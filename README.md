@@ -1,8 +1,8 @@
-#Sports federation
+# Sports federation
 
 ## Modules
 
-###Club 
+### Club 
 - Name
 - Address
 - Website
@@ -10,21 +10,21 @@
 - Director
 - History
 
-###Selection
+### Selection
 - Gender
 - Category
 - Coach
 - History
 - ClubId
 
-###Coach 
+### Coach 
 - Name
 - Surname
 - Date of birth
 - Description
 - ClubId
 
-###Player info 
+### Player info 
 - Name
 - Surname
 - Description
@@ -38,14 +38,14 @@
 - Current club
 - Selection 
 
-###Event 
+### Event 
 - Type (league, cup, tournament)
 - Name
 - Date from  
 - Date to
 - Description
 
-###Game
+### Game
 - Event
 - Date
 - Place
@@ -59,24 +59,24 @@
 - ScoresHome
 - Note
 
-###Representative
+### Representative
 - Type(referee, delegate)
 - Name
 - Surname
 
-###Club CRUD
-###Selection CRUD
-###Coach CRUD
-###Player info CRUD
-###Event CRUD
-###Game CRUD
-###Representative CRUD
+### Club CRUD
+### Selection CRUD
+### Coach CRUD
+### Player info CRUD
+### Event CRUD
+### Game CRUD
+### Representative CRUD
 
-####Game approval (game needs to be approved by delegate, cannot be editable after approval)
-####Game report ( delegate enters game result and notes)
-####Download game report
+#### Game approval (game needs to be approved by delegate, cannot be editable after approval)
+#### Game report ( delegate enters game result and notes)
+#### Download game report
 
-##Git Hub
+## Git Hub
 1. Renata Novaković -  renata85 
 2. Igor Musić - agentsmith-source
 3. Nikolina Vranješ  - nikolina252 
