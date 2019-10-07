@@ -20,7 +20,6 @@ class CreateFederationsTable extends Migration
             $table->string('name');
             $table->string('history');
             $table->string('owner');
-            $table->BigInteger('presidentId')->unsigned();
             $table->timestamps();
 
            

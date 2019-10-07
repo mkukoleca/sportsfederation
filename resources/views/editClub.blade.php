@@ -11,8 +11,18 @@
     <title>Document</title>
 </head>
 <body>
+
+<div class="container">
+<div class="row">
+
+<div clas="col-3">
+</div>
+
+<div class="col-6">
+<br><br>
+
 <button type="button" class="btn btn-secondary btn-lg btn-block"><a href="/index">Back</a></button>
-<div class="container">  
+ 
   <form id="contact" action="{{route('updateclub', $club->id)}}" method="POST">
   {{csrf_field()}}
     <h3>Update Club</h3>
@@ -37,9 +47,16 @@
     <fieldset>
       <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Update</button>
     </fieldset>
-    <p class="copyright">Designed by <a href="https://colorlib.com" target="_blank" title="Colorlib">Colorlib</a></p>
+    <p class="copyright">Designed by Sharks</p>
   </form>
+
+
 </div>
+<div clas="col-3">
+      </div>
+    </div>
+
+  </div>
 </body>
 </html>
 

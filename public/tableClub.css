@@ -1,3 +1,14 @@
+body {
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
+  font-weight: 100;
+  font-size: 12px;
+  line-height: 30px;
+  color: #777;
+  background-image:url(images/rukomet.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 table.blueTable {
     border: 1px solid #1C6EA4;
     background-color: #EEEEEE;
@@ -8,6 +19,7 @@ table.blueTable {
   table.blueTable td, table.blueTable th {
     border: 1px solid #AAAAAA;
     padding: 3px 2px;
+  
   }
   table.blueTable tbody td {
     font-size: 13px;

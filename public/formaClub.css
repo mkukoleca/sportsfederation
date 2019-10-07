@@ -18,7 +18,9 @@ body {
   font-size: 12px;
   line-height: 30px;
   color: #777;
-  background: rgb(49, 59, 192);
+  background-image:url(images/rukomet.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .container {
@@ -40,7 +42,7 @@ body {
 #contact {
   background: #F9F9F9;
   padding: 25px;
-  margin: 150px 0;
+  margin: 50px 0;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
 
@@ -93,7 +95,7 @@ fieldset {
   cursor: pointer;
   width: 100%;
   border: none;
-  background:  rgb(49, 59, 192);
+  background: rgb(58, 163, 233);
   color: #FFF;
   margin: 0 0 5px;
   padding: 10px;
