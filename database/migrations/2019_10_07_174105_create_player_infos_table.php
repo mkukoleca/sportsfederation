@@ -15,6 +15,7 @@ class CreatePlayerInfosTable extends Migration
     {
         Schema::create('player_infos', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('thumbnail');
             $table->string('name');
             $table->string('surname');
             $table->string('description');
