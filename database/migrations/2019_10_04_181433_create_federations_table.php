@@ -16,11 +16,10 @@ class CreateFederationsTable extends Migration
     {
         Schema::create('federations', function (Blueprint $table) {
             $table->bigIncrements('id')->unsigned();
-            $table->string('description');
             $table->string('name');
+            $table->string('description');
             $table->string('history');
             $table->string('owner');
-            $table->BigInteger('presidentId')->unsigned();
             $table->timestamps();
 
            
