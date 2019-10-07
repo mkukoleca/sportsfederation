@@ -18,5 +18,10 @@ Route::post('/editClub/{id}','ClubController@update')->name('updateclub');
 Route::get('/deleteClub/{id}','ClubController@destroy');
 Route::post('/deleteClub/{id}','ClubController@clear')->name('clearclub');
 
+<<<<<<< HEAD
 Route::get('editSelection/{id}','SelectionContoller@edit');
 Route::post('editSelection/{id}','SelectionContoller@update');
+=======
+Route::get('/selection','SelectionController@show' );
+
+>>>>>>> c1d7ab0d556c404bcd50852e4c7c88515ac9d6d0

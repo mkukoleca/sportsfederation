@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Selection;
 use Illuminate\Http\Request;
-
+use DB;
 class SelectionController extends Controller
 {
     /**
@@ -44,9 +44,10 @@ class SelectionController extends Controller
      * @param  \App\Selection  $selection
      * @return \Illuminate\Http\Response
      */
-    public function show(Selection $selection)
-    {
-        //
+    public function show(){
+        $selection = DB::table('selection')->get();
+        return view('selection', ['selection' => $selection]);
+        
     }
 
     /**
@@ -93,5 +94,8 @@ class SelectionController extends Controller
     public function destroy(Selection $selection)
     {
         //
+
     }
 }
+
+
