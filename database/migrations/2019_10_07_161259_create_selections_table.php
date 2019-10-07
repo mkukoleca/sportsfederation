@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateStaffTable extends Migration
+class CreateSelectionsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,13 @@ class CreateStaffTable extends Migration
      */
     public function up()
     {
-        Schema::create('staff', function (Blueprint $table) {
-            $table->bigIncrements('id')->unsigned();
-            $table->string('name');
-            $table->string('description');
-            $table->string('thumbnail');
-            $table->bigInteger('typeId')->unsigned();
+        Schema::create('selections', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->string('gender');
+            $table->string('category');
+            $table->bigInteger('coachId');
+            $table->string('history');
+            $table->bigInteger('clubId');
             $table->timestamps();
         });
     }
@@ -30,9 +31,6 @@ class CreateStaffTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('staff');
+        Schema::dropIfExists('selections');
     }
 }
-
-
-
