@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class PlayerInfo extends Model
 {
-    use Notifiable;
+    
 
     /**
      * The attributes that are mass assignable.
@@ -14,21 +14,21 @@ class PlayerInfo extends Model
      * @var array
      */
     protected $fillable = [
-    'Thumbnail',   
-    'Name',
-    'Surname',
-    'Description',
-    'Position',
-    'Height',
-    'Weight',
-    'Jersey number',
-    'Date of birth',
-    'Citizenship',
-    'Club history',
-    'Current club',
-    'Selection',
-    'Created_at',
-    'Updated_at',
+    'thumbnail',   
+    'name',
+    'surname',
+    'description',
+    'position',
+    'height',
+    'weight',
+    'jerseyNumber',
+    'dateOfBirth',
+    'citizenship',
+    'clubHistory',
+    'currentClub',
+    'selection',
+    'created_at',
+    'updated_at',
 
     ];
 
