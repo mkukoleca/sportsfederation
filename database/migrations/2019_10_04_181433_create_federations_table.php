@@ -15,14 +15,13 @@ class CreateFederationsTable extends Migration
     public function up()
     {
         Schema::create('federations', function (Blueprint $table) {
-            $table->bigIncrements('id')->unsigned();
+            $table->bigIncrements('id');
             $table->string('name');
             $table->string('description');
             $table->string('history');
             $table->string('owner');
-            $table->timestamps();
-
-           
+            $table->string('description');
+            $table->timestamps(); 
         });
     }
 

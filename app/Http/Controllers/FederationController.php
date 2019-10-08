@@ -57,7 +57,7 @@ class FederationController extends Controller
      */
     public function edit(Federation $federation)
     {
-        //
+        
     }
 
     /**
