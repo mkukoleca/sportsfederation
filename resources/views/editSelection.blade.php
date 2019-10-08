@@ -26,7 +26,7 @@
     Coach Id:<br><input placeholder="CoachId" type="number" name ="coachId" value="{{$selection->coachId}}" tabindex="3">
     </fieldset>
     <fieldset>
-    History:<br><textarea placeholder="History" type="text" name ="history" value="{{$selection->history}}" tabindex="4" ></textarea>
+    History:<br><input placeholder="History" type="text" name ="history" value="{{$selection->history}}" tabindex="4" >
     </fieldset>
     <fieldset>
     Club Id:<br><input placeholder="ClubId" type="number" name ="clubId" value="{{$selection->clubId}}" tabindex="5" >
