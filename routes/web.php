@@ -18,7 +18,9 @@ Route::post('/editClub/{id}','ClubController@update')->name('updateclub');
 Route::get('/deleteClub/{id}','ClubController@destroy');
 Route::post('/deleteClub/{id}','ClubController@clear')->name('clearclub');
 
-Route::get('editSelection/{id}','SelectionContoller@edit');
-Route::post('editSelection/{id}','SelectionContoller@update');
-Route::get('/selection','SelectionController@show' );
+
+Route::get('/selection','SelectionController@show');
+Route::get('editSelection/{id}','SelectionController@edit');
+Route::post('editSelection/{id}','SelectionController@update')->name('updateselection');
+
 
