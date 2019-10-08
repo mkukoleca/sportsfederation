@@ -44,9 +44,13 @@ class PlayerInfoController extends Controller
      * @param  \App\PlayerInfo  $playerInfo
      * @return \Illuminate\Http\Response
      */
-    public function show(PlayerInfo $playerInfo)
+    public function show($id)
     {
-        return view('/playersinfo/singlePlayer');
+        return PlayerInfo::find($id);
+
+        //return view('/playersinfo/singlePlayer'); je kontrolni cisto da vidim da li radi ruta
+
+        //return view('/playersinfo/singlePlayer');
     }
 
     /**
@@ -55,9 +59,10 @@ class PlayerInfoController extends Controller
      * @param  \App\PlayerInfo  $playerInfo
      * @return \Illuminate\Http\Response
      */
-    public function edit(PlayerInfo $playerInfo)
+    public function edit($id)
     {
-        //
+        $playerInfo = PlayerInfo::where('id', $id)->first();
+        return view('/playersinfo/singlePlayer',compact('singlePlayer'));
     }
 
     /**
