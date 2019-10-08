@@ -78,8 +78,8 @@ class PlayerInfoController extends Controller
      * @param  \App\PlayerInfo  $playerInfo
      * @return \Illuminate\Http\Response
      */
-    public function destroy(PlayerInfo $playerInfo)
-    {
-        //
+    public function destroy($id){
+        $PlayerInfo = PlayerInfo::where('id', $id)->first();
+        return view('playersinfo/players',compact('playersinfo/players'));
     }
 }

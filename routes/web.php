@@ -19,3 +19,4 @@ Route::get('/deleteClub/{id}','ClubController@destroy');
 Route::post('/deleteClub/{id}','ClubController@clear')->name('clearclub');
 
 Route::get('/playersInfo/players', 'PlayerInfoController@index');
+Route::post('/playersinfo/players/{id}','PlayerInfoController@destroy');
