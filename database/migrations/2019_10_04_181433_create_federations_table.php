@@ -20,6 +20,7 @@ class CreateFederationsTable extends Migration
             $table->string('history');
             $table->string('owner');
             $table->string('description');
+            
             $table->timestamps(); 
         });
     }
