@@ -18,6 +18,8 @@ Route::post('/editClub/{id}','ClubController@update')->name('updateclub');
 Route::get('/deleteClub/{id}','ClubController@destroy');
 Route::post('/deleteClub/{id}','ClubController@clear')->name('clearclub');
 
+Route::get('/newSelection', 'SelectionController@store');
+Route::post('/newSelection','SelectionController@store')->name('createSelection');
 Route::get('editSelection/{id}','SelectionContoller@edit');
 Route::post('editSelection/{id}','SelectionContoller@update');
 Route::get('/selection','SelectionController@show' );
