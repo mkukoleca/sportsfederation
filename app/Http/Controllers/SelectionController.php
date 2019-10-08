@@ -84,11 +84,17 @@ class SelectionController extends Controller
      * @param  \App\Selection  $selection
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Selection $selection)
-    {
-        //
 
+    public function destroy($id, Request $request){
+        
+        $selection = Selection::where('id', $id)->first();
+        $selection->delete();
+        return redirect('/selection');
     }
+
+    
+
+
 }
 
 

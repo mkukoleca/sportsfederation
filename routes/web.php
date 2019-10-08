@@ -23,4 +23,6 @@ Route::get('/selection','SelectionController@show');
 Route::get('editSelection/{id}','SelectionController@edit');
 Route::post('editSelection/{id}','SelectionController@update')->name('updateselection');
 
+Route::get('/deleteSelection/{id}','SelectionController@destroy');
+
 

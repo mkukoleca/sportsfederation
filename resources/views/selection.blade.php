@@ -18,8 +18,7 @@
         <td>{{$select->history}}</td>
         <td>{{$select->coachId}}</td>
         <td>{{$select->clubId}}</td>
-
-
+        <td><a href="deleteSelection/{{$select->id}}"><button>Delete</button></a></td>
 
     </tr>
     @endforeach
