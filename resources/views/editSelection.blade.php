@@ -8,31 +8,28 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 <link rel="stylesheet" type="text/css" href="../formaClub.css">
-    <title>Edit Club</title>
+    <title>Edit Selection</title>
 </head>
 <body>
-<button type="button" class="btn btn-secondary btn-lg btn-block"><a href="/index">Back</a></button>
+<button type="button" class="btn btn-secondary btn-lg btn-block"><a href="/selection">Back</a></button>
 <div class="container">  
-  <form id="contact" action="{{route('updateclub', $club->id)}}" method="POST">
+  <form id="contact" action="{{route('updateselection', $selection->id)}}" method="POST">
   {{csrf_field()}}
-    <h3>Update Club</h3>
+    <h3>Update Selection</h3>
     <fieldset>
-    Name:<br><input placeholder="Name"  type="text" name ="name" value="{{$club->name}}" tabindex="1"  autofocus>
+    Gender:<br><input placeholder="Gender"  type="text" name ="gender" value="{{$selection->gender}}" tabindex="1"  autofocus>
     </fieldset>
     <fieldset>
-    Address:<br><input placeholder="Address" type="text" name ="address" value="{{$club->address}}" tabindex="2" >
+    Category:<br><input placeholder="Category" type="text" name ="category" value="{{$selection->category}}" tabindex="2" >
     </fieldset>
     <fieldset>
-    Website:<br><input placeholder="Website (optional)" type="url" name ="website" value="{{$club->website}}" tabindex="3">
+    Coach Id:<br><input placeholder="CoachId" type="number" name ="coachId" value="{{$selection->coachId}}" tabindex="3">
     </fieldset>
     <fieldset>
-    Date of foundation:<br><input placeholder="Date of foundation" type="date" name ="dateOfFoundation" value="{{$club->dateOfFoundation}}" tabindex="4">
+    History:<br><textarea placeholder="History" type="text" name ="history" value="{{$selection->history}}" tabindex="4" ></textarea>
     </fieldset>
     <fieldset>
-    Director:<br><input placeholder="Director" type="text" name ="director" value="{{$club->director}}" tabindex="5" >
-    </fieldset>
-    <fieldset>
-    History:<br><textarea placeholder="History" type="text" name ="history" value="{{$club->history}}" tabindex="6" ></textarea>
+    Club Id:<br><input placeholder="ClubId" type="number" name ="clubId" value="{{$selection->clubId}}" tabindex="5" >
     </fieldset>
     <fieldset>
       <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Update</button>
@@ -42,4 +39,3 @@
 </div>
 </body>
 </html>
-

@@ -41,6 +41,7 @@
         <td>{{$select->history}}</td>
         <td>{{$select->coachId}}</td>
         <td>{{$select->clubId}}</td>
+<<<<<<< HEAD
 
         <td><button><a href="editSelection/{{$select->id}}">Edit</a></button></td>
         <td><button><a href="deleteSelection/{{$select->id}}">Delete</a></button></td>
@@ -48,6 +49,11 @@
         </tr>
 
         @endforeach
+=======
+ 
+    </tr>
+    @endforeach
+>>>>>>> 73c1a6c811644d5e600a02c36fb362f689b1893d
 
     </tbody>
 </table>

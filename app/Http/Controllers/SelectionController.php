@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Selection;
 use Illuminate\Http\Request;
 use DB;
+
 class SelectionController extends Controller
 {
     /**
@@ -77,28 +78,20 @@ class SelectionController extends Controller
      */
     public function edit($id)
     {
-        $selection = Club::where('id', $id)->first();
-        return view('/editSelection',compact('slection'));
+        $selection = Selection::where('id', $id)->first();
+        return view('/editSelection',compact('selection'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Selection  $selection
-     * @return \Illuminate\Http\Response
-     */
     public function update($id, Request $request)
     {
         $data = $request->only(['gender', 'category', 'coachId', 'history', 'clubId']);
 
-        
-        $selection=Selection::where('id', $id)->first();
-        $selection->name=$data['gender'];
-        $selection->address=$data['category'];
-        $selection->website=$data['coachId'];
-        $selection->dateOfFoundation=$data['history'];
-        $selection->director=$data['clubId'];
+        $selection = Selection::where('id', $id)->first();
+        $selection->gender=$data['gender'];
+        $selection->category=$data['category'];
+        $selection->coachId=$data['coachId'];
+        $selection->history=$data['history'];
+        $selection->clubId=$data['clubId'];
         $selection->save();
     
         return redirect('/selection');
