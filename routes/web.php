@@ -17,3 +17,5 @@ Route::get('/editClub/{id}','ClubController@edit');
 Route::post('/editClub/{id}','ClubController@update')->name('updateclub');
 Route::get('/deleteClub/{id}','ClubController@destroy');
 Route::post('/deleteClub/{id}','ClubController@clear')->name('clearclub');
+Route::get('/selection', 'SelectionController@index');
+Route::get('/federation', 'FederationController@index');
