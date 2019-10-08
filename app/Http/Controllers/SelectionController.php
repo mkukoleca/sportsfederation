@@ -34,10 +34,29 @@ class SelectionController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        //
+    public function store(Request $request) {
+        
+        $data = $request->only(['gender', 'category', 'history', 'coachId', 'clubId']);
+
+            if(count($data) > 0){
+                $selection = new Selection();
+                $selection->gender = $data['gender'];
+                $selection->category = $data['category'];
+                $selection->history = $data['history'];
+                
+                $selection->coachId = $data['coachId'];
+                $selection->clubId = $data['clubId'];
+
+                // $data['coachId']->unsigned()->nullable();
+                // $data['clubId']->unsigned()->nullable();
+                $selection->save();
+
+                return redirect("/selection");
+            }
+    return view('/newSelection');
+
     }
+    
 
     /**
      * Display the specified resource.
