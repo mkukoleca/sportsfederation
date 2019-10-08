@@ -14,8 +14,11 @@
 <body>
     <button autofocus><a href="/playersInfo/registerPlayer">Register new player</a></button>
     <br/><br/><br/>
+    
     <table>
-    @foreach($player_infos as $player)
+    @foreach ($player_infos as $player)
+    
+    
             <tr>
                 <th>Thumbnail</th>
                 <td>{{$player->thumbnail}}</td>
@@ -64,11 +67,12 @@
                 <th>Current club</th>
                 <td>{{$player -> currentClub}}</td>
             </tr>
-            @endforeach 
+            
             <tr>
                 <th><button><a href="/playersInfo/registerPlayer{{$player->id}}">EDIT</a></button></th>
                 <td><button><a href="/playersInfo/registerPlayer{{$player->id}}">DELETE</a></button></td>
             </tr>
+            @endforeach 
     </table>
         
 </body>

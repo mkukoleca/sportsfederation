@@ -24,7 +24,7 @@ class PlayerInfoController extends Controller
      */
     public function create()
     {
-        //
+        return view('/playersInfo/registerPlayer');
     }
 
     /**
@@ -35,7 +35,30 @@ class PlayerInfoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->only(['thumbnail', 'name', 'surname', 'description', 'position', 'height', 'weight', 'jerseyNumber', 'dateOfBirth', 'citizenship', 'clubHistory', 'currentClub', 'selection' ]);
+
+        if(count($data) > 0){
+        $player = new PlayerInfo();
+        $player->thumbnail=$data['thumbnail'];
+        $player->name=$data['name'];
+        $player->surname=$data['surname'];
+        $player->description=$data['description'];
+        $player->position=$data['position'];
+        $player->height=$data['height'];
+        $player->weight=$data['weight'];
+        $player->jerseyNumber=$data['jerseyNumber'];
+        $player->dateOfBirth=$data['dateOfBirth'];
+        $player->citizenship=$data['citizenship'];
+        $player->clubHistory=$data['clubHistory'];
+        $player->currentClub=$data['currentClub'];
+        $player->selection=$data['selection'];
+        
+    
+        $player->save();
+        return redirect('/playersInfo/players');        
+            } 
+     return view('/playersInfo/registerPlayer');
+
     }
 
     /**
