@@ -29,7 +29,7 @@
     History:<br><textarea placeholder="History" type="text" name ="history" value="{{$selection->history}}" tabindex="4" ></textarea>
     </fieldset>
     <fieldset>
-    Club Id:<br><input placeholder="ClubId" type="number" name ="clubId" value="{{$selection->director}}" tabindex="5" >
+    Club Id:<br><input placeholder="ClubId" type="number" name ="clubId" value="{{$selection->clubId}}" tabindex="5" >
     </fieldset>
     <fieldset>
       <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Update</button>

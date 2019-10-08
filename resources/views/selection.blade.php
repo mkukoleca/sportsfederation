@@ -18,9 +18,7 @@
         <td>{{$select->history}}</td>
         <td>{{$select->coachId}}</td>
         <td>{{$select->clubId}}</td>
-
-
-
+ 
     </tr>
     @endforeach
 
