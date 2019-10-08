@@ -9,17 +9,27 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 <link rel="stylesheet" type="text/css" href="tableClub.css">
 
+
+
    
     <title>Document</title>
 </head>
 <body>
-<br><br><br>
+
+<div class="container">
+<div class="row">
+
+<div clas="col-3">
+</div>
+
+<div class="col-6">
+<br><br>
   <button><a href="/newClub">Add new Club</a></button>
 <br><br><br>
  <table class="blueTable">
   <thead>
             <tr>
-            <th>ID</th>
+            <th>No.</th>
             <th>Name</th>
             <th>Address</th>
             <th>Website</th>
@@ -53,6 +63,11 @@
 @isset($message)
 {{$message}}
 @endisset
+</div>
+<div clas="col-3">
+      </div>
+    </div>
 
+  </div>
 </body>
 </html>
