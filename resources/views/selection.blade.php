@@ -10,13 +10,13 @@
 <link rel="stylesheet" type="text/css" href="tableClub.css">
 
    
-    <title>Document</title>
+    <title>Selection</title>
 </head>
 <body>
 <br><br><br>
   <button><a href="/newSelection">Add new Selection</a></button>
 <br><br><br>
-<table class="bluetable">
+<table class="blueTable">
 <thead>
     <tr>   
         <th>gender</th>
@@ -41,7 +41,6 @@
         <td>{{$select->history}}</td>
         <td>{{$select->coachId}}</td>
         <td>{{$select->clubId}}</td>
-<<<<<<< HEAD
 
         <td><button><a href="editSelection/{{$select->id}}">Edit</a></button></td>
         <td><button><a href="deleteSelection/{{$select->id}}">Delete</a></button></td>
@@ -49,11 +48,6 @@
         </tr>
 
         @endforeach
-=======
- 
-    </tr>
-    @endforeach
->>>>>>> 73c1a6c811644d5e600a02c36fb362f689b1893d
 
     </tbody>
 </table>
