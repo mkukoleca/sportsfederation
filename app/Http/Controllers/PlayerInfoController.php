@@ -135,6 +135,6 @@ class PlayerInfoController extends Controller
         $player->delete();
         
         
-        return view('playersInfo/players');
+        return redirect('playersInfo/players');
     }
 }
