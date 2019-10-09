@@ -71,8 +71,7 @@ class PlayerInfoController extends Controller
     public function show($id)
     {
         //return PlayerInfo::find($id);
-        $player = PlayerInfo::where('id', $id)
-        ->first();
+        $player = PlayerInfo::where('id', $id)->first();
         return view("/playersInfo/singlePlayer", compact('player'));
 
         //return view('/playersinfo/singlePlayer'); je kontrolni cisto da vidim da li radi ruta
@@ -136,5 +135,11 @@ class PlayerInfoController extends Controller
         
         
         return redirect('playersInfo/players');
+    }
+
+
+    public function nekafunkcija(PlayerInfo $player){
+        return view ('/playerInfo/editPlayer', compact('player'));
+
     }
 }
