@@ -18,6 +18,7 @@ Route::post('/editClub/{id}','ClubController@update')->name('updateclub');
 Route::get('/deleteClub/{id}','ClubController@destroy');
 Route::post('/deleteClub/{id}','ClubController@clear')->name('clearclub');
 
+//PlayerInfo
 Route::get('/playersInfo/players', 'PlayerInfoController@index');
 Route::get('/playersInfo/singlePlayer/{id}', 'PlayerInfoController@show');
 Route::get('/playersInfo/updatePlayer/{id}','PlayerInfoController@edit');
@@ -27,4 +28,10 @@ Route::post('/playersInfo/registerPlayer', 'PlayerInfoController@store')->name('
 
 
 Route::get('/deletePlayer/{id}','PlayerInfoController@destroy');
+
+Route::get('/singlePlayer/{cccc}','PlayerInfoController@nekafunkcija');
+
+//Game
+Route::get('/games/gamesList', 'GameController@index');
+
 
