@@ -46,7 +46,10 @@ class PlayerInfoController extends Controller
      */
     public function show($id)
     {
-        return PlayerInfo::find($id);
+        //return PlayerInfo::find($id);
+        $player = PlayerInfo::where('id', $id)
+        ->first();
+        return view("/playersInfo/singlePlayer", compact('player'));
 
         //return view('/playersinfo/singlePlayer'); je kontrolni cisto da vidim da li radi ruta
 
@@ -61,8 +64,8 @@ class PlayerInfoController extends Controller
      */
     public function edit($id)
     {
-        $playerInfo = PlayerInfo::where('id', $id)->first();
-        return view('/playersinfo/singlePlayer',compact('singlePlayer'));
+        $player = PlayerInfo::where('id', $id)->first();
+        return view('/playersinfo/updatePlayer',compact('player'));
     }
 
     /**
@@ -76,24 +79,24 @@ class PlayerInfoController extends Controller
     {
         $data = $request->only(['thumbnail', 'name', 'surname', 'description', 'position', 'height', 'weight', 'jerseyNumber', 'dateOfBirth', 'citizenship', 'clubHistory', 'currentClub', 'selection', 'created_at', 'updated_at',]);
 
-        $playerInfo=PlayerInfo::where('id', $id)->first();
-        $playerInfo->thumbnail=$data['thumbnail'];
-        $playerInfo->name=$data['name'];
-        $playerInfo->surname=$data['surname'];
-        $playerInfo->description=$data['description'];
-        $playerInfo->position=$data['position'];
-        $playerInfo->height=$data['height'];
-        $playerInfo->weight=$data['weight'];
-        $playerInfo->jerseyNumber=$data['jerseyNumber'];
-        $playerInfo->dateOfBirth=$data['dateOfBirth'];
-        $playerInfo->citizenship=$data['citizenship'];
-        $playerInfo->clubHistoy=$data['clubHistoy'];
-        $playerInfo->currentClub=$data['currentClub'];
-        $playerInfo->selection=$data['selection'];
-        $playerInfo->created_at=$data['created_at'];
-        $playerInfo->updated_at=$data['updated_at'];
+        $player=PlayerInfo::where('id', $id)->first();
+        $player->thumbnail=$data['thumbnail'];
+        $player->name=$data['name'];
+        $player->surname=$data['surname'];
+        $player->description=$data['description'];
+        $player->position=$data['position'];
+        $player->height=$data['height'];
+        $player->weight=$data['weight'];
+        $player->jerseyNumber=$data['jerseyNumber'];
+        $player->dateOfBirth=$data['dateOfBirth'];
+        $player->citizenship=$data['citizenship'];
+        $player->clubHistory=$data['clubHistory'];
+        $player->currentClub=$data['currentClub'];
+        $player->selection=$data['selection'];
+        //$player->created_at=$data['created_at'];
+        //$player->updated_at=$data['updated_at'];
 
-        $playerInfo->save();
+        $player->save();
     
         return redirect('/playersInfo/players');
     }
