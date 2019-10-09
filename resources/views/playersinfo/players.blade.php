@@ -76,7 +76,7 @@
                 <td>{{$player -> selection}}</td>
             </tr>
             <tr>
-                <th>Added</th>
+                <th>Registered at</th>
                 <td>{{$player -> created_at}}</td>
             </tr>
             <tr>
