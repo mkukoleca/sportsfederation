@@ -13,7 +13,7 @@
 <body>
 <button type="button" class="btn btn-secondary btn-lg btn-block"><a href="/playersInfo/players">Back</a></button>
 <div class="container">  
-  <form id="contact" action="{{route('updatepalyer', $player->id)}}" method="POST">
+  <form id="contact" action="{{route('updateplayer', $player->id)}}" method="POST">
   {{csrf_field()}}
     <h3>Update Player</h3>
     <fieldset>
