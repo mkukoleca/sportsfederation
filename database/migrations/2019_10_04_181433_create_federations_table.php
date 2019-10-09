@@ -17,11 +17,13 @@ class CreateFederationsTable extends Migration
         Schema::create('federations', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
-            $table->string('description');
+            $table->string('email');
             $table->string('history');
             $table->string('owner');
-            
-            $table->timestamps(); 
+            $table->string('desciption');
+            $table->timestamps();
+
+           
         });
     }
 
