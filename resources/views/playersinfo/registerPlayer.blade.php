@@ -76,6 +76,7 @@
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>
+  <a href="/playersInfo/players"><button class="btn btn-secondary">Back</button></a>
 </div>
 
 </body>
