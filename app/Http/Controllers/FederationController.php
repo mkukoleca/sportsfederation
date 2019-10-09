@@ -14,7 +14,9 @@ class FederationController extends Controller
      */
     public function index()
     {
-        return view('/federation');
+        return view('federation', [
+            'federations' => Federation::all(),
+            ]);
     }
 
     /**

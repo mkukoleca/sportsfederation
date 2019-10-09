@@ -10,5 +10,15 @@
 <body>
 
    <h1 style="text-align:center">Rukometni savez Republike Srpske </h1>
+
+   @foreach($federations as $fed)
+    
+        <h1>{{ $fed->name }}</h1>
+        <h4>History: {{ $fed->history }}</h4>
+        <h4>Owner: {{ $fed->owner }}</h4>
+        <h4>Description: {{ $fed->description }}</h4>
+    
+    @endforeach
+
 </body>
 </html>
