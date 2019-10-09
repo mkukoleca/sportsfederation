@@ -18,7 +18,7 @@ class CreateSelectionTable extends Migration
             $table->string('gender');
             $table->string('category');
             $table->string('history');
-            $table->integer('coachId')-nullable();
+            $table->integer('coachId')->nullable();
             $table->integer('clubId')->nullable();
             $table->timestamps();
         });
