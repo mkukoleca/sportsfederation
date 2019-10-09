@@ -64,11 +64,16 @@
                 <th>Current club</th>
                 <td>{{$player -> currentClub}}</td>
             </tr>
-            @endforeach 
             <tr>
-                <th><button><a href="/playersInfo/registerPlayer{{$player->id}}">EDIT</a></button></th>
-                <td><button><a href="/playersInfo/registerPlayer{{$player->id}}">DELETE</a></button></td>
+                <th>Selection</th>
+                <td>{{$player -> selection}}</td>
             </tr>
+            
+            <tr>
+                <th><button><a href="/playersInfo/singlePlayer/{{$player->id}}">EDIT</a></button></th>
+                <td><button><a href="/playersInfo/singlePlayer/{{$player->id}}">DELETE</a></button></td>
+            </tr>
+            @endforeach 
     </table>
         
 </body>
