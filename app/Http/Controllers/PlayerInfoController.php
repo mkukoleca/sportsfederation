@@ -131,7 +131,10 @@ class PlayerInfoController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy($id){
-        $PlayerInfo = PlayerInfo::where('id', $id)->first();
-        return view('playersinfo/players',compact('playersinfo/players'));
+        $player = PlayerInfo::where('id', $id)->first();
+        $player->delete();
+        
+        
+        return view('playersInfo/players');
     }
 }

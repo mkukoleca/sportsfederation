@@ -18,7 +18,10 @@
     <table>
     @foreach ($player_infos as $player)
     
-    
+            <tr>
+                <th>ID</th>
+                <td>{{$player->id}}</td>
+            </tr>
             <tr>
                 <th>Thumbnail</th>
                 <td>{{$player->thumbnail}}</td>
@@ -74,8 +77,8 @@
             </tr>
             
             <tr>
-                <th><button><a href="/playersInfo/singlePlayer/{{$player->id}}">EDIT</a></button></th>
-                <td><button><a href="/playersInfo/singlePlayer/{{$player->id}}">DELETE</a></button></td>
+                <th><button><a href="/playersInfo/updatePlayer/{{$player->id}}">EDIT</a></button></th>
+                <td><button><a href="/deletePlayer/{{$player->id}}">DELETE</a></button></td>
             </tr>
             @endforeach 
     </table>

@@ -14,7 +14,7 @@
 </head>
 <body>
 <br><br><br>
-  <button><a href="/newClub">Add new Club</a></button>
+<button autofocus><a href="/playersInfo/registerPlayer">Register new player</a></button>
 <br><br><br>
  <table class="blueTable">
   
@@ -77,8 +77,8 @@
             </tr>
             
             <tr>
-                <td><button><a href="/playersInfo/singlePlayer/{{$player->id}}">EDIT</a></button></td>
-                <td><button><a href="/playersInfo/singlePlayer/{{$player->id}}">DELETE</a></button></td>
+                <td><button><a href="/playersInfo/updatePlayer/{{$player->id}}">EDIT</a></button></td>
+                <td><button><a href="/deletePlayer/{{$player->id}}">DELETE</a></button></td>
                 <td><button><a href="/playersInfo/players">Lista igrača</a></button></td>
             </tr>
            
