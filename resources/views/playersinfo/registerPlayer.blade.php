@@ -13,12 +13,12 @@
 
 <div class="container">
   <h2>Register new player</h2>
-  <form action="{{route('register')}}" method="POST">
+  <form action="{{route('register')}}" method="POST" enctype="multipart/form-data" >
   {{csrf_field()}}
     
 	<div class="form-group">
       <label for="thumbnail">Profile picture:</label>
-      <input type="thumbnail" class="form-control" id="thumbnail" name="thumbnail">
+      <input type="file" class="form-control" id="thumbnail" name="thumbnail">
     </div>
 	<div class="form-group">
       <label for="name">Name:</label>
