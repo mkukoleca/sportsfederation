@@ -53,6 +53,7 @@ class PlayerInfoController extends Controller
         $player->currentClub=$data['currentClub'];
         $player->selection=$data['selection'];
         
+        
     
         $player->save();
         return redirect('/playersInfo/players');        
@@ -116,8 +117,7 @@ class PlayerInfoController extends Controller
         $player->clubHistory=$data['clubHistory'];
         $player->currentClub=$data['currentClub'];
         $player->selection=$data['selection'];
-        //$player->created_at=$data['created_at'];
-        //$player->updated_at=$data['updated_at'];
+        
 
         $player->save();
     

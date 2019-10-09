@@ -44,11 +44,11 @@
             </tr>
             <tr>
                 <th>Height</th>
-                <td>{{$player -> height}}</td>
+                <td>{{$player -> height}} cm</td>
             </tr>
             <tr>
                 <th>Weight</th>
-                <td>{{$player -> weight}}</td>
+                <td>{{$player -> weight}} kg</td>
             </tr>
             <tr>
                 <th>Jersey number</th>
@@ -75,8 +75,17 @@
                 <th>Selection</th>
                 <td>{{$player -> selection}}</td>
             </tr>
+            <tr>
+                <th>Added</th>
+                <td>{{$player -> created_at}}</td>
+            </tr>
+            <tr>
+                <th>Updated</th>
+                <td>{{$player -> updated_at}}</td>
+            </tr>
             
             <tr>
+                <td><button><a href="/playersInfo/singlePlayer/{{$player->id}}">SHOW PLAYER</a></button></td>
                 <th><button><a href="/playersInfo/updatePlayer/{{$player->id}}">EDIT</a></button></th>
                 <td><button><a href="/deletePlayer/{{$player->id}}">DELETE</a></button></td>
             </tr>
