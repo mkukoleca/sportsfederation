@@ -14,7 +14,7 @@
 </head>
 <body>
 <br><br><br>
-  <button><a href="/newSelection">Add new Selection</a></button>
+  <a href="/newSelection"><button>Add new Selection</button></a>
 <br><br><br>
 <table class="blueTable">
 <thead>
@@ -42,8 +42,8 @@
         <td>{{$select->coachId}}</td>
         <td>{{$select->clubId}}</td>
 
-        <td><button><a href="editSelection/{{$select->id}}">Edit</a></button></td>
-        <td><button><a href="deleteSelection/{{$select->id}}">Delete</a></button></td>
+        <td><a href="editSelection/{{$select->id}}"><button>Edit</button></a></td>
+        <td><a onclick="return confirm('DA LI STE SIGURNI DA ZELITE BRISATI?')" href="deleteSelection/{{$select->id}}"><button>Delete</button></a></td>
 
         </tr>
 

@@ -17,7 +17,9 @@
   {{csrf_field()}}
     <h3>Add new Selection</h3>
     <fieldset>
-      <input placeholder="Gender" type="text" name ="gender" tabindex="1" required autofocus>
+      <input  type="radio" value="Female" name ="gender" tabindex="1" required  >Female
+      <input  type="radio" value="Male" name ="gender" tabindex="1" required  >Male
+
     </fieldset>
 
     <fieldset>
