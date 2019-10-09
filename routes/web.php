@@ -21,7 +21,7 @@ Route::post('/deleteClub/{id}','ClubController@clear')->name('clearclub');
 Route::get('/playersInfo/players', 'PlayerInfoController@index');
 Route::get('/playersInfo/singlePlayer/{id}', 'PlayerInfoController@show');
 Route::get('/playersInfo/updatePlayer/{id}','PlayerInfoController@edit');
-Route::post('/playersInfo/updatePlayer/{id}','PlayerInfoController@update')->name('updatepalyer');
+Route::post('/playersInfo/updatePlayer/{id}','PlayerInfoController@update')->name('updateplayer');
 Route::get('/playersInfo/registerPlayer', 'PlayerInfoController@create');
 Route::post('/playersInfo/registerPlayer', 'PlayerInfoController@store')->name('register');
 
