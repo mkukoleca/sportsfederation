@@ -22,5 +22,8 @@ Route::get('/playersInfo/players', 'PlayerInfoController@index');
 Route::get('/playersInfo/singlePlayer/{id}', 'PlayerInfoController@show');
 Route::get('/playersInfo/updatePlayer/{id}','PlayerInfoController@edit');
 Route::post('/playersInfo/updatePlayer/{id}','PlayerInfoController@update')->name('updatepalyer');
+Route::get('/playersInfo/registerPlayer', 'PlayerInfoController@create');
+Route::post('/playersInfo/players', 'PlayerInfoController@store')->name('register');
+
 Route::post('/playersinfo/players/{id}','PlayerInfoController@destroy');
 
