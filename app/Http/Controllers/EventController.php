@@ -35,7 +35,19 @@ class EventController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->only(['type', 'name', 'season', 'description']);
+
+            if(count($data) > 0){
+                $event = new Event();
+                $event->type = $data['type'];
+                $event->name = $data['name'];
+                $event->season = $data['season'];
+                $event->description = $data['description'];
+                $event->save();
+
+                return redirect("/event");
+            }
+    return view('/newEvent');
     }
 
     /**

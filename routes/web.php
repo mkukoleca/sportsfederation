@@ -29,6 +29,23 @@ Route::post('editSelection/{id}','SelectionController@update')->name('updatesele
 
 Route::get('/deleteSelection/{id}','SelectionController@destroy');
 
+Route::get('/newEvent', 'EventController@store');
+Route::post('/newEvent','EventController@store')->name('createEvent');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
