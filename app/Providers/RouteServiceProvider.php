@@ -23,7 +23,7 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        //Route::model('select',\App\Selection::class);
 
         parent::boot();
     }

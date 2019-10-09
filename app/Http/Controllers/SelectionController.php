@@ -76,10 +76,9 @@ class SelectionController extends Controller
      * @param  \App\Selection  $selection
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Selection $selection)
     {
-        $selection = Selection::where('id', $id)->first();
-        return view('/editSelection',compact('selection'));
+        return view('/editSelection', compact('selection'));
     }
 
     public function update($id, Request $request)
@@ -110,6 +109,7 @@ class SelectionController extends Controller
         $selection->delete();
         return redirect('/selection');
     }
+    
 
     
 

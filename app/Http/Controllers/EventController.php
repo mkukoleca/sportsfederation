@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Event;
 use Illuminate\Http\Request;
+use DB;
 
 class EventController extends Controller
 {
@@ -14,7 +15,8 @@ class EventController extends Controller
      */
     public function index()
     {
-        //
+        $event = DB::table('events')->get();
+        return view('event', ['events' => $event]);
     }
 
     /**
