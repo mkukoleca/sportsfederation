@@ -26,7 +26,6 @@ Route::get('/newSelection', 'SelectionController@store');
 Route::post('/newSelection','SelectionController@store')->name('createSelection');
 Route::get('editSelection/{id}','SelectionController@edit');
 Route::post('editSelection/{id}','SelectionController@update')->name('updateselection');
-
 Route::get('/deleteSelection/{id}','SelectionController@destroy');
 
 
