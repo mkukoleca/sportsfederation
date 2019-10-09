@@ -35,7 +35,7 @@
     <fieldset>
     <textarea placeholder="Description" type="text" name ="description" tabindex="3" required></textarea>
 
-    </fieldset>
+    </fieldset> 
 
     
 

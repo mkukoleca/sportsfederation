@@ -24,28 +24,14 @@ Route::post('/deleteClub/{id}','ClubController@clear')->name('clearclub');
 Route::get('/selection','SelectionController@show' );
 Route::get('/newSelection', 'SelectionController@store');
 Route::post('/newSelection','SelectionController@store')->name('createSelection');
-Route::get('editSelection/{id}','SelectionController@edit');
-Route::post('editSelection/{id}','SelectionController@update')->name('updateselection');
-
+Route::get('/editSelection/{selection}','SelectionController@edit');
+Route::post('/editSelection/{id}','SelectionController@update')->name('updateselection');
 Route::get('/deleteSelection/{id}','SelectionController@destroy');
 
 Route::get('/newEvent', 'EventController@store');
 Route::post('/newEvent','EventController@store')->name('createEvent');
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Route::get('/event','EventController@index'); 
 
 
 
