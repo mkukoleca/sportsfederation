@@ -10,8 +10,8 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/index','IndexController@index' );
-Route::get('/newClub', 'ClubController@store' );
+Route::get('/index','IndexController@index');
+Route::get('/newClub', 'ClubController@store');
 Route::post('/newClub', 'ClubController@store')->name('create');
 Route::get('/editClub/{id}','ClubController@edit');
 Route::post('/editClub/{id}','ClubController@update')->name('updateclub');
@@ -20,5 +20,9 @@ Route::post('/deleteClub/{id}','ClubController@clear')->name('clearclub');
 Route::get('/selection', 'SelectionController@index');
 
 Route::get('/federation', 'FederationController@index');
+Route::get('federation/staffs','StaffController@index');
+Route::get('federation/newStaff','StaffController@store');
+Route::post('federation/newStaff', 'StaffController@store')->name('create');
 
 
+// Route::get('/getclub/{Club}','ClubController@getclub');
