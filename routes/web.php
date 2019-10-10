@@ -28,3 +28,6 @@ Route::post('/playersInfo/registerPlayer', 'PlayerInfoController@store')->name('
 
 Route::get('/deletePlayer/{id}','PlayerInfoController@destroy');
 
+Route::get('/getplayer/{cccc}','PlayerInfoController@nekafunkcija');
+
+Route::get('/deleteGame/{id}','GameController@destroy');
