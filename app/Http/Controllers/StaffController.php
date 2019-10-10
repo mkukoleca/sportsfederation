@@ -14,7 +14,8 @@ class StaffController extends Controller
      */
     public function index()
     {
-        //
+        return view('/federation.staffs', ['staffs' => Staff::all()]);
+    
     }
 
     /**
