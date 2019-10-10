@@ -18,15 +18,18 @@ Route::post('/editClub/{id}','ClubController@update')->name('updateclub');
 Route::get('/deleteClub/{id}','ClubController@destroy');
 Route::post('/deleteClub/{id}','ClubController@clear')->name('clearclub');
 
+//PlayerInfo
 Route::get('/playersInfo/players', 'PlayerInfoController@index');
 Route::get('/playersInfo/singlePlayer/{id}', 'PlayerInfoController@show');
 Route::get('/playersInfo/updatePlayer/{id}','PlayerInfoController@edit');
 Route::post('/playersInfo/updatePlayer/{id}','PlayerInfoController@update')->name('updateplayer');
 Route::get('/playersInfo/registerPlayer', 'PlayerInfoController@create');
-Route::post('/playersInfo/registerPlayer', 'PlayerInfoController@store')->name('register');
+Route::post('/playersInfo/registerPlayer', 'PlayerInfoController@store')->name('registerplayer');
 
 
 Route::get('/deletePlayer/{id}','PlayerInfoController@destroy');
+
+Route::post('/games/updateGame/{id}','GameController@update')->name('updategame');
 
 Route::get('/getplayer/{cccc}','PlayerInfoController@nekafunkcija');
 

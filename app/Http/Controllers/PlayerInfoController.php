@@ -58,7 +58,7 @@ class PlayerInfoController extends Controller
         $player->save();
         return redirect('/playersInfo/players');        
             } 
-     return view('/playersInfo/registerPlayer');
+     //return view('/playersInfo/registerPlayer');
 
     }
 
@@ -71,8 +71,7 @@ class PlayerInfoController extends Controller
     public function show($id)
     {
         //return PlayerInfo::find($id);
-        $player = PlayerInfo::where('id', $id)
-        ->first();
+        $player = PlayerInfo::where('id', $id)->first();
         return view("/playersInfo/singlePlayer", compact('player'));
 
         //return view('/playersinfo/singlePlayer'); je kontrolni cisto da vidim da li radi ruta

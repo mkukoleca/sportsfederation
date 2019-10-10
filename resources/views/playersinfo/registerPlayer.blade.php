@@ -13,7 +13,7 @@
 <body>
 <button type="button" class="btn btn-secondary btn-lg btn-block"><a href="/playersInfo/players">Back</a></button>
 <div class="container">  
-  <form id="contact" action="{{route('register')}}" method="POST" enctype="multipart/form-data">
+  <form id="contact" action="{{route('registerplayer')}}" method="POST" enctype="multipart/form-data">
   {{csrf_field()}}
     <h3>Add new Player</h3>
     <fieldset> Profile image:

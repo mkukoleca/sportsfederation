@@ -26,6 +26,10 @@ class RouteServiceProvider extends ServiceProvider
         //
 
         parent::boot();
+<<<<<<< HEAD
+=======
+
+>>>>>>> 1b6e163bf5a0ff1c0609acb83b57b1b537f0871e
         Route::model('cccc',\App\PlayerInfo::class);
     }
 
