@@ -29,8 +29,7 @@ Route::post('/playersInfo/registerPlayer', 'PlayerInfoController@store')->name('
 
 Route::get('/deletePlayer/{id}','PlayerInfoController@destroy');
 
-Route::get('/games/singleGame/{id}', 'GameController@show');
-Route::get('/games/updateGame/{id}', 'GameController@edit');
+
 Route::get('/singlePlayer/{cccc}','PlayerInfoController@nekafunkcija');
 Route::get('/getplayer/{cccc}','PlayerInfoController@nekafunkcija');
 
@@ -41,5 +40,7 @@ Route::get('/getplayer/{cccc}','PlayerInfoController@nekafunkcija');
 Route::get('/games/gamesList', 'GameController@index');
 Route::get('/games/registerGame', 'GameController@create');
 Route::post('/games/registerGame', 'GameController@store')->name('register');
+Route::get('/games/singleGame/{id}', 'GameController@show');
+Route::get('/games/updateGame/{id}', 'GameController@edit');
 Route::get('/deleteGame/{id}','GameController@destroy');
 
