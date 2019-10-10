@@ -40,3 +40,4 @@ Route::get('/games/registerGame', 'GameController@create');
 Route::post('/games/registerGame', 'GameController@store')->name('register');
 Route::get('/deleteGame/{id}','GameController@destroy');
 
+Route::post('/games/updateGame/{id}', 'GameController@update')->name('updategame');

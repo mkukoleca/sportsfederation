@@ -79,9 +79,9 @@ class GameController extends Controller
      * @param  \App\Game  $game
      * @return \Illuminate\Http\Response
      */
-    public function edit(Game $game)
+    public function edit($id)
     {
-        //
+      
     }
 
     /**
@@ -91,12 +91,12 @@ class GameController extends Controller
      * @param  \App\Game  $game
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Game $game)
+    public function update($id, Request $request)
     {
         $data = $request->only([ 'event', 'date', 'place', 'home', 'guest', 'referee1', 'referee2', 'delegate', 'round', 'scoresHome', 'scoresGuest', 'note' ]);
 
-        if(count($data) > 0){
-        $game = new Game();
+        
+        $game = Game::where('id', $id)->first();
         $game->event=$data['event'];
         $game->date=$data['date'];
         $game->place=$data['place'];
@@ -113,7 +113,8 @@ class GameController extends Controller
         
     
         $game->save();
-        return redirect('/games/gamesList'); 
+        return redirect('/games/gamesList');        
+        
     }
 
     /**
