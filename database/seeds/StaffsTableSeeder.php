@@ -18,14 +18,14 @@ class StaffsTableSeeder extends Seeder
             'type_id' => 1
         ]);
         
-        DB::table('staff')->insert([
+        DB::table('staffs')->insert([
             'name' => 'Maja', 
             'lastname' => 'Jović',
             'description' => 'Referees officiate games or competitions. They explain and enforce rules, assess penalties, signal the start and end of games, stop play for reviews as needed and inspect sports equipment prior to the start of games.',
             'type_id' => 2
         ]);
         
-        DB::table('staff')->insert([
+        DB::table('staffs')->insert([
             'name' => 'Igor',
             'lastname' => 'Krčić',
             'description' => 'Doctors are licensed health professionals who maintain players health during the game.',

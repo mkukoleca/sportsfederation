@@ -79,8 +79,13 @@ class StaffController extends Controller
      * @param  \App\Staff  $staff
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Staff $staff)
-    {
-        //
+    public function destroy(Staff $staff){
+        return view('/federation.deleteStaff',compact('staff'));
     }
+    
+    public function clear($id){
+        $staff = Staff::where('id', $id)->delete();
+        return redirect('/staffs');
+    }
+
 }

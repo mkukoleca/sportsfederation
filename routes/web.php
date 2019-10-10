@@ -23,4 +23,8 @@ Route::get('/federation', 'FederationController@index');
 Route::get('/staffs','StaffController@index');
 
 
+Route::get('/deleteStaff/{Staff}','StaffController@destroy');
+Route::post('/deleteStaff/{id}','StaffController@clear')->name('clearstaff');
+
+
 // Route::get('/getclub/{Club}','ClubController@getclub');

@@ -28,6 +28,8 @@
             <th>Name</th>
             <th>Lastname</th>
             <th>Description</th>
+            <th>Edit</th>
+            <th>Delete</th>
         
             </tr>
   </thead>
@@ -41,7 +43,7 @@
 
 
            <td><button><a href="federation/editStaff/{{$staff->id}}">Edit</a></button></td>
-           <td><button><a href="federation/deleteStaff/{{$staff->id}}">Delete</a></button></td>
+           <td><button><a href="/deleteStaff/{{$staff->id}}">Delete</a></button></td>
             </tr>
            
             @endforeach
