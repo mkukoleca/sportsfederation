@@ -58,7 +58,7 @@ class PlayerInfoController extends Controller
         $player->save();
         return redirect('/playersInfo/players');        
             } 
-     return view('/playersInfo/registerPlayer');
+     //return view('/playersInfo/registerPlayer');
 
     }
 
