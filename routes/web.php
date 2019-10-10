@@ -44,3 +44,4 @@ Route::get('/games/singleGame/{id}', 'GameController@show');
 Route::get('/games/updateGame/{id}', 'GameController@edit');
 Route::get('/deleteGame/{id}','GameController@destroy');
 
+Route::post('/games/updateGame/{id}', 'GameController@update')->name('updategame');
