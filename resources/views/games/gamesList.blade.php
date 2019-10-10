@@ -83,7 +83,7 @@
             <tr>
                 <td><button><a href="/games/singleGame/{{$game->id}}">SHOW GAME</a></button></td>
                 <th><button><a href="/games/updateGame/{{$game->id}}">EDIT</a></button></th>
-                <td><button><a href="/games/deleteGame/{{$game->id}}">DELETE</a></button></td>
+                <td><button><a href="/deleteGame/{{$game->id}}">DELETE</a></button></td>
             </tr>
             @endforeach 
     </table>
