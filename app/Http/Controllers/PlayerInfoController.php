@@ -138,7 +138,7 @@ class PlayerInfoController extends Controller
     }
 
     public function nekafunkcija(PlayerInfo $player){
-
+        
         return view('/playersinfo/updatePlayer',compact('player'));
     }
 }

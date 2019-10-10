@@ -122,8 +122,12 @@ class GameController extends Controller
      * @param  \App\Game  $game
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Game $game)
+    public function destroy($id)
     {
-        //
+            $game = Game::where('id', $id)->first();
+            $game->delete();
+            
+            
+            return redirect('games/gamesList');
     }
 }
