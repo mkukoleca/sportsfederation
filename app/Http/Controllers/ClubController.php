@@ -50,6 +50,7 @@ class ClubController extends Controller
     }
 
  
+   
 
     public function destroy($id){
         $club = Club::where('id', $id)->first();

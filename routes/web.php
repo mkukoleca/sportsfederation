@@ -20,3 +20,5 @@ Route::post('/deleteClub/{id}','ClubController@clear')->name('clearclub');
 Route::get('/selection', 'SelectionController@index');
 
 Route::get('/federation', 'FederationController@index');
+
+
