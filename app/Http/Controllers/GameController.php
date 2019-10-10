@@ -14,7 +14,7 @@ class GameController extends Controller
      */
     public function index()
     {
-        //
+        return view('/games/gamesList', ['games'=> Game::all()]);
     }
 
     /**
@@ -24,7 +24,7 @@ class GameController extends Controller
      */
     public function create()
     {
-        //
+        return view('/games/registerGame');
     }
 
     /**
@@ -35,8 +35,32 @@ class GameController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->only([ 'event', 'date', 'place', 'home', 'guest', 'referee1', 'referee2', 'delegate', 'round', 'scoresHome', 'scoresGuest', 'note' ]);
+
+        if(count($data) > 0){
+        $game = new Game();
+        $game->event=$data['event'];
+        $game->date=$data['date'];
+        $game->place=$data['place'];
+        $game->home=$data['home'];
+        $game->guest=$data['guest'];
+        $game->referee1=$data['referee1'];
+        $game->referee2=$data['referee2'];
+        $game->delegate=$data['delegate'];
+        $game->round=$data['round'];
+        $game->scoresHome=$data['scoresHome'];
+        $game->scoresGuest=$data['scoresGuest'];
+        $game->note=$data['note'];
+        
+        
+    
+        $game->save();
+        return redirect('/games/gamesList');        
+            } 
+     //return view('/playersInfo/registerPlayer');
+
     }
+    
 
     /**
      * Display the specified resource.
