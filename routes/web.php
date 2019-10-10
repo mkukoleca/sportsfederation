@@ -20,7 +20,9 @@ Route::post('/deleteClub/{id}','ClubController@clear')->name('clearclub');
 Route::get('/selection', 'SelectionController@index');
 
 Route::get('/federation', 'FederationController@index');
-Route::get('/staffs','StaffController@index');
+Route::get('federation/staffs','StaffController@index');
+Route::get('federation/newStaff','StaffController@store');
+Route::post('federation/newStaff', 'StaffController@store')->name('create');
 
 
 Route::get('/deleteStaff/{Staff}','StaffController@destroy');

@@ -36,8 +36,25 @@ class StaffController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->only(['name', 'lastname', 'description']);
+     
+        
+            if(count($data) > 0){
+                $staff = new Staff();
+                $staff->name = $data['name'];
+                $staff->lastname = $data['lastname'];
+                $staff->description = $data['description'];
+               
+                $staff->save();
+    
+                return redirect("federation/staffs");        
+                } 
+         return view('federation/newStaff');
     }
+        
+        
+              
+    
 
     /**
      * Display the specified resource.
