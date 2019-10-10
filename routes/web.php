@@ -33,5 +33,7 @@ Route::get('/singlePlayer/{cccc}','PlayerInfoController@nekafunkcija');
 
 //Game
 Route::get('/games/gamesList', 'GameController@index');
+Route::get('/games/registerGame', 'GameController@create');
+Route::post('/games/registerGame', 'GameController@store')->name('register');
 
 
