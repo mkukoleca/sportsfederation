@@ -35,6 +35,10 @@ Route::get('/event','EventController@index');
 
 
 
+Route::get('/deleteEvent/{id}','EventController@destroy');
+
+
+
 
 
 

@@ -92,8 +92,11 @@ class EventController extends Controller
      * @param  \App\Event  $event
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Event $event)
+    public function destroy($id, Request $request)
     {
-        //
+        
+        $event = Event::where('id', $id)->first();
+        $event->delete();
+        return redirect('/event');
     }
 }
