@@ -10,6 +10,11 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/', function () {
+    return view('welcome');
+});
+
+//Club
 Route::get('/index','IndexController@index' );
 Route::get('/newClub', 'ClubController@store' );
 Route::post('/newClub', 'ClubController@store')->name('create');
@@ -27,7 +32,21 @@ Route::get('/playersInfo/registerPlayer', 'PlayerInfoController@create');
 Route::post('/playersInfo/registerPlayer', 'PlayerInfoController@store')->name('registerplayer');
 Route::get('/deletePlayer/{id}','PlayerInfoController@destroy');
 
+//Selection
+Route::get('/selection','SelectionController@index' );
+Route::get('/newSelection', 'SelectionController@store');
+Route::post('/newSelection','SelectionController@store')->name('createSelection');
+Route::get('/editSelection/{selection}','SelectionController@edit');
+Route::post('/editSelection/{id}','SelectionController@update')->name('updateselection');
+Route::get('/deleteSelection/{id}','SelectionController@destroy');
 
+//Event
+Route::get('/event','EventController@index');
+Route::get('/newEvent', 'EventController@store');
+Route::post('/newEvent','EventController@store')->name('createEvent');
+Route::get('/editEvent/{event}','EventController@edit');
+Route::post('/editEvent/{id}','EventController@update')->name('updateevent');
+Route::get('/deleteEvent/{id}','EventController@destroy');
 
 
 //Game
@@ -39,3 +58,4 @@ Route::get('/games/updateGame/{id}', 'GameController@edit');
 Route::get('/deleteGame/{id}','GameController@destroy');
 
 Route::post('/games/updateGame/{id}', 'GameController@update')->name('updategame');
+
