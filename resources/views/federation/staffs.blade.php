@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="tableClub.css">
+    <link rel="stylesheet" type="text/css" href="../tableClub.css">
     <title>Document</title>
 </head>
 <body>
@@ -19,7 +19,7 @@
 
 <div class="col-6">
 <br><br>
-  <button><a href="/newStaff">Add new Staff</a></button>
+  <button><a href="/federation/newStaff">Add new Staff</a></button>
 <br><br><br>
  <table class="blueTable">
   <thead>
