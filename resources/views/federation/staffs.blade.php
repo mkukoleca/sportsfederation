@@ -19,7 +19,7 @@
 
 <div class="col-6">
 <br><br>
-  <button><a href="/newStaff">Add new Staff</a></button>
+  <button><a href="/federation/newStaff">Add new Staff</a></button>
 <br><br><br>
  <table class="blueTable">
   <thead>

@@ -23,3 +23,8 @@ Route::get('/selection', 'SelectionController@index');
 Route::get('/', 'FederationController@index');
 Route::get('/federationEdit/{federation}', 'FederationController@edit');
 Route::post('/federationEdit/{id}', 'FederationController@update');
+
+//staff federation route
+Route::get('/federation/staffs', 'StaffController@index');
+Route::get('/federation/newStaff', 'StaffController@store');
+Route::post('/federation/newStaff', 'StaffController@store');

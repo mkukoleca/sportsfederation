@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class StaffsTableSeeder extends Seeder
+class StaffTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.

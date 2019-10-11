@@ -116,7 +116,7 @@
           </div>
           <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
             <div class="box">
-              <div class="icon"><a href=""><i class="fa fa-users"></i></a></div>
+              <div class="icon"><a href="/federation/staffs"><i class="fa fa-users"></i></a></div>
               <h4 class="title"><a href="">Upravni odbor</a></h4>
               <p class="description">Informacije o nasim clanovima</p>
             </div>
