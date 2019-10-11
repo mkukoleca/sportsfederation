@@ -50,7 +50,6 @@
     <p class="copyright">Designed by Sharks</p>
   </form>
 
-
 </div>
 <div clas="col-3">
       </div>
