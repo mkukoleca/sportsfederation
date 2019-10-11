@@ -104,10 +104,8 @@ class GameController extends Controller
      */
     public function destroy($id)
     {
-            $game = Game::where('id', $id)->first();
-            $game->delete();
-            
-            
+            $game = Game::find($id)->delete();
+          
             return redirect('games/gamesList');
     }
 }
