@@ -20,38 +20,6 @@ class FederationController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Federation  $federation
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Federation $federation)
-    {
-        //
-    }
-
-    /**
      * Show the form for editing the specified resource.
      *
      * @param  \App\Federation  $federation
@@ -83,14 +51,4 @@ class FederationController extends Controller
         return redirect('/');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Federation  $federation
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Request $request , Federation $federation)
-    { 
-        //
-    }
 }

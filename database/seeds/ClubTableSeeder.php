@@ -18,7 +18,8 @@ class ClubTableSeeder extends Seeder
             'website' => 'm.me/omladinskirukometniklub.celinac',
             'dateOfFoundation' => '2021-01-01',
             'director' => '...',
-            'history' => '....'
+            'history' => '....',
+            'thumbnail' => ' '
             ]);
     }
 }
