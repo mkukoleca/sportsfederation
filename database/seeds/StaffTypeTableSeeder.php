@@ -12,17 +12,21 @@ class StaffTypeTableSeeder extends Seeder
     public function run()
     {
         DB::table('staff_types')->insert([
-            'name' => 'Delegate'
+            'name' => 'Delegate',
+            'id' => 1
             
         ]);
     
         DB::table('staff_types')->insert([
-            'name' => 'Referee'
+            'name' => 'Referee',
+            'id' => 2
             
         ]);
+
         DB::table('staff_types')->insert([
-            'name' => 'Doctor'
-            
+            'name' => 'Doctor',
+            'id' => 4
+
         ]);
     }
 }

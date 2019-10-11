@@ -24,7 +24,7 @@
 <button type="button" class="btn btn-secondary btn-lg btn-block"><a href="/index">Back</a></button>
 
 <div class="container">  
-  <form id="contact" action="{{route('create')}}" method="POST">
+  <form id="contact" action="{{route('createclub')}}" method="POST">
   {{csrf_field()}}
     <h3>Add new Club</h3>
     <fieldset>
@@ -34,16 +34,19 @@
       <input placeholder="Address" type="text" name ="address" tabindex="2" required>
     </fieldset>
     <fieldset>
-      <input placeholder="Website (optional)" type="url" name ="website" tabindex="3">
+      <input placeholder="Email" type="email" name ="email" tabindex="3">
     </fieldset>
     <fieldset>
-      <input placeholder="Date of foundation" type="date" name ="dateOfFoundation" tabindex="4" required>
+      <input placeholder="Website (optional)" type="url" name ="website" tabindex="4">
     </fieldset>
     <fieldset>
-      <input placeholder="Director" type="text" name ="director" tabindex="5" required>
+      <input placeholder="Date of foundation" type="date" name ="dateOfFoundation" tabindex="5" required>
     </fieldset>
     <fieldset>
-      <textarea placeholder="History" type="text" name ="history" tabindex="6" required></textarea>
+      <input placeholder="Director" type="text" name ="director" tabindex="6" required>
+    </fieldset>
+    <fieldset>
+      <textarea placeholder="History" type="text" name ="history" tabindex="7" required></textarea>
     </fieldset>
     <fieldset>
       <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
