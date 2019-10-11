@@ -46,6 +46,8 @@
             <td>{{$club->dateOfFoundation}}</td>
             <td>{{$club->director}}</td>
             <td>{{$club->history}}</td>
+            <td>{{$club->thumbnail}}</td>
+
 
 
            <td><button><a href="editClub/{{$club->id}}">Edit</button></td>
