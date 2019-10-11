@@ -15,18 +15,10 @@ class SelectionController extends Controller
      */
     public function index()
     {
-        //
+        $selection = DB::table('selection')->get();
+        return view('selection', ['selection' => $selection]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
 
     /**
      * Store a newly created resource in storage.
@@ -57,18 +49,6 @@ class SelectionController extends Controller
 
     }
     
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Selection  $selection
-     * @return \Illuminate\Http\Response
-     */
-    public function show(){
-        $selection = DB::table('selection')->get();
-        return view('selection', ['selection' => $selection]);
-        
-    }
 
     /**
      * Show the form for editing the specified resource.
