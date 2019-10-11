@@ -33,6 +33,9 @@
     Address:<br><input placeholder="Address" type="text" name ="address" value="{{$club->address}}" tabindex="2" >
     </fieldset>
     <fieldset>
+    Email:<br><input placeholder="Email" type="email" name ="email" value="{{$club->email}}" tabindex="2" >
+    </fieldset>
+    <fieldset>
     Website:<br><input placeholder="Website (optional)" type="url" name ="website" value="{{$club->website}}" tabindex="3">
     </fieldset>
     <fieldset>
