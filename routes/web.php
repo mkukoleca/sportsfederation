@@ -10,8 +10,8 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/index','IndexController@index');
-Route::get('/newClub', 'ClubController@store');
+Route::get('/club','IndexController@index' );
+Route::get('/newClub', 'ClubController@store' );
 Route::post('/newClub', 'ClubController@store')->name('create');
 Route::get('/editClub/{id}','ClubController@edit');
 Route::post('/editClub/{id}','ClubController@update')->name('updateclub');
@@ -19,10 +19,18 @@ Route::get('/deleteClub/{id}','ClubController@destroy');
 Route::post('/deleteClub/{id}','ClubController@clear')->name('clearclub');
 Route::get('/selection', 'SelectionController@index');
 
-Route::get('/federation', 'FederationController@index');
-Route::get('federation/staffs','StaffController@index');
-Route::get('federation/newStaff','StaffController@store');
-Route::post('federation/newStaff', 'StaffController@store')->name('create');
+//home and edit view
+Route::get('/', 'FederationController@index');
+Route::get('/federationEdit/{federation}', 'FederationController@edit');
+Route::post('/federationEdit/{id}', 'FederationController@update');
 
+//staff federation route
+Route::get('/federation/staffs', 'StaffController@index');
+Route::get('/federation/newStaff', 'StaffController@store');
+Route::post('/federation/newStaff', 'StaffController@store');
 
-// Route::get('/getclub/{Club}','ClubController@getclub');
+//staff edit and delete
+Route::get('/editStaff/{id}', 'StaffController@edit');
+Route::post('/editStaff/{id}', 'StaffController@update');
+
+Route::post('/editStaff/{id}', 'StaffController@delete');

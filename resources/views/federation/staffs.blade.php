@@ -28,10 +28,13 @@
             <th>Name</th>
             <th>Lastname</th>
             <th>Description</th>
+            <th>Edit</th>
+            <th>Delete</th>
         
             </tr>
   </thead>
   <tbody>
+    
             @foreach($staffs as $staff)
             <tr>
             <td>{{$staff->id}} </td>
@@ -40,8 +43,13 @@
             <td>{{$staff->description}}</td>
 
 
-           <td><button><a href="federation/editStaff/{{$staff->id}}">Edit</a></button></td>
-           <td><button><a href="federation/deleteStaff/{{$staff->id}}">Delete</a></button></td>
+           <td><button><a href="/editStaff/{{ $staff->id }}">Edit</a></button></td>
+           
+           
+           <td><form method="POST" action="/editStaff/{{ $staff->id }}">
+            @csrf
+             <button type="submit" onclick="return confirm('Are you sure you want to delete this member?')">Delete</button>
+            </form></td>
             </tr>
            
             @endforeach

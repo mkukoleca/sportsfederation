@@ -23,7 +23,7 @@ class CreateFederationStaffTable extends Migration
             $table->timestamps();
 
             $table->foreign('fed_id')->references('id')->on('federations');
-            $table->foreign('staff_id')->references('id')->on('staff');
+            $table->foreign('staff_id')->references('id')->on('staffs');
             $table->foreign('staff_type_id')->references('id')->on('staff_types');
 
         });

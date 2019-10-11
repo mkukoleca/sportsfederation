@@ -23,6 +23,7 @@ class CreateClubsTable extends Migration
             $table->date('dateOfFoundation');
             $table->string('director');
             $table->string('history')->nullable();
+            $table->string('thumbnail');
             $table->timestamps();
         });
     }
