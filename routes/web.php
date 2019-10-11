@@ -28,3 +28,9 @@ Route::post('/federationEdit/{id}', 'FederationController@update');
 Route::get('/federation/staffs', 'StaffController@index');
 Route::get('/federation/newStaff', 'StaffController@store');
 Route::post('/federation/newStaff', 'StaffController@store');
+
+//staff edit and delete
+Route::get('/editStaff/{id}', 'StaffController@edit');
+Route::post('/editStaff/{id}', 'StaffController@update');
+
+Route::post('/editStaff/{id}', 'StaffController@delete');
