@@ -58,7 +58,7 @@ class PlayerInfoController extends Controller
         $player->save();
         return redirect('/playersInfo/players');        
             } 
-     //return view('/playersInfo/registerPlayer');
+     return view('/playersInfo/registerPlayer');
 
     }
 
@@ -137,8 +137,9 @@ class PlayerInfoController extends Controller
         return redirect('playersInfo/players');
     }
 
+
     public function nekafunkcija(PlayerInfo $player){
-        
-        return view('/playersinfo/updatePlayer',compact('player'));
+        return view ('/playerInfo/editPlayer', compact('player'));
+
     }
 }

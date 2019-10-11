@@ -15,20 +15,20 @@ class CreateGamesTable extends Migration
     {
         Schema::create('games', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('event');  
-            $table->date('date');
-            $table->string('place');
-            $table->string('home');
-            $table->string('guest');
-            $table->string('referee1');
-            $table->string('referee2');
-            $table->string('delegate');
-            $table->integer('round');
-            $table->integer('scoresHome');
-            $table->integer('scoresGuest');
-            $table->string('note');
-            $table->timestamps();
-            });
+        $table->string('event');  
+        $table->date('date');
+        $table->string('place');
+        $table->string('home');
+        $table->string('guest');
+        $table->string('referee1');
+        $table->string('referee2');
+        $table->string('delegate');
+        $table->integer('round');
+        $table->integer('scoresGuest');
+        $table->integer('scoresHome');
+        $table->string('note');
+        $table->timestamps();
+        });
     }
 
     /**

@@ -83,22 +83,11 @@
             <tr>
                 <td><button><a href="/games/singleGame/{{$game->id}}">SHOW GAME</a></button></td>
                 <th><button><a href="/games/updateGame/{{$game->id}}">EDIT</a></button></th>
-                <td><button onclick="myFunction()"><a href="/deleteGame/{{$game->id}}">DELETE</a></button></td>
+                <td><button onclick="return confirm('Are you sure you want to delete this data')"><a href="/deleteGame/{{$game->id}}">DELETE</a></button></td>
      
             </tr>
             @endforeach 
     </table>
-    <script>
-        function myFunction() {
-            var x;
-            var del = confirm("Are you sure you want you want to delete data?")
-            if (del == true) {
-                alert("Your Account deleted!");
-            } else {
-                alert("Your Account NOT deleted!");
-            }
-            
-        }
-    </script>
+    
 </body>
 </html>
