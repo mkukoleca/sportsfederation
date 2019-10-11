@@ -11,22 +11,25 @@ class StaffTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('staff')->insert([
-            'name' => 'Delegate', 
+        DB::table('staffs')->insert([
+            'name' => 'Marko',
+            'lastname' => 'Marić',
             'description' => 'The main duty of Delegate is to ensures a proper conduct of the match.',
-            'type_id' => 1,  
+            'type_id' => 1
         ]);
         
-        DB::table('staff')->insert([
-            'name' => 'Referee', 
+        DB::table('staffs')->insert([
+            'name' => 'Maja', 
+            'lastname' => 'Jović',
             'description' => 'Referees officiate games or competitions. They explain and enforce rules, assess penalties, signal the start and end of games, stop play for reviews as needed and inspect sports equipment prior to the start of games.',
-            'type_id' => 2,     
+            'type_id' => 2
         ]);
         
-        DB::table('staff')->insert([
-            'name' => 'Doctor',
+        DB::table('staffs')->insert([
+            'name' => 'Igor',
+            'lastname' => 'Krčić',
             'description' => 'Doctors are licensed health professionals who maintain players health during the game.',
-            'type_id' => 3,  
+            'type_id' => 3
         
         ]);
     }

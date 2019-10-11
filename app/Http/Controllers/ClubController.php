@@ -31,7 +31,7 @@ class ClubController extends Controller
     public function edit($id){
         $club = Club::where('id', $id)->first();
         return view('/editClub',compact('club'));
-    }
+    } 
 
 
     public function update($id, Request $request){
@@ -50,11 +50,11 @@ class ClubController extends Controller
     }
 
  
+   
 
     public function destroy($id){
         $club = Club::where('id', $id)->first();
         return view('DeleteClub',compact('club'));
-    
     }
     
     public function clear($id){

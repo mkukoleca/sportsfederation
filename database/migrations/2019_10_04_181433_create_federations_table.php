@@ -18,7 +18,7 @@ class CreateFederationsTable extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->string('history');
-            $table->string('owner');
+            $table->string('president');
             $table->string('description');
             $table->timestamps();
 

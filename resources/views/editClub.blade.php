@@ -21,7 +21,7 @@
 <div class="col-6">
 <br><br>
 
-<button type="button" class="btn btn-secondary btn-lg btn-block"><a href="/index">Back</a></button>
+<button type="button" class="btn btn-secondary btn-lg btn-block"><a href="/">Back</a></button>
  
   <form id="contact" action="{{route('updateclub', $club->id)}}" method="POST">
   {{csrf_field()}}
@@ -49,7 +49,6 @@
     </fieldset>
     <p class="copyright">Designed by Sharks</p>
   </form>
-
 
 </div>
 <div clas="col-3">

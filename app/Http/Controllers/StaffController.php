@@ -14,9 +14,8 @@ class StaffController extends Controller
      */
     public function index()
     {
-        return view('staff', [
-            'staffs' => Staff::all(),
-            ]);
+        return view('/federation.staffs', ['staffs' => Staff::all()]);
+    
     }
 
     /**
@@ -37,8 +36,25 @@ class StaffController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->only(['name', 'lastname', 'description']);
+     
+        
+            if(count($data) > 0){
+                $staff = new Staff();
+                $staff->name = $data['name'];
+                $staff->lastname = $data['lastname'];
+                $staff->description = $data['description'];
+               
+                $staff->save();
+    
+                return redirect("federation/staffs");        
+                } 
+         return view('federation/newStaff');
     }
+        
+        
+              
+    
 
     /**
      * Display the specified resource.
@@ -46,36 +62,66 @@ class StaffController extends Controller
      * @param  \App\Staff  $staff
      * @return \Illuminate\Http\Response
      */
-    public function show(Staff $staff)
+    public function show($id)
     {
         //
     }
 
-    
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  \App\Staff  $staff
+     * @return \Illuminate\Http\Response
+     */
     public function edit($id)
     {
-        $staff = Staff::where('id', $id)->first();
-        return view('/editStaff',compact('staff'));
+        $staff = Staff::findOrFail($id);
         
+        return view('federation.editStaff', ['staff' => $staff]);
     }
 
-    
-    public function update($id, Request $request)
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Staff  $staff
+     * @return \Illuminate\Http\Response
+     */
+    public function update($id)
     {
-        $data = $request->only(['name', 'desription','type_id']);
+        $staff = Staff::findOrFail($id);
 
-        $staff=Staff::where('id', $id)->first();
-        $staff->name=$data['name'];
-        $staff->description=$data['description'];
-        $staff->type_id=$data['type_id'];
+        $staff->name = request('name');
+        $staff->lastname = request('lastname');
+        $staff->description = request('description');
+
         $staff->save();
-    
-        return redirect('/staff');
+
+        return redirect('federation/staffs');
     }
 
-    
-    public function destroy(Staff $staff)
-    {
-        //
+    public function delete($id) {
+
+        $staff = Staff::findOrFail($id);
+
+        $staff->delete();
+
+        return redirect('federation/staffs');
     }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  \App\Staff  $staff
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy(Staff $staff){
+        return view('/federation.deleteStaff',compact('staff'));
+    }
+    
+    public function clear($id){
+        $staff = Staff::where('id', $id)->delete();
+        return redirect('/staffs');
+    }
+
 }
