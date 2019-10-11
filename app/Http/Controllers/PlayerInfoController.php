@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\PlayerInfo;
 use Illuminate\Http\Request;
+use App\Selection;
 
 class PlayerInfoController extends Controller
 {
@@ -24,7 +25,7 @@ class PlayerInfoController extends Controller
      */
     public function create()
     {
-        return view('/playersInfo/registerPlayer');
+        return view('/playersInfo/registerPlayer', ['selections'=>Selection::all()]);
     }
 
     /**
@@ -39,7 +40,7 @@ class PlayerInfoController extends Controller
 
         if(count($data) > 0){
             $player = new PlayerInfo();
-            $player->thumbnail=$data['thumbnail'];
+          
             $player->name=$data['name'];
             $player->surname=$data['surname'];
             $player->description=$data['description'];
@@ -52,10 +53,20 @@ class PlayerInfoController extends Controller
             $player->clubHistory=$data['clubHistory'];
             $player->currentClub=$data['currentClub'];
             $player->selection=$data['selection'];
+
+            if($request->hasFile('thumbnail')) {
+                $name = $player->name. '.' .$request->thumbnail->extension();
+                $folder = 'profile/images/';
+                $request->thumbnail->move(public_path($folder),$name);
+
+                $player->thumbnail=$folder.$name;
+            }
+
+
             $player->save();
             return redirect('/playersInfo/players');        
-            } 
-     return view('/playersInfo/registerPlayer');
+        } 
+        return view('/playersInfo/registerPlayer');
 
     }
 

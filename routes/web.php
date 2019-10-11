@@ -50,7 +50,7 @@ Route::get('/deleteEvent/{id}','EventController@destroy');
 
 
 //Game
-Route::get('/games/gamesList', 'GameController@index');
+Route::get('/gamesList', 'GameController@index');
 Route::get('/games/registerGame', 'GameController@create');
 Route::post('/games/registerGame', 'GameController@store')->name('register');
 Route::get('/games/singleGame/{id}', 'GameController@show');
