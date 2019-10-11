@@ -22,6 +22,7 @@ class StaffTypeTableSeeder extends Seeder
             'id' => 2
             
         ]);
+
         DB::table('staff_types')->insert([
             'name' => 'Coach',
             'id' => 3

@@ -10,19 +10,19 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/club','IndexController@index' );
-Route::get('/newClub', 'ClubController@store' );
-Route::post('/newClub', 'ClubController@store')->name('create');
+Route::get('/clubs','ClubController@index');
+Route::get('/newClub', 'ClubController@store');
+Route::post('/newClub', 'ClubController@store')->name('createclub');
 Route::get('/editClub/{id}','ClubController@edit');
 Route::post('/editClub/{id}','ClubController@update')->name('updateclub');
 Route::get('/deleteClub/{id}','ClubController@destroy');
 Route::post('/deleteClub/{id}','ClubController@clear')->name('clearclub');
 Route::get('/selection', 'SelectionController@index');
 
-//home and edit view
-Route::get('/', 'FederationController@index');
-Route::get('/federationEdit/{federation}', 'FederationController@edit');
-Route::post('/federationEdit/{id}', 'FederationController@update');
+Route::get('/federation', 'FederationController@index');
+Route::get('/staffs','StaffController@index');
+Route::get('/newStaff','StaffController@store');
+Route::post('/newStaff', 'StaffController@store')->name('create');
 
 //staff federation route
 Route::get('/federation/staffs', 'StaffController@index');
@@ -33,4 +33,4 @@ Route::post('/federation/newStaff', 'StaffController@store')->name('create');
 Route::get('/editStaff/{id}', 'StaffController@edit');
 Route::post('/editStaff/{id}', 'StaffController@update');
 
-Route::post('/editStaff/{id}', 'StaffController@delete');
+Route::get('/deleteStaff/{id}', 'StaffController@destroy');
