@@ -14,7 +14,7 @@
 </head>
 <body>
 <br><br><br>
-<button autofocus><a href="/games/register">Register new game</a></button>
+<button autofocus><a href="/games/registerGame">Register new game</a></button>
 <br><br><br>
  <table class="blueTable">
   
@@ -60,11 +60,11 @@
                 <td>{{$game -> round}}</td>
             </tr>
             <tr>
-                <th>ScoresHome</th>
+                <th>Scores Home</th>
                 <td>{{$game -> scoresHome}}</td>
             </tr>
             <tr>
-                <th>ScoresGuest</th>
+                <th>Scores Guest</th>
                 <td>{{$game -> scoresGuest}}</td>
             </tr>
             <tr>

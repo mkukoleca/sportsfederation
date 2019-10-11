@@ -44,13 +44,13 @@
     Round:<br><input placeholder=" Round" type="number" name =" round" value="{{$game-> round}}" tabindex="9" >
     </fieldset>
     <fieldset>
-    ScoresHome:<br><input placeholder="ScoresHome" type="number" name ="scoresHome" value="{{$game->scoresHome}}" tabindex="10" >
+    Scores Home:<br><input placeholder="ScoresHome" type="number" name ="scoresHome" value="{{$game->scoresHome}}" tabindex="10" >
     </fieldset>
     <fieldset>
-    ScoresGuest:<br><textarea placeholder="ScoresGuest" type="number" name ="scoresGuest" value="{{$game->scoresGuest}}" tabindex="11" ></textarea>
+    Scores Guest:<br><input placeholder="ScoresGuest" type="number" name ="scoresGuest" value="{{$game->scoresGuest}}" tabindex="11" >
     </fieldset>
     <fieldset>
-    Note:<br><input placeholder="Note" type="text" name ="note" value="{{$game->note}}" tabindex="12" >
+    Note:<br><textarea placeholder="Note" type="text" name ="note" value="{{$game->note}}" tabindex="12" ></textarea>
     </fieldset>
     <fieldset>
     Selection:<br><input placeholder="Selection" type="text" name ="selection" value="{{$game->selection}}" tabindex="13" >
