@@ -10,7 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/index','IndexController@index' );
+Route::get('/club','IndexController@index' );
 Route::get('/newClub', 'ClubController@store' );
 Route::post('/newClub', 'ClubController@store')->name('create');
 Route::get('/editClub/{id}','ClubController@edit');
@@ -19,4 +19,7 @@ Route::get('/deleteClub/{id}','ClubController@destroy');
 Route::post('/deleteClub/{id}','ClubController@clear')->name('clearclub');
 Route::get('/selection', 'SelectionController@index');
 
-Route::get('/federation', 'FederationController@index');
+//home and edit view
+Route::get('/', 'FederationController@index');
+Route::get('/federationEdit/{federation}', 'FederationController@edit');
+Route::post('/federationEdit/{id}', 'FederationController@update');

@@ -17,9 +17,8 @@ class CreateFederationsTable extends Migration
         Schema::create('federations', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
-            $table->string('email');
             $table->string('history');
-            $table->string('owner');
+            $table->string('president');
             $table->string('description');
             $table->timestamps();
 

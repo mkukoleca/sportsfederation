@@ -59,7 +59,7 @@ class FederationController extends Controller
      */
     public function edit(Federation $federation)
     {
-        
+        return view('federationEdit', compact('federation'));
     }
 
     /**
@@ -69,9 +69,18 @@ class FederationController extends Controller
      * @param  \App\Federation  $federation
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Federation $federation)
+    public function update($id)
     {
-        //
+        $federation = Federation::findOrFail($id);
+        
+        $federation->name = request('name');
+        $federation->history = request('history');
+        $federation->president = request('president');
+        $federation->description = request('description');
+
+        $federation->save();
+
+        return redirect('/');
     }
 
     /**
@@ -80,8 +89,8 @@ class FederationController extends Controller
      * @param  \App\Federation  $federation
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Federation $federation)
-    {
+    public function destroy(Request $request , Federation $federation)
+    { 
         //
     }
 }
