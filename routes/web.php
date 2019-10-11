@@ -33,4 +33,4 @@ Route::post('/federation/newStaff', 'StaffController@store')->name('create');
 Route::get('/editStaff/{id}', 'StaffController@edit');
 Route::post('/editStaff/{id}', 'StaffController@update');
 
-Route::get('/deleteStaff/{id}', 'StaffController@delete');
+Route::get('/deleteStaff/{id}', 'StaffController@destroy');

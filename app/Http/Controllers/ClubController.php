@@ -39,7 +39,7 @@ class ClubController extends Controller
 
 
     public function update($id, Request $request){
-        $data = $request->only(['name', 'address', 'website', 'dateOfFoundation', 'director', 'history']);
+        $data = $request->only(['name', 'address', 'email','website', 'dateOfFoundation', 'director', 'history']);
 
         $club=Club::where('id', $id)->first();
         $club->name=$data['name'];

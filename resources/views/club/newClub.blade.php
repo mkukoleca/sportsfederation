@@ -21,7 +21,7 @@
 
 <div class="col-6">
 <br><br>
-<button type="button" class="btn btn-secondary btn-lg btn-block"><a href="/">Back</a></button>
+<button type="button" class="btn btn-secondary btn-lg btn-block"><a href="../clubs">Back</a></button>
 
 <div class="container">  
   <form id="contact" action="{{route('createclub')}}" method="POST">
