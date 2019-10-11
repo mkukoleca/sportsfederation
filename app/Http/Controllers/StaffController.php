@@ -14,7 +14,9 @@ class StaffController extends Controller
      */
     public function index()
     {
-        //
+        return view('staff', [
+            'staffs' => Staff::all(),
+            ]);
     }
 
     /**
@@ -49,35 +51,29 @@ class StaffController extends Controller
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Staff  $staff
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Staff $staff)
+    
+    public function edit($id)
     {
-        //
+        $staff = Staff::where('id', $id)->first();
+        return view('/editStaff',compact('staff'));
+        
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Staff  $staff
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Staff $staff)
+    
+    public function update($id, Request $request)
     {
-        //
+        $data = $request->only(['name', 'desription','type_id']);
+
+        $staff=Staff::where('id', $id)->first();
+        $staff->name=$data['name'];
+        $staff->description=$data['description'];
+        $staff->type_id=$data['type_id'];
+        $staff->save();
+    
+        return redirect('/staff');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Staff  $staff
-     * @return \Illuminate\Http\Response
-     */
+    
     public function destroy(Staff $staff)
     {
         //

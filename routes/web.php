@@ -19,4 +19,16 @@ Route::get('/deleteClub/{id}','ClubController@destroy');
 Route::post('/deleteClub/{id}','ClubController@clear')->name('clearclub');
 Route::get('/selection', 'SelectionController@index');
 
-Route::get('/federation', 'FederationController@index');
+
+Route::get('/staff','StaffController@index' );
+Route::get('/editStaff/{id}','StaffController@edit');
+Route::post('/editStaff/{id}','StaffController@update')->name('updatestaff');
+
+
+
+
+
+
+
+
+

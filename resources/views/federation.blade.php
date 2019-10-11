@@ -13,12 +13,13 @@
 
    @foreach($federations as $fed)
     
-        <h1>{{ $fed->name }}</h1>
+        <h1>Name: {{ $fed->name }}</h1>
         <h4>History: {{ $fed->history }}</h4>
         <h4>Owner: {{ $fed->owner }}</h4>
         <h4>Description: {{ $fed->description }}</h4>
     
     @endforeach
-
+<br>
+<button><a href="/newFederation">Add new Federation</a></button>
 </body>
 </html>

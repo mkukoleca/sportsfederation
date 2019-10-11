@@ -37,7 +37,21 @@ class FederationController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
+            $data = $request->only(['name', 'history', 'owner', 'description']);
+         
+            
+                if(count($data) > 0){
+                    $federation = new Federation();
+                    $federation->name = $data['name'];
+                    $federation->history = $data['history'];
+                    $federation->owner = $data['owner'];
+                    $federation->description = $data['description'];
+                    $federation->save();
+        
+                    return redirect("/federation");        
+                    } 
+             return view('/newFederation');
     }
 
     /**
@@ -80,8 +94,14 @@ class FederationController extends Controller
      * @param  \App\Federation  $federation
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Federation $federation)
+    public function destroy($id)
     {
-        //
+        
+            $federation = Federation::where('id', $id)->first();
+            return view('DeleteFederation',compact('club'));
+    }
+    public function clear($id){
+        $federation = Federation::where('id', $id)->delete();
+        return redirect('/federation');
     }
 }
