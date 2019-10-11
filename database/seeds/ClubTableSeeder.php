@@ -14,11 +14,12 @@ class ClubTableSeeder extends Seeder
         DB::table('clubs')->insert([
             'name' => 'Omladinski Rukometni Klub Čelinac',
             'address' => 'Čelinac bb',
-            'email' => 'omladinski@yahoo.com',
+            'email' => 'omrk@hop.com',
             'website' => 'm.me/omladinskirukometniklub.celinac',
             'dateOfFoundation' => '2021-01-01',
             'director' => '...',
-            'history' => '....'
+            'history' => '....',
+            'thumbnail' => ' '
             ]);
     }
 }

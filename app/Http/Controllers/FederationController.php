@@ -20,38 +20,6 @@ class FederationController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Federation  $federation
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Federation $federation)
-    {
-        //
-    }
-
-    /**
      * Show the form for editing the specified resource.
      *
      * @param  \App\Federation  $federation
@@ -59,7 +27,7 @@ class FederationController extends Controller
      */
     public function edit(Federation $federation)
     {
-        
+        return view('federationEdit', compact('federation'));
     }
 
     /**
@@ -69,19 +37,18 @@ class FederationController extends Controller
      * @param  \App\Federation  $federation
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Federation $federation)
+    public function update($id)
     {
-        //
+        $federation = Federation::findOrFail($id);
+        
+        $federation->name = request('name');
+        $federation->history = request('history');
+        $federation->president = request('president');
+        $federation->description = request('description');
+
+        $federation->save();
+
+        return redirect('/');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Federation  $federation
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Federation $federation)
-    {
-        //
-    }
 }

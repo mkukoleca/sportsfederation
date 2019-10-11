@@ -17,16 +17,12 @@
 <body>
 
 <div class="container">
-<div class="row">
 
-<div clas="col-3">
-</div>
-
-<div class="col-6">
 <br><br>
   <button><a href="/newClub">Add new Club</a></button>
 <br><br><br>
- <table class="blueTable">
+<div class="table-responsive">
+ <table class="table blueTable">
   <thead>
             <tr>
             <th>No.</th>
@@ -50,6 +46,8 @@
             <td>{{$club->dateOfFoundation}}</td>
             <td>{{$club->director}}</td>
             <td>{{$club->history}}</td>
+            <td>{{$club->thumbnail}}</td>
+
 
 
            <td><button><a href="editClub/{{$club->id}}">Edit</button></td>

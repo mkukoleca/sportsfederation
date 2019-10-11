@@ -20,10 +20,11 @@ class CreateStaffsTable extends Migration
             $table->string('description');
             $table->bigInteger('type_id')->nullable();
             $table->timestamps();
-            $table->foreign('type_id')->references('id')->on('staff_types');
+
+           // $table->foreign('type_id')->references('id')->on('staff_types');
         });
 
-        Schema::enableForeignKeyConstraints();
+        //Schema::enableForeignKeyConstraints();
     
     }
 

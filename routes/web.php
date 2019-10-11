@@ -24,9 +24,13 @@ Route::get('/staffs','StaffController@index');
 Route::get('/newStaff','StaffController@store');
 Route::post('/newStaff', 'StaffController@store')->name('create');
 
+//staff federation route
+Route::get('/federation/staffs', 'StaffController@index');
+Route::get('/federation/newStaff', 'StaffController@store');
+Route::post('/federation/newStaff', 'StaffController@store')->name('create');
 
-Route::get('/deleteStaff/{Staff}','StaffController@destroy');
-Route::post('/deleteStaff/{id}','StaffController@clear')->name('clearstaff');
+//staff edit and delete
+Route::get('/editStaff/{id}', 'StaffController@edit');
+Route::post('/editStaff/{id}', 'StaffController@update');
 
-
-// Route::get('/getclub/{Club}','ClubController@getclub');
+Route::get('/deleteStaff/{id}', 'StaffController@delete');

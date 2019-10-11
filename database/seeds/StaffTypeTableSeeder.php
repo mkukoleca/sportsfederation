@@ -24,9 +24,14 @@ class StaffTypeTableSeeder extends Seeder
         ]);
 
         DB::table('staff_types')->insert([
+            'name' => 'Coach',
+            'id' => 3
+            
+        ]);
+        DB::table('staff_types')->insert([
             'name' => 'Doctor',
             'id' => 4
-
+            
         ]);
     }
 }

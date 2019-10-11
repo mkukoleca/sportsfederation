@@ -63,8 +63,4 @@ class ClubController extends Controller
         $club = Club::where('id', $id)->delete();
         return redirect('/clubs');
     }
-/*
-    public function getclub(Club $club){
-        return view('/editClub',compact('club'));
-    }   */
 }
