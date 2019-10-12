@@ -26,17 +26,14 @@ class RouteServiceProvider extends ServiceProvider
         //
         
         parent::boot();
-<<<<<<< HEAD
+
+        <<<<<<< HEAD
 
         Route::model('cccc',\App\PlayerInfo::class);
-       
-=======
-<<<<<<< HEAD
-        //Route::model('Club', \App\Club::class);
+        =======       
 =======
        // Route::model('Club', \App\Club::class);
        Route::model('Staff', \App\Staff::class);
->>>>>>> 93f395187c1a04707a356c0d67b0e0e1d4416942
 >>>>>>> origin/tim_sharks
     }
 
