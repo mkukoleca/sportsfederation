@@ -9,19 +9,26 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 <link rel="stylesheet" type="text/css" href="tableClub.css">
 
+
+
    
     <title>Document</title>
 </head>
 <body>
-<br><br><br>
+
+<div class="container">
+
+<br><br>
   <button><a href="/newClub">Add new Club</a></button>
 <br><br><br>
- <table class="blueTable">
+<div class="table-responsive">
+ <table class="table blueTable">
   <thead>
             <tr>
-            <th>ID</th>
+            <th>No.</th>
             <th>Name</th>
             <th>Address</th>
+            <th>E-mail</th>
             <th>Website</th>
             <th>Date of foundation</th>
             <th>Director</th>
@@ -36,14 +43,18 @@
             <td>{{$club->id}} </td>
             <td>{{$club->name}}</td>
             <td>{{$club->address}}</td>
+            <td>{{$club->email}}</td>
             <td>{{$club->website}}</td>
             <td>{{$club->dateOfFoundation}}</td>
             <td>{{$club->director}}</td>
             <td>{{$club->history}}</td>
+            
+
 
 
            <td><button><a href="editClub/{{$club->id}}">Edit</button></td>
            <td><button><a href="deleteClub/{{$club->id}}">Delete</a></button></td>
+           <td>{{$club->thumbnail}}</td>
             </tr>
            
             @endforeach
@@ -53,6 +64,11 @@
 @isset($message)
 {{$message}}
 @endisset
+</div>
+<div clas="col-3">
+      </div>
+    </div>
 
+  </div>
 </body>
 </html>
