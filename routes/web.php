@@ -40,6 +40,7 @@ Route::get('/editStaff/{id}', 'StaffController@edit');
 Route::post('/editStaff/{id}', 'StaffController@update');
 
 Route::get('/deleteStaff/{id}', 'StaffController@destroy');
+<<<<<<< HEAD
 
 Route::get('/selection','SelectionController@show' );
 Route::get('/newSelection', 'SelectionController@store');
@@ -81,3 +82,5 @@ Route::get('/games/registerGame', 'GameController@create');
 Route::post('/games/registerGame', 'GameController@store')->name('register');
 
 
+=======
+>>>>>>> 24ca8d7a670113ef41e1e99aa58d9c5c9155a393
