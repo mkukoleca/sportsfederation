@@ -63,4 +63,7 @@ class ClubController extends Controller
         $club = Club::where('id', $id)->delete();
         return redirect('/clubs');
     }
+
+
+    
 }
