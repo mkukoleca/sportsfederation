@@ -28,11 +28,16 @@ class RouteServiceProvider extends ServiceProvider
 
         parent::boot();
 <<<<<<< HEAD
+<<<<<<< HEAD
        // Route::model('Club', \App\Club::class);
        Route::model('Staff', \App\Staff::class);
 =======
        
 >>>>>>> origin/tim_nijepekmez
+=======
+
+        Route::model('cccc',\App\PlayerInfo::class);
+>>>>>>> origin/tim_kornjaca
     }
 
     /**
