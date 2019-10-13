@@ -64,6 +64,8 @@ class ClubController extends Controller
         return redirect('/clubs');
     }
 
+
+    
     public function getclub(club $club){
         return view('/editClub', compact('club'));
 
