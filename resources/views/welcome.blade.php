@@ -87,6 +87,7 @@
                 <div class="links">
                     <a href="/index">Club</a>
                     <a href="/selection">Selection</a>
+                    <a href="/event">Event</a>
                     
                 </div>
             </div>

@@ -20,16 +20,6 @@ class EventController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -53,17 +43,6 @@ class EventController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  \App\Event  $event
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Event $event)
-    {
-        //
-    }
-
-    /**
      * Show the form for editing the specified resource.
      *
      * @param  \App\Event  $event
@@ -71,8 +50,10 @@ class EventController extends Controller
      */
     public function edit(Event $event)
     {
-        //
+        return view('/editEvent', compact('event'));
+
     }
+
 
     /**
      * Update the specified resource in storage.
@@ -81,9 +62,18 @@ class EventController extends Controller
      * @param  \App\Event  $event
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Event $event)
+    public function update($id, Request $request)
     {
-        //
+        $data = $request->only(['type', 'name', 'season', 'description']);
+
+        $event = Event::where('id', $id)->first();
+        $event->type=$data['type'];
+        $event->name=$data['name'];
+        $event->season=$data['season'];
+        $event->description=$data['description'];
+        $event->save();
+    
+        return redirect('/event');
     }
 
     /**
@@ -92,8 +82,11 @@ class EventController extends Controller
      * @param  \App\Event  $event
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Event $event)
+    public function destroy($id, Request $request)
     {
-        //
+        
+        $event = Event::where('id', $id)->first();
+        $event->delete();
+        return redirect('/event');
     }
 }

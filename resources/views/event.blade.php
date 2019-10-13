@@ -35,16 +35,16 @@
 
         @foreach($events as $event) 
 
-        <tr>
-        <td>{{$event->type}}</td>
-        <td>{{$event->name}}</td>
-        <td>{{$event->season}}</td>
-        <td>{{$event->description}}</td>
+ <tr>
+            <td>{{$event->type}}</td>
+            <td>{{$event->name}}</td>
+            <td>{{$event->season}}</td>
+            <td>{{$event->description}}</td>
 
-        <td><a href="editEvent/{{$event->id}}"><button>Edit</button></a></td>
-        <td><a onclick="return confirm('DA LI STE SIGURNI DA ŽELITE BRISATI?')" href="deleteEvent/{{$event->id}}"><button>Delete</button></a></td>
+            <td><a href="editEvent/{{$event->id}}"><button>Edit</button></a></td>
+            <td><a onclick="return confirm('DA LI STE SIGURNI DA ŽELITE BRISATI?')" href="deleteEvent/{{$event->id}}"><button>Delete</button></a></td>
 
-        </tr>
+ </tr>
 
         @endforeach
 

@@ -34,7 +34,7 @@
     <fieldset>
       <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Update</button>
     </fieldset>
-    <p class="copyright">Designed by <a href="https://colorlib.com" target="_blank" title="Colorlib">Colorlib</a></p>
+    <p class="copyright">Designed by <a href="https://bit.ly/312kfAQ" target="_blank" title="thumbnail">Pekmez_GANG</a></p>
   </form>
 </div>
 </body>
