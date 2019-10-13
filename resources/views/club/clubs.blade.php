@@ -35,6 +35,7 @@
             <th>History</th>
             <th>Edit</th>
             <th>Delete</th>
+            <th>Thumbnail</th>
             </tr>
   </thead>
   <tbody>
@@ -48,6 +49,7 @@
             <td>{{$club->dateOfFoundation}}</td>
             <td>{{$club->director}}</td>
             <td>{{$club->history}}</td>
+            
             
 
 
