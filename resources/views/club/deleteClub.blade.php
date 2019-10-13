@@ -21,7 +21,7 @@
 <div class="col-6">
 <br><br>
 
-<button type="button" class="btn btn-secondary btn-lg btn-block"><a href="/index">Back</a></button>
+<button type="button" class="btn btn-secondary btn-lg btn-block"><a href="/clubs">Back</a></button>
 
   <form id="contact" action="{{route('clearclub', $club->id)}}" method="POST">
   {{csrf_field()}}
