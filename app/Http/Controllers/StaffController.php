@@ -23,11 +23,7 @@ class StaffController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        //
-    }
-
+  
     /**
      * Store a newly created resource in storage.
      *
@@ -62,11 +58,7 @@ class StaffController extends Controller
      * @param  \App\Staff  $staff
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
-        //
-    }
-
+   
     /**
      * Show the form for editing the specified resource.
      *

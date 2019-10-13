@@ -23,39 +23,19 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+       
         
 
         parent::boot();
-<<<<<<< HEAD
-        
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-       // Route::model('Club', \App\Club::class);
-       Route::model('Staff', \App\Staff::class);
-=======
-       
->>>>>>> origin/tim_nijepekmez
-=======
 
-        Route::model('cccc',\App\PlayerInfo::class);
->>>>>>> origin/tim_kornjaca
-=======
-        //Route::model('Club', \App\Club::class);
-=======
-       // Route::model('Club', \App\Club::class);
+     
        Route::model('Staff', \App\Staff::class);
->>>>>>> 93f395187c1a04707a356c0d67b0e0e1d4416942
->>>>>>> 24ca8d7a670113ef41e1e99aa58d9c5c9155a393
-=======
-<<<<<<< HEAD
-        //Route::model('Club', \App\Club::class);
-=======
-       // Route::model('Club', \App\Club::class);
-       Route::model('Staff', \App\Staff::class);
->>>>>>> 93f395187c1a04707a356c0d67b0e0e1d4416942
->>>>>>> 24ca8d7a670113ef41e1e99aa58d9c5c9155a393
+
+       
+
+
+
+
     }
 
     /**

@@ -12,7 +12,7 @@
 
 
    
-    <title>Document</title>
+    <title>Rukometni savez Republike Srpske</title>
 </head>
 <body>
 

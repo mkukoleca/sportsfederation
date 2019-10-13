@@ -24,10 +24,7 @@ class FederationController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        //
-    }
+   
 
     /**
      * Store a newly created resource in storage.
@@ -60,10 +57,7 @@ class FederationController extends Controller
      * @param  \App\Federation  $federation
      * @return \Illuminate\Http\Response
      */
-    public function show(Federation $federation)
-    {
-        //
-    }
+  
 
     /**
      * Show the form for editing the specified resource.
