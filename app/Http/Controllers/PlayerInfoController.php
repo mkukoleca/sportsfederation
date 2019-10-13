@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\PlayerInfo;
 use Illuminate\Http\Request;
 use App\Selection;
+use App\Club;
 
 class PlayerInfoController extends Controller
 {
@@ -25,9 +26,8 @@ class PlayerInfoController extends Controller
      */
     public function create()
     {
-        return view('/playersInfo/registerPlayer', ['selections'=>Selection::all()]);
+        return view('/playersInfo/registerPlayer', ['selections'=>Selection::all()],['clubs'=>Club::all()]);
     }
-
     /**
      * Store a newly created resource in storage.
      *
