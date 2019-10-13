@@ -50,11 +50,16 @@
       <textarea placeholder="Club history" type="text" name ="clubHistory" tabindex="11" required></textarea>
     </fieldset>
     <fieldset>
-      <input placeholder="Current club" type="text" name ="currentClub" tabindex="12" required>
+    <select name="currentClub">
+      <option value="">Please select</option>
+      @foreach ($clubs as $club)
+      <option value="{{$club->id}}">{{$club->name}}</option>
+      @endforeach
+       </select>
     </fieldset>
     <fieldset>
       <select name="selection">
-      <option value="">please select</option>
+      <option value="">Please select</option>
       @foreach ($selections as $s)
       <option value="{{$s->id}}">{{$s->category}}</option>
       @endforeach
