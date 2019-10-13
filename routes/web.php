@@ -15,7 +15,7 @@ Route::get('/', function () {
 });
 
 //Club
-Route::get('/index','IndexController@index' );
+Route::get('/clubs','IndexController@index' );
 Route::get('/newClub', 'ClubController@store' );
 Route::post('/newClub', 'ClubController@store')->name('create');
 Route::get('/clubs','ClubController@index');
