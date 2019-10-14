@@ -18,7 +18,13 @@
     <h3>Add new Game</h3>
     
     <fieldset>
-      <input placeholder="Event" type="text" name ="event" tabindex="1" required>
+      <span>Event</span>
+      <select name="event">
+        @foreach ($events as $event)
+          <option value="{{$event->id}}">{{$event->type}}</option>
+        @endforeach
+      </select>
+      
     </fieldset>
     <fieldset>
       <input placeholder="Date" type="date" name ="date" tabindex="2" required>
@@ -27,19 +33,44 @@
       <input placeholder="Place" type="text" name ="place" tabindex="3" required>
     </fieldset>
     <fieldset>
-      <input placeholder="Home" type="text" name ="home" tabindex="4" required>
+      <span>Home</span>
+          <select name="home">
+            @foreach ($clubs as $club)
+            <option value="{{$club->id}}">{{$club->name}}</option>
+            @endforeach
+          </select>  
     </fieldset>
     <fieldset>
-    <input placeholder="Guest" type="text" name ="guest" tabindex="5" required>
+      <span>Guest</span>
+            <select name="guest">
+              @foreach ($clubs as $club)
+              <option value="{{$club->id}}">{{$club->name}}</option>
+              @endforeach
+            </select>
     </fieldset>
     <fieldset>
-    <input placeholder="Referee1" type="text" name ="referee1" tabindex="6" required>
+      <span>Referee1</span>
+              <select name="referee1">
+                @foreach ($staff as $stff)
+                <option value="{{$stff->id}}">{{$stff->name}}</option>
+                @endforeach
+              </select>
     </fieldset>
     <fieldset>
-    <input placeholder="Referee2" type="text" name ="referee2" tabindex="7" required>
+      <span>Referee2</span>
+                <select name="referee2">
+                  @foreach ($staff as $stff)
+                  <option value="{{$stff->id}}">{{$stff->name}}</option>
+                  @endforeach
+                </select>
     </fieldset>
     <fieldset>
-    <input placeholder="Delegate" type="text" name ="delegate" tabindex="8" required>
+      <span>Delegate</span>
+                <select name="delegate">
+                  @foreach ($staff as $stff)
+                  <option value="{{$stff->id}}">{{$stff->name}}</option>
+                  @endforeach
+                </select>
     </fieldset>
     <fieldset>
       <input placeholder="Round" type="number" name ="round" tabindex="9" required>

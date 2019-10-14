@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Game;
 use Illuminate\Http\Request;
+use App\Club;
+use App\Staff;
+use App\Event;
+
 
 class GameController extends Controller
 {
@@ -24,7 +28,7 @@ class GameController extends Controller
      */
     public function create()
     {
-        return view('/games/registerGame');
+        return view('/games/registerGame',['clubs'=>Club::all()],['events'=>Event::all()], ['staffs'=>Staff::all()]);
     }
 
     /**
