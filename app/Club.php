@@ -11,7 +11,7 @@ class Club extends Model
     public $timestamps = false;
     
     protected $fillable = [
-        'id', 'name', 'address', 'website', 'dateOfFoundation', 'director', 'history'
+        'id', 'name', 'address', 'email', 'website', 'dateOfFoundation', 'director', 'history', 'thumbnail'
     ];
 
 }
