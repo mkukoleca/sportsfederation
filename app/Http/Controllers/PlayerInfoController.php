@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\PlayerInfo;
 use Illuminate\Http\Request;
 use App\Selection;
+use App\Club;
 
 class PlayerInfoController extends Controller
 {
@@ -27,7 +28,6 @@ class PlayerInfoController extends Controller
     {
         return view('/playersInfo/registerPlayer', ['selection'=> Selection::all()]);
     }
-
     /**
      * Store a newly created resource in storage.
      *
@@ -40,7 +40,7 @@ class PlayerInfoController extends Controller
 
         if(count($data) > 0){
             $player = new PlayerInfo();
-            $player->thumbnail=$data['thumbnail'];
+          
             $player->name=$data['name'];
             $player->surname=$data['surname'];
             $player->description=$data['description'];
@@ -64,8 +64,8 @@ class PlayerInfoController extends Controller
 
             $player->save();
             return redirect('/playersInfo/players');        
-            } 
-     return view('/playersInfo/registerPlayer');
+        } 
+        return view('/playersInfo/registerPlayer');
 
     }
 

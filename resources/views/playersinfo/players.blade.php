@@ -24,7 +24,7 @@
             </tr>
             <tr>
                 <th>Thumbnail</th>
-                <td><img src="{{url($player->thumbnail)}}"></td>
+                <td><img src="{{url($player->thumbnail)}}" alt="profile img"> </td>
             </tr>
             <tr>
                 <th>Name</th>
