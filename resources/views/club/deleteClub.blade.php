@@ -11,8 +11,18 @@
     <title>Document</title>
 </head>
 <body>
-<button type="button" class="btn btn-secondary btn-lg btn-block"><a href="/index">Back</a></button>
-<div class="container">  
+
+<div class="container">
+<div class="row">
+
+<div clas="col-3">
+</div>
+
+<div class="col-6">
+<br><br>
+
+<button type="button" class="btn btn-secondary btn-lg btn-block"><a href="/">Back</a></button>
+
   <form id="contact" action="{{route('clearclub', $club->id)}}" method="POST">
   {{csrf_field()}}
     <h3>Delete Club</h3>
@@ -23,22 +33,32 @@
     Address:<br><input placeholder="Address" type="text" name ="address" value="{{$club->address}}" tabindex="2" >
     </fieldset>
     <fieldset>
-    Website:<br><input placeholder="Website (optional)" type="url" name ="website" value="{{$club->website}}" tabindex="3">
+    Email:<br><input placeholder="Email" type="email" name ="email" value="{{$club->email}}" tabindex="3">
     </fieldset>
     <fieldset>
-    Date of foundation:<br><input placeholder="Date of foundation" type="date" name ="dateOfFoundation" value="{{$club->dateOfFoundation}}" tabindex="4" required>
+    Website:<br><input placeholder="Website (optional)" type="url" name ="website" value="{{$club->website}}" tabindex="4">
     </fieldset>
     <fieldset>
-    Director:<br><input placeholder="Director" type="text" name ="director" value="{{$club->director}}" tabindex="5" >
+    Date of foundation:<br><input placeholder="Date of foundation" type="date" name ="dateOfFoundation" value="{{$club->dateOfFoundation}}" tabindex="5" required>
     </fieldset>
     <fieldset>
-    History:<br><textarea placeholder="History" type="text" name ="history" value="{{$club->history}}" tabindex="6" ></textarea>
+    Director:<br><input placeholder="Director" type="text" name ="director" value="{{$club->director}}" tabindex="6" >
+    </fieldset>
+    <fieldset>
+    History:<br><textarea placeholder="History" type="text" name ="history" value="{{$club->history}}" tabindex="7" ></textarea>
     </fieldset>
     <fieldset>
       <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Delete</button>
     </fieldset>
-    <p class="copyright">Designed by <a href="https://colorlib.com" target="_blank" title="Colorlib">Colorlib</a></p>
+    <p class="copyright">Designed by Sharks</a></p>
   </form>
+
+
 </div>
+<div clas="col-3">
+      </div>
+    </div>
+
+  </div>
 </body>
 </html>
