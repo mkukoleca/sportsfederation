@@ -12,4 +12,8 @@ class Staff extends Model
     protected $fillable = [
         'id', 'name', 'lastname', 'description', 'type_id', 'thumbnail'
     ];
+/*
+   public function staffType(){
+       return $this->belongsToMany('App\StaffType');
+   } */
 }

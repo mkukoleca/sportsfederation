@@ -78,7 +78,7 @@
             
             <tr>
                 <td><button><a href="/playersInfo/updatePlayer/{{$player->id}}">EDIT</a></button></td>
-                <td><button><a href="/deletePlayer/{{$player->id}}">DELETE</a></button></td>
+                <td><button onclick="return confirm('Are you sure you want to delete this data')"><a href="/deletePlayer/{{$player->id}}">DELETE</a></button></td>
                 <td><button><a href="/playersInfo/players">Lista igrača</a></button></td>
             </tr>
            

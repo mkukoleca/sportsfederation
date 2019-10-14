@@ -52,6 +52,14 @@
             <td>{{$club->dateOfFoundation}}</td>
             <td>{{$club->director}}</td>
             <td>{{$club->history}}</td>
+            
+           <td><button><a href="editClub/{{$club->id}}">Edit</button></td>
+           <td><a onclick="return confirm('DA LI STE SIGURNI DA ZELITE BRISATI?')" href="deleteClub/{{$club->id}}"><button>Delete</button></a></td>
+            </tr>
+           
+            @endforeach
+  </tbody>
+</table>
 
             <td><button><a href="editClub/{{$club->id}}">Edit</button></td>
             <td><button><a href="deleteClub/{{$club->id}}">Delete</a></button></td>

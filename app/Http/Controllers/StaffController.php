@@ -13,6 +13,7 @@ class StaffController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index(){
+      //  $staff = Staff::with('staff_types')->with('name')->where('id', $id)->first();
         return view('federation.staffs',['staffs' => Staff::all()]);
     
     }
@@ -114,13 +115,10 @@ class StaffController extends Controller
      * @return \Illuminate\Http\Response
      */
     
-    public function destroy($id){
+    public function destroy($id, Request $request){
+        
         $staff = Staff::where('id', $id)->first();
-        return view('/federation.deleteStaff',compact('staff'));
-    }
-    
-    public function clear($id){
-        $staff = Staff::where('id', $id)->delete();
+        $staff->delete();
         return redirect('/staffs');
     }
 

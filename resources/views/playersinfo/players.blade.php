@@ -24,7 +24,7 @@
             </tr>
             <tr>
                 <th>Thumbnail</th>
-                <td>{{$player->thumbnail}}</td>
+                <td><img src="{{url($player->thumbnail)}}" alt="profile img"> </td>
             </tr>
             <tr>
                 <th>Name</th>
@@ -87,7 +87,7 @@
             <tr>
                 <td><button><a href="/playersInfo/singlePlayer/{{$player->id}}">SHOW PLAYER</a></button></td>
                 <th><button><a href="/playersInfo/updatePlayer/{{$player->id}}">EDIT</a></button></th>
-                <td><button><a href="/deletePlayer/{{$player->id}}">DELETE</a></button></td>
+                <td><button onclick="return confirm('Are you sure you want to delete this data')"><a href="/deletePlayer/{{$player->id}}">DELETE</a></button></td>
             </tr>
             @endforeach 
     </table>

@@ -14,7 +14,7 @@ class CreateStaffsTable extends Migration
     public function up()
     {
         Schema::create('staffs', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->bigIncrements('id')->unsigned();
             $table->string('name');
             $table->string('lastname');
             $table->string('description');
@@ -23,12 +23,13 @@ class CreateStaffsTable extends Migration
 
             $table->timestamps();
 
-           // $table->foreign('type_id')->references('id')->on('staff_types');
+          //  $table->foreign('type_id')->references('id')->on('staff_types');
         });
 
         //Schema::enableForeignKeyConstraints();
     
     }
+
 
     /**
      * Reverse the migrations.
