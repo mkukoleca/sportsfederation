@@ -53,7 +53,11 @@
       <input placeholder="Current club" type="text" name ="currentClub" tabindex="12" required>
     </fieldset>
     <fieldset>
-      <input placeholder="Selection" type="text" name ="selection" tabindex="13" required>
+      <select>
+      @foreach($selections as $s)
+      <option value="{{$s->id}}">{{$s->name}}</option>
+      @endforeach
+      </select>
     </fieldset>
     <fieldset>
       <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
