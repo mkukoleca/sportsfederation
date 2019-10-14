@@ -8,15 +8,17 @@ use \Illuminate\Http\Response;
 
 class ClubController extends Controller
 {
-    public function index(){
-        return view('club.clubs', ['clubs' => Club::all()]);
+    public function index()
+    {
+        return view('/club.clubs', ['clubs' => Club::all()]);
     }
 
-    public function store(Request $request){
-    $data = $request->only(['name', 'address', 'email', 'website', 'dateOfFoundation', 'director', 'history']);
- 
-    
-        if(count($data) > 0){
+    public function store(Request $request)
+    {
+        $data = $request->only(['name', 'address', 'email', 'website', 'dateOfFoundation', 'director', 'history', 'thumbnail']);
+
+
+        if (count($data) > 0) {
             $club = new Club();
             $club->name = $data['name'];
             $club->address = $data['address'];
@@ -25,51 +27,67 @@ class ClubController extends Controller
             $club->dateOfFoundation = $data['dateOfFoundation'];
             $club->director = $data['director'];
             $club->history = $data['history'];
+
+            if ($request->hasFile('thumbnail')) {
+                $name = $club->name . '.' . $request->thumbnail->extension();
+                $folder = 'photo/';
+                $request->thumbnail->move(public_path($folder), $name);
+
+                $club->thumbnail = $folder . $name;
+            }
+
             $club->save();
 
-            return redirect("/");        
-            } 
-     return view('/club.newClub');
-}
-    
-    public function edit($id){
+            return redirect("/clubs");
+        }
+        return view('/club.newClub');
+    }
+
+
+    public function edit($id)
+    {
         $club = Club::where('id', $id)->first();
-        return view('/club.editClub',compact('club'));
-    } 
+        return view('/club.editClub', compact('club'));
+    }
 
 
-    public function update($id, Request $request){
-        $data = $request->only(['name', 'address', 'email','website', 'dateOfFoundation', 'director', 'history']);
-
-        $club=Club::where('id', $id)->first();
-        $club->name=$data['name'];
-        $club->address=$data['address'];
+    public function update($id, Request $request)
+    {
+        $data = $request->only(['name', 'address', 'email', 'website', 'dateOfFoundation', 'director', 'history', 'thumbnail']);
+       
+        $club = Club::where('id', $id)->first();
+        $club->name = $data['name'];
+        $club->address = $data['address'];
         $club->email = $data['email'];
-        $club->website=$data['website'];
-        $club->dateOfFoundation=$data['dateOfFoundation'];
-        $club->director=$data['director'];
-        $club->history=$data['history'];
+        $club->website = $data['website'];
+        $club->dateOfFoundation = $data['dateOfFoundation'];
+        $club->director = $data['director'];
+        $club->history = $data['history'];
+
+        if ($request->hasFile('thumbnail')) {
+            $name = $club->name . '.' . $request->thumbnail->extension();
+            $folder = 'photo/';
+            $request->thumbnail->move(public_path($folder), $name);
+
+            $club->thumbnail = $folder . $name;
+        }
+
+
         $club->save();
-    
-        return redirect('/');
+
+        return redirect('/clubs');
     }
 
-    public function destroy($id){
+    public function destroy($id, Request $request)
+    {
         $club = Club::where('id', $id)->first();
-        return view('/club.DeleteClub',compact('club'));
+        $club->delete();
+
+        return redirect('/clubs');
     }
     
-    public function clear($id){
-        $club = Club::where('id', $id)->delete();
-        return redirect('/');
-    }
-
-
-    /*
-    public function getclub(club $club){
+    /* public function getclub(club $club)
+    {
         return view('/editClub', compact('club'));
-
-
-    }
-    */
+    } */
 }

@@ -24,7 +24,7 @@
 <button type="button" class="btn btn-secondary btn-lg btn-block"><a href="/">Back</a></button>
 
 <div class="container">  
-  <form id="contact" action="{{route('createclub')}}" method="POST">
+  <form id="contact" action="{{route('createclub')}}" method="POST" enctype="multipart/form-data">
   {{csrf_field()}}
     <h3>Add new Club</h3>
     <fieldset>
@@ -48,9 +48,11 @@
     <fieldset>
       <textarea placeholder="History" type="text" name ="history" tabindex="7" required></textarea>
     </fieldset>
-    <fieldset>
-    Thumbnail:<br><textarea placeholder="Thumbnail" type="text" name ="thumbnail" tabindex="8" ></textarea>
+
+    <fieldset> Club image:
+      <input type="file" name="thumbnail" tabindex="8" required>
     </fieldset>
+
     <fieldset>
       <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
     </fieldset>

@@ -31,14 +31,22 @@ class StaffController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->only(['name', 'lastname', 'description']);
+        $data = $request->only(['name', 'lastname', 'description', 'thumbnail']);
      
-        
+        dd($data);
             if(count($data) > 0){
                 $staff = new Staff();
                 $staff->name = $data['name'];
                 $staff->lastname = $data['lastname'];
                 $staff->description = $data['description'];
+
+                if ($request->hasFile('thumbnail')) {
+                    $name = $staff->name . '.' . $request->thumbnail->extension();
+                    $folder = 'photo/';
+                    $request->thumbnail->move(public_path($folder), $name);
+    
+                    $staff->thumbnail = $folder . $name;
+                }
                
                 $staff->save();
     
@@ -78,13 +86,21 @@ class StaffController extends Controller
      * @param  \App\Staff  $staff
      * @return \Illuminate\Http\Response
      */
-    public function update($id)
+    public function update($id, Request $request)
     {
         $staff = Staff::findOrFail($id);
 
         $staff->name = request('name');
         $staff->lastname = request('lastname');
         $staff->description = request('description');
+
+        if ($request->hasFile('thumbnail')) {
+            $name = $staff->name . '.' . $request->thumbnail->extension();
+            $folder = 'photo/';
+            $request->thumbnail->move(public_path($folder), $name);
+
+            $staff->thumbnail = $folder . $name;
+        }
 
         $staff->save();
 

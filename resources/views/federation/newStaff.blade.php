@@ -24,7 +24,7 @@
 <button type="button" class="btn btn-secondary btn-lg btn-block"><a href="/staffs">Back</a></button>
 
 <div class="container">  
-  <form id="contact" action="{{route('create')}}" method="POST">
+  <form id="contact" action="{{route('create')}}" method="POST" enctype="multipart/form-data">
   {{csrf_field()}}
     <h3>Add new Staff</h3>
     <fieldset>
@@ -35,6 +35,10 @@
     </fieldset>
     <fieldset>
       <input placeholder="Description" type="text" name ="description" tabindex="3">
+    </fieldset>
+
+    <fieldset> Staff image:
+      <input type="file" name="thumbnail" tabindex="3" required>
     </fieldset>
    
     <fieldset>

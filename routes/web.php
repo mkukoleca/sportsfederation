@@ -2,7 +2,7 @@
 
 // Club
 
-Route::get('/','ClubController@index');
+Route::get('/clubs','ClubController@index');
 Route::get('/newClub', 'ClubController@store');
 Route::post('/newClub', 'ClubController@store')->name('createclub');
 Route::get('/editClub/{id}','ClubController@edit');

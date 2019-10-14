@@ -20,20 +20,24 @@
 <button type="button" class="btn btn-secondary btn-lg btn-block"><a href="/staffs">Back</a></button>
 
 <div class="container">  
-  <form id="contact" method="POST" action="/editStaff/{{ $staff->id }}">
+  <form id="contact" method="POST" action="/editStaff/{{ $staff->id }}" enctype="multipart/form-data">
   
   @csrf
     <h3>Edit Staff Member</h3>
 
     
     <fieldset>
-    Name:<p><input type="text" name ="name" tabindex="1" required autofocus value="{{ $staff['name'] }}">
+    Name:<p><input type="text" name ="name" tabindex="1" required autofocus value="{{ $staff->name }}">
     </fieldset>
     <fieldset>
-    Lastname:<p><input type="text" name ="lastname" tabindex="2" required value="{{ $staff['lastname'] }}">
+    Lastname:<p><input type="text" name ="lastname" tabindex="2" required value="{{ $staff->lastname }}">
     </fieldset>
     <fieldset>
-    Description:<p><textarea type="text" name ="description" tabindex="3"required value="{{ $staff['description'] }}">{{ $staff['description'] }}</textarea>
+    Description:<p><textarea type="text" name ="description" tabindex="3"required value="{{ $staff->description }}">{{ $staff->description }}</textarea>
+    </fieldset>
+
+    <fieldset> Staff image:
+      <input type="file" name="thumbnail" value="{{ $staff->thumbnail }}" tabindex="4">
     </fieldset>
    
     <fieldset>

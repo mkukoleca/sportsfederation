@@ -19,6 +19,8 @@ class CreateStaffsTable extends Migration
             $table->string('lastname');
             $table->string('description');
             $table->bigInteger('type_id')->nullable();
+            $table->string('thumbnail')->nullable();
+
             $table->timestamps();
 
            // $table->foreign('type_id')->references('id')->on('staff_types');
