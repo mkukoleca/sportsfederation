@@ -24,7 +24,7 @@
             </tr>
             <tr>
                 <th>Thumbnail</th>
-                <td>{{$player->thumbnail}}</td>
+                <td><img src="{{url($player->thumbnail)}}"></td>
             </tr>
             <tr>
                 <th>Name</th>
