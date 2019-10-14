@@ -12,9 +12,8 @@ class StaffController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        return view('/federation.staffs', ['staffs' => Staff::all()]);
+    public function index(){
+        return view('federation.staffs',['staffs' => Staff::all()]);
     
     }
 
@@ -43,7 +42,7 @@ class StaffController extends Controller
                
                 $staff->save();
     
-                return redirect("federation/staffs");        
+                return redirect('/staffs');        
                 } 
          return view('federation/newStaff');
     }
@@ -89,16 +88,7 @@ class StaffController extends Controller
 
         $staff->save();
 
-        return redirect('federation/staffs');
-    }
-
-    public function delete($id) {
-
-        $staff = Staff::findOrFail($id);
-
-        $staff->delete();
-
-        return redirect('federation/staffs');
+        return redirect('/staffs');
     }
 
     /**
@@ -107,7 +97,9 @@ class StaffController extends Controller
      * @param  \App\Staff  $staff
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Staff $staff){
+    
+    public function destroy($id){
+        $staff = Staff::where('id', $id)->first();
         return view('/federation.deleteStaff',compact('staff'));
     }
     
@@ -115,5 +107,6 @@ class StaffController extends Controller
         $staff = Staff::where('id', $id)->delete();
         return redirect('/staffs');
     }
+
 
 }
