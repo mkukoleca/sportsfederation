@@ -49,6 +49,9 @@
       <textarea placeholder="History" type="text" name ="history" tabindex="7" required></textarea>
     </fieldset>
     <fieldset>
+    Thumbnail:<br><textarea placeholder="Thumbnail" type="text" name ="thumbnail" tabindex="8" ></textarea>
+    </fieldset>
+    <fieldset>
       <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
     </fieldset>
     <p class="copyright">Designed by Sharks</a></p>

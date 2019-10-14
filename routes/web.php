@@ -1,22 +1,7 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-Route::get('/', function () {
-    return view('welcome');
-});
 
 //Club
-Route::get('/index','IndexController@index' );
-Route::post('/newClub', 'ClubController@store')->name('create');
 Route::get('/','ClubController@index');
 Route::get('/newClub', 'ClubController@store');
 Route::post('/newClub', 'ClubController@store')->name('createclub');
@@ -34,6 +19,19 @@ Route::get('/playersInfo/registerPlayer', 'PlayerInfoController@create');
 Route::post('/playersInfo/registerPlayer', 'PlayerInfoController@store')->name('registerplayer');
 Route::get('/deletePlayer/{id}','PlayerInfoController@destroy');
 
+//staff federation route
+
+Route::get('/federation', 'FederationController@index');
+Route::any('/staffs', 'StaffController@index');
+Route::get('/newStaff','StaffController@store');
+Route::post('/newStaff', 'StaffController@store')->name('create');
+
+
+//staff edit and delete
+Route::get('/editStaff/{id}', 'StaffController@edit');
+Route::post('/editStaff/{id}', 'StaffController@update');
+Route::get('/deleteStaff/{id}', 'StaffController@destroy');
+Route::post('/deleteStaff/{id}', 'StaffController@clear')->name('clearstaff');
 
 //Game
 Route::get('/gamesList', 'GameController@index');
