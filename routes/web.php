@@ -63,3 +63,7 @@ Route::get('/deleteEvent/{id}','EventController@destroy');
 
 
 
+Route::get('/', 'FederationController@index');
+Route::get('/federation/{id}', 'FederationController@edit');
+Route::post('/federationEdit/{id}', 'FederationController@update');
+
