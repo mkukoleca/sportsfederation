@@ -12,5 +12,10 @@ class StaffType extends Model
     protected $fillable = [
         'id', 'name'
     ];
+/*
+    public function type(){
+        return $this->hasMany('App\Staff');
 
+    }  
+  */
 }

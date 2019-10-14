@@ -27,7 +27,7 @@ class ClubController extends Controller
             $club->history = $data['history'];
             $club->save();
 
-            return redirect("/");        
+            return redirect("/clubs");        
             } 
      return view('/club.newClub');
 }
@@ -51,17 +51,14 @@ class ClubController extends Controller
         $club->history=$data['history'];
         $club->save();
     
-        return redirect('/');
+        return redirect('/clubs');
     }
 
-    public function destroy($id){
+    public function destroy($id, Request $request){
+        
         $club = Club::where('id', $id)->first();
-        return view('/club.DeleteClub',compact('club'));
-    }
-    
-    public function clear($id){
-        $club = Club::where('id', $id)->delete();
-        return redirect('/');
+        $club->delete();
+        return redirect('/clubs');
     }
 
 
