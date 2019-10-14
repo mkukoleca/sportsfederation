@@ -63,7 +63,7 @@ Route::get('/games/registerGame', 'GameController@create');
 Route::post('/games/registerGame', 'GameController@store')->name('register');
 
 
-Route::get('/federation', 'FederationController@index');
+Route::get('/', 'FederationController@index');
 Route::get('/federation/{id}', 'FederationController@edit');
 Route::post('/federationEdit/{id}', 'FederationController@update');
 
