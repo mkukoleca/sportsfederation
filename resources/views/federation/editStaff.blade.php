@@ -17,7 +17,7 @@
 
 <div clas="col-3">
 </div>
-<button type="button" class="btn btn-secondary btn-lg btn-block"><a href="/federation/staffs">Back</a></button>
+<button type="button" class="btn btn-secondary btn-lg btn-block"><a href="/staffs">Back</a></button>
 
 <div class="container">  
   <form id="contact" method="POST" action="/editStaff/{{ $staff->id }}">

@@ -31,10 +31,10 @@
     Name:<br><input placeholder="Name"  type="text" name ="name" value="{{$staff->name}}" tabindex="1"  autofocus>
     </fieldset>
     <fieldset>
-    Lastname:<br><input placeholder="Lastname" type="text" name ="lastname" value="{{$staff->address}}" tabindex="2" >
+    Lastname:<br><input placeholder="Lastname" type="text" name ="lastname" value="{{$staff->lastname}}" tabindex="2" >
     </fieldset>
     <fieldset>
-    Description:<br><input placeholder="Description" type="text" name ="description" value="{{$staff->website}}" tabindex="3">
+    Description:<br><input placeholder="Description" type="text" name ="description" value="{{$staff->description}}" tabindex="3">
     </fieldset>
     
     <fieldset>

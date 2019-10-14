@@ -19,7 +19,7 @@
 
 <div class="col-6">
 <br><br>
-  <button><a href="/federation/newStaff">Add new Staff</a></button>
+  <button><a href="/newStaff">Add new Staff</a></button>
 <br><br><br>
  <table class="blueTable">
   <thead>
@@ -41,15 +41,8 @@
             <td>{{$staff->name}}</td>
             <td>{{$staff->lastname}}</td>
             <td>{{$staff->description}}</td>
-
-
            <td><button><a href="/editStaff/{{ $staff->id }}">Edit</a></button></td>
-           
-           
-           <td><form method="POST" action="/editStaff/{{ $staff->id }}">
-            @csrf
-             <button type="submit" onclick="return confirm('Are you sure you want to delete this member?')">Delete</button>
-            </form></td>
+           <td><button><a href="/deleteStaff/{{ $staff->id }}">Delete</a></button></td>
             </tr>
            
             @endforeach
