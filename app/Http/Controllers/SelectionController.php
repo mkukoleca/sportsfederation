@@ -16,7 +16,7 @@ class SelectionController extends Controller
     public function index()
     {
         $selection = DB::table('selection')->get();
-        return view('selection', ['selection' => $selection]);
+        return view('/selection/selection', ['selection' => $selection]);
     }
 
 
@@ -45,7 +45,7 @@ class SelectionController extends Controller
 
                 return redirect("/selection");
             }
-    return view('/newSelection');
+    return view('/selection/newSelection');
 
     }
     
@@ -58,7 +58,7 @@ class SelectionController extends Controller
      */
     public function edit(Selection $selection)
     {
-        return view('/editSelection', compact('selection'));
+        return view('/selection/editSelection', compact('selection'));
     }
 
     public function update($id, Request $request)

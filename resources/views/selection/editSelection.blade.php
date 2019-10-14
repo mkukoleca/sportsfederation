@@ -11,24 +11,28 @@
     <title>Edit Selection</title>
 </head>
 <body>
-<button type="button" class="btn btn-secondary btn-lg btn-block"><a href="/event">Back</a></button>
+<button type="button" class="btn btn-secondary btn-lg btn-block"><a href="/selection">Back</a></button>
 <div class="container">  
-  <form id="contact" action="{{route('updateevent', $event->id)}}" method="POST">
+  <form id="contact" action="{{route('updateselection', $selection->id)}}" method="POST">
   {{csrf_field()}}
-    <h3>Update Event</h3>
+    <h3>Update Selection</h3>
     <fieldset>
-    Type:<br><input placeholder="Tournament type"  type="text" name ="type" value="{{$event->type}}" tabindex="1"  autofocus>
+    Gender:<br>
+            <input  type="radio" value="Female" name ="gender" tabindex="1"  {{ $selection->gender =='Female' ? 'checked' : '' }}>Female <br>
+            <input  type="radio" value="Male" name ="gender" tabindex="1"   {{ $selection->gender =='Male' ? 'checked' : '' }} >Male
     </fieldset>
     <fieldset>
-    Name:<br><input placeholder="Name" type="text" name ="name" value="{{$event->name}}" tabindex="2" >
+    Category:<br><input placeholder="Category" type="text" name ="category" value="{{$selection->category}}" tabindex="2" >
     </fieldset>
     <fieldset>
-    Season:<br><input placeholder="Season" type="text" name ="season" value="{{$event->season}}" tabindex="3">
+    Coach Id:<br><input placeholder="CoachId" type="number" name ="coachId" value="{{$selection->coachId}}" tabindex="3">
     </fieldset>
     <fieldset>
-    Description:<br><input placeholder="Description" type="text" name ="description" value="{{$event->description}}" tabindex="4" >
+    History:<br><input placeholder="History" type="text" name ="history" value="{{$selection->history}}" tabindex="4" >
     </fieldset>
-   
+    <fieldset>
+    Club Id:<br><input placeholder="ClubId" type="number" name ="clubId" value="{{$selection->clubId}}" tabindex="5" >
+    </fieldset>
     <fieldset>
       <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Update</button>
     </fieldset>

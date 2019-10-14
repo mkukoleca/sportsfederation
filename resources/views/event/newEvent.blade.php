@@ -16,12 +16,10 @@
   <form id="contact" action="{{route('createEvent')}}" method="POST">
   {{csrf_field()}}
     <h3>Add new Event</h3>
-    <fieldset>
-      <input  type="radio" value="League" name ="type" tabindex="1" required  >League
-      <input  type="radio" value="Cup" name ="type" tabindex="1" required  >Cup
-      <input  type="radio" value="Tournament" name ="type" tabindex="1" required  >Tournament
-
-
+    <fieldset>Type: <br>
+      <input  type="radio" value="League" name ="type" tabindex="1" required  >League <br>
+      <input  type="radio" value="Cup" name ="type" tabindex="1" required  >Cup <br>
+      <input  type="radio" value="Tournament" name ="type" tabindex="1" required  >Tournament <br>
     </fieldset>
 
     <fieldset>

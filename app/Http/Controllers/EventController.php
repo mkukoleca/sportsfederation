@@ -16,7 +16,7 @@ class EventController extends Controller
     public function index()
     {
         $event = DB::table('events')->get();
-        return view('event', ['events' => $event]);
+        return view('/event/event', ['events' => $event]);
     }
 
     /**
@@ -39,7 +39,7 @@ class EventController extends Controller
 
                 return redirect("/event");
             }
-    return view('/newEvent');
+    return view('/event/newEvent');
     }
 
     /**
@@ -50,7 +50,7 @@ class EventController extends Controller
      */
     public function edit(Event $event)
     {
-        return view('/editEvent', compact('event'));
+        return view('event/editEvent', compact('event'));
 
     }
 
