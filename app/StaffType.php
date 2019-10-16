@@ -12,10 +12,13 @@ class StaffType extends Model
     protected $fillable = [
         'id', 'name'
     ];
-/*
-    public function type(){
-        return $this->hasMany('App\Staff');
+
+    public function staffs(){
+        
+        return $this->belongsToMany('App\Staff', 'federation_staff')->withPivot('staff_type_id');
 
     }  
-  */
+
+     
+ 
 }

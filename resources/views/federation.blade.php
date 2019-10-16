@@ -72,7 +72,7 @@
     <div class="hero-container">
       <h1>Dobrodošli na oficijalnu stranicu Rukometnog Saveza Republike Srpske</h1>
       <h2>Mi volimo rukomet</h2>
-      <p><a href="/club" class="btn-get-started">CLUB</a> <a href="#about" class="btn-get-started">SELECTION</a> <a href="#about" class="btn-get-started">EVENT</a></p>
+      <p><a href="/clubs" class="btn-get-started">CLUB</a> <a href="#about" class="btn-get-started">SELECTION</a> <a href="#about" class="btn-get-started">EVENT</a></p>
     </div>
   </section><!-- #hero -->
 
@@ -103,7 +103,7 @@
           <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
             <div class="box">
               <div class="icon"><a href=""><i class="fa fa-phone-square"></i></a></div>
-              <h4 class="title"><a href="">Kontakt Info</a></h4>
+              <h4 class="title"><a href="/federation/{{ $fed->id }}">Kontakt Info</a></h4>
               <p class="description">Sve dotatne informacije kako nas možete kontaktirati</p>
             </div>
           </div>

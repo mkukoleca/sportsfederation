@@ -33,6 +33,8 @@ Route::get('/editStaff/{id}', 'StaffController@edit');
 Route::post('/editStaff/{id}', 'StaffController@update');
 Route::get('/deleteStaff/{id}', 'StaffController@destroy');
 
+//Route::get('/newStaff', 'FederationStaffController@create');
+//Route::get('/editStaff/{id}', 'FederationStaffController@create');
 
 //Game
 Route::get('/gamesList', 'GameController@index');

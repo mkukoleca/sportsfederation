@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Staff;
 use Illuminate\Http\Request;
+use App\StaffType;
+use App\Federation;
+use App\FederationStaff;
 
 class StaffController extends Controller
 {
@@ -32,14 +35,15 @@ class StaffController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->only(['name', 'lastname', 'description', 'thumbnail']);
-     
-        dd($data);
+        $data = $request->only(['name', 'lastname', 'description', 'thumbnail','staffType', 'fedType']);
+         //dd($data);
+        
             if(count($data) > 0){
                 $staff = new Staff();
                 $staff->name = $data['name'];
                 $staff->lastname = $data['lastname'];
                 $staff->description = $data['description'];
+                $staff->type_id = $data['staffType'];
 
                 if ($request->hasFile('thumbnail')) {
                     $name = $staff->name . '.' . $request->thumbnail->extension();
@@ -50,16 +54,21 @@ class StaffController extends Controller
                 }
                
                 $staff->save();
+
+                $federation_staff = new FederationStaff();
+                $federation_staff->staff_id = $staff->id;
+                $federation_staff->federation_id = $data['fedType'];
+                $federation_staff->staff_type_id = $data['staffType'];
+
+                $federation_staff->save();
     
                 return redirect('/staffs');        
                 } 
-         return view('federation/newStaff');
+         return view('federation/newStaff', [
+            'staff' => StaffType::all(),
+            'feds' => Federation::all(),
+         ]);
     }
-        
-        
-              
-    
-
     /**
      * Display the specified resource.
      *
@@ -77,7 +86,11 @@ class StaffController extends Controller
     {
         $staff = Staff::findOrFail($id);
         
-        return view('federation.editStaff', ['staff' => $staff]);
+        return view('federation.editStaff', [
+            'staff' => $staff,
+            'staffs' => StaffType::all(),
+            'feds' => Federation::all(), 
+            ]);
     }
 
     /**
@@ -89,11 +102,14 @@ class StaffController extends Controller
      */
     public function update($id, Request $request)
     {
-        $staff = Staff::findOrFail($id);
-
-        $staff->name = request('name');
-        $staff->lastname = request('lastname');
-        $staff->description = request('description');
+        
+        $data = $request->only(['name', 'lastname', 'description', 'thumbnail','staffType', 'fedType']);
+        
+        $staff = Staff::where('id', $id)->first();
+        $staff->name = $data['name'];
+        $staff->lastname = $data['lastname'];
+        $staff->description = $data['description'];
+        $staff->type_id = $data['staffType'];
 
         if ($request->hasFile('thumbnail')) {
             $name = $staff->name . '.' . $request->thumbnail->extension();
@@ -104,6 +120,12 @@ class StaffController extends Controller
         }
 
         $staff->save();
+
+        $federation_staff = FederationStaff::where('staff_id', $id)->first();
+        $federation_staff->federation_id = $data['fedType'];
+        $federation_staff->staff_type_id = $data['staffType'];
+
+        $federation_staff->save();
 
         return redirect('/staffs');
     }
@@ -118,7 +140,12 @@ class StaffController extends Controller
     public function destroy($id, Request $request){
         
         $staff = Staff::where('id', $id)->first();
+
+        $data = FederationStaff::where('staff_id', $id)->first();
+        $data->delete();
+
         $staff->delete();
+        
         return redirect('/staffs');
     }
 

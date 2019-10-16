@@ -39,6 +39,26 @@
     <fieldset> Staff image:
       <input type="file" name="thumbnail" value="{{ $staff->thumbnail }}" tabindex="4">
     </fieldset>
+
+
+    
+    <fieldset>
+      <span>Staff Type </span>
+      <select name="staffType">
+        @foreach ($staffs as $s)
+        <option value="{{ $s->id  }}">{{ $s->name }}</option>
+        @endforeach
+      </select>
+    </fieldset>
+
+    <fieldset>
+      <span>Federation </span>
+      <select name="fedType">
+        @foreach ($feds as $fed)
+        <option value="{{ $fed->id }}">{{ $fed->name }}</option>
+        @endforeach
+      </select>
+    </fieldset>
    
     <fieldset>
       <button name="submit" type="submit" id="contact-submit">Update</button>
