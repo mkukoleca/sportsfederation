@@ -22,7 +22,7 @@
         <th>gender</th>
         <th>category</th>
         <th>history</th>
-        <th>coachId</th>
+        <th>staffTypeId</th>
         <th>clubId</th>
         <th>Edit</th>
         <th>Delete</th>
@@ -39,7 +39,7 @@
         <td>{{$select->gender}}</td>
         <td>{{$select->category}}</td>
         <td>{{$select->history}}</td>
-        <td>{{$select->coachId}}</td>
+        <td>{{$select->staffTypeId}}</td>
         <td>{{$select->clubId}}</td>
 
         <td><a href="editSelection/{{$select->id}}"><button>Edit</button></a></td>
