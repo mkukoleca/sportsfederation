@@ -26,7 +26,7 @@ class PlayerInfoController extends Controller
      */
     public function create()
     {
-        return view('/playersInfo/registerPlayer', ['selection'=> Selection::all()]);
+        return view('/playersInfo/registerPlayer', ['selection'=> Selection::all(), 'clubs' => Club::all()]);
     }
     /**
      * Store a newly created resource in storage.

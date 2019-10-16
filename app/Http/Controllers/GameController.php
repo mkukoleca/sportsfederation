@@ -82,6 +82,7 @@ class GameController extends Controller
     public function edit($id)
     {
         $game = Game::where('id', $id)->first();
+        dd($game);
         return view("games/updateGame", compact('game'));
     }
 

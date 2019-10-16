@@ -30,7 +30,7 @@
     </fieldset>
     <fieldset>
     <span>Pozicija</span>
-    <select>
+    <select name="position">
       <option value="lijevo_krilo">Lijevo krilo</option>
       <option value="desno_krilo">Desno krilo</option>
       <option value="lijevi_bek">Lijevi bek</option>
@@ -54,7 +54,7 @@
     </fieldset>
     <fieldset>
     <span>Citizenship</span>
-    <select name="country">
+    <select name="citizenship">
                 <option value="Afghanistan">Afghanistan</option>
                 <option value="Åland Islands">Åland Islands</option>
                 <option value="Albania">Albania</option>
@@ -307,19 +307,27 @@
     </fieldset>
     <fieldset>
     <span>Current Club</span>
+    @if(count($clubs) > 0)
     <select name="currentClub">
       @foreach ($clubs as $club)
       <option value="{{$club->id}}">{{$club->name}}</option>
       @endforeach
-       </select>
+    </select>
+    @else 
+      <h3>Please register club first </h3><a href="/">Register club</a>
+      @endif
     </fieldset>
     <fieldset>
     <span>Selection</span>
+    @if(count($selection) > 0)
       <select name="selection">
-      @foreach ($selections as $s)
+      @foreach ($selection as $s)
       <option value="{{$s->id}}">{{$s->category}}</option>
       @endforeach
        </select>
+       @else 
+       <h3>Please register selection first</h3><a href="/selection">Register selection</a>
+      @endif
     </fieldset>
     <fieldset>
       <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
@@ -329,3 +337,5 @@
 </div>
 </body>
 </html>
+
+
