@@ -26,7 +26,7 @@ Route::get('/deleteStaff/{id}', 'StaffController@destroy');
 Route::post('/deleteStaff/{id}', 'StaffController@clear')->name('clearstaff');
 
 
-
+// selection 
 Route::get('/selection','SelectionController@index' );
 Route::get('/newSelection', 'SelectionController@store');
 Route::post('/newSelection','SelectionController@store')->name('createSelection');
@@ -34,6 +34,7 @@ Route::get('/editSelection/{selection}','SelectionController@edit');
 Route::post('/editSelection/{id}','SelectionController@update')->name('updateselection');
 Route::get('/deleteSelection/{id}','SelectionController@destroy');
 
+// event
 Route::get('/event','EventController@index');
 Route::get('/newEvent', 'EventController@store');
 Route::post('/newEvent','EventController@store')->name('createEvent');
