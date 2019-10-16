@@ -28,19 +28,15 @@ class SelectionController extends Controller
      */
     public function store(Request $request) {
         
-        $data = $request->only(['gender', 'category', 'history', 'coachId', 'clubId']);
+        $data = $request->only(['gender', 'category', 'history', 'staffTypeId', 'clubId']);
 
             if(count($data) > 0){
                 $selection = new Selection();
                 $selection->gender = $data['gender'];
                 $selection->category = $data['category'];
                 $selection->history = $data['history'];
-                
-                $selection->coachId = $data['coachId'];
+                $selection->staffTypeId = $data['staffTypeId'];
                 $selection->clubId = $data['clubId'];
-
-                // $data['coachId']->unsigned()->nullable();
-                // $data['clubId']->unsigned()->nullable();
                 $selection->save();
 
                 return redirect("/selection");
@@ -63,12 +59,12 @@ class SelectionController extends Controller
 
     public function update($id, Request $request)
     {
-        $data = $request->only(['gender', 'category', 'coachId', 'history', 'clubId']);
+        $data = $request->only(['gender', 'category', 'staffTypeId', 'history', 'clubId']);
 
         $selection = Selection::where('id', $id)->first();
         $selection->gender=$data['gender'];
         $selection->category=$data['category'];
-        $selection->coachId=$data['coachId'];
+        $selection->staffTypeId=$data['staffTypeId'];
         $selection->history=$data['history'];
         $selection->clubId=$data['clubId'];
         $selection->save();

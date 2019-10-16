@@ -25,7 +25,7 @@
     Category:<br><input placeholder="Category" type="text" name ="category" value="{{$selection->category}}" tabindex="2" >
     </fieldset>
     <fieldset>
-    Coach Id:<br><input placeholder="CoachId" type="number" name ="coachId" value="{{$selection->coachId}}" tabindex="3">
+    Staff Type Id:<br><input placeholder="StaffTypeId" type="number" name ="staffTypeId" value="{{$selection->staffTypeId}}" tabindex="3">
     </fieldset>
     <fieldset>
     History:<br><input placeholder="History" type="text" name ="history" value="{{$selection->history}}" tabindex="4" >

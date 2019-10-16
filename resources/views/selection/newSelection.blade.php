@@ -30,8 +30,10 @@
       <textarea placeholder="History" type="text" name ="history" tabindex="3" required></textarea>
     </fieldset>
 
+
+
     <fieldset>
-      <input placeholder="CoachId" type="number" name="coachId" value="coachId" tabindex="4">
+      <input placeholder="StaffTypeId" type="number" name="staffTypeId" value="staffTypeId" tabindex="4">
     </fieldset>
 
     <fieldset>
