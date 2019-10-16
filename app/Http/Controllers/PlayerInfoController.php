@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Selection;
 use App\Club;
 
+
 class PlayerInfoController extends Controller
 {
     /**
