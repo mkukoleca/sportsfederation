@@ -12,9 +12,10 @@ class StaffController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        //
+    public function index(){
+      //  $staff = Staff::with('staff_types')->with('name')->where('id', $id)->first();
+        return view('federation.staffs',['staffs' => Staff::all()]);
+    
     }
 
     /**
@@ -22,11 +23,7 @@ class StaffController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        //
-    }
-
+  
     /**
      * Store a newly created resource in storage.
      *
@@ -35,8 +32,33 @@ class StaffController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->only(['name', 'lastname', 'description', 'thumbnail']);
+     
+        dd($data);
+            if(count($data) > 0){
+                $staff = new Staff();
+                $staff->name = $data['name'];
+                $staff->lastname = $data['lastname'];
+                $staff->description = $data['description'];
+
+                if ($request->hasFile('thumbnail')) {
+                    $name = $staff->name . '.' . $request->thumbnail->extension();
+                    $folder = 'photo/';
+                    $request->thumbnail->move(public_path($folder), $name);
+    
+                    $staff->thumbnail = $folder . $name;
+                }
+               
+                $staff->save();
+    
+                return redirect('/staffs');        
+                } 
+         return view('federation/newStaff');
     }
+        
+        
+              
+    
 
     /**
      * Display the specified resource.
@@ -44,20 +66,18 @@ class StaffController extends Controller
      * @param  \App\Staff  $staff
      * @return \Illuminate\Http\Response
      */
-    public function show(Staff $staff)
-    {
-        //
-    }
-
+   
     /**
      * Show the form for editing the specified resource.
      *
      * @param  \App\Staff  $staff
      * @return \Illuminate\Http\Response
      */
-    public function edit(Staff $staff)
+    public function edit($id)
     {
-        //
+        $staff = Staff::findOrFail($id);
+        
+        return view('federation.editStaff', ['staff' => $staff]);
     }
 
     /**
@@ -67,9 +87,25 @@ class StaffController extends Controller
      * @param  \App\Staff  $staff
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Staff $staff)
+    public function update($id, Request $request)
     {
-        //
+        $staff = Staff::findOrFail($id);
+
+        $staff->name = request('name');
+        $staff->lastname = request('lastname');
+        $staff->description = request('description');
+
+        if ($request->hasFile('thumbnail')) {
+            $name = $staff->name . '.' . $request->thumbnail->extension();
+            $folder = 'photo/';
+            $request->thumbnail->move(public_path($folder), $name);
+
+            $staff->thumbnail = $folder . $name;
+        }
+
+        $staff->save();
+
+        return redirect('/staffs');
     }
 
     /**
@@ -78,8 +114,13 @@ class StaffController extends Controller
      * @param  \App\Staff  $staff
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Staff $staff)
-    {
-        //
+    
+    public function destroy($id, Request $request){
+        
+        $staff = Staff::where('id', $id)->first();
+        $staff->delete();
+        return redirect('/staffs');
     }
+
+
 }

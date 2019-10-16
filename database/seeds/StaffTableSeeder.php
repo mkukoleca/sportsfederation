@@ -11,6 +11,14 @@ class StaffTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        DB::table('staffs')->insert([
+            'name' => 'Bibiana',
+            'lastname' => 'Steinhaus',
+            'description' => 'German football referee!!!',
+            'type_id' => 1,
+            'thumbnail' => ''
+        ]);
+        
+        
     }
 }

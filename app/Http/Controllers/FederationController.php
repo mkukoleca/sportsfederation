@@ -14,7 +14,9 @@ class FederationController extends Controller
      */
     public function index()
     {
-        //
+        return view('federation', [
+            'federations' => Federation::all(),
+            ]);
     }
 
     /**
@@ -22,10 +24,7 @@ class FederationController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        //
-    }
+   
 
     /**
      * Store a newly created resource in storage.
@@ -35,7 +34,21 @@ class FederationController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
+            $data = $request->only(['name', 'history', 'owner', 'description']);
+         
+            
+                if(count($data) > 0){
+                    $federation = new Federation();
+                    $federation->name = $data['name'];
+                    $federation->history = $data['history'];
+                    $federation->owner = $data['owner'];
+                    $federation->description = $data['description'];
+                    $federation->save();
+        
+                    return redirect("/federation");        
+                    } 
+             return view('/newFederation');
     }
 
     /**
@@ -44,10 +57,7 @@ class FederationController extends Controller
      * @param  \App\Federation  $federation
      * @return \Illuminate\Http\Response
      */
-    public function show(Federation $federation)
-    {
-        //
-    }
+  
 
     /**
      * Show the form for editing the specified resource.
@@ -57,7 +67,7 @@ class FederationController extends Controller
      */
     public function edit(Federation $federation)
     {
-        //
+        return view('federationEdit', compact('federation'));
     }
 
     /**
@@ -67,9 +77,18 @@ class FederationController extends Controller
      * @param  \App\Federation  $federation
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Federation $federation)
+    public function update($id)
     {
-        //
+        $federation = Federation::findOrFail($id);
+        
+        $federation->name = request('name');
+        $federation->history = request('history');
+        $federation->president = request('president');
+        $federation->description = request('description');
+
+        $federation->save();
+
+        return redirect('/');
     }
 
     /**
@@ -78,8 +97,14 @@ class FederationController extends Controller
      * @param  \App\Federation  $federation
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Federation $federation)
+    public function destroy($id)
     {
-        //
+        
+            $federation = Federation::where('id', $id)->first();
+            return view('DeleteFederation',compact('club'));
+    }
+    public function clear($id){
+        $federation = Federation::where('id', $id)->delete();
+        return redirect('/federation');
     }
 }

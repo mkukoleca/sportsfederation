@@ -12,12 +12,14 @@ class ClubTableSeeder extends Seeder
     public function run()
     {
         DB::table('clubs')->insert([
-            'name' => 'Omladinski Rukometni Klub Čelinac',
-            'address' => 'Čelinac bb',
-            'website' => 'm.me/omladinskirukometniklub.celinac',
+            'name' => 'Boston Celtic',
+            'address' => 'Boston',
+            'email' => 'boston@look.me',
+            'website' => 'http://bostonceltic.com',
             'dateOfFoundation' => '2021-01-01',
-            'director' => '...',
-            'history' => '....'
+            'director' => 'Isaia',
+            'history' => 'They are good!!!',
+            'thumbnail' => ' '
             ]);
     }
 }

@@ -6,5 +6,16 @@ use Illuminate\Database\Eloquent\Model;
 
 class StaffType extends Model
 {
-    //
+    protected $table = "staff_types";
+    public $timestamps = false;
+    
+    protected $fillable = [
+        'id', 'name'
+    ];
+/*
+    public function type(){
+        return $this->hasMany('App\Staff');
+
+    }  
+  */
 }
