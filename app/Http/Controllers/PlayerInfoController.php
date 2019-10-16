@@ -27,7 +27,7 @@ class PlayerInfoController extends Controller
      */
     public function create()
     {
-        return view('/playersInfo/registerPlayer', ['selections'=>Selection::all()],['clubs'=>Club::all()]);
+        return view('/playersInfo/registerPlayer', ['selection'=> Selection::all(), 'clubs' => Club::all()]);
     }
     /**
      * Store a newly created resource in storage.
@@ -55,14 +55,13 @@ class PlayerInfoController extends Controller
             $player->currentClub=$data['currentClub'];
             $player->selection=$data['selection'];
 
-            if($request->hasFile('thumbnail')) {
-                $name = $player->name. '.' .$request->thumbnail->extension();
-                $folder = 'profile/images/';
-                $request->thumbnail->move(public_path($folder),$name);
+            if($request->hasFile('thumbnail')){
+                $name = $player->name.time().'.'.$request->thumbnail->extension();
+                $folder = '/profile/images/';
+                $request->thumbnail->move(public_path($folder), $name);
 
                 $player->thumbnail=$folder.$name;
             }
-
 
             $player->save();
             return redirect('/playersInfo/players');        

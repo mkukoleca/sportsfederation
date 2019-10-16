@@ -29,15 +29,15 @@
       <input placeholder="Description" type="text" name ="description" tabindex="4" required>
     </fieldset>
     <fieldset>
-    <span>Position</span>
+    <span>Pozicija</span>
     <select name="position">
-      <option value="Left winger">Left winger</option>
-      <option value="Right winger">Right winger</option>
-      <option value="Left back">Left back</option>
-      <option value="Center">Center</option>
-      <option value="Right back">Right back</option>
-      <option value="Circle runner">Circle runner</option>
-      <option value="Goalkeeper">Goalkeeper</option>
+      <option value="lijevo_krilo">Lijevo krilo</option>
+      <option value="desno_krilo">Desno krilo</option>
+      <option value="lijevi_bek">Lijevi bek</option>
+      <option value="srednji_bek">Srednji bek</option>
+      <option value="desni_bek">Desni bek</option>
+      <option value="pivot">Pivot</option>
+      <option value="golman">Golman</option>
     </select> 
     </fieldset>
     <fieldset>
@@ -307,19 +307,27 @@
     </fieldset>
     <fieldset>
     <span>Current Club</span>
+    @if(count($clubs) > 0)
     <select name="currentClub">
       @foreach ($clubs as $club)
       <option value="{{$club->id}}">{{$club->name}}</option>
       @endforeach
-       </select>
+    </select>
+    @else 
+      <h3>Please register club first </h3><a href="/">Register club</a>
+      @endif
     </fieldset>
     <fieldset>
     <span>Selection</span>
+    @if(count($selection) > 0)
       <select name="selection">
-      @foreach ($selections as $s)
+      @foreach ($selection as $s)
       <option value="{{$s->id}}">{{$s->category}}</option>
       @endforeach
        </select>
+       @else 
+       <h3>Please register selection first</h3><a href="/selection">Register selection</a>
+      @endif
     </fieldset>
     <fieldset>
       <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
@@ -329,3 +337,5 @@
 </div>
 </body>
 </html>
+
+
