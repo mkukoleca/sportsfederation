@@ -96,7 +96,9 @@ class PlayerInfoController extends Controller
     public function edit($id)
     {
         $player = PlayerInfo::where('id', $id)->first();
-        return view('/playersinfo/updatePlayer',compact('player'));
+        $clubs= Club::all();
+        $selection = Selection::all();
+        return view('/playersinfo/updatePlayer',compact(['player', 'clubs', 'selection']));
     }
 
     /**

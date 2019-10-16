@@ -50,13 +50,26 @@
     Club history:<br><textarea placeholder="Club history" type="text" name ="clubHistory" value="{{$player->clubHistory}}" tabindex="11" >{{$player->clubHistory}}</textarea>
     </fieldset>
     <fieldset>
-    Current club:<br><input placeholder="Current club" type="text" name ="currentClub" value="{{$player->currentClub}}" tabindex="12" >
-    </fieldset>
+      <span>Current Club</span>
+      <select name="currentClub">
+        @foreach ($clubs as $club)
+        <option value="{{$club->id}}">{{$club->name}}</option>
+        @endforeach
+      </select>
+      </fieldset>
+      <fieldset>
+        <span>Selection</span>
+          <select name="selection">
+          @foreach ($selection as $s)
+          <option value="{{$s->id}}">{{$s->category}}</option>
+          @endforeach
+           </select>
+        </fieldset>
     <fieldset>
-    Selection:<br><input placeholder="Selection" type="text" name ="selection" value="{{$player->selection}}" tabindex="13" >
-    </fieldset>
-    <fieldset>
-      <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Update</button>
+      <button name="submit" type="submit" id="contact-submit" data-submit="...Sending"
+      @if ((count($selection) == 0) || (count($clubs) == 0))
+          disabled   
+      @endif>Update</button>
     </fieldset>
     <p class="copyright">Designed by <a href="https://colorlib.com" target="_blank" title="Colorlib">Colorlib</a></p>
   </form>
