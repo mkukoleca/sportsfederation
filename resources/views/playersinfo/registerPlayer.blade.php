@@ -23,21 +23,21 @@
       <input placeholder="Name" type="text" name ="name" tabindex="2" required>
     </fieldset>
     <fieldset>
-      <input placeholder="Surname" type="text" name ="surname" tabindex="3">
+      <input placeholder="Surname" type="text" name ="surname" tabindex="3" required>
     </fieldset>
     <fieldset>
       <input placeholder="Description" type="text" name ="description" tabindex="4" required>
     </fieldset>
     <fieldset>
-    <span>Pozicija</span>
+    <span>Position</span>
     <select name="position">
-      <option value="lijevo_krilo">Lijevo krilo</option>
-      <option value="desno_krilo">Desno krilo</option>
-      <option value="lijevi_bek">Lijevi bek</option>
-      <option value="srednji_bek">Srednji bek</option>
-      <option value="desni_bek">Desni bek</option>
-      <option value="pivot">Pivot</option>
-      <option value="golman">Golman</option>
+    <option value="Left winger">Left winger</option>
+      <option value="Right winger">Right winger</option>
+      <option value="Left back">Left back</option>
+      <option value="Center">Center</option>
+      <option value="Right back">Right back</option>
+      <option value="Circle runner">Circle runner</option>
+      <option value="Goalkeeper">Goalkeeper</option>
     </select> 
     </fieldset>
     <fieldset>

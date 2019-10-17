@@ -52,7 +52,7 @@ class PlayerInfoController extends Controller
             $player->dateOfBirth=$data['dateOfBirth'];
             $player->citizenship=$data['citizenship'];
             $player->clubHistory=$data['clubHistory'];
-            $player->currentClub=$data['currentClub'];
+            $player->club_id=$data['club_id'];
             $player->selection=$data['selection'];
 
             if($request->hasFile('thumbnail')){
@@ -122,7 +122,7 @@ class PlayerInfoController extends Controller
         $player->dateOfBirth=$data['dateOfBirth'];
         $player->citizenship=$data['citizenship'];
         $player->clubHistory=$data['clubHistory'];
-        $player->currentClub=$data['currentClub'];
+        $player->club_id=$data['club_id'];
         $player->selection=$data['selection'];
         
 
