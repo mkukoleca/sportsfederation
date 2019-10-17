@@ -30,7 +30,7 @@ class CreatePlayerInfosTable extends Migration
             $table->string('selection');
             $table->timestamps();
 
-            $table->foreign('clubd') -> references('id') -> on('clubs');
+            $table->foreign('clubId') -> references('id') -> on('clubs');
         });
     }
 
