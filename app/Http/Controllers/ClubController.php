@@ -9,7 +9,7 @@ use \Illuminate\Http\Response;
 class ClubController extends Controller
 {
     public function index(){
-        return view('/club.clubs', ['clubs' => Club::all()]);
+        return view('club.clubs', ['clubs' => Club::all()]);
     }
 
     public function store(Request $request){
@@ -27,7 +27,7 @@ class ClubController extends Controller
             $club->history = $data['history'];
             $club->save();
 
-            return redirect("/clubs");        
+            return redirect("/");        
             } 
      return view('/club.newClub');
 }
@@ -51,7 +51,7 @@ class ClubController extends Controller
         $club->history=$data['history'];
         $club->save();
     
-        return redirect('/clubs');
+        return redirect('/');
     }
 
     public function destroy($id){
@@ -61,15 +61,15 @@ class ClubController extends Controller
     
     public function clear($id){
         $club = Club::where('id', $id)->delete();
-        return redirect('/clubs');
+        return redirect('/');
     }
 
+
+    /*
     public function getclub(club $club){
         return view('/editClub', compact('club'));
 
 
     }
-
-
-    
+    */
 }

@@ -23,17 +23,12 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        
         
         parent::boot();
 
-      
-
         Route::model('cccc',\App\PlayerInfo::class);
        
-
-       // Route::model('Club', \App\Club::class);
-       Route::model('Staff', \App\Staff::class);
 
     }
 

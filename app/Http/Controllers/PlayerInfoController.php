@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Selection;
 use App\Club;
 
+
 class PlayerInfoController extends Controller
 {
     /**
@@ -26,7 +27,7 @@ class PlayerInfoController extends Controller
      */
     public function create()
     {
-        return view('/playersInfo/registerPlayer', ['selections'=>Selection::all()],['clubs'=>Club::all()]);
+        return view('/playersInfo/registerPlayer', ['selection'=> Selection::all(), 'clubs' => Club::all()]);
     }
     /**
      * Store a newly created resource in storage.
@@ -54,14 +55,13 @@ class PlayerInfoController extends Controller
             $player->clubId=$data['clubId'];
             $player->selection=$data['selection'];
 
-            if($request->hasFile('thumbnail')) {
-                $name = $player->name. '.' .$request->thumbnail->extension();
-                $folder = 'profile/images/';
-                $request->thumbnail->move(public_path($folder),$name);
+            if($request->hasFile('thumbnail')){
+                $name = $player->name.time().'.'.$request->thumbnail->extension();
+                $folder = '/profile/images/';
+                $request->thumbnail->move(public_path($folder), $name);
 
                 $player->thumbnail=$folder.$name;
             }
-
 
             $player->save();
             return redirect('/playersInfo/players');        
@@ -97,7 +97,9 @@ class PlayerInfoController extends Controller
     {
 
         $player = PlayerInfo::where('id', $id)->first();
-        return view('/playersinfo/updatePlayer',compact('player'));
+        $clubs= Club::all();
+        $selection = Selection::all();
+        return view('/playersinfo/updatePlayer',compact(['player', 'clubs', 'selection']));
     }
 
     /**

@@ -3,9 +3,18 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Club;
 
 class PlayerInfo extends Model
+
 {
+
+    public function club() {
+        return $this->belongsTo("App\Club");
+    }
+    public function selection() {
+        return $this->belongsTo("App\Selection");
+    }
   
 
     /**

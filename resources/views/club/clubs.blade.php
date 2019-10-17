@@ -12,7 +12,7 @@
 
 
    
-    <title>Document</title>
+    <title>Rukometni savez Republike Srpske</title>
 </head>
 <body>
 
@@ -33,8 +33,10 @@
             <th>Date of foundation</th>
             <th>Director</th>
             <th>History</th>
+            <th>Thumbnail</th>
             <th>Edit</th>
             <th>Delete</th>
+            
             </tr>
   </thead>
   <tbody>
@@ -48,13 +50,9 @@
             <td>{{$club->dateOfFoundation}}</td>
             <td>{{$club->director}}</td>
             <td>{{$club->history}}</td>
-            
-
-
-
+            <td>{{$club->thumbnail}}</td>
            <td><button><a href="editClub/{{$club->id}}">Edit</button></td>
            <td><button><a href="deleteClub/{{$club->id}}">Delete</a></button></td>
-           <td>{{$club->thumbnail}}</td>
             </tr>
            
             @endforeach

@@ -53,9 +53,6 @@
     Note:<br><textarea placeholder="Note" type="text" name ="note" min="1" value="{{$game->note}}" tabindex="12" ></textarea>
     </fieldset>
     <fieldset>
-    Selection:<br><input placeholder="Selection" type="text" name ="selection" value="{{$game->selection}}" tabindex="13" >
-    </fieldset>
-    <fieldset>
       <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Update</button>
     </fieldset>
     <p class="copyright">Designed by <a href="https://colorlib.com" target="_blank" title="Colorlib">Colorlib</a></p>

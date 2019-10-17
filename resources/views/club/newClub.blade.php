@@ -21,7 +21,7 @@
 
 <div class="col-6">
 <br><br>
-<button type="button" class="btn btn-secondary btn-lg btn-block"><a href="../clubs">Back</a></button>
+<button type="button" class="btn btn-secondary btn-lg btn-block"><a href="/">Back</a></button>
 
 <div class="container">  
   <form id="contact" action="{{route('createclub')}}" method="POST">
@@ -47,6 +47,9 @@
     </fieldset>
     <fieldset>
       <textarea placeholder="History" type="text" name ="history" tabindex="7" required></textarea>
+    </fieldset>
+    <fieldset>
+    Thumbnail:<br><textarea placeholder="Thumbnail" type="text" name ="thumbnail" tabindex="8" ></textarea>
     </fieldset>
     <fieldset>
       <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>

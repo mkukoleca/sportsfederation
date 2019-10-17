@@ -48,6 +48,9 @@
     History:<br><textarea placeholder="History" type="text" name ="history" value="{{$club->history}}" tabindex="6" ></textarea>
     </fieldset>
     <fieldset>
+    Thumbnail:<br><textarea placeholder="Thumbnail" type="text" name ="thumbnail" value="{{$club->thumbnail}}" tabindex="8" ></textarea>
+    </fieldset>
+    <fieldset>
       <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Update</button>
     </fieldset>
     <p class="copyright">Designed by Sharks</p>

@@ -6,6 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Game extends Model
 {
+
+    public function event() {
+        return $this->belongsTo("App\Event");
+    }
+  
     /**
      * The attributes that are mass assignable.
      *
