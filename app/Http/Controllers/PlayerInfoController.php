@@ -36,8 +36,8 @@ class PlayerInfoController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->only(['thumbnail', 'name', 'surname', 'description', 'position', 'height', 'weight', 'jerseyNumber', 'dateOfBirth', 'citizenship', 'clubHistory', 'currentClub', 'selection' ]);
-
+        $data = $request->only(['thumbnail', 'name', 'surname', 'description', 'position', 'height', 'weight', 'jerseyNumber', 'dateOfBirth', 'citizenship', 'clubHistory', 'clubId', 'selection' ]);
+        //dd($data);
         if(count($data) > 0){
             $player = new PlayerInfo();
           
@@ -51,7 +51,7 @@ class PlayerInfoController extends Controller
             $player->dateOfBirth=$data['dateOfBirth'];
             $player->citizenship=$data['citizenship'];
             $player->clubHistory=$data['clubHistory'];
-            $player->currentClub=$data['currentClub'];
+            $player->clubId=$data['clubId'];
             $player->selection=$data['selection'];
 
             if($request->hasFile('thumbnail')) {
@@ -80,7 +80,7 @@ class PlayerInfoController extends Controller
     {
         //return PlayerInfo::find($id);
         $player = PlayerInfo::where('id', $id)->first();
-        return view("/playersInfo/singlePlayer", compact('player'));
+        return view("/playersInfo/singlePlayer", ['player'=>PlayerInfo::all(),'selections'=>Selection::all(),'clubs'=>Club::all()]);
 
         //return view('/playersinfo/singlePlayer'); je kontrolni cisto da vidim da li radi ruta
 
@@ -95,6 +95,7 @@ class PlayerInfoController extends Controller
      */
     public function edit($id)
     {
+
         $player = PlayerInfo::where('id', $id)->first();
         return view('/playersinfo/updatePlayer',compact('player'));
     }
@@ -108,8 +109,9 @@ class PlayerInfoController extends Controller
      */
     public function update($id, Request $request)
     {
-        $data = $request->only(['thumbnail', 'name', 'surname', 'description', 'position', 'height', 'weight', 'jerseyNumber', 'dateOfBirth', 'citizenship', 'clubHistory', 'currentClub', 'selection', 'created_at', 'updated_at',]);
-
+        $data = $request->only(['thumbnail', 'name', 'surname', 'description', 'position', 'height', 'weight', 'jerseyNumber', 'dateOfBirth', 'citizenship', 'clubHistory', 'clubId', 'selection', 'created_at', 'updated_at',]);
+        
+        //dd($data);
         $player=PlayerInfo::where('id', $id)->first();
         $player->thumbnail=$data['thumbnail'];
         $player->name=$data['name'];
@@ -122,7 +124,7 @@ class PlayerInfoController extends Controller
         $player->dateOfBirth=$data['dateOfBirth'];
         $player->citizenship=$data['citizenship'];
         $player->clubHistory=$data['clubHistory'];
-        $player->currentClub=$data['currentClub'];
+        $player->clubId=$data['clubId'];
         $player->selection=$data['selection'];
         
 

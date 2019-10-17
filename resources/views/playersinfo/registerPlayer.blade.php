@@ -30,7 +30,7 @@
     </fieldset>
     <fieldset>
     <span>Pozicija</span>
-    <select>
+    <select name="position">
       <option value="lijevo_krilo">Lijevo krilo</option>
       <option value="desno_krilo">Desno krilo</option>
       <option value="lijevi_bek">Lijevi bek</option>
@@ -54,7 +54,7 @@
     </fieldset>
     <fieldset>
     <span>Citizenship</span>
-    <select name="country">
+    <select name="citizenship">
                 <option value="Afghanistan">Afghanistan</option>
                 <option value="Åland Islands">Åland Islands</option>
                 <option value="Albania">Albania</option>
@@ -307,7 +307,7 @@
     </fieldset>
     <fieldset>
     <span>Current Club</span>
-    <select name="currentClub">
+    <select name="clubId">
       @foreach ($clubs as $club)
       <option value="{{$club->id}}">{{$club->name}}</option>
       @endforeach

@@ -32,13 +32,13 @@
     Position:<br><input placeholder="Position" type="text" name ="position" value="{{$player->position}}" tabindex="5" >
     </fieldset>
     <fieldset>
-    Height:<br><input placeholder="Height" type="number" name ="height" value="{{$player->height}}" tabindex="6" >
+    Height:<br><input placeholder="Height" type="number" min="1" name ="height" value="{{$player->height}}" tabindex="6" >
     </fieldset>
     <fieldset>
-    Weight:<br><input placeholder="Weight" type="number" name ="weight" value="{{$player->weight}}" tabindex="7" >
+    Weight:<br><input placeholder="Weight" type="number" min="1" name ="weight" value="{{$player->weight}}" tabindex="7" >
     </fieldset>
     <fieldset>
-    Jersey number:<br><input placeholder="Jersey number" type="number" name ="jerseyNumber" value="{{$player->jerseyNumber}}" tabindex="8" >
+    Jersey number:<br><input placeholder="Jersey number" type="number" min="1" name ="jerseyNumber" value="{{$player->jerseyNumber}}" tabindex="8" >
     </fieldset>
     <fieldset>
     Date of birth:<br><input placeholder="Date of birth" type="date" name ="dateOfBirth" value="{{$player->dateOfBirth}}" tabindex="9" >
@@ -50,7 +50,7 @@
     Club history:<br><textarea placeholder="Club history" type="text" name ="clubHistory" value="{{$player->clubHistory}}" tabindex="11" >{{$player->clubHistory}}</textarea>
     </fieldset>
     <fieldset>
-    Current club:<br><input placeholder="Current club" type="text" name ="currentClub" value="{{$player->currentClub}}" tabindex="12" >
+    Current club:<br><input placeholder="clubId" type="text" name ="clubId" value="{{$player->clubId}}" tabindex="12" >
     </fieldset>
     <fieldset>
     Selection:<br><input placeholder="Selection" type="text" name ="selection" value="{{$player->selection}}" tabindex="13" >

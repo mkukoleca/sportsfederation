@@ -24,7 +24,7 @@
             </tr>
             <tr>
                 <th>Event</th>
-                <td>{{$game->event}}</td>
+                <td>{{$game->eventId}}</td>
             </tr>
             <tr>
                 <th>Date</th>
@@ -59,11 +59,11 @@
                 <td>{{$game -> round}}</td>
             </tr>
             <tr>
-                <th>SkoresHome</th>
+                <th>Scores Home</th>
                 <td>{{$game -> scoresHome}}</td>
             </tr>
             <tr>
-                <th>SkoresGuest</th>
+                <th>Scores Guest</th>
                 <td>{{$game -> scoresGuest}}</td>
             </tr>
             <tr>

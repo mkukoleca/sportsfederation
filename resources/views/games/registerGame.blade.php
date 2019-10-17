@@ -19,7 +19,7 @@
     
     <fieldset>
       <span>Event</span>
-      <select name="event">
+      <select name="eventId">
         @foreach ($events as $event)
           <option value="{{$event->id}}">{{$event->type}}</option>
         @endforeach
@@ -51,35 +51,35 @@
     <fieldset>
       <span>Referee1</span>
               <select name="referee1">
-                @foreach ($staff as $stff)
-                <option value="{{$stff->id}}">{{$stff->name}}</option>
+                @foreach ($staffs as $staff)
+                <option value="{{$staff->id}}">{{$staff->name}}</option>
                 @endforeach
               </select>
     </fieldset>
     <fieldset>
       <span>Referee2</span>
                 <select name="referee2">
-                  @foreach ($staff as $stff)
-                  <option value="{{$stff->id}}">{{$stff->name}}</option>
+                  @foreach ($staffs as $staff)
+                  <option value="{{$staff->id}}">{{$staff->name}}</option>
                   @endforeach
                 </select>
     </fieldset>
     <fieldset>
       <span>Delegate</span>
                 <select name="delegate">
-                  @foreach ($staff as $stff)
-                  <option value="{{$stff->id}}">{{$stff->name}}</option>
+                  @foreach ($staffs as $staff)
+                  <option value="{{$staff->id}}">{{$staff->name}}</option>
                   @endforeach
                 </select>
-    </fieldset>
+    </fieldset> 
     <fieldset>
       <input placeholder="Round" type="number" name ="round" tabindex="9" required>
     </fieldset>
     <fieldset>
-      <input placeholder="Scores Home" type="number" name ="scoresHome" tabindex="10" required>
+      <input placeholder="Scores Home" type="number" min="1" name ="scoresHome" tabindex="10" required>
     </fieldset>
     <fieldset>
-      <input placeholder="Scores Guest" type="number" name ="scoresGuest" tabindex="11" required>
+      <input placeholder="Scores Guest" type="number" min="1" name ="scoresGuest" tabindex="11" required>
     </fieldset>
     <fieldset>
       <textarea placeholder="Note" type="text" name ="note" tabindex="12" required></textarea>
