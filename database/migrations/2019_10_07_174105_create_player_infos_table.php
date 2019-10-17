@@ -26,7 +26,7 @@ class CreatePlayerInfosTable extends Migration
             $table->date('dateOfBirth');
             $table->string('citizenship');
             $table->string('clubHistory');
-            $table->string('club_id')->unsigned();
+            $table->string('clubId')->unsigned();
             $table->string('selection');
             $table->timestamps();
 

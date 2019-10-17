@@ -17,7 +17,7 @@
   {{csrf_field()}}
     <h3>Update Game</h3>
     <fieldset>
-    Event:<br><input placeholder="Event"  type="text" name ="event_id" value="{{$game->event_id}}" tabindex="1"  autofocus>
+    Event:<br><input placeholder="Event"  type="text" name ="eventId" value="{{$game->eventId}}" tabindex="1"  autofocus>
     </fieldset>
     <fieldset>
     Date:<br><input placeholder=" Date" type="date" name =" date" value="{{$game-> date}}" tabindex="2" >
@@ -41,16 +41,16 @@
     Delegate:<br><input placeholder="Delegate" type="text" name =" delegate" value="{{$game-> delegate}}" tabindex="8" >
     </fieldset>
     <fieldset>
-    Round:<br><input placeholder=" Round" type="number" name =" round" value="{{$game-> round}}" tabindex="9" >
+    Round:<br><input placeholder=" Round" type="number" min="1" name =" round" value="{{$game-> round}}" tabindex="9" >
     </fieldset>
     <fieldset>
-    Scores Home:<br><input placeholder="ScoresHome" type="number" name ="scoresHome" value="{{$game->scoresHome}}" tabindex="10" >
+    Scores Home:<br><input placeholder="ScoresHome" type="number" min="1" name ="scoresHome" value="{{$game->scoresHome}}" tabindex="10" >
     </fieldset>
     <fieldset>
     Scores Guest:<br><input placeholder="ScoresGuest" type="number" name ="scoresGuest" value="{{$game->scoresGuest}}" tabindex="11" >
     </fieldset>
     <fieldset>
-    Note:<br><textarea placeholder="Note" type="text" name ="note" value="{{$game->note}}" tabindex="12" ></textarea>
+    Note:<br><textarea placeholder="Note" type="text" name ="note" min="1" value="{{$game->note}}" tabindex="12" ></textarea>
     </fieldset>
     <fieldset>
       <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Update</button>

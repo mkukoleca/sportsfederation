@@ -307,8 +307,12 @@
     </fieldset>
     <fieldset>
     <span>Current Club</span>
+    <select name="clubId">
     @if(count($clubs) > 0)
+<<<<<<< HEAD
     <select name="club_id">
+=======
+>>>>>>> c919506d6d945cde1248b9a37c453bb983fa32fa
       @foreach ($clubs as $club)
       <option value="{{$club->id}}">{{$club->name}}</option>
       @endforeach
@@ -330,7 +334,10 @@
       @endif
     </fieldset>
     <fieldset>
-      <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+      <button name="submit" type="submit" id="contact-submit" data-submit="...Sending" 
+      @if ((count($selection) == 0) || (count($clubs) == 0))
+          disabled   
+      @endif >Submit</button>
     </fieldset>
     <p class="copyright">Designed by <a href="https://colorlib.com" target="_blank" title="Colorlib">Colorlib</a></p>
   </form>

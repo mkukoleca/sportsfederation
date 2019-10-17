@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Game;
 use Illuminate\Http\Request;
+use App\Club;
+use App\Staff;
+use App\Event;
+
 
 class GameController extends Controller
 {
@@ -24,7 +28,7 @@ class GameController extends Controller
      */
     public function create()
     {
-        return view('/games/registerGame');
+        return view('/games/registerGame',['clubs'=>Club::all()],['events'=>Event::all()], ['staffs'=>Staff::all()]);
     }
 
     /**
@@ -35,10 +39,10 @@ class GameController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->only([ 'event', 'date', 'place', 'home', 'guest', 'referee1', 'referee2', 'delegate', 'round', 'scoresHome', 'scoresGuest', 'note' ]);
+        $data = $request->only([ 'eventId', 'date', 'place', 'home', 'guest', 'referee1', 'referee2', 'delegate', 'round', 'scoresHome', 'scoresGuest', 'note' ]);
         if(count($data) > 0){
             $game = new Game();
-            $game->event=$data['event_id'];
+            $game->eventId=$data['eventId'];
             $game->date=$data['date'];
             $game->place=$data['place'];
             $game->home=$data['home'];
@@ -82,8 +86,7 @@ class GameController extends Controller
     public function edit($id)
     {
         $game = Game::where('id', $id)->first();
-        dd($game);
-        return view("games/updateGame", compact('game'));
+        return view("games/updateGame", ['game'=>Game::all()],['clubs'=>Club::all()],['events'=>Event::all()], ['staffs'=>Staff::all()]);
     }
 
     /**
@@ -95,10 +98,10 @@ class GameController extends Controller
      */
     public function update($id, Request $request)
     {
-        $data = $request->only([ 'event', 'date', 'place', 'home', 'guest', 'referee1', 'referee2', 'delegate', 'round', 'scoresHome', 'scoresGuest', 'note' ]);
+        $data = $request->only([ 'eventId', 'date', 'place', 'home', 'guest', 'referee1', 'referee2', 'delegate', 'round', 'scoresHome', 'scoresGuest', 'note' ]);
         
         $game = Game::where('id', $id)->first();
-        $game->event=$data['event_id'];
+        $game->eventId=$data['eventId'];
         $game->date=$data['date'];
         $game->place=$data['place'];
         $game->home=$data['home'];

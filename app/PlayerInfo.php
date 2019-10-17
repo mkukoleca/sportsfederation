@@ -34,7 +34,7 @@ class PlayerInfo extends Model
     'dateOfBirth',
     'citizenship',
     'clubHistory',
-    'club_id',
+    'clubId',
     'selection',
     'created_at',
     'updated_at',
