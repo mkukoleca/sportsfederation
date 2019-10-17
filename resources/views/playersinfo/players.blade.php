@@ -68,11 +68,7 @@
             </tr>
             <tr>
                 <th>Current club</th>
-<<<<<<< HEAD
-                <td>{{$player -> club_id}}</td>
-=======
                 <td>{{$player -> clubId}}</td>
->>>>>>> c919506d6d945cde1248b9a37c453bb983fa32fa
             </tr>
             
             <tr>

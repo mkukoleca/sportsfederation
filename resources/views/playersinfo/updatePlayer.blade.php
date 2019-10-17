@@ -296,15 +296,8 @@
     Club history:<br><textarea placeholder="Club history" type="text" name ="clubHistory" value="{{$player->clubHistory}}" tabindex="11" >{{$player->clubHistory}}</textarea>
     </fieldset>
     <fieldset>
-<<<<<<< HEAD
-    Current club:<br><input placeholder="Current club" type="text" name ="club_id" value="{{$player->club_id}}" tabindex="12" >
-    </fieldset>
-    <fieldset>
-    Selection:<br><input placeholder="Selection" type="text" name ="selection" value="{{$player->selection}}" tabindex="13" >
-    </fieldset>
-=======
       <span>Current Club</span>
-      <select name="currentClub">
+      <select name="clubId">
         @foreach ($clubs as $club)
         <option value="{{$club->id}}">{{$club->name}}</option>
         @endforeach
@@ -318,7 +311,6 @@
           @endforeach
            </select>
         </fieldset>
->>>>>>> c919506d6d945cde1248b9a37c453bb983fa32fa
     <fieldset>
       <button name="submit" type="submit" id="contact-submit" data-submit="...Sending"
       @if ((count($selection) == 0) || (count($clubs) == 0))

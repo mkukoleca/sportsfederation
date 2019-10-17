@@ -309,10 +309,6 @@
     <span>Current Club</span>
     <select name="clubId">
     @if(count($clubs) > 0)
-<<<<<<< HEAD
-    <select name="club_id">
-=======
->>>>>>> c919506d6d945cde1248b9a37c453bb983fa32fa
       @foreach ($clubs as $club)
       <option value="{{$club->id}}">{{$club->name}}</option>
       @endforeach

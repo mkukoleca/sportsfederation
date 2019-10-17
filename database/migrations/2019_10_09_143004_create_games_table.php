@@ -15,7 +15,7 @@ class CreateGamesTable extends Migration
     {
         Schema::create('games', function (Blueprint $table) {
         $table->bigIncrements('id'); 
-        $table->string('eventId')->unsigned();  
+        $table->bigInteger('eventId')->unsigned();  
         $table->date('date');
         $table->string('place');
         $table->string('home');
@@ -29,7 +29,7 @@ class CreateGamesTable extends Migration
         $table->string('note');
         $table->timestamps();
 
-        $table->foreign('event_id') -> references('id') -> on('events');
+        $table->foreign('eventId') -> references('id') -> on('events');
         });
     }
 
