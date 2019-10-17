@@ -308,7 +308,7 @@
     <fieldset>
     <span>Current Club</span>
     @if(count($clubs) > 0)
-    <select name="currentClub">
+    <select name="club_id">
       @foreach ($clubs as $club)
       <option value="{{$club->id}}">{{$club->name}}</option>
       @endforeach

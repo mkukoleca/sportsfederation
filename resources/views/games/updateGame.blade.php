@@ -17,7 +17,7 @@
   {{csrf_field()}}
     <h3>Update Game</h3>
     <fieldset>
-    Event:<br><input placeholder="Event"  type="text" name ="event" value="{{$game->event}}" tabindex="1"  autofocus>
+    Event:<br><input placeholder="Event"  type="text" name ="event_id" value="{{$game->event_id}}" tabindex="1"  autofocus>
     </fieldset>
     <fieldset>
     Date:<br><input placeholder=" Date" type="date" name =" date" value="{{$game-> date}}" tabindex="2" >

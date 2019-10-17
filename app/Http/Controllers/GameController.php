@@ -38,7 +38,7 @@ class GameController extends Controller
         $data = $request->only([ 'event', 'date', 'place', 'home', 'guest', 'referee1', 'referee2', 'delegate', 'round', 'scoresHome', 'scoresGuest', 'note' ]);
         if(count($data) > 0){
             $game = new Game();
-            $game->event=$data['event'];
+            $game->event=$data['event_id'];
             $game->date=$data['date'];
             $game->place=$data['place'];
             $game->home=$data['home'];
@@ -98,7 +98,7 @@ class GameController extends Controller
         $data = $request->only([ 'event', 'date', 'place', 'home', 'guest', 'referee1', 'referee2', 'delegate', 'round', 'scoresHome', 'scoresGuest', 'note' ]);
         
         $game = Game::where('id', $id)->first();
-        $game->event=$data['event'];
+        $game->event=$data['event_id'];
         $game->date=$data['date'];
         $game->place=$data['place'];
         $game->home=$data['home'];

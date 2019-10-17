@@ -18,7 +18,7 @@
     <h3>Add new Game</h3>
     
     <fieldset>
-      <input placeholder="Event" type="text" name ="event" tabindex="1" required>
+      <input placeholder="Event" type="text" name ="event_id" tabindex="1" required>
     </fieldset>
     <fieldset>
       <input placeholder="Date" type="date" name ="date" tabindex="2" required>

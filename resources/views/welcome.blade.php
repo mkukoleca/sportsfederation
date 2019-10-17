@@ -88,7 +88,7 @@
                     <a href="/index">Club</a>
                     <a href="/selection">Selection</a>
                     <a href="/event">Event</a>
-                    <a href="/gamesList">Games</a> 
+                    <a href="/games/gamesList">Games</a> 
                     <a href="/playersInfo/players">Players</a> 
                     
                 </div>

@@ -50,7 +50,7 @@
     Club history:<br><textarea placeholder="Club history" type="text" name ="clubHistory" value="{{$player->clubHistory}}" tabindex="11" >{{$player->clubHistory}}</textarea>
     </fieldset>
     <fieldset>
-    Current club:<br><input placeholder="Current club" type="text" name ="currentClub" value="{{$player->currentClub}}" tabindex="12" >
+    Current club:<br><input placeholder="Current club" type="text" name ="club_id" value="{{$player->club_id}}" tabindex="12" >
     </fieldset>
     <fieldset>
     Selection:<br><input placeholder="Selection" type="text" name ="selection" value="{{$player->selection}}" tabindex="13" >

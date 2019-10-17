@@ -24,7 +24,7 @@
             </tr>
             <tr>
                 <th>Event</th>
-                <td>{{$game->event}}</td>
+                <td>{{$game->event_id}}</td>
             </tr>
             <tr>
                 <th>Date</th>
