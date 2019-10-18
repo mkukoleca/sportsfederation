@@ -16,8 +16,8 @@
   <form id="contact" action="{{route('createSelection')}}" method="POST">
   {{csrf_field()}}
     <h3>Add new Selection</h3>
-    <fieldset>
-      <input  type="radio" value="Female" name ="gender" tabindex="1" required  >Female
+    <fieldset>Gender: <br>
+      <input  type="radio" value="Female" name ="gender" tabindex="1" required  >Female <br>
       <input  type="radio" value="Male" name ="gender" tabindex="1" required  >Male
 
     </fieldset>
@@ -30,8 +30,10 @@
       <textarea placeholder="History" type="text" name ="history" tabindex="3" required></textarea>
     </fieldset>
 
+
+
     <fieldset>
-      <input placeholder="CoachId" type="number" name="coachId" value="coachId" tabindex="4">
+      <input placeholder="StaffTypeId" type="number" name="staffTypeId" value="staffTypeId" tabindex="4">
     </fieldset>
 
     <fieldset>

@@ -11,26 +11,27 @@
     <title>Edit Selection</title>
 </head>
 <body>
-<button type="button" class="btn btn-secondary btn-lg btn-block"><a href="/selection">Back</a></button>
+<button type="button" class="btn btn-secondary btn-lg btn-block"><a href="/event">Back</a></button>
 <div class="container">  
-  <form id="contact" action="{{route('updateselection', $selection->id)}}" method="POST">
+  <form id="contact" action="{{route('updateevent', $event->id)}}" method="POST">
   {{csrf_field()}}
-    <h3>Update Selection</h3>
+    <h3>Update Event</h3>
     <fieldset>
-    Gender:<br><input placeholder="Gender"  type="text" name ="gender" value="{{$selection->gender}}" tabindex="1"  autofocus>
+    Type:<br>
+          <input  type="radio" value="League" name ="type" tabindex="1"  {{$event->type == 'League' ? 'checked' : '' }} >League <br>
+          <input  type="radio" value="Cup" name ="type" tabindex="1"  {{$event->type == 'Cup' ? 'checked' : '' }}>Cup <br>
+          <input  type="radio" value="Tournament" name ="type" tabindex="1" {{$event->type == 'Tournament' ? 'checked' : '' }} >Tournament <br>
     </fieldset>
     <fieldset>
-    Category:<br><input placeholder="Category" type="text" name ="category" value="{{$selection->category}}" tabindex="2" >
+    Name:<br><input placeholder="Name" type="text" name ="name" value="{{$event->name}}" tabindex="2" >
     </fieldset>
     <fieldset>
-    Coach Id:<br><input placeholder="CoachId" type="number" name ="coachId" value="{{$selection->coachId}}" tabindex="3">
+    Season:<br><input placeholder="Season" type="text" name ="season" value="{{$event->season}}" tabindex="3">
     </fieldset>
     <fieldset>
-    History:<br><input placeholder="History" type="text" name ="history" value="{{$selection->history}}" tabindex="4" >
+    Description:<br><input placeholder="Description" type="text" name ="description" value="{{$event->description}}" tabindex="4" >
     </fieldset>
-    <fieldset>
-    Club Id:<br><input placeholder="ClubId" type="number" name ="clubId" value="{{$selection->clubId}}" tabindex="5" >
-    </fieldset>
+   
     <fieldset>
       <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Update</button>
     </fieldset>
