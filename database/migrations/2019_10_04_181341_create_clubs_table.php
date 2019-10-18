@@ -18,10 +18,12 @@ class CreateClubsTable extends Migration
             $table->bigIncrements('id')->unsigned();
             $table->string('name');
             $table->string('address');
+            $table->string('email');
             $table->string('website');
             $table->date('dateOfFoundation');
             $table->string('director');
             $table->string('history')->nullable();
+            $table->string('thumbnail')->nullable();
             $table->timestamps();
         });
     }

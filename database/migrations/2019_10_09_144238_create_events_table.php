@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateStaffTable extends Migration
+class CreateEventsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,12 @@ class CreateStaffTable extends Migration
      */
     public function up()
     {
-        Schema::create('staff', function (Blueprint $table) {
-            $table->bigIncrements('id')->unsigned();
+        Schema::create('events', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->string('type');
             $table->string('name');
+            $table->string('season');
             $table->string('description');
-            $table->string('thumbnail');
-            $table->BigInteger('typeId')->unsigned();
             $table->timestamps();
         });
     }
@@ -30,9 +30,6 @@ class CreateStaffTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('staff');
+        Schema::dropIfExists('events');
     }
 }
-
-
-

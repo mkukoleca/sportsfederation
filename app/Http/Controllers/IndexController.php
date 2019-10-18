@@ -8,6 +8,6 @@ use App\Club;
 class IndexController extends Controller
 {
     public function index(){
-        return view('/index', ['clubs' => Club::all()]);
+        return view('/index', ['clubs'=> Club::all()]);
     }
 }
