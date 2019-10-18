@@ -17,12 +17,12 @@ class CreateFederationStaffTable extends Migration
 
         Schema::create('federation_staff', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('fed_id')->unsigned();
+            $table->bigInteger('federation_id')->unsigned();
             $table->bigInteger('staff_id')->unsigned();
             $table->bigInteger('staff_type_id')->unsigned();
             $table->timestamps();
 
-            $table->foreign('fed_id')->references('id')->on('federations');
+            $table->foreign('federation_id')->references('id')->on('federations');
             $table->foreign('staff_id')->references('id')->on('staffs');
             $table->foreign('staff_type_id')->references('id')->on('staff_types');
 

@@ -18,15 +18,18 @@ class CreateStaffsTable extends Migration
             $table->string('name');
             $table->string('lastname');
             $table->string('description');
-            $table->bigInteger('type_id')->nullable();
+            $table->bigInteger('type_id')->unsigned();
+            $table->string('thumbnail')->nullable();
+
             $table->timestamps();
 
-           // $table->foreign('type_id')->references('id')->on('staff_types');
+            $table->foreign('type_id')->references('id')->on('staff_types');
         });
 
         //Schema::enableForeignKeyConstraints();
     
     }
+
 
     /**
      * Reverse the migrations.

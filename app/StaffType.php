@@ -13,4 +13,12 @@ class StaffType extends Model
         'id', 'name'
     ];
 
+    public function staffs(){
+        
+        return $this->belongsToMany('App\Staff', 'federation_staff')->withPivot('staff_type_id');
+
+    }  
+
+     
+ 
 }

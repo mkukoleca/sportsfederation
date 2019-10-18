@@ -12,7 +12,7 @@ class FederationStaffTableSeeder extends Seeder
     public function run()
     {
         DB::table('federation_staff')->insert([
-            'fed_id' =>  1,
+            'federation_id' =>  1,
             'staff_id' => 1,
             'staff_type_id' => 1,
         ]);
