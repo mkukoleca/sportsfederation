@@ -28,8 +28,11 @@
             <th>Name</th>
             <th>Lastname</th>
             <th>Description</th>
+            <th>Thumbnail</th>
+
             <th>Edit</th>
             <th>Delete</th>
+            
         
             </tr>
   </thead>
@@ -41,8 +44,11 @@
             <td>{{$staff->name}}</td>
             <td>{{$staff->lastname}}</td>
             <td>{{$staff->description}}</td>
+
+            <td><img src="{{ url($staff->thumbnail) }}" alt="staff pic"></td>
+
            <td><button><a href="/editStaff/{{ $staff->id }}">Edit</a></button></td>
-           <td><button><a href="/deleteStaff/{{ $staff->id }}">Delete</a></button></td>
+           <td><a onclick="return confirm('DA LI STE SIGURNI DA ZELITE BRISATI?')" href="deleteStaff/{{$staff->id}}"><button>Delete</button></a></td>
             </tr>
            
             @endforeach

@@ -21,9 +21,9 @@
 <div class="col-6">
 <br><br>
 
-<button type="button" class="btn btn-secondary btn-lg btn-block"><a href="/">Back</a></button>
+<button type="button" class="btn btn-secondary btn-lg btn-block"><a href="/clubs">Back</a></button>
  
-  <form id="contact" action="{{route('updateclub', $club->id)}}" method="POST">
+  <form id="contact" action="{{route('updateclub', $club->id)}}" method="POST" enctype="multipart/form-data">
   {{csrf_field()}}
     <h3>Update Club</h3>
     <fieldset>
@@ -47,9 +47,11 @@
     <fieldset>
     History:<br><textarea placeholder="History" type="text" name ="history" value="{{$club->history}}" tabindex="6" ></textarea>
     </fieldset>
-    <fieldset>
-    Thumbnail:<br><textarea placeholder="Thumbnail" type="text" name ="thumbnail" value="{{$club->thumbnail}}" tabindex="8" ></textarea>
+
+    <fieldset> Club image:
+      <input type="file" name="thumbnail" value="{{ $club->thumbnail }}" tabindex="7" required>{{ $club->thumbnail }}
     </fieldset>
+
     <fieldset>
       <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Update</button>
     </fieldset>

@@ -11,6 +11,6 @@ class FederationStaff extends Model
 
     protected $fillable = [
 
-        'fed_id', 'staff_id', 'staff_type_id'
+        'federation_id', 'staff_id', 'staff_type_id'
     ];
 }

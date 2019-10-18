@@ -65,8 +65,9 @@ class FederationController extends Controller
      * @param  \App\Federation  $federation
      * @return \Illuminate\Http\Response
      */
-    public function edit(Federation $federation)
+    public function edit($id)
     {
+        $federation = Federation::findOrFail($id);
         return view('federationEdit', compact('federation'));
     }
 

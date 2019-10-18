@@ -17,13 +17,14 @@ class Club extends Model
     ];
 
     public function selection() {
-        return $this->belongsTo("App\Selection");
+        return $this->hasMany("App\Selection");
     }
 
     public function players() {
         return $this->hasMany("App\PlayerInfo");
     }
+
     public function games() {
         return $this->hasMany("App\Game");
-    }    
+    }
 }

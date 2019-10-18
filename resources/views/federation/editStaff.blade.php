@@ -20,20 +20,44 @@
 <button type="button" class="btn btn-secondary btn-lg btn-block"><a href="/staffs">Back</a></button>
 
 <div class="container">  
-  <form id="contact" method="POST" action="/editStaff/{{ $staff->id }}">
+  <form id="contact" method="POST" action="/editStaff/{{ $staff->id }}" enctype="multipart/form-data">
   
   @csrf
     <h3>Edit Staff Member</h3>
 
     
     <fieldset>
-    Name:<p><input type="text" name ="name" tabindex="1" required autofocus value="{{ $staff['name'] }}">
+    Name:<p><input type="text" name ="name" tabindex="1" required autofocus value="{{ $staff->name }}">
     </fieldset>
     <fieldset>
-    Lastname:<p><input type="text" name ="lastname" tabindex="2" required value="{{ $staff['lastname'] }}">
+    Lastname:<p><input type="text" name ="lastname" tabindex="2" required value="{{ $staff->lastname }}">
     </fieldset>
     <fieldset>
-    Description:<p><textarea type="text" name ="description" tabindex="3"required value="{{ $staff['description'] }}">{{ $staff['description'] }}</textarea>
+    Description:<p><textarea type="text" name ="description" tabindex="3"required value="{{ $staff->description }}">{{ $staff->description }}</textarea>
+    </fieldset>
+
+    <fieldset> Staff image:
+      <input type="file" name="thumbnail" value="{{ $staff->thumbnail }}" tabindex="4">
+    </fieldset>
+
+
+    
+    <fieldset>
+      <span>Staff Type </span>
+      <select name="staffType">
+        @foreach ($staffs as $s)
+        <option value="{{ $s->id  }}">{{ $s->name }}</option>
+        @endforeach
+      </select>
+    </fieldset>
+
+    <fieldset>
+      <span>Federation </span>
+      <select name="fedType">
+        @foreach ($feds as $fed)
+        <option value="{{ $fed->id }}">{{ $fed->name }}</option>
+        @endforeach
+      </select>
     </fieldset>
    
     <fieldset>
