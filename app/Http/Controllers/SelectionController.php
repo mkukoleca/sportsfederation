@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Selection;
 use Illuminate\Http\Request;
+use App\Club;
+
 use DB;
 
 class SelectionController extends Controller
@@ -41,7 +43,8 @@ class SelectionController extends Controller
 
                 return redirect("/selection");
             }
-    return view('/selection/newSelection');
+    return view('/selection/newSelection',[ 'clubs' => Club::all()]);
+    
 
     }
     
@@ -54,7 +57,7 @@ class SelectionController extends Controller
      */
     public function edit(Selection $selection)
     {
-        return view('/selection/editSelection', compact('selection'));
+        return view('/selection/editSelection', compact('selection'),[ 'clubs' => Club::all()]);
     }
 
     public function update($id, Request $request)
