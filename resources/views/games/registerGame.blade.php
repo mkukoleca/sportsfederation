@@ -73,7 +73,7 @@
                 </select>
     </fieldset> 
     <fieldset>
-      <input placeholder="Round" type="number" name ="round" tabindex="9" required>
+      <input placeholder="Round" type="number" min="1" name ="round" tabindex="9" required>
     </fieldset>
     <fieldset>
       <input placeholder="Scores Home" type="number" min="1" name ="scoresHome" tabindex="10" required>

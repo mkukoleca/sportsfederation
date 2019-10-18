@@ -42,13 +42,13 @@
     </select> 
     </fieldset>
     <fieldset>
-    <input placeholder="Height" type="number" name ="height" tabindex="6" required>
+    <input placeholder="Height" type="number" min="1" name ="height" tabindex="6" required>
     </fieldset>
     <fieldset>
-    <input placeholder="Weight" type="number" name ="weight" tabindex="7" required>
+    <input placeholder="Weight" type="number" min="1" name ="weight" tabindex="7" required>
     </fieldset>
     <fieldset>
-    <input placeholder="Jersey number" type="number" name ="jerseyNumber" tabindex="8" required>
+    <input placeholder="Jersey number" type="number" min="1" name ="jerseyNumber" tabindex="8" required>
     </fieldset>
     <fieldset>
     <input placeholder="Date of birth" type="date" name ="dateOfBirth" tabindex="9" required>
