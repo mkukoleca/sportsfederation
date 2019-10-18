@@ -22,8 +22,11 @@
 
     </fieldset>
 
-    <fieldset>
-      <input placeholder="Category" type="text" name ="category" tabindex="2" required>
+    <fieldset>Category: <br>
+    <input  type="radio" value="Senior" name ="category" tabindex="2" required  >Senior <br>
+    <input  type="radio" value="U21" name ="category" tabindex="2" required  >U21 <br>
+    <input  type="radio" value="U19" name ="category" tabindex="2" required  >U19 <br>
+    <input  type="radio" value="U17" name ="category" tabindex="2" required  >U17 <br>
     </fieldset>
 
     <fieldset>
@@ -37,7 +40,11 @@
     </fieldset>
 
     <fieldset>
-      <input placeholder="ClubId" type="number" name="clubId" value="clubId" tabindex="5">
+      <select name="clubId" >
+      @foreach ($clubs as $club)
+      <option value="{{$club->id}}">{{$club->name}}</option>
+      @endforeach
+      </select>
     </fieldset>
 
 

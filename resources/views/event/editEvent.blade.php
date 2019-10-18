@@ -11,7 +11,7 @@
     <title>Edit Selection</title>
 </head>
 <body>
-<button type="button" class="btn btn-secondary btn-lg btn-block"><a href="/event">Back</a></button>
+<a href="/event"><button type="button" class="btn btn-secondary btn-lg btn-block">Back</button></a>
 <div class="container">  
   <form id="contact" action="{{route('updateevent', $event->id)}}" method="POST">
   {{csrf_field()}}

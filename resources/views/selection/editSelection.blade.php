@@ -11,7 +11,7 @@
     <title>Edit Selection</title>
 </head>
 <body>
-<button type="button" class="btn btn-secondary btn-lg btn-block"><a href="/selection">Back</a></button>
+<a href="/selection"><button type="button" class="btn btn-secondary btn-lg btn-block">Back</button></a>
 <div class="container">  
   <form id="contact" action="{{route('updateselection', $selection->id)}}" method="POST">
   {{csrf_field()}}
@@ -22,7 +22,10 @@
             <input  type="radio" value="Male" name ="gender" tabindex="1"   {{ $selection->gender =='Male' ? 'checked' : '' }} >Male
     </fieldset>
     <fieldset>
-    Category:<br><input placeholder="Category" type="text" name ="category" value="{{$selection->category}}" tabindex="2" >
+    Category:<br> <input  type="radio" value="Senior" name ="category" tabindex="2"  {{ $selection->category =='Senior' ? 'checked' : '' }}>Senior <br>
+         <input  type="radio" value="U21" name ="category" tabindex="2"  {{ $selection->category =='U21' ? 'checked' : '' }}>U21 <br>
+         <input  type="radio" value="U19" name ="category" tabindex="2"   {{ $selection->category =='U19' ? 'checked' : '' }} >U19 <br>
+         <input  type="radio" value="U17" name ="category" tabindex="2"  {{ $selection->category =='U17' ? 'checked' : '' }}>U17 <br>
     </fieldset>
     <fieldset>
     Staff Type Id:<br><input placeholder="StaffTypeId" type="number" name ="staffTypeId" value="{{$selection->staffTypeId}}" tabindex="3">
@@ -31,7 +34,13 @@
     History:<br><input placeholder="History" type="text" name ="history" value="{{$selection->history}}" tabindex="4" >
     </fieldset>
     <fieldset>
-    Club Id:<br><input placeholder="ClubId" type="number" name ="clubId" value="{{$selection->clubId}}" tabindex="5" >
+    Club Id:<br><fieldset>
+      <select name="clubId" >
+      @foreach ($clubs as $club)
+      <option value="{{$club->id}}">{{$club->name}}</option>
+      @endforeach
+      </select>
+    </fieldset>
     </fieldset>
     <fieldset>
       <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Update</button>
