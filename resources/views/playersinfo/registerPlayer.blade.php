@@ -41,13 +41,13 @@
     </select> 
     </fieldset>
     <fieldset>
-    <input placeholder="Height" type="number" name ="height" tabindex="6" required>
+    <input placeholder="Height" type="number" min="1" name ="height" tabindex="6" required>
     </fieldset>
     <fieldset>
-    <input placeholder="Weight" type="number" name ="weight" tabindex="7" required>
+    <input placeholder="Weight" type="number" min="1" name ="weight" tabindex="7" required>
     </fieldset>
     <fieldset>
-    <input placeholder="Jersey number" type="number" name ="jerseyNumber" tabindex="8" required>
+    <input placeholder="Jersey number" type="number" min="1" name ="jerseyNumber" tabindex="8" required>
     </fieldset>
     <fieldset>
     <input placeholder="Date of birth" type="date" name ="dateOfBirth" tabindex="9" required>
@@ -308,7 +308,7 @@
     <fieldset>
     <span>Current Club</span>
     @if(count($clubs) > 0)
-    <select name="currentClub">
+    <select name="clubId">
       @foreach ($clubs as $club)
       <option value="{{$club->id}}">{{$club->name}}</option>
       @endforeach
@@ -330,7 +330,10 @@
       @endif
     </fieldset>
     <fieldset>
-      <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+      <button name="submit" type="submit" id="contact-submit" data-submit="...Sending" 
+      @if ((count($selection) == 0) || (count($clubs) == 0))
+          disabled   
+      @endif >Submit</button>
     </fieldset>
     <p class="copyright">Designed by <a href="https://colorlib.com" target="_blank" title="Colorlib">Colorlib</a></p>
   </form>

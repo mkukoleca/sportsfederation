@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Event;
 
 class Game extends Model
 {
@@ -17,7 +18,7 @@ class Game extends Model
      * @var array
      */
     protected $fillable = [
-        'event',   
+        'eventId',   
         'date',
         'place',
         'home',

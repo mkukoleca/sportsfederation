@@ -68,7 +68,7 @@
             </tr>
             <tr>
                 <th>Current club</th>
-                <td>{{$player -> currentClub}}</td>
+                <td>{{$player -> clubId}}</td>
             </tr>
             
             <tr>
