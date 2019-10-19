@@ -23,7 +23,7 @@
                 <td>{{$player->id}}</td>
             </tr>
             <tr>
-                <th>Thumbnail</th>
+                <th>Profile image</th>
                 <td><img src="{{url($player->thumbnail)}}" alt="profile img"> </td>
             </tr>
             <tr>

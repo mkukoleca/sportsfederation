@@ -10,8 +10,8 @@ use App\PlayerInfo;
 
 class Club extends Model
 {
-    protected $table = "clubs";
-
+    // protected $table = "clubs";
+    
     protected $fillable = [
         'id', 'name', 'address', 'email', 'website', 'dateOfFoundation', 'director', 'history', 'thumbnail'
     ];
@@ -26,5 +26,5 @@ class Club extends Model
 
     public function games() {
         return $this->hasMany("App\Game");
-    }
+    }   
 }

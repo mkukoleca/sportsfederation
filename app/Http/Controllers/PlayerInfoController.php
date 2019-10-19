@@ -80,7 +80,7 @@ class PlayerInfoController extends Controller
     {
         //return PlayerInfo::find($id);
         $player = PlayerInfo::where('id', $id)->first();
-        return view("/playersInfo/singlePlayer", ['player'=>PlayerInfo::all(),'selections'=>Selection::all(),'clubs'=>Club::all()]);
+        return view("/playersInfo/singlePlayer", ['player' => $player]);
 
         //return view('/playersinfo/singlePlayer'); je kontrolni cisto da vidim da li radi ruta
 
