@@ -37,13 +37,12 @@ class PlayerInfoController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->only(['thumbnail', 'name', 'surname', 'description', 'position', 'height', 'weight', 'jerseyNumber', 'dateOfBirth', 'citizenship', 'clubHistory', 'clubId', 'selection' ]);
+        $data = $request->only(['thumbnail', 'name', 'description', 'position', 'height', 'weight', 'jerseyNumber', 'dateOfBirth', 'citizenship', 'clubHistory', 'clubId', 'selection' ]);
         //dd($data);
         if(count($data) > 0){
             $player = new PlayerInfo();
           
             $player->name=$data['name'];
-            $player->surname=$data['surname'];
             $player->description=$data['description'];
             $player->position=$data['position'];
             $player->height=$data['height'];
@@ -57,7 +56,7 @@ class PlayerInfoController extends Controller
 
             if($request->hasFile('thumbnail')){
                 $name = $player->name.time().'.'.$request->thumbnail->extension();
-                $folder = '/profile/images/';
+                $folder = 'assets/images/';
                 $request->thumbnail->move(public_path($folder), $name);
 
                 $player->thumbnail=$folder.$name;
@@ -80,7 +79,7 @@ class PlayerInfoController extends Controller
     {
         //return PlayerInfo::find($id);
         $player = PlayerInfo::where('id', $id)->first();
-        return view("/playersInfo/singlePlayer", ['player'=>PlayerInfo::all(),'selections'=>Selection::all(),'clubs'=>Club::all()]);
+        return view("/playersInfo/singlePlayer", ['player' => $player]);
 
         //return view('/playersinfo/singlePlayer'); je kontrolni cisto da vidim da li radi ruta
 
@@ -111,13 +110,12 @@ class PlayerInfoController extends Controller
      */
     public function update($id, Request $request)
     {
-        $data = $request->only(['thumbnail', 'name', 'surname', 'description', 'position', 'height', 'weight', 'jerseyNumber', 'dateOfBirth', 'citizenship', 'clubHistory', 'clubId', 'selection', 'created_at', 'updated_at',]);
+        $data = $request->only(['thumbnail', 'name', 'description', 'position', 'height', 'weight', 'jerseyNumber', 'dateOfBirth', 'citizenship', 'clubHistory', 'clubId', 'selection', 'created_at', 'updated_at',]);
         
         //dd($data);
         $player=PlayerInfo::where('id', $id)->first();
         $player->thumbnail=$data['thumbnail'];
         $player->name=$data['name'];
-        $player->surname=$data['surname'];
         $player->description=$data['description'];
         $player->position=$data['position'];
         $player->height=$data['height'];

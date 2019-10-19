@@ -13,24 +13,30 @@
 <body>
 <button type="button" class="btn btn-secondary btn-lg btn-block"><a href="/playersInfo/players">Back</a></button>
 <div class="container">  
-  <form id="contact" action="{{route('updateplayer', $player->id)}}" method="POST">
+  <form id="contact" action="{{route('updateplayer', $player->id)}}" method="POST" enctype="multipart/form-data">
   {{csrf_field()}}
     <h3>Update Player</h3>
     <fieldset>
-    Thumbnail:<br><input placeholder="Thumbnail"  type="text" name ="thumbnail" value="{{$player->thumbnail}}" tabindex="1"  autofocus>
+    Profile image:<br><img src="{{url($player->thumbnail)}}" alt="profile img">
+    <input placeholder="Profile image" type="file" name ="thumbnail" tabindex="1" required autofocus>
     </fieldset>
     <fieldset>
     Name:<br><input placeholder="Name" type="text" name ="name" value="{{$player->name}}" tabindex="2" >
     </fieldset>
     <fieldset>
-    Surname:<br><input placeholder="Surname" type="text" name ="surname" value="{{$player->surname}}" tabindex="3">
-    </fieldset>
-    <fieldset>
     Description:<br><input placeholder="Description" type="text" name ="description" value="{{$player->description}}" tabindex="4">
     </fieldset>
     <fieldset>
-    Position:<br><input placeholder="Position" type="text" name ="position" value="{{$player->position}}" tabindex="5" >
-    </fieldset>
+    <span>Position</span>
+    <select name="position">
+    <option value="Left winger">Left winger</option>
+      <option value="Right winger">Right winger</option>
+      <option value="Left back">Left back</option>
+      <option value="Center">Center</option>
+      <option value="Right back">Right back</option>
+      <option value="Circle runner">Circle runner</option>
+      <option value="Goalkeeper">Goalkeeper</option>
+    </select> 
     <fieldset>
     Height:<br><input placeholder="Height" type="number" min="1" name ="height" value="{{$player->height}}" tabindex="6" >
     </fieldset>

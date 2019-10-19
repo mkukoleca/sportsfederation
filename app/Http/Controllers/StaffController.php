@@ -15,9 +15,9 @@ class StaffController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(){
-      //  $staff = Staff::with('staff_types')->with('name')->where('id', $id)->first();
-        return view('federation.staffs',['staffs' => Staff::all()]);
+    public function index() {        
+        return view('federation.staffs',
+                    ['staffs' => Staff::with(['type', 'federation'])->get()]);
     
     }
 
@@ -35,19 +35,18 @@ class StaffController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->only(['name', 'lastname', 'description', 'thumbnail','staffType', 'fedType']);
+        $data = $request->only(['name', 'description', 'thumbnail','staffType', 'fedType']);
          //dd($data);
         
             if(count($data) > 0){
                 $staff = new Staff();
                 $staff->name = $data['name'];
-                $staff->lastname = $data['lastname'];
                 $staff->description = $data['description'];
                 $staff->type_id = $data['staffType'];
 
                 if ($request->hasFile('thumbnail')) {
                     $name = $staff->name . '.' . $request->thumbnail->extension();
-                    $folder = 'photo/';
+                    $folder = 'assets/photo/';
                     $request->thumbnail->move(public_path($folder), $name);
     
                     $staff->thumbnail = $folder . $name;
@@ -103,17 +102,16 @@ class StaffController extends Controller
     public function update($id, Request $request)
     {
         
-        $data = $request->only(['name', 'lastname', 'description', 'thumbnail','staffType', 'fedType']);
+        $data = $request->only(['name', 'description', 'thumbnail','staffType', 'fedType']);
         
         $staff = Staff::where('id', $id)->first();
         $staff->name = $data['name'];
-        $staff->lastname = $data['lastname'];
         $staff->description = $data['description'];
         $staff->type_id = $data['staffType'];
 
         if ($request->hasFile('thumbnail')) {
             $name = $staff->name . '.' . $request->thumbnail->extension();
-            $folder = 'photo/';
+            $folder = 'assets/photo/';
             $request->thumbnail->move(public_path($folder), $name);
 
             $staff->thumbnail = $folder . $name;

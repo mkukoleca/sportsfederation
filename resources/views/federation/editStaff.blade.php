@@ -29,9 +29,7 @@
     <fieldset>
     Name:<p><input type="text" name ="name" tabindex="1" required autofocus value="{{ $staff->name }}">
     </fieldset>
-    <fieldset>
-    Lastname:<p><input type="text" name ="lastname" tabindex="2" required value="{{ $staff->lastname }}">
-    </fieldset>
+
     <fieldset>
     Description:<p><textarea type="text" name ="description" tabindex="3"required value="{{ $staff->description }}">{{ $staff->description }}</textarea>
     </fieldset>

@@ -85,10 +85,12 @@
                 </div>
 
                 <div class="links">
-                    <a href="/index">Club</a>
+                    <a href="/federation">Federation</a>
+                    <a href="/staffs">Staff</a>
+                    <a href="/clubs">Club</a>
                     <a href="/selection">Selection</a>
                     <a href="/event">Event</a>
-                    <a href="/games/gamesList">Games</a> 
+                    <a href="/games">Games</a> 
                     <a href="/playersInfo/players">Players</a> 
                     
                 </div>

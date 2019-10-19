@@ -12,32 +12,32 @@ class StaffTableSeeder extends Seeder
     public function run()
     {
         DB::table('staffs')->insert([
+            'id' => 1,
             'name' => 'Bibiana Delegate',
-            'lastname' => 'Steinhaus',
             'description' => 'German football referee!!!',
             'type_id' => 1,
             'thumbnail' => ''
         ]);
 
         DB::table('staffs')->insert([
+            'id' => 2,
             'name' => 'Bibiana Referee',
-            'lastname' => 'Steinhaus',
             'description' => 'German football referee!!!',
             'type_id' => 2,
             'thumbnail' => ''
         ]);
 
         DB::table('staffs')->insert([
+            'id' => 3,
             'name' => 'Bibiana Coach',
-            'lastname' => 'Steinhaus',
             'description' => 'German football referee!!!',
             'type_id' => 3,
             'thumbnail' => ''
         ]);
 
         DB::table('staffs')->insert([
+            'id' => 4,
             'name' => 'Bibiana Doctor',
-            'lastname' => 'Steinhaus',
             'description' => 'German football referee!!!',
             'type_id' => 4,
             'thumbnail' => ''

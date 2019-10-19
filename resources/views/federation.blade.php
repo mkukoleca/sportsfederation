@@ -95,7 +95,11 @@
                 <p> {{ $fed->history }}</p>
                 <p> {{ $fed->description }}</p>
                 <p>Trenutni predsjednik saveza je  {{ $fed->president }}.</p>
-                
+                @foreach($fed->staff as $staff)
+                <div>
+                  {{$staff->type->name}}: {{$staff->name}}
+                </div>
+                @endforeach
 
             @endforeach
           </p>

@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use App\Event;
 
+
 class Game extends Model
 {
 

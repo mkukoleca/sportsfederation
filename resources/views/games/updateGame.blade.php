@@ -11,7 +11,7 @@
     <title>Document</title>
 </head>
 <body>
-<button type="button" class="btn btn-secondary btn-lg btn-block"><a href="/games/gamesList">Back</a></button>
+<button type="button" class="btn btn-secondary btn-lg btn-block"><a href="/games">Back</a></button>
 <div class="container">  
   <form id="contact" action="{{route('updategame', $game->id)}}" method="POST">
   {{csrf_field()}}

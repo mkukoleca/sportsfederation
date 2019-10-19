@@ -11,9 +11,9 @@
     <title>Document</title>
 </head>
 <body>
-<button type="button" class="btn btn-secondary btn-lg btn-block"><a href="/games/gamesList">Back</a></button>
+<button type="button" class="btn btn-secondary btn-lg btn-block"><a href="/games">Back</a></button>
 <div class="container">  
-  <form id="contact" action="{{route('register')}}" method="POST" enctype="multipart/form-data">
+  <form id="contact" action="{{route('register')}}" method="POST">
   {{csrf_field()}}
     <h3>Add new Game</h3>
     

@@ -23,16 +23,12 @@
                 <td>{{$player->id}}</td>
             </tr>
             <tr>
-                <th>Thumbnail</th>
+                <th>Profile image</th>
                 <td><img src="{{url($player->thumbnail)}}" alt="profile img"> </td>
             </tr>
             <tr>
                 <th>Name</th>
                 <td>{{$player -> name}}</td>
-            </tr>
-            <tr>
-                <th>Surname</th>
-                <td>{{$player -> surname}}</td>
             </tr>
             <tr>
                 <th>Description</th>

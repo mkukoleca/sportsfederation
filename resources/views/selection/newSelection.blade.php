@@ -34,7 +34,7 @@
     </fieldset>
 
     <fieldset>
-      <input placeholder="StaffTypeId" type="number" name="staffTypeId" value="staffTypeId" tabindex="4">
+      <input placeholder="coachId" type="number" name="coachId" value="coachId" tabindex="4">
     </fieldset>
 
     <fieldset>

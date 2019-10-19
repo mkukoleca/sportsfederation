@@ -12,10 +12,6 @@ class PlayerInfo extends Model
     public function club() {
         return $this->belongsTo("App\Club");
     }
-    public function selection() {
-        return $this->belongsTo("App\Selection");
-    }
-  
 
     /**
      * The attributes that are mass assignable.
@@ -25,7 +21,6 @@ class PlayerInfo extends Model
     protected $fillable = [
     'thumbnail',   
     'name',
-    'surname',
     'description',
     'position',
     'height',
