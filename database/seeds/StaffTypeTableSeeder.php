@@ -20,7 +20,6 @@ class StaffTypeTableSeeder extends Seeder
         DB::table('staff_types')->insert([
             'name' => 'Referee',
             'id' => 2
-            
         ]);
 
         DB::table('staff_types')->insert([
@@ -31,7 +30,6 @@ class StaffTypeTableSeeder extends Seeder
         DB::table('staff_types')->insert([
             'name' => 'Doctor',
             'id' => 4
-            
         ]);
     }
 }
