@@ -17,7 +17,7 @@
   {{csrf_field()}}
     <h3>Add new Player</h3>
     <fieldset> Profile image:
-      <input placeholder="Thumbnail" type="file" name ="thumbnail" tabindex="1" required autofocus>
+      <input placeholder="Profile image" type="file" name ="thumbnail" tabindex="1" required autofocus>
     </fieldset>
     <fieldset>
       <input placeholder="Name" type="text" name ="name" tabindex="2" required>
@@ -41,13 +41,13 @@
     </select> 
     </fieldset>
     <fieldset>
-    <input placeholder="Height" type="number" min="1" name ="height" tabindex="6" required>
+    <input placeholder="Height" min=100 type="number" name ="height" tabindex="6" required>
     </fieldset>
     <fieldset>
-    <input placeholder="Weight" type="number" min="1" name ="weight" tabindex="7" required>
+    <input placeholder="Weight" min=10 type="number" name ="weight" tabindex="7" required>
     </fieldset>
     <fieldset>
-    <input placeholder="Jersey number" type="number" min="1" name ="jerseyNumber" tabindex="8" required>
+    <input placeholder="Jersey number" min=1 type="number" name ="jerseyNumber" tabindex="8" required>
     </fieldset>
     <fieldset>
     <input placeholder="Date of birth" type="date" name ="dateOfBirth" tabindex="9" required>

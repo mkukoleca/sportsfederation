@@ -1,5 +1,10 @@
 <?php
 
+Route::get('/', function () {
+    return view('welcome');
+});
+
+
 
 //Club
 Route::get('/clubs','ClubController@index');
@@ -63,7 +68,7 @@ Route::get('/deleteEvent/{id}','EventController@destroy');
 
 
 
-Route::get('/', 'FederationController@index');
+Route::get('/federation', 'FederationController@index');
 Route::get('/federation/{id}', 'FederationController@edit');
 Route::post('/federationEdit/{id}', 'FederationController@update');
 

@@ -60,7 +60,7 @@ class GameController extends Controller
             $game->save();
             return redirect('/games/gamesList');        
             } 
-    //return view('/playersInfo/registerPlayer');
+    return view('/games/registerGame');
     }
 
     /**
@@ -71,10 +71,9 @@ class GameController extends Controller
      */
     public function show($id)
     {
-        //return Game::find($id);
-        $game = Game::where('id', $id)->first();
        
-        return view("/games/singleGame", compact('game'));
+        $game = Game::where('id', $id)->first();
+        return view("games/updateGame", ['game'=> $game]);
     }
 
     /**

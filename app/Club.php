@@ -31,9 +31,5 @@ class Club extends Model
     protected $fillable = [
         'id', 'name', 'address', 'email', 'website', 'dateOfFoundation', 'director', 'history', 'thumbnail'
     ];
-    public function club()
-    {
-        return $this->hasMany('App\PlayerInfo');
-    }
    
 }

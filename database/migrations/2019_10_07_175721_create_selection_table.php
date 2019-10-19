@@ -19,7 +19,7 @@ class CreateSelectionTable extends Migration
             $table->string('gender');
             $table->string('category');
             $table->string('history');
-            $table->integer('staffTypeId');
+            $table->bigInteger('staffTypeId')->unsigned();
             $table->bigInteger('clubId')->unsigned();
             $table->timestamps();
 

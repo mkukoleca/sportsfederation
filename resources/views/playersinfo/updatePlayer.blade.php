@@ -13,11 +13,12 @@
 <body>
 <button type="button" class="btn btn-secondary btn-lg btn-block"><a href="/playersInfo/players">Back</a></button>
 <div class="container">  
-  <form id="contact" action="{{route('updateplayer', $player->id)}}" method="POST">
+  <form id="contact" action="{{route('updateplayer', $player->id)}}" method="POST" enctype="multipart/form-data">
   {{csrf_field()}}
     <h3>Update Player</h3>
     <fieldset>
-    Thumbnail:<br><input placeholder="Thumbnail"  type="text" name ="thumbnail" value="{{$player->thumbnail}}" tabindex="1"  autofocus>
+    Profile image:<br><img src="{{url($player->thumbnail)}}" alt="profile img">
+    <input placeholder="Profile image" type="file" name ="thumbnail" tabindex="1" required autofocus>
     </fieldset>
     <fieldset>
     Name:<br><input placeholder="Name" type="text" name ="name" value="{{$player->name}}" tabindex="2" >
