@@ -46,7 +46,7 @@ class StaffController extends Controller
 
                 if ($request->hasFile('thumbnail')) {
                     $name = $staff->name . '.' . $request->thumbnail->extension();
-                    $folder = 'photo/';
+                    $folder = 'assets/photo/';
                     $request->thumbnail->move(public_path($folder), $name);
     
                     $staff->thumbnail = $folder . $name;
@@ -111,7 +111,7 @@ class StaffController extends Controller
 
         if ($request->hasFile('thumbnail')) {
             $name = $staff->name . '.' . $request->thumbnail->extension();
-            $folder = 'photo/';
+            $folder = 'assets/photo/';
             $request->thumbnail->move(public_path($folder), $name);
 
             $staff->thumbnail = $folder . $name;

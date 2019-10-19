@@ -21,5 +21,28 @@ class ClubTableSeeder extends Seeder
             'history' => 'They are good!!!',
             'thumbnail' => ' '
             ]);
+
+        
+        DB::table('clubs')->insert([
+            'name' => 'Partizan',
+            'address' => 'Boston',
+            'email' => 'boston@look.me',
+            'website' => 'http://bostonceltic.com',
+            'dateOfFoundation' => '2021-01-01',
+            'director' => 'Isaia',
+            'history' => 'They are good!!!',
+            'thumbnail' => ' '
+            ]);
+            
+        DB::table('clubs')->insert([
+            'name' => 'Crvena Zvezda',
+            'address' => 'Boston',
+            'email' => 'boston@look.me',
+            'website' => 'http://bostonceltic.com',
+            'dateOfFoundation' => '2021-01-01',
+            'director' => 'Isaia',
+            'history' => 'They are good!!!',
+            'thumbnail' => ' '
+            ]);
     }
 }

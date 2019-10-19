@@ -14,8 +14,11 @@ class DatabaseSeeder extends Seeder
             StaffTypeTableSeeder::class,
             StaffTableSeeder::class,
             FederationStaffTableSeeder::class,
-
             ClubTableSeeder::class,
+            SelectionsSeeder::class,
+            EventSeeder::class,
+            GamesSeeder::class,
+            PlayerInfoSeeder::class,
 
         ]);
     }

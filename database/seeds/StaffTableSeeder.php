@@ -12,6 +12,7 @@ class StaffTableSeeder extends Seeder
     public function run()
     {
         DB::table('staffs')->insert([
+            'id' => 1,
             'name' => 'Bibiana Delegate',
             'description' => 'German football referee!!!',
             'type_id' => 1,
@@ -19,6 +20,7 @@ class StaffTableSeeder extends Seeder
         ]);
 
         DB::table('staffs')->insert([
+            'id' => 2,
             'name' => 'Bibiana Referee',
             'description' => 'German football referee!!!',
             'type_id' => 2,
@@ -26,6 +28,7 @@ class StaffTableSeeder extends Seeder
         ]);
 
         DB::table('staffs')->insert([
+            'id' => 3,
             'name' => 'Bibiana Coach',
             'description' => 'German football referee!!!',
             'type_id' => 3,
@@ -33,6 +36,7 @@ class StaffTableSeeder extends Seeder
         ]);
 
         DB::table('staffs')->insert([
+            'id' => 4,
             'name' => 'Bibiana Doctor',
             'description' => 'German football referee!!!',
             'type_id' => 4,
