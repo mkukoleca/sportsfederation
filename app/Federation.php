@@ -15,8 +15,8 @@ class Federation extends Model
         'name', 'history', 'president', 'description'
     ];
 
-    public function staff() {
-
-         return $this->belongsToMany('App\Staff', 'federation_staff')->withPivot('staff_id');
+    public function staff()
+    {
+         return $this->belongsToMany('App\Staff', 'federation_staff');
     }
 }

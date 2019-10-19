@@ -15,9 +15,9 @@ class StaffController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(){
-      //  $staff = Staff::with('staff_types')->with('name')->where('id', $id)->first();
-        return view('federation.staffs',['staffs' => Staff::all()]);
+    public function index() {        
+        return view('federation.staffs',
+                    ['staffs' => Staff::with(['type', 'federation'])->get()]);
     
     }
 
