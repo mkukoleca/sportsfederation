@@ -17,9 +17,9 @@
   {{csrf_field()}}
     <h3>Add new Event</h3>
     <fieldset>Type: <br>
-      <input  type="radio" value="League" name ="type" tabindex="1" required  >League <br>
-      <input  type="radio" value="Cup" name ="type" tabindex="1" required  >Cup <br>
-      <input  type="radio" value="Tournament" name ="type" tabindex="1" required  >Tournament <br>
+      <input  type="radio" value="League" name ="type" tabindex="1" required  > League <br>
+      <input  type="radio" value="Cup" name ="type" tabindex="1" required  > Cup <br>
+      <input  type="radio" value="Tournament" name ="type" tabindex="1" required  > Tournament <br>
     </fieldset>
 
     <fieldset>
@@ -27,7 +27,7 @@
     </fieldset>
 
     <fieldset>
-      <textarea placeholder="Season" type="text" name ="season" tabindex="3" required></textarea>
+      <input placeholder="Season" type="text" name ="season" tabindex="3" required>
     </fieldset>
 
     <fieldset>

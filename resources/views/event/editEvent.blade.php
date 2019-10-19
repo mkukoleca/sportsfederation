@@ -18,18 +18,18 @@
     <h3>Update Event</h3>
     <fieldset>
     Type:<br>
-          <input  type="radio" value="League" name ="type" tabindex="1"  {{$event->type == 'League' ? 'checked' : '' }} >League <br>
-          <input  type="radio" value="Cup" name ="type" tabindex="1"  {{$event->type == 'Cup' ? 'checked' : '' }}>Cup <br>
-          <input  type="radio" value="Tournament" name ="type" tabindex="1" {{$event->type == 'Tournament' ? 'checked' : '' }} >Tournament <br>
+          <input  type="radio" value="League" name ="type" tabindex="1"  {{$event->type == 'League' ? 'checked' : '' }} > League <br>
+          <input  type="radio" value="Cup" name ="type" tabindex="1"  {{$event->type == 'Cup' ? 'checked' : '' }}> Cup <br>
+          <input  type="radio" value="Tournament" name ="type" tabindex="1" {{$event->type == 'Tournament' ? 'checked' : '' }} > Tournament <br>
     </fieldset>
     <fieldset>
     Name:<br><input placeholder="Name" type="text" name ="name" value="{{$event->name}}" tabindex="2" >
     </fieldset>
     <fieldset>
-    Season:<br><input placeholder="Season" type="text" name ="season" value="{{$event->season}}" tabindex="3">
+    Season:<br> <input placeholder="Season" type="text" name ="season" value="{{$event->season}}" tabindex="3">
     </fieldset>
     <fieldset>
-    Description:<br><input placeholder="Description" type="text" name ="description" value="{{$event->description}}" tabindex="4" >
+    Description:<br><textarea placeholder="Description" type="text" name ="description" value="{{$event->description}}" tabindex="4" >{{$event->description}}</textarea>
     </fieldset>
    
     <fieldset>

@@ -72,7 +72,9 @@
     <div class="hero-container">
       <h1>Dobrodošli na oficijalnu stranicu Rukometnog Saveza Republike Srpske</h1>
       <h2>Mi volimo rukomet</h2>
-      <p><a href="/clubs" class="btn-get-started">CLUB</a> <a href="#about" class="btn-get-started">SELECTION</a> <a href="#about" class="btn-get-started">EVENT</a></p>
+      <p><a href="/clubs" class="btn-get-started">CLUB</a>
+       <a href="/selection" class="btn-get-started">SELECTION</a> 
+       <a href="/event" class="btn-get-started">EVENT</a></p>
     </div>
   </section><!-- #hero -->
 

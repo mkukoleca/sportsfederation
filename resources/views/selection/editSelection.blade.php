@@ -18,20 +18,20 @@
     <h3>Update Selection</h3>
     <fieldset>
     Gender:<br>
-            <input  type="radio" value="Female" name ="gender" tabindex="1"  {{ $selection->gender =='Female' ? 'checked' : '' }}>Female <br>
-            <input  type="radio" value="Male" name ="gender" tabindex="1"   {{ $selection->gender =='Male' ? 'checked' : '' }} >Male
+            <input  type="radio" value="Female" name ="gender" tabindex="1"  {{ $selection->gender =='Female' ? 'checked' : '' }}> Female <br>
+            <input  type="radio" value="Male" name ="gender" tabindex="1"   {{ $selection->gender =='Male' ? 'checked' : '' }} > Male
     </fieldset>
     <fieldset>
-    Category:<br> <input  type="radio" value="Senior" name ="category" tabindex="2"  {{ $selection->category =='Senior' ? 'checked' : '' }}>Senior <br>
-         <input  type="radio" value="U21" name ="category" tabindex="2"  {{ $selection->category =='U21' ? 'checked' : '' }}>U21 <br>
-         <input  type="radio" value="U19" name ="category" tabindex="2"   {{ $selection->category =='U19' ? 'checked' : '' }} >U19 <br>
-         <input  type="radio" value="U17" name ="category" tabindex="2"  {{ $selection->category =='U17' ? 'checked' : '' }}>U17 <br>
+    Category:<br> <input  type="radio" value="Senior" name ="category" tabindex="2"  {{ $selection->category =='Senior' ? 'checked' : '' }}> Senior <br>
+         <input  type="radio" value="U21" name ="category" tabindex="2"  {{ $selection->category =='U21' ? 'checked' : '' }}> U21 <br>
+         <input  type="radio" value="U19" name ="category" tabindex="2"   {{ $selection->category =='U19' ? 'checked' : '' }}> U19 <br>
+         <input  type="radio" value="U17" name ="category" tabindex="2"  {{ $selection->category =='U17' ? 'checked' : '' }}> U17 
+    </fieldset>
+    <fieldset>
+    History:<br> <textarea placeholder="History" type="text" name ="history" value="{{$selection->history}}" tabindex="4">{{$selection->history}}</textarea>
     </fieldset>
     <fieldset>
     Staff Type Id:<br><input placeholder="StaffTypeId" type="number" name ="staffTypeId" value="{{$selection->staffTypeId}}" tabindex="3">
-    </fieldset>
-    <fieldset>
-    History:<br><input placeholder="History" type="text" name ="history" value="{{$selection->history}}" tabindex="4" >
     </fieldset>
     <fieldset>
     Club Id:<br><fieldset>

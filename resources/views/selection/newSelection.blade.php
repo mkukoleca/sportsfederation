@@ -17,23 +17,21 @@
   {{csrf_field()}}
     <h3>Add new Selection</h3>
     <fieldset>Gender: <br>
-      <input  type="radio" value="Female" name ="gender" tabindex="1" required  >Female <br>
-      <input  type="radio" value="Male" name ="gender" tabindex="1" required  >Male
+      <input  type="radio" value="Female" name ="gender" tabindex="1" required > Female <br>
+      <input  type="radio" value="Male" name ="gender" tabindex="1" required > Male
 
     </fieldset>
 
     <fieldset>Category: <br>
-    <input  type="radio" value="Senior" name ="category" tabindex="2" required  >Senior <br>
-    <input  type="radio" value="U21" name ="category" tabindex="2" required  >U21 <br>
-    <input  type="radio" value="U19" name ="category" tabindex="2" required  >U19 <br>
-    <input  type="radio" value="U17" name ="category" tabindex="2" required  >U17 <br>
+    <input  type="radio" value="Senior" name ="category" tabindex="2" required > Senior <br>
+    <input  type="radio" value="U21" name ="category" tabindex="2" required > U21 <br>
+    <input  type="radio" value="U19" name ="category" tabindex="2" required > U19 <br>
+    <input  type="radio" value="U17" name ="category" tabindex="2" required > U17 <br>
     </fieldset>
 
     <fieldset>
       <textarea placeholder="History" type="text" name ="history" tabindex="3" required></textarea>
     </fieldset>
-
-
 
     <fieldset>
       <input placeholder="StaffTypeId" type="number" name="staffTypeId" value="staffTypeId" tabindex="4">
@@ -47,8 +45,6 @@
       </select>
     </fieldset>
 
-
-    
     <fieldset>
       <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
     </fieldset>
