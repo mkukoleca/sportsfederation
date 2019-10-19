@@ -31,7 +31,7 @@
     History:<br> <textarea placeholder="History" type="text" name ="history" value="{{$selection->history}}" tabindex="4">{{$selection->history}}</textarea>
     </fieldset>
     <fieldset>
-    Staff Type Id:<br><input placeholder="StaffTypeId" type="number" name ="staffTypeId" value="{{$selection->staffTypeId}}" tabindex="3">
+    Staff Type Id:<br><input placeholder="coachId" type="number" name ="coachId" value="{{$selection->coachId}}" tabindex="3">
     </fieldset>
     <fieldset>
     Club Id:<br><fieldset>
