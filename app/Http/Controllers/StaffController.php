@@ -35,13 +35,12 @@ class StaffController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->only(['name', 'lastname', 'description', 'thumbnail','staffType', 'fedType']);
+        $data = $request->only(['name', 'description', 'thumbnail','staffType', 'fedType']);
          //dd($data);
         
             if(count($data) > 0){
                 $staff = new Staff();
                 $staff->name = $data['name'];
-                $staff->lastname = $data['lastname'];
                 $staff->description = $data['description'];
                 $staff->type_id = $data['staffType'];
 
@@ -103,11 +102,10 @@ class StaffController extends Controller
     public function update($id, Request $request)
     {
         
-        $data = $request->only(['name', 'lastname', 'description', 'thumbnail','staffType', 'fedType']);
+        $data = $request->only(['name', 'description', 'thumbnail','staffType', 'fedType']);
         
         $staff = Staff::where('id', $id)->first();
         $staff->name = $data['name'];
-        $staff->lastname = $data['lastname'];
         $staff->description = $data['description'];
         $staff->type_id = $data['staffType'];
 

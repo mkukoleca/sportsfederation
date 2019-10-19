@@ -13,7 +13,6 @@ class StaffTableSeeder extends Seeder
     {
         DB::table('staffs')->insert([
             'name' => 'Bibiana Delegate',
-            'lastname' => 'Steinhaus',
             'description' => 'German football referee!!!',
             'type_id' => 1,
             'thumbnail' => ''
@@ -21,7 +20,6 @@ class StaffTableSeeder extends Seeder
 
         DB::table('staffs')->insert([
             'name' => 'Bibiana Referee',
-            'lastname' => 'Steinhaus',
             'description' => 'German football referee!!!',
             'type_id' => 2,
             'thumbnail' => ''
@@ -29,7 +27,6 @@ class StaffTableSeeder extends Seeder
 
         DB::table('staffs')->insert([
             'name' => 'Bibiana Coach',
-            'lastname' => 'Steinhaus',
             'description' => 'German football referee!!!',
             'type_id' => 3,
             'thumbnail' => ''
@@ -37,7 +34,6 @@ class StaffTableSeeder extends Seeder
 
         DB::table('staffs')->insert([
             'name' => 'Bibiana Doctor',
-            'lastname' => 'Steinhaus',
             'description' => 'German football referee!!!',
             'type_id' => 4,
             'thumbnail' => ''

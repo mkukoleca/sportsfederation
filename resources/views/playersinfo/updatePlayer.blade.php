@@ -24,9 +24,6 @@
     Name:<br><input placeholder="Name" type="text" name ="name" value="{{$player->name}}" tabindex="2" >
     </fieldset>
     <fieldset>
-    Surname:<br><input placeholder="Surname" type="text" name ="surname" value="{{$player->surname}}" tabindex="3">
-    </fieldset>
-    <fieldset>
     Description:<br><input placeholder="Description" type="text" name ="description" value="{{$player->description}}" tabindex="4">
     </fieldset>
     <fieldset>

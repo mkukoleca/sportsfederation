@@ -26,7 +26,6 @@
             <tr>
             <th>No.</th>
             <th>Name</th>
-            <th>Lastname</th>
             <th>Description</th>
             <th>Thumbnail</th>
 
@@ -42,7 +41,6 @@
             <tr>
             <td>{{$staff->id}} </td>
             <td>{{$staff->name}}</td>
-            <td>{{$staff->lastname}}</td>
             <td>{{$staff->description}}</td>
 
             <td><img src="{{ url($staff->thumbnail) }}" alt="staff pic"></td>

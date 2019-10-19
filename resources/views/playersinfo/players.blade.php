@@ -31,10 +31,6 @@
                 <td>{{$player -> name}}</td>
             </tr>
             <tr>
-                <th>Surname</th>
-                <td>{{$player -> surname}}</td>
-            </tr>
-            <tr>
                 <th>Description</th>
                 <td>{{$player -> description}}</td>
             </tr>

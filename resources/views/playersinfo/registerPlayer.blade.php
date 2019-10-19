@@ -23,9 +23,6 @@
       <input placeholder="Name" type="text" name ="name" tabindex="2" required>
     </fieldset>
     <fieldset>
-      <input placeholder="Surname" type="text" name ="surname" tabindex="3" required>
-    </fieldset>
-    <fieldset>
       <input placeholder="Description" type="text" name ="description" tabindex="4" required>
     </fieldset>
     <fieldset>

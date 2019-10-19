@@ -13,7 +13,7 @@ class Staff extends Model
     public $timestamps = false;
     
     protected $fillable = [
-        'id', 'name', 'lastname', 'description', 'type_id', 'thumbnail'
+        'id', 'name', 'description', 'type_id', 'thumbnail'
     ];
 
    public function types(){
