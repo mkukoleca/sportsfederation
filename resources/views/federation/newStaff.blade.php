@@ -21,7 +21,7 @@
 
 <div class="col-6">
 <br><br>
-<a href="/staff"><button type="button" class="btn btn-secondary btn-lg btn-block">Back</button></a>
+<button type="button" class="btn btn-secondary btn-lg btn-block"><a href="/staffs">Back</a></button>
 
 <div class="container">  
   <form id="contact" action="{{route('create')}}" method="POST" enctype="multipart/form-data">

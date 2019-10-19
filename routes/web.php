@@ -23,7 +23,7 @@ Route::post('/playersInfo/registerPlayer', 'PlayerInfoController@store')->name('
 Route::get('/deletePlayer/{id}','PlayerInfoController@destroy');
 
 // Staff federation route
-Route::any('/staff', 'StaffController@index');
+Route::any('/staffs', 'StaffController@index');
 Route::get('/newStaff','StaffController@store');
 Route::post('/newStaff', 'StaffController@store')->name('create');
 
