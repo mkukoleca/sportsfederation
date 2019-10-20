@@ -28,7 +28,7 @@ class PlayerInfo extends Model
     'jerseyNumber',
     'dateOfBirth',
     'citizenship',
-    'clubHistory',
+    'playerHistory',
     'clubId',
     'selection',
     'created_at',
