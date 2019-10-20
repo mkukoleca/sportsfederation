@@ -15,10 +15,15 @@ class StaffController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index() {        
-        return view('federation.staff',
+    public function index() {  
+ 
+        if (request()->has('type')) {
+            return view('federation.staffs',
+                    ['staffs' => Staff::with(['type', 'federation'])->where('type_id',request('type'))->get()]);
+        } 
+
+        return view('federation.staffs',
                     ['staffs' => Staff::with(['type', 'federation'])->get()]);
-    
     }
 
     /**
@@ -61,7 +66,7 @@ class StaffController extends Controller
 
                 $federation_staff->save();
     
-                return redirect('/staff');        
+                return redirect('/staffs');        
                 } 
          return view('federation/newStaff', [
             'staff' => StaffType::all(),
@@ -87,8 +92,7 @@ class StaffController extends Controller
         
         return view('federation.editStaff', [
             'staff' => $staff,
-            'staffs' => StaffType::all(),
-            'feds' => Federation::all(), 
+            'staffs' => StaffType::all()
             ]);
     }
 
@@ -125,7 +129,7 @@ class StaffController extends Controller
 
         $federation_staff->save();
 
-        return redirect('/staff');
+        return redirect('/staffs');
     }
 
     /**
@@ -144,7 +148,7 @@ class StaffController extends Controller
 
         $staff->delete();
         
-        return redirect('/staff');
+        return redirect('/staffs');
     }
 
 

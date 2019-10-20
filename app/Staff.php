@@ -16,7 +16,7 @@ class Staff extends Model
 
     public function federationType()
     {
-        return $this->belongsTo("App\StaffType"); // TODO: add pivot type relation
+        return $this->belongsTo("App\Federation"); // TODO: add pivot type relation
     }
 
     protected $fillable = [

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <title>Rukometni savez REPUBLIKE SRPSKE</title>
@@ -24,7 +25,11 @@
   <!-- Main Stylesheet File -->
   <link href="css/style.css" rel="stylesheet">
 
-  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
 </head>
 
 <body>
@@ -35,7 +40,7 @@
   <header id="header">
     <div class="container">
 
-      
+
 
       <nav id="nav-menu-container">
         <ul class="nav-menu">
@@ -73,13 +78,14 @@
       <h1>Dobrodošli na oficijalnu stranicu Rukometnog Saveza Republike Srpske</h1>
       <h2>Mi volimo rukomet</h2>
       <p><a href="/clubs" class="btn-get-started">CLUB</a>
-       <a href="/selection" class="btn-get-started">SELECTION</a> 
-       <a href="/event" class="btn-get-started">EVENT</a></p>
+        <a href="/selection" class="btn-get-started">SELECTION</a>
+        <a href="/event" class="btn-get-started">EVENT</a></p>
+        <a href="/staff" class="btn-get-started">STAFF</a></p>
     </div>
   </section><!-- #hero -->
 
   <main id="main">
-   
+
     <!--==========================
       Services Section
     ============================-->
@@ -87,38 +93,61 @@
       <div class="container wow fadeIn">
         <div class="section-header">
           <h3 class="section-title">O savezu</h3>
-         
+
           <p class="section-description">
             @foreach($federations as $fed)
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h3>{{ $fed->name }}</h3>
+              </div>
 
-                <h4>{{ $fed->name }}</h4>
+              <div class="panel-body">
                 <p> {{ $fed->history }}</p>
                 <p> {{ $fed->description }}</p>
-                <p>Trenutni predsjednik saveza je  {{ $fed->president }}.</p>
-                @foreach($fed->staff as $staff)
-                <div>
-                  {{$staff->type->name}}: {{$staff->name}}
+                <p>Trenutni predsjednik saveza je {{ $fed->president }}.</p>
+              </div>
+              <p>
+                <div class="panel-heading">
+                  <h4>Članovi saveza</h4>
                 </div>
-                @endforeach
-
+                <div class="panel-body">
+                  <a href="/staffs?type=1">Delegate</a>
+                  <a href="/staffs?type=2"> Referee</a>
+                  <a href="/staffs?type=3"> Coach</a>
+                  <a href="/staffs?type=4"> Doctor</a><p>
+                  @foreach($fed->staff as $staff)
+                  <div>
+                    {{$staff->type->name}}: {{$staff->name}}
+                  </div>
+                  @endforeach
+                </div>
+            </div>
             @endforeach
           </p>
+          <p>
+            <br>
         </div>
         <div class="row">
-          <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+          <div class="col-lg-12 col-md-12 wow fadeInUp" data-wow-delay="0.2s">
+            <p></p>
+            <p></p>
             <div class="box">
               <div class="icon"><a href=""><i class="fa fa-phone-square"></i></a></div>
-              <h4 class="title"><a href="/federation/{{ $fed->id }}">Kontakt Info</a></h4>
-              <p class="description">Sve dotatne informacije kako nas možete kontaktirati</p>
+              <h4 class="title"><a href="/federation/{{ $fed->id }}">Savez Update</a></h4>
+              <p class="description">Nove informacije možete dodati...</p>
             </div>
           </div>
-          <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.4s">
+          <p></p>
+          <p></p>
+         <!--  <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.4s">
             <div class="box">
               <div class="icon"><a href=""><i class="fa fa-bar-chart"></i></a></div>
               <h4 class="title"><a href="">Statistika</a></h4>
               <p class="description">Informacije o utakmicama</p>
             </div>
           </div>
+          <p></p>
+          <p></p>
           <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
             <div class="box">
               <div class="icon"><a href="/federation/staffs"><i class="fa fa-users"></i></a></div>
@@ -148,7 +177,7 @@
               <p class="description">Istorija saveza</p>
             </div>
           </div>
-        </div>
+        </div> -->
 
       </div>
     </section><!-- #services -->
@@ -171,8 +200,8 @@
       </div>
     </section><!-- #call-to-action -->
 
-   
-    
+
+
 
     <!--==========================
       Team Section
@@ -324,7 +353,7 @@
         &copy; Copyright <strong>PropaliБекендаши</strong>. All Rights Reserved
       </div>
       <div class="credits">
-        
+
         Designed by <a href="#hero">Tim_NijePekmez</a>
       </div>
     </div>
@@ -350,4 +379,5 @@
   <script src="js/main.js"></script>
 
 </body>
+
 </html>

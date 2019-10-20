@@ -21,7 +21,7 @@
   <div class="container">
 
     <br><br>
-    <a href="/newClub"><button>Add new Club</button></a>
+    <button><a href="/newClub">Add new Club</a></button>
     <br><br><br>
     <div class="table-responsive">
       <table class="table blueTable">
@@ -35,10 +35,9 @@
             <th>Date of foundation</th>
             <th>Director</th>
             <th>History</th>
-            <th>Thumbnail</th>
             <th>Edit</th>
             <th>Delete</th>
-           
+            <th>Thumbnail</th>
 
           </tr>
         </thead>
@@ -53,10 +52,12 @@
             <td>{{$club->dateOfFoundation}}</td>
             <td>{{$club->director}}</td>
             <td>{{$club->history}}</td>
-            <td><img src="{{ url($club->thumbnail) }}" alt="club pic"></td>
-           <td><a href="editClub/{{$club->id}}"><button>Edit</button></a></td>
+            
+           <td><button><a href="editClub/{{$club->id}}">Edit</button></td>
            <td><a onclick="return confirm('DA LI STE SIGURNI DA ZELITE BRISATI?')" href="deleteClub/{{$club->id}}"><button>Delete</button></a></td>
     
+
+            <td><img src="{{ url($club->thumbnail) }}" alt="club pic"></td>
           </tr>
 
           @endforeach
