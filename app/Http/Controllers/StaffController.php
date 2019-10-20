@@ -18,11 +18,11 @@ class StaffController extends Controller
     public function index() {  
  
         if (request()->has('type')) {
-            return view('federation.staffs',
+            return view('federation.staff',
                     ['staffs' => Staff::with(['type', 'federation'])->where('type_id',request('type'))->get()]);
         } 
 
-        return view('federation.staffs',
+        return view('federation.staff',
                     ['staffs' => Staff::with(['type', 'federation'])->get()]);
     }
 
@@ -66,7 +66,7 @@ class StaffController extends Controller
 
                 $federation_staff->save();
     
-                return redirect('/staffs');        
+                return redirect('/staff');        
                 } 
          return view('federation/newStaff', [
             'staff' => StaffType::all(),
@@ -129,7 +129,7 @@ class StaffController extends Controller
 
         $federation_staff->save();
 
-        return redirect('/staffs');
+        return redirect('/staff');
     }
 
     /**
@@ -148,7 +148,7 @@ class StaffController extends Controller
 
         $staff->delete();
         
-        return redirect('/staffs');
+        return redirect('/staff');
     }
 
 
