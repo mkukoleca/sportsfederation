@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Selection;
 use Illuminate\Http\Request;
+use App\Selection;
 use App\Club;
+use App\Staff;
 
 use DB;
 
@@ -43,12 +44,11 @@ class SelectionController extends Controller
 
                 return redirect("/selection");
             }
-    return view('/selection/newSelection',[ 'clubs' => Club::all()]);
-    
-
+    return view('/selection/newSelection',
+                [ 'clubs' => Club::all(),
+                'staffs' => Staff::all()]);
     }
     
-
     /**
      * Show the form for editing the specified resource.
      *
@@ -57,7 +57,9 @@ class SelectionController extends Controller
      */
     public function edit(Selection $selection)
     {
-        return view('/selection/editSelection', compact('selection'),[ 'clubs' => Club::all()]);
+        return view('/selection/editSelection', compact('selection'),
+                    [ 'clubs' => Club::all(),
+                    'staffs' => Staff::all()]);
     }
 
     public function update($id, Request $request)

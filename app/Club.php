@@ -10,7 +10,7 @@ use App\PlayerInfo;
 
 class Club extends Model
 {
-protected $table = "clubs";
+    protected $table = "clubs";
 
     protected $fillable = [
         'id', 'name', 'address', 'email', 'website', 'dateOfFoundation', 'director', 'history', 'thumbnail'
