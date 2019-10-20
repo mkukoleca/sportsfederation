@@ -31,13 +31,18 @@
     History:<br> <textarea placeholder="History" type="text" name ="history" value="{{$selection->history}}" tabindex="4">{{$selection->history}}</textarea>
     </fieldset>
     <fieldset>
-    Staff Type Id:<br><input placeholder="coachId" type="number" name ="coachId" value="{{$selection->coachId}}" tabindex="3">
-    </fieldset>
+      Coach:
+      <select name="coachId">
+        @foreach ($staffs as $staff)
+          <option value="{{$staff->id}}" @if ($staff->id == $selection->coachId) selected @endif>{{$staff->name}}</option>
+        @endforeach
+      </select>
+    </fieldset> 
     <fieldset>
     Club Id:<br><fieldset>
       <select name="clubId" >
       @foreach ($clubs as $club)
-      <option value="{{$club->id}}">{{$club->name}}</option>
+      <option value="{{$club->id}}" @if ($club->id == $selection->clubId) selected @endif>{{$club->name}}</option>
       @endforeach
       </select>
     </fieldset>
