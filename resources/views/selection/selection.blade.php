@@ -13,11 +13,11 @@ Rukometni savez Republike Srpske-Selection
 <table class="blueTable">
 <thead>
     <tr>   
-        <th>gender</th>
-        <th>category</th>
-        <th>history</th>
-        <th>coachId</th>
-        <th>clubId</th>
+        <th>Gender</th>
+        <th>Category</th>
+        <th>History</th>
+        <th>Coach</th>
+        <th>Club</th>
         <th>Edit</th>
         <th>Delete</th>
 

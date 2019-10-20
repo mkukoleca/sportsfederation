@@ -34,10 +34,16 @@
     </fieldset>
 
     <fieldset>
-      <input placeholder="coachId" type="number" name="coachId" value="coachId" tabindex="4">
-    </fieldset>
+      Coach:
+      <select name="coachId">
+        @foreach ($staffs as $staff)
+          <option value="{{$staff->id}}">{{$staff->name}}</option>
+        @endforeach
+      </select>
+    </fieldset> 
 
     <fieldset>
+    Club:
       <select name="clubId" >
       @foreach ($clubs as $club)
       <option value="{{$club->id}}">{{$club->name}}</option>
