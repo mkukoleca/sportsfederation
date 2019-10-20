@@ -1,29 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-<link rel="stylesheet" type="text/css" href="tableClub.css">
+@extends("../layouts.master")
+@section("content")
 
-   
-    <title>Selection</title>
-</head>
-<body>
+
+@section("title")
+Rukometni savez Republike Srpske-Selection
+@endsection
+
+
 <br><br><br>
-  <a href="/newSelection"><button>Add new Selection</button></a>
+  <a href="/newSelection"><button class="myButton">Add new Selection</button></a>
 <br><br><br>
 <table class="blueTable">
 <thead>
     <tr>   
-        <th>gender</th>
-        <th>category</th>
-        <th>history</th>
-        <th>coachId</th>
-        <th>clubId</th>
+        <th>Gender</th>
+        <th>Category</th>
+        <th>History</th>
+        <th>Coach</th>
+        <th>Club</th>
         <th>Edit</th>
         <th>Delete</th>
 
@@ -39,11 +33,11 @@
         <td>{{$select->gender}}</td>
         <td>{{$select->category}}</td>
         <td>{{$select->history}}</td>
-        <td>{{$select->coachId}}</td>
-        <td>{{$select->clubId}}</td>
+        <td>{{$select->staffType->name}}</td>
+        <td>{{$select->club->name}}</td>
 
-        <td><a href="editSelection/{{$select->id}}"><button>Edit</button></a></td>
-        <td><a onclick="return confirm('DA LI STE SIGURNI DA ZELITE BRISATI?')" href="deleteSelection/{{$select->id}}"><button>Delete</button></a></td>
+        <td><a href="editSelection/{{$select->id}}"><button class="myButton">Edit</button></a></td>
+        <td><a onclick="return confirm('DA LI STE SIGURNI DA ZELITE BRISATI?')" href="deleteSelection/{{$select->id}}"><button class="myButton">Delete</button></a></td>
 
         </tr>
 
@@ -51,4 +45,5 @@
 
     </tbody>
 </table>
-</table>
+
+@endsection

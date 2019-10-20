@@ -1,0 +1,144 @@
+.nav-menu, .nav-menu * {
+    margin: 0;
+    padding: 5px;
+    list-style: none;
+  }
+  
+  .nav-menu ul {
+    position: absolute;
+    display: none;
+    top: 100%;
+    left: 0;
+    z-index: 99;
+  }
+  
+  .nav-menu li {
+    position: relative;
+    white-space: nowrap;
+  }
+  
+  .nav-menu > li {
+    float: left;
+  }
+  
+  .nav-menu li:hover > ul,
+  .nav-menu li.sfHover > ul {
+    display: block;
+  }
+  
+  .nav-menu ul ul {
+    top: 0;
+    left: 100%;
+  }
+  
+  .nav-menu ul li {
+    min-width: 180px;
+  }
+  
+  
+  /* Nav Meu Container */
+  #nav-menu-container {
+    float: right;
+    margin: 0;
+  }
+  
+  @media (max-width: 768px) {
+    #nav-menu-container {
+      display: none;
+    }
+  }
+  
+  /* Nav Meu Styling */
+  .nav-menu a {
+    padding: 0 8px 10px 8px;
+    text-decoration: none;
+    display: inline-block;
+    color: #fff;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size: 13px;
+    outline: none;
+  }
+  
+  .nav-menu > li {
+    margin-left: 10px;
+  }
+  
+  .nav-menu > li > a:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #2dc997;
+    visibility: hidden;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    transition: all 0.3s ease-in-out 0s;
+  }
+  
+  .nav-menu a:hover:before, .nav-menu li:hover > a:before, .nav-menu .menu-active > a:before {
+    visibility: visible;
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+  }
+  
+  .nav-menu ul {
+    margin: 4px 0 0 0;
+    border: 1px solid #e7e7e7;
+  }
+  
+  .nav-menu ul li {
+    background: #fff;
+  }
+  
+  .nav-menu ul li:first-child {
+    border-top: 0;
+  }
+  
+  .nav-menu ul li a {
+    padding: 10px;
+    color: #333;
+    transition: 0.3s;
+    display: block;
+    font-size: 13px;
+    text-transform: none;
+  }
+  
+  .nav-menu ul li a:hover {
+    background: #2dc997;
+    color: #fff;
+  }
+  
+  .nav-menu ul ul {
+    margin: 0;
+  }
+
+  .myButton {
+	box-shadow: 3px 4px 0px 0px #1564ad;
+	background:linear-gradient(to bottom, #79bbff 5%, #378de5 50%);
+	background-color:#79bbff;
+	border-radius:5px;
+	border:1px solid #337bc4;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:17px;
+	font-weight:bold;
+	padding:2px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #528ecc;
+	
+ }
+ a:hover {
+	
+	background-color:#378de5;
+}
+ a:active {
+	position:relative;
+	top:1px;
+}
