@@ -21,7 +21,7 @@
     
             <tr>
                 <th>Profile image</th>
-            <td><img src="{{url($player->thumbnail)}}" alt="profile img"></td>
+            <td><img src="{{url($player->thumbnail)}}" width="50" height="auto" alt="profile img"></td>
             </tr>
             <tr>
             <tr>
@@ -58,7 +58,7 @@
             </tr>
             <tr>
                 <th>Club history</th>
-                <td>{{$player -> clubHistory}}</td>
+                <td>{{$player -> playerHistory}}</td>
             </tr>
             <tr>
                 <th>Current club</th>

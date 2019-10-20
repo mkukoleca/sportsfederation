@@ -299,7 +299,7 @@
             </select>
     </fieldset>
     <fieldset>
-    Club history:<br><textarea placeholder="Club history" type="text" name ="clubHistory" value="{{$player->clubHistory}}" tabindex="11" >{{$player->clubHistory}}</textarea>
+    Player history:<br><textarea placeholder="Club history" type="text" name ="playerHistory" value="{{$player->playerHistory}}" tabindex="11" >{{$player->clubHistory}}</textarea>
     </fieldset>
     <fieldset>
       <span>Current Club</span>
