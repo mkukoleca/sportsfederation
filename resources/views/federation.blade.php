@@ -103,7 +103,6 @@
 
             @endforeach
           </p>
-
         </div>
         <div class="row">
           <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
