@@ -1,18 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <style>
-    table, th, td {
-        text-align: left;
-    }
-</style>
-</head>
-<body>
-    <button autofocus><a href="/games/registerGame">Register new game</a></button>
+@extends("../layouts.master")
+@section("content")
+
+
+@section("title")
+Rukometni savez Republike Srpske-Games
+@endsection
+<br><br><br>
+    <a href="/games/registerGame"><button class="myButton" autofocus>Register new game</button></a>
     <br/><br/><br/>
     
     <table>
@@ -89,5 +83,4 @@
             @endforeach 
     </table>
     
-</body>
-</html>
+@endsection

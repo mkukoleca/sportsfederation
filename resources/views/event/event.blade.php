@@ -1,20 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-<link rel="stylesheet" type="text/css" href="tableClub.css">
+@extends("../layouts.master")
+@section("content")
 
-   
-    <title>Events</title>
-</head>
-<body>
+
+@section("title")
+Rukometni savez Republike Srpske-Players
+@endsection
+
+
 <br><br><br>
-  <a href="/newEvent"><button>Add new Event</button></a>
+  <a href="/newEvent"><button class="myButton">Add new Event</button></a>
 <br><br><br>
 <table class="blueTable">
 <thead>
@@ -41,8 +35,8 @@
             <td>{{$event->season}}</td>
             <td>{{$event->description}}</td>
 
-            <td><a href="editEvent/{{$event->id}}"><button>Edit</button></a></td>
-            <td><a onclick="return confirm('DA LI STE SIGURNI DA ŽELITE BRISATI?')" href="deleteEvent/{{$event->id}}"><button>Delete</button></a></td>
+            <td><a href="editEvent/{{$event->id}}"><button class="myButton">Edit</button></a></td>
+            <td><a onclick="return confirm('DA LI STE SIGURNI DA ŽELITE BRISATI?')" href="deleteEvent/{{$event->id}}"><button class="myButton">Delete</button></a></td>
 
  </tr>
 
@@ -50,4 +44,4 @@
 
     </tbody>
 </table>
-</table>
+@endsection
