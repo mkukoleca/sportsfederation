@@ -17,7 +17,7 @@ class PlayerInfoController extends Controller
      */
     public function index()
     {
-       return view('/playersInfo/players', ['player_infos'=> PlayerInfo::all()]);
+       return view('/playersinfo.players', ['player_infos'=> PlayerInfo::all()]);
     }
 
     /**
@@ -37,7 +37,7 @@ class PlayerInfoController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->only(['thumbnail', 'name', 'description', 'position', 'height', 'weight', 'jerseyNumber', 'dateOfBirth', 'citizenship', 'clubHistory', 'clubId', 'selection' ]);
+        $data = $request->only(['thumbnail', 'name', 'description', 'position', 'height', 'weight', 'jerseyNumber', 'dateOfBirth', 'citizenship', 'playerHistory', 'clubId', 'selection' ]);
         //dd($data);
         if(count($data) > 0){
             $player = new PlayerInfo();
@@ -50,7 +50,7 @@ class PlayerInfoController extends Controller
             $player->jerseyNumber=$data['jerseyNumber'];
             $player->dateOfBirth=$data['dateOfBirth'];
             $player->citizenship=$data['citizenship'];
-            $player->clubHistory=$data['clubHistory'];
+            $player->playerHistory=$data['playerHistory'];
             $player->clubId=$data['clubId'];
             $player->selection=$data['selection'];
 
@@ -110,7 +110,7 @@ class PlayerInfoController extends Controller
      */
     public function update($id, Request $request)
     {
-        $data = $request->only(['thumbnail', 'name', 'description', 'position', 'height', 'weight', 'jerseyNumber', 'dateOfBirth', 'citizenship', 'clubHistory', 'clubId', 'selection', 'created_at', 'updated_at',]);
+        $data = $request->only(['thumbnail', 'name', 'description', 'position', 'height', 'weight', 'jerseyNumber', 'dateOfBirth', 'citizenship', 'playerHistory', 'clubId', 'selection', 'created_at', 'updated_at',]);
         
         //dd($data);
         $player=PlayerInfo::where('id', $id)->first();
@@ -123,7 +123,7 @@ class PlayerInfoController extends Controller
         $player->jerseyNumber=$data['jerseyNumber'];
         $player->dateOfBirth=$data['dateOfBirth'];
         $player->citizenship=$data['citizenship'];
-        $player->clubHistory=$data['clubHistory'];
+        $player->playerHistory=$data['playerHistory'];
         $player->clubId=$data['clubId'];
         $player->selection=$data['selection'];
         

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Selection;
 use App\Club;
 use App\Staff;
+use App\StaffType;
 
 use DB;
 
@@ -19,7 +20,7 @@ class SelectionController extends Controller
     public function index()
     {
         $selection = DB::table('selection')->get();
-        return view('/selection/selection', ['selection' => $selection]);
+        return view('/selection/selection', ['selection' => $selection, 'selection' => Selection::with(['club','staffType'])->get()]);
     }
 
 

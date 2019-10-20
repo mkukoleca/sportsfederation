@@ -8,9 +8,10 @@ use App\Club;
 class PlayerInfo extends Model
 
 {
-
-    public function club() {
-        return $this->belongsTo("App\Club");
+    public function club (){
+        return $this->belongsTo('App\Club', 'clubId');
+    
+    
     }
 
     /**
@@ -28,7 +29,7 @@ class PlayerInfo extends Model
     'jerseyNumber',
     'dateOfBirth',
     'citizenship',
-    'clubHistory',
+    'playerHistory',
     'clubId',
     'selection',
     'created_at',

@@ -1,92 +1,75 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <style>
-    table, th, td {
-        text-align: left;
-    }
-</style>
-</head>
-<body>
-    <button autofocus><a href="/playersInfo/registerPlayer">Register new player</a></button>
+@extends("../layouts.master")
+@section("content")
+
+
+@section("title")
+Rukometni savez Republike Srpske-Players
+@endsection
+
+
+<br><br>
+    <a href="/playersInfo/registerPlayer"><button class="myButton" autofocus>Register new player</button></a>
     <br/><br/><br/>
-    
-    <table>
-    @foreach ($player_infos as $player)
-    
-            <tr>
-                <th>ID</th>
-                <td>{{$player->id}}</td>
-            </tr>
-            <tr>
-                <th>Profile image</th>
-                <td><img src="{{url($player->thumbnail)}}" alt="profile img"> </td>
-            </tr>
-            <tr>
-                <th>Name</th>
-                <td>{{$player -> name}}</td>
-            </tr>
-            <tr>
-                <th>Description</th>
-                <td>{{$player -> description}}</td>
-            </tr>
-            <tr>
-                <th>Position</th>
-                <td>{{$player -> position}}</td>
-            </tr>
-            <tr>
-                <th>Height</th>
-                <td>{{$player -> height}} cm</td>
-            </tr>
-            <tr>
-                <th>Weight</th>
-                <td>{{$player -> weight}} kg</td>
-            </tr>
-            <tr>
-                <th>Jersey number</th>
-                <td>{{$player -> jerseyNumber}}</td>
-            </tr>
-            <tr>
-                <th>Date of birth</th>
-                <td>{{$player -> dateOfBirth}}</td>
-            </tr>
-            <tr>
-                <th>Citizenship</th>
-                <td>{{$player -> citizenship}}</td>
-            </tr>
-            <tr>
-                <th>Club history</th>
-                <td>{{$player -> clubHistory}}</td>
-            </tr>
-            <tr>
-                <th>Current club</th>
-                <td>{{$player -> clubId}}</td>
-            </tr>
-            
-            <tr>
-                <th>Selection</th>
-                <td>{{$player -> selection}}</td>
-            </tr>
-            <tr>
-                <th>Registered at</th>
-                <td>{{$player -> created_at}}</td>
-            </tr>
-            <tr>
-                <th>Updated</th>
-                <td>{{$player -> updated_at}}</td>
-            </tr>
-            
-            <tr>
-                <td><button><a href="/playersInfo/singlePlayer/{{$player->id}}">SHOW PLAYER</a></button></td>
-                <th><button><a href="/playersInfo/updatePlayer/{{$player->id}}">EDIT</a></button></th>
-                <td><button onclick="return confirm('Are you sure you want to delete this data')"><a href="/deletePlayer/{{$player->id}}">DELETE</a></button></td>
-            </tr>
-            @endforeach 
-    </table>
+    <div class="table-responsive">
+      <table class="table blueTable">
+        <thead>
+          <tr>
+            <th>No.</th>
+            <th>Profile image</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Position</th>
+            <th>Height</th>
+            <th>Weight</th>
+            <th>Jersey number</th>
+            <th>Date of birth</th>
+            <th>Citizenship</th>
+            <th>Player history</th>
+            <th>Current club</th>
+            <th>Selection</th>
+            <th>Registered at</th>
+            <th>Updated</th>
+            <th>Edit</th>
+            <th>Show</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
         
-</body>
-</html>
+        <tbody>
+          @foreach($player_infos as $player)
+          <tr>
+            <td>{{$player->id}} </td>
+            <td><img width="60" height="auto" src="{{url($player->thumbnail)}}" alt="{{$player -> name}}"> </td>
+            <td>{{$player -> name}}</td>
+            <td>{{$player -> description}}</td>
+            <td>{{$player -> position}}</td>
+            <td>{{$player -> height}} cm</td>
+            <td>{{$player -> weight}} kg</td>
+            <td>{{$player -> jerseyNumber}}</td>
+            <td>{{$player -> dateOfBirth}}</td>
+            <td>{{$player -> citizenship}}</td>
+            <td>{{$player -> playerHistory}}</td>
+            <td>{{$player->club->name}}</td>
+            <td>{{$player -> selection}}</td>
+            <td>{{$player -> created_at}}</td>
+            <td>{{$player -> updated_at}}</td>
+            
+           <td><a href="/playersInfo/updatePlayer/{{$player->id}}"><button class="myButton">Edit</button></a></td>
+           <td><a href="/playersInfo/singlePlayer/{{$player->id}}"><button class="myButton">Show</button></a></td>
+           <td><a onclick="return confirm('DA LI STE SIGURNI DA ZELITE BRISATI?')" href="/deletePlayer/{{$player->id}}"><button class="myButton">Delete</button></a></td>
+          </tr>
+
+          @endforeach
+        </tbody>
+      </table>
+
+      @isset($message)
+      {{$message}}
+      @endisset
+   
+  </div>
+
+
+
+@endsection
+    
