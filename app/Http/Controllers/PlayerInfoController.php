@@ -17,7 +17,7 @@ class PlayerInfoController extends Controller
      */
     public function index()
     {
-       return view('/playersInfo/players', ['player_infos'=> PlayerInfo::all()]);
+       return view('/playersinfo.players', ['player_infos'=> PlayerInfo::all()]);
     }
 
     /**
