@@ -3,6 +3,8 @@
 namespace App;
 
 use App\Club;
+use App\Staff;
+use App\StaffType;
 use Illuminate\Database\Eloquent\Model;
 
 class Selection extends Model
@@ -12,5 +14,9 @@ class Selection extends Model
 
     public function club (){
         return $this->belongsTo('App\Club', 'clubId');
+    }
+    public function staffType()
+    {
+        return $this->belongsTo("App\Staff", 'coachId');
     }
 }

@@ -33,8 +33,8 @@ Rukometni savez Republike Srpske-Selection
         <td>{{$select->gender}}</td>
         <td>{{$select->category}}</td>
         <td>{{$select->history}}</td>
-        <td>{{$select->coachId}}</td>
-        <td>{{$select->clubId}}</td>
+        <td>{{$select->staffType->name}}</td>
+        <td>{{$select->club->name}}</td>
 
         <td><a href="editSelection/{{$select->id}}"><button class="myButton">Edit</button></a></td>
         <td><a onclick="return confirm('DA LI STE SIGURNI DA ZELITE BRISATI?')" href="deleteSelection/{{$select->id}}"><button class="myButton">Delete</button></a></td>
