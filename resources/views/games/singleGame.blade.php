@@ -19,13 +19,10 @@
  <table class="blueTable">
   
     
-            <tr>
-                <th>Id</th>
-                <td>{{$game->id}}</td>
-            </tr>
+            
             <tr>
                 <th>Event</th>
-                <td>{{$game->eventId}}</td>
+                <td>{{$game->event->type}}</td>
             </tr>
             <tr>
                 <th>Date</th>

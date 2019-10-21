@@ -36,7 +36,7 @@ Rukometni savez Republike Srpske-Games
     </thead>
     <tbody>
         <tr>
-            <td>{{$game->eventId}}</td>
+            <td>{{$game->event->type}}</td>
             <td>{{$game -> date}}</td>
             <td>{{$game -> place}}</td>
             <td>{{$game -> homeClubId}}</td>

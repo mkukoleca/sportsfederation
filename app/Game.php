@@ -19,6 +19,7 @@ class Game extends Model
         'place',
         'homeClubId',
         'guestClubId',
+        'category',
         'referee1',
         'referee2',
         'delegate',
