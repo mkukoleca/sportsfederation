@@ -9,7 +9,7 @@
           <li><a href="/selection">Selection</a></li>
           <li><a href="/event">Event</a></li>
           <li><a href="/games">Games</a></li>
-          <li><a href="/playersInfo/players">Player info</a></li>
+          <li><a href="/players">Player info</a></li>
         <ul>
             
 </nav>

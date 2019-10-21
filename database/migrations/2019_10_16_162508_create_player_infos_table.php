@@ -25,7 +25,7 @@ class CreatePlayerInfosTable extends Migration
             $table->integer('jerseyNumber');
             $table->date('dateOfBirth');
             $table->string('citizenship');
-            $table->string('clubHistory');
+            $table->string('clubHistory'); //
             $table->bigInteger('clubId')->unsigned();
             $table->string('selection');
             $table->timestamps();

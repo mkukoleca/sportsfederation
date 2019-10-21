@@ -17,7 +17,7 @@ class PlayerInfoController extends Controller
      */
     public function index()
     {
-       return view('/playersInfo/players', ['player_infos'=> PlayerInfo::all()]);
+       return view('/playersinfo.players', ['player_infos'=> PlayerInfo::all()]);
     }
 
     /**
@@ -27,7 +27,7 @@ class PlayerInfoController extends Controller
      */
     public function create()
     {
-        return view('/playersInfo/registerPlayer', ['selection'=> Selection::all(), 'clubs' => Club::all()]);
+        return view('/playersinfo.registerPlayer', ['selection'=> Selection::all(), 'clubs' => Club::all()]);
     }
     /**
      * Store a newly created resource in storage.
@@ -37,7 +37,7 @@ class PlayerInfoController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->only(['thumbnail', 'name', 'description', 'position', 'height', 'weight', 'jerseyNumber', 'dateOfBirth', 'citizenship', 'clubHistory', 'clubId', 'selection' ]);
+        $data = $request->only(['thumbnail', 'name', 'description', 'position', 'height', 'weight', 'jerseyNumber', 'dateOfBirth', 'citizenship', 'playerHistory', 'clubId', 'selection' ]);
         //dd($data);
         if(count($data) > 0){
             $player = new PlayerInfo();
@@ -50,7 +50,7 @@ class PlayerInfoController extends Controller
             $player->jerseyNumber=$data['jerseyNumber'];
             $player->dateOfBirth=$data['dateOfBirth'];
             $player->citizenship=$data['citizenship'];
-            $player->clubHistory=$data['clubHistory'];
+            $player->playerHistory=$data['playerHistory'];
             $player->clubId=$data['clubId'];
             $player->selection=$data['selection'];
 
@@ -63,9 +63,9 @@ class PlayerInfoController extends Controller
             }
 
             $player->save();
-            return redirect('/playersInfo/players');        
+            return redirect('/players');        
         } 
-        return view('/playersInfo/registerPlayer');
+        return view('/playersinfo.registerPlayer');
 
     }
 
@@ -79,7 +79,7 @@ class PlayerInfoController extends Controller
     {
         //return PlayerInfo::find($id);
         $player = PlayerInfo::where('id', $id)->first();
-        return view("/playersInfo/singlePlayer", ['player' => $player]);
+        return view("/playersinfo.singlePlayer", ['player' => $player]);
 
         //return view('/playersinfo/singlePlayer'); je kontrolni cisto da vidim da li radi ruta
 
@@ -98,7 +98,7 @@ class PlayerInfoController extends Controller
         $player = PlayerInfo::where('id', $id)->first();
         $clubs= Club::all();
         $selection = Selection::all();
-        return view('/playersinfo/updatePlayer',compact(['player', 'clubs', 'selection']));
+        return view('/playersinfo.updatePlayer',compact(['player', 'clubs', 'selection']));
     }
 
     /**
@@ -110,7 +110,7 @@ class PlayerInfoController extends Controller
      */
     public function update($id, Request $request)
     {
-        $data = $request->only(['thumbnail', 'name', 'description', 'position', 'height', 'weight', 'jerseyNumber', 'dateOfBirth', 'citizenship', 'clubHistory', 'clubId', 'selection', 'created_at', 'updated_at',]);
+        $data = $request->only(['thumbnail', 'name', 'description', 'position', 'height', 'weight', 'jerseyNumber', 'dateOfBirth', 'citizenship', 'playerHistory', 'clubId', 'selection', 'created_at', 'updated_at',]);
         
         //dd($data);
         $player=PlayerInfo::where('id', $id)->first();
@@ -123,14 +123,14 @@ class PlayerInfoController extends Controller
         $player->jerseyNumber=$data['jerseyNumber'];
         $player->dateOfBirth=$data['dateOfBirth'];
         $player->citizenship=$data['citizenship'];
-        $player->clubHistory=$data['clubHistory'];
+        $player->playerHistory=$data['playerHistory'];
         $player->clubId=$data['clubId'];
         $player->selection=$data['selection'];
         
 
         $player->save();
     
-        return redirect('/playersInfo/players');
+        return redirect('/players');
     }
 
     /**
@@ -144,7 +144,7 @@ class PlayerInfoController extends Controller
         $player->delete();
         
         
-        return redirect('playersInfo/players');
+        return redirect('/players');
     }
 
 

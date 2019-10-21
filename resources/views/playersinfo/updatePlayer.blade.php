@@ -1,23 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-<link rel="stylesheet" type="text/css" href="../formaClub.css">
-    <title>Document</title>
-</head>
-<body>
-<button type="button" class="btn btn-secondary btn-lg btn-block"><a href="/playersInfo/players">Back</a></button>
+@extends("../layouts.master")
+@section("content")
+
+
+@section("title")
+Rukometni savez Republike Srpske-Players
+@endsection
+<div class="container">
+  <div class="row">
+
+     
+
+     <div>
+  <br><br>
+<button type="button" class="btn btn-secondary btn-lg btn-block"><a href="/players">Back</a></button>
 <div class="container">  
   <form id="contact" action="{{route('updateplayer', $player->id)}}" method="POST" enctype="multipart/form-data">
   {{csrf_field()}}
     <h3>Update Player</h3>
     <fieldset>
-    Profile image:<br><img src="{{url($player->thumbnail)}}" alt="profile img">
+    Profile image:<br><img width="320" height="auto" src="{{url($player->thumbnail)}}" alt="profile img">
     <input placeholder="Profile image" type="file" name ="thumbnail" tabindex="1" required autofocus>
     </fieldset>
     <fieldset>
@@ -38,10 +39,10 @@
       <option value="Goalkeeper">Goalkeeper</option>
     </select> 
     <fieldset>
-    Height:<br><input placeholder="Height" type="number" min="1" name ="height" value="{{$player->height}}" tabindex="6" >
+    Height:<br><input placeholder="Height" type="number" min="1" name ="height" value="{{$player->height}}" tabindex="6" > cm
     </fieldset>
     <fieldset>
-    Weight:<br><input placeholder="Weight" type="number" min="1" name ="weight" value="{{$player->weight}}" tabindex="7" >
+    Weight:<br><input placeholder="Weight" type="number" min="1" name ="weight" value="{{$player->weight}}" tabindex="7" > kg
     </fieldset>
     <fieldset>
     Jersey number:<br><input placeholder="Jersey number" type="number" min="1" name ="jerseyNumber" value="{{$player->jerseyNumber}}" tabindex="8" >
@@ -181,7 +182,7 @@
                 <option value="Lithuania">Lithuania</option>
                 <option value="Luxembourg">Luxembourg</option>
                 <option value="Macao">Macao</option>
-                <option value="Macedonia, The Former Yugoslav Republic of">Macedonia, The Former Yugoslav Republic of</option>
+                <option value="Republic of North Macedonia">Republic of North Macedonia</option>
                 <option value="Madagascar">Madagascar</option>
                 <option value="Malawi">Malawi</option>
                 <option value="Malaysia">Malaysia</option>
@@ -299,7 +300,7 @@
             </select>
     </fieldset>
     <fieldset>
-    Club history:<br><textarea placeholder="Club history" type="text" name ="clubHistory" value="{{$player->clubHistory}}" tabindex="11" >{{$player->clubHistory}}</textarea>
+    Player history:<br><textarea placeholder="Club history" type="text" name ="playerHistory" value="{{$player->playerHistory}}" tabindex="11" >{{$player->playerHistory}}</textarea>
     </fieldset>
     <fieldset>
       <span>Current Club</span>
@@ -323,8 +324,6 @@
           disabled   
       @endif>Update</button>
     </fieldset>
-    <p class="copyright">Designed by <a href="https://colorlib.com" target="_blank" title="Colorlib">Colorlib</a></p>
+    <p class="copyright">Designed by <a href="#" target="_blank" title="Colorlib">tim_kornjača</a></p>
   </form>
-</div>
-</body>
-</html>
+  @endsection

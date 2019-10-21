@@ -30,6 +30,13 @@ body {
   position: relative;
 }
 
+.container1 {
+  color: wheat;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+
 #contact input[type="text"],
 #contact input[type="email"],
 #contact input[type="tel"],

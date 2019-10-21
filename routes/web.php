@@ -14,12 +14,12 @@ Route::post('/editClub/{id}','ClubController@update')->name('updateclub');
 Route::get('/deleteClub/{id}','ClubController@destroy');
 
 // PlayerInfo
-Route::get('/playersInfo/players', 'PlayerInfoController@index');
-Route::get('/playersInfo/singlePlayer/{id}', 'PlayerInfoController@show');
-Route::get('/playersInfo/updatePlayer/{id}','PlayerInfoController@edit');
-Route::post('/playersInfo/updatePlayer/{id}','PlayerInfoController@update')->name('updateplayer');
-Route::get('/playersInfo/registerPlayer', 'PlayerInfoController@create');
-Route::post('/playersInfo/registerPlayer', 'PlayerInfoController@store')->name('registerplayer');
+Route::get('/players', 'PlayerInfoController@index');
+Route::get('/singlePlayer/{id}', 'PlayerInfoController@show');
+Route::get('/updatePlayer/{id}','PlayerInfoController@edit');
+Route::post('updatePlayer/{id}','PlayerInfoController@update')->name('updateplayer');
+Route::get('/registerPlayer', 'PlayerInfoController@create');
+Route::post('/registerPlayer', 'PlayerInfoController@store')->name('registerplayer');
 Route::get('/deletePlayer/{id}','PlayerInfoController@destroy');
 
 // Staff federation route
