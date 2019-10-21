@@ -79,6 +79,15 @@ class PlayerInfoController extends Controller
     {
         //return PlayerInfo::find($id);
         $player = PlayerInfo::where('id', $id)->first();
+        
+        if(request()->hasFile('thumbnail')){
+            $name = $player->name.time().'.'.$request->thumbnail->extension();
+            $folder = 'assets/photo/';
+            $request->thumbnail->move(public_path($folder), $name);
+
+            $player->thumbnail=$folder.$name;
+        }
+
         return view("/playersinfo.singlePlayer", ['player' => $player]);
 
         //return view('/playersinfo/singlePlayer'); je kontrolni cisto da vidim da li radi ruta
@@ -127,9 +136,15 @@ class PlayerInfoController extends Controller
         $player->clubId=$data['clubId'];
         $player->selection=$data['selection'];
         
+        if($request->hasFile('thumbnail')){
+            $name = $player->name.time().'.'.$request->thumbnail->extension();
+            $folder = 'assets/photo/';
+            $request->thumbnail->move(public_path($folder), $name);
+
+            $player->thumbnail=$folder.$name;
+        }
 
         $player->save();
-    
         return redirect('/players');
     }
 
