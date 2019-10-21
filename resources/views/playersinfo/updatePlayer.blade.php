@@ -300,21 +300,21 @@ Rukometni savez Republike Srpske-Players
             </select>
     </fieldset>
     <fieldset>
-    Player history:<br><textarea placeholder="Club history" type="text" name ="playerHistory" value="{{$player->playerHistory}}" tabindex="11" >{{$player->playerHistory}}</textarea>
+    Player history:<br><textarea placeholder="History" type="text" name ="playerHistory" value="{{$player->playerHistory}}" tabindex="11" >{{$player->playerHistory}}</textarea>
     </fieldset>
     <fieldset>
       <span>Current Club</span>
       <select name="clubId">
         @foreach ($clubs as $club)
-        <option value="{{$club->id}}">{{$club->name}}</option>
+        <option value="{{$club->id}}" @if ($club->id == $player->clubId) selected @endif>{{$club->name}}</option>
         @endforeach
       </select>
       </fieldset>
       <fieldset>
         <span>Selection</span>
-          <select name="selection">
+          <select name="selectionId">
           @foreach ($selection as $s)
-          <option value="{{$s->id}}">{{$s->category}}</option>
+          <option value="{{$s->id}}" @if ($s->id == $player->selectionId) selected @endif>{{$s->category}}</option>
           @endforeach
            </select>
         </fieldset>
