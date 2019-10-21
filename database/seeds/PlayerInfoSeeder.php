@@ -23,7 +23,7 @@ class PlayerInfoSeeder extends Seeder
             'citizenship' => 'Boznia and Herzegovina', 
             'playerHistory' => 'Igrao je u tri tima do sada.',
             'clubId' => 1,
-            'selection' => 'Senior',
+            'selectionId' => 1,
         ]);
 
         DB::table('player_infos')->insert([
@@ -38,7 +38,7 @@ class PlayerInfoSeeder extends Seeder
             'citizenship' => 'Boznia and Herzegovina', 
             'playerHistory' => 'Ponikao u redovima Partizana',
             'clubId' => 2,
-            'selection' => 'Senior',
+            'selectionId' => '1',
             
         ]);
     }

@@ -24,7 +24,7 @@ Rukometni savez Republike Srpske-Players
             <th>Jersey number</th>
             <th>Date of birth</th>
             <th>Citizenship</th>
-            <th>Player history</th>
+            <th>History</th>
             <th>Current club</th>
             <th>Selection</th>
             <th>Registered at</th>
@@ -50,9 +50,9 @@ Rukometni savez Republike Srpske-Players
             <td>{{$player -> citizenship}}</td>
             <td>{{$player -> playerHistory}}</td>
             <td>{{$player->club->name}}</td>
-            <td>{{$player -> selection}}</td>
-            <td>{{$player -> created_at}}</td>
-            <td>{{$player -> updated_at}}</td>
+            <td>{{$player->selection->category}}</td>
+            <td>{{$player->created_at}}</td>
+            <td>{{$player->updated_at}}</td>
             
            <td><a href="/updatePlayer/{{$player->id}}"><button class="myButton">Edit</button></a></td>
            <td><a href="/singlePlayer/{{$player->id}}"><button class="myButton">Show</button></a></td>

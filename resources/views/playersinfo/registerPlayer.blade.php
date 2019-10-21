@@ -302,7 +302,7 @@ Rukometni savez Republike Srpske-Players
     </fieldset>
     
     <fieldset>
-      <textarea placeholder="Player history" type="text" name ="playerHistory" tabindex="11" required></textarea>
+      <textarea placeholder="History" type="text" name ="playerHistory" tabindex="11" required></textarea>
     </fieldset>
     <fieldset>
     <span>Current Club</span>
@@ -319,7 +319,7 @@ Rukometni savez Republike Srpske-Players
     <fieldset>
     <span>Selection</span>
     @if(count($selection) > 0)
-      <select name="selection">
+      <select name="selectionId">
       @foreach ($selection as $s)
       <option value="{{$s->id}}">{{$s->category}}</option>
       @endforeach

@@ -37,7 +37,7 @@ class PlayerInfoController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->only(['thumbnail', 'name', 'description', 'position', 'height', 'weight', 'jerseyNumber', 'dateOfBirth', 'citizenship', 'playerHistory', 'clubId', 'selection' ]);
+        $data = $request->only(['thumbnail', 'name', 'description', 'position', 'height', 'weight', 'jerseyNumber', 'dateOfBirth', 'citizenship', 'playerHistory', 'clubId', 'selectionId' ]);
         //dd($data);
         if(count($data) > 0){
             $player = new PlayerInfo();
@@ -52,7 +52,7 @@ class PlayerInfoController extends Controller
             $player->citizenship=$data['citizenship'];
             $player->playerHistory=$data['playerHistory'];
             $player->clubId=$data['clubId'];
-            $player->selection=$data['selection'];
+            $player->selectionId=$data['selectionId'];
 
             if($request->hasFile('thumbnail')){
                 $name = $player->name.time().'.'.$request->thumbnail->extension();
@@ -119,7 +119,7 @@ class PlayerInfoController extends Controller
      */
     public function update($id, Request $request)
     {
-        $data = $request->only(['thumbnail', 'name', 'description', 'position', 'height', 'weight', 'jerseyNumber', 'dateOfBirth', 'citizenship', 'playerHistory', 'clubId', 'selection', 'created_at', 'updated_at',]);
+        $data = $request->only(['thumbnail', 'name', 'description', 'position', 'height', 'weight', 'jerseyNumber', 'dateOfBirth', 'citizenship', 'playerHistory', 'clubId', 'selectionId', 'created_at', 'updated_at',]);
         
         //dd($data);
         $player=PlayerInfo::where('id', $id)->first();
@@ -134,7 +134,7 @@ class PlayerInfoController extends Controller
         $player->citizenship=$data['citizenship'];
         $player->playerHistory=$data['playerHistory'];
         $player->clubId=$data['clubId'];
-        $player->selection=$data['selection'];
+        $player->selectionId=$data['selectionId'];
         
         if($request->hasFile('thumbnail')){
             $name = $player->name.time().'.'.$request->thumbnail->extension();

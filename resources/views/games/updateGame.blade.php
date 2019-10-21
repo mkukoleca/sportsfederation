@@ -17,7 +17,12 @@
   {{csrf_field()}}
     <h3>Update Game</h3>
     <fieldset>
-    Event:<br><input placeholder="Event"  type="text" name ="eventId" value="{{$game->eventId}}" tabindex="1"  autofocus>
+      <span>Event</span>
+      <select name="eventId">
+        @foreach ($events as $event)
+          <option value="{{$event->id}}">{{$event->type}}</option>
+        @endforeach
+      </select> 
     </fieldset>
     <fieldset>
     Date:<br><input placeholder=" Date" type="date" name =" date" value="{{$game-> date}}" tabindex="2" >
@@ -26,20 +31,45 @@
     Place:<br><input placeholder="Place" type="text" name ="place" value="{{$game->place}}" tabindex="3">
     </fieldset>
     <fieldset>
-    Home:<br><input placeholder="Home" type="text" name ="home" value="{{$game->home}}" tabindex="4">
+      <span>Home</span>
+          <select name="home">
+            @foreach ($clubs as $club)
+            <option value="{{$club->id}}">{{$club->name}}</option>
+            @endforeach
+          </select>  
     </fieldset>
     <fieldset>
-    Guest:<br><input placeholder="Guest" type="text" name ="guest" value="{{$game->guest}}" tabindex="5" >
+      <span>Guest</span>
+            <select name="guest">
+              @foreach ($clubs as $club)
+              <option value="{{$club->id}}">{{$club->name}}</option>
+              @endforeach
+            </select>
     </fieldset>
     <fieldset>
-    Referee1:<br><input placeholder="Referee1" type="text" name ="referee1" value="{{$game->referee1}}" tabindex="6" >
+      <span>Referee1</span>
+              <select name="referee1">
+                @foreach ($staffs as $staff)
+                <option value="{{$staff->id}}">{{$staff->name}}</option>
+                @endforeach
+              </select>
     </fieldset>
     <fieldset>
-    Referee2:<br><input placeholder="Referee2" type="text" name ="referee2" value="{{$game->referee2}}" tabindex="7" >
+      <span>Referee2</span>
+                <select name="referee2">
+                  @foreach ($staffs as $staff)
+                  <option value="{{$staff->id}}">{{$staff->name}}</option>
+                  @endforeach
+                </select>
     </fieldset>
     <fieldset>
-    Delegate:<br><input placeholder="Delegate" type="text" name =" delegate" value="{{$game-> delegate}}" tabindex="8" >
-    </fieldset>
+      <span>Delegate</span>
+                <select name="delegate">
+                  @foreach ($staffs as $staff)
+                  <option value="{{$staff->id}}">{{$staff->name}}</option>
+                  @endforeach
+                </select>
+    </fieldset> 
     <fieldset>
     Round:<br><input placeholder=" Round" type="number" min="1" name =" round" value="{{$game-> round}}" tabindex="9" >
     </fieldset>
