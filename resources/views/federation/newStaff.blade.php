@@ -30,9 +30,7 @@
     <fieldset>
       <input placeholder="Name" type="text" name ="name" tabindex="1" required autofocus>
     </fieldset>
-    <fieldset>
-      <input placeholder="Lastname" type="text" name ="lastname" tabindex="2" required>
-    </fieldset>
+
     <fieldset>
       <input placeholder="Description" type="text" name ="description" tabindex="3">
     </fieldset>
@@ -70,6 +68,11 @@
 
 </div>
 <div clas="col-3">
+@if (session('status'))
+<div class="alert alert-success">
+        {{ session('status') }}
+    </div>
+@endif
       </div>
     </div>
 

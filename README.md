@@ -17,16 +17,15 @@
 - History
 - ClubId
 
-### Coach 
+### Staff 
 - Name
-- Surname
 - Date of birth
 - Description
 - ClubId
+- StaffTypeId
 
 ### Player info 
 - Name
-- Surname
 - Description
 - Position
 - Height
@@ -46,7 +45,7 @@
 - Description
 
 ### Game
-- Event
+- EventId
 - Date
 - Place
 - Home
@@ -59,10 +58,8 @@
 - ScoresHome
 - Note
 
-### Representative
-- Type(referee, delegate)
-- Name
-- Surname
+### StaffTypes
+- name
 
 ### Club CRUD
 ### Selection CRUD

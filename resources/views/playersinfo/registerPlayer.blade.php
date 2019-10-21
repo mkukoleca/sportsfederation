@@ -1,60 +1,59 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-<link rel="stylesheet" type="text/css" href="formaClub.css">
-    <title>Document</title>
-</head>
-<body>
-<button type="button" class="btn btn-secondary btn-lg btn-block"><a href="/playersInfo/players">Back</a></button>
+@extends("../layouts.master")
+@section("content")
+
+
+@section("title")
+Rukometni savez Republike Srpske-Players
+@endsection
+<div class="container">
+  <div class="row">
+
+     
+
+     <div>
+  <br><br>
+
+<button type="button" class="btn btn-secondary btn-lg btn-block"><a href="/players">Back</a></button>
 <div class="container">  
   <form id="contact" action="{{route('registerplayer')}}" method="POST" enctype="multipart/form-data">
   {{csrf_field()}}
     <h3>Add new Player</h3>
     <fieldset> Profile image:
-      <input placeholder="Thumbnail" type="file" name ="thumbnail" tabindex="1" required autofocus>
+      <input placeholder="Profile image" type="file" name ="thumbnail" tabindex="1" required autofocus>
     </fieldset>
     <fieldset>
       <input placeholder="Name" type="text" name ="name" tabindex="2" required>
     </fieldset>
     <fieldset>
-      <input placeholder="Surname" type="text" name ="surname" tabindex="3">
-    </fieldset>
-    <fieldset>
       <input placeholder="Description" type="text" name ="description" tabindex="4" required>
     </fieldset>
     <fieldset>
-    <span>Pozicija</span>
-    <select>
-      <option value="lijevo_krilo">Lijevo krilo</option>
-      <option value="desno_krilo">Desno krilo</option>
-      <option value="lijevi_bek">Lijevi bek</option>
-      <option value="srednji_bek">Srednji bek</option>
-      <option value="desni_bek">Desni bek</option>
-      <option value="pivot">Pivot</option>
-      <option value="golman">Golman</option>
+    <span>Position</span>
+    <select name="position">
+    <option value="Left winger">Left winger</option>
+      <option value="Right winger">Right winger</option>
+      <option value="Left back">Left back</option>
+      <option value="Center">Center</option>
+      <option value="Right back">Right back</option>
+      <option value="Circle runner">Circle runner</option>
+      <option value="Goalkeeper">Goalkeeper</option>
     </select> 
     </fieldset>
     <fieldset>
-    <input placeholder="Height" type="number" name ="height" tabindex="6" required>
+    <input placeholder="Height" min=100 type="number" name ="height" tabindex="6" required>
     </fieldset>
     <fieldset>
-    <input placeholder="Weight" type="number" name ="weight" tabindex="7" required>
+    <input placeholder="Weight" min=10 type="number" name ="weight" tabindex="7" required>
     </fieldset>
     <fieldset>
-    <input placeholder="Jersey number" type="number" name ="jerseyNumber" tabindex="8" required>
+    <input placeholder="Jersey number" min=1 type="number" name ="jerseyNumber" tabindex="8" required>
     </fieldset>
     <fieldset>
     <input placeholder="Date of birth" type="date" name ="dateOfBirth" tabindex="9" required>
     </fieldset>
     <fieldset>
     <span>Citizenship</span>
-    <select name="country">
+    <select name="citizenship">
                 <option value="Afghanistan">Afghanistan</option>
                 <option value="Åland Islands">Åland Islands</option>
                 <option value="Albania">Albania</option>
@@ -184,7 +183,7 @@
                 <option value="Lithuania">Lithuania</option>
                 <option value="Luxembourg">Luxembourg</option>
                 <option value="Macao">Macao</option>
-                <option value="Macedonia, The Former Yugoslav Republic of">Macedonia, The Former Yugoslav Republic of</option>
+                <option value="Republic of North Macedonia">Republic of North Macedonia</option>
                 <option value="Madagascar">Madagascar</option>
                 <option value="Malawi">Malawi</option>
                 <option value="Malaysia">Malaysia</option>
@@ -303,29 +302,45 @@
     </fieldset>
     
     <fieldset>
-      <textarea placeholder="Club history" type="text" name ="clubHistory" tabindex="11" required></textarea>
+      <textarea placeholder="Club history" type="text" name ="playerHistory" tabindex="11" required></textarea>
     </fieldset>
     <fieldset>
     <span>Current Club</span>
-    <select name="currentClub">
+    @if(count($clubs) > 0)
+    <select name="clubId">
       @foreach ($clubs as $club)
       <option value="{{$club->id}}">{{$club->name}}</option>
       @endforeach
-       </select>
+    </select>
+    @else 
+      <h3>Please register club first </h3><a href="/">Register club</a>
+      @endif
     </fieldset>
     <fieldset>
     <span>Selection</span>
+    @if(count($selection) > 0)
       <select name="selection">
-      @foreach ($selections as $s)
+      @foreach ($selection as $s)
       <option value="{{$s->id}}">{{$s->category}}</option>
       @endforeach
        </select>
+       @else 
+       <h3>Please register selection first</h3><a href="/selection">Register selection</a>
+      @endif
     </fieldset>
     <fieldset>
-      <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+      <button name="submit" type="submit" id="contact-submit" data-submit="...Sending" 
+      @if ((count($selection) == 0) || (count($clubs) == 0))
+          disabled   
+      @endif >Submit</button>
     </fieldset>
-    <p class="copyright">Designed by <a href="https://colorlib.com" target="_blank" title="Colorlib">Colorlib</a></p>
+    <p class="copyright">Designed by <a href="#" target="_blank" title="Colorlib">tim_kornjača</a></p>
   </form>
-</div>
-</body>
-</html>
+
+
+      
+  @endsection
+
+
+
+

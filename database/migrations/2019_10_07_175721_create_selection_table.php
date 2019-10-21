@@ -13,15 +13,21 @@ class CreateSelectionTable extends Migration
      */
     public function up()
     {
+        Schema::disableForeignKeyConstraints();
         Schema::create('selection', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('gender');
             $table->string('category');
             $table->string('history');
-            $table->integer('coachId')->nullable();
-            $table->integer('clubId')->nullable();
+
+            $table->bigInteger('staffTypeId')->unsigned();  // TODO: change to coachId!!!
+            $table->bigInteger('clubId')->unsigned();
             $table->timestamps();
+
+            $table->foreign('staffTypeId')->references('id')->on('staff_types');
+            $table->foreign('clubId')->references('id')->on('clubs');
         });
+        Schema::enableForeignKeyConstraints();
     }
 
     /**

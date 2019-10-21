@@ -3,16 +3,23 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Event;
+
 
 class Game extends Model
 {
+
+    public function event() {
+        return $this->belongsTo("App\Event");
+    }
+  
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'event',   
+        'eventId',   
         'date',
         'place',
         'home',

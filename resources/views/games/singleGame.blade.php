@@ -25,7 +25,7 @@
             </tr>
             <tr>
                 <th>Event</th>
-                <td>{{$game->event}}</td>
+                <td>{{$game->eventId}}</td>
             </tr>
             <tr>
                 <th>Date</th>
@@ -84,7 +84,7 @@
             <tr>
                 <td><button><a href="/games/updateGame/{{$game->id}}">EDIT</a></button></td>
                 <td><button><a href="/deletePlayer/{{$game->id}}">DELETE</a></button></td>
-                <td><button><a href="/games/gamesList">GAMES LIST</a></button></td>
+                <td><button><a href="/games">GAMES LIST</a></button></td>
             </tr>
            
 </table>

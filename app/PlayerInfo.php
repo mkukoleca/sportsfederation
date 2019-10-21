@@ -3,10 +3,16 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Club;
 
 class PlayerInfo extends Model
+
 {
-  
+    public function club (){
+        return $this->belongsTo('App\Club', 'clubId');
+    
+    
+    }
 
     /**
      * The attributes that are mass assignable.
@@ -16,7 +22,6 @@ class PlayerInfo extends Model
     protected $fillable = [
     'thumbnail',   
     'name',
-    'surname',
     'description',
     'position',
     'height',
@@ -24,8 +29,8 @@ class PlayerInfo extends Model
     'jerseyNumber',
     'dateOfBirth',
     'citizenship',
-    'clubHistory',
-    'currentClub',
+    'playerHistory',
+    'clubId',
     'selection',
     'created_at',
     'updated_at',

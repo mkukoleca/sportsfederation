@@ -8,20 +8,29 @@ class Staff extends Model
 {
     protected $table = "staffs";
     public $timestamps = false;
-    
+
+    public function type()
+    {
+        return $this->belongsTo("App\StaffType");
+    }
+
+    public function federationType()
+    {
+        return $this->belongsTo("App\Federation"); // TODO: add pivot type relation
+    }
+
     protected $fillable = [
-        'id', 'name', 'lastname', 'description', 'type_id', 'thumbnail'
+        'id', 'name', 'description', 'type_id', 'thumbnail'
     ];
 
-   public function types(){
+    public function types()
+    {
 
-       return $this->belongsToMany('App\StaffType', 'federation_staff')->withPivot('staff_type_id');
-   }
+        return $this->belongsToMany('App\StaffType');
+    }
 
-   public function feds(){
-
-    return $this->belongsToMany('App\Federation','federation_staff')->withPivot('federation_id');
-}
- 
-
+    public function federation()
+    {
+        return $this->belongsToMany('App\Federation', 'federation_staff');
+    }
 }

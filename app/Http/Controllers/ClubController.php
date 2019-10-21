@@ -30,7 +30,7 @@ class ClubController extends Controller
 
             if ($request->hasFile('thumbnail')) {
                 $name = $club->name . '.' . $request->thumbnail->extension();
-                $folder = 'photo/';
+                $folder = 'assets/photo/';
                 $request->thumbnail->move(public_path($folder), $name);
 
                 $club->thumbnail = $folder . $name;
@@ -66,7 +66,7 @@ class ClubController extends Controller
 
         if ($request->hasFile('thumbnail')) {
             $name = $club->name . '.' . $request->thumbnail->extension();
-            $folder = 'photo/';
+            $folder = 'assets/photo/';
             $request->thumbnail->move(public_path($folder), $name);
 
             $club->thumbnail = $folder . $name;
