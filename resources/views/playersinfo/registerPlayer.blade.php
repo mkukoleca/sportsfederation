@@ -302,7 +302,7 @@ Rukometni savez Republike Srpske-Players
     </fieldset>
     
     <fieldset>
-      <textarea placeholder="Club history" type="text" name ="playerHistory" tabindex="11" required></textarea>
+      <textarea placeholder="Player history" type="text" name ="playerHistory" tabindex="11" required></textarea>
     </fieldset>
     <fieldset>
     <span>Current Club</span>

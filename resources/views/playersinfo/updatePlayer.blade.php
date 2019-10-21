@@ -18,7 +18,7 @@ Rukometni savez Republike Srpske-Players
   {{csrf_field()}}
     <h3>Update Player</h3>
     <fieldset>
-    Profile image:<br><img width="320" height="auto" src="{{url($player->thumbnail)}}" alt="profile img">
+    Profile image:<br><img width="50" height="auto" src="{{url($player->thumbnail)}}" alt="profile img">
     <input placeholder="Profile image" type="file" name ="thumbnail" tabindex="1" required autofocus>
     </fieldset>
     <fieldset>
@@ -300,7 +300,7 @@ Rukometni savez Republike Srpske-Players
             </select>
     </fieldset>
     <fieldset>
-    Player history:<br><textarea placeholder="Club history" type="text" name ="playerHistory" value="{{$player->playerHistory}}" tabindex="11" >{{$player->playerHistory}}</textarea>
+    Player history:<br><textarea placeholder="Player history" type="text" name ="playerHistory" value="{{$player->playerHistory}}" tabindex="11" >{{$player->playerHistory}}</textarea>
     </fieldset>
     <fieldset>
       <span>Current Club</span>

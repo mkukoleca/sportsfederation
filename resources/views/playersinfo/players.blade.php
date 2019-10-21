@@ -39,7 +39,7 @@ Rukometni savez Republike Srpske-Players
           @foreach($player_infos as $player)
           <tr>
             <td>{{$player->id}} </td>
-            <td><img width="60" height="auto" src="{{url($player->thumbnail)}}" alt="{{$player -> name}}"> </td>
+            <td><img width="50" height="auto" src="{{url($player->thumbnail)}}" alt="{{$player -> name}}"> </td>
             <td>{{$player -> name}}</td>
             <td>{{$player -> description}}</td>
             <td>{{$player -> position}}</td>
