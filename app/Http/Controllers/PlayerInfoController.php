@@ -56,7 +56,7 @@ class PlayerInfoController extends Controller
 
             if($request->hasFile('thumbnail')){
                 $name = $player->name.time().'.'.$request->thumbnail->extension();
-                $folder = 'assets/images/';
+                $folder = 'assets/photo/';
                 $request->thumbnail->move(public_path($folder), $name);
 
                 $player->thumbnail=$folder.$name;

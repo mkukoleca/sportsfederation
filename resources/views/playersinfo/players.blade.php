@@ -39,16 +39,16 @@ Rukometni savez Republike Srpske-Players
           @foreach($player_infos as $player)
           <tr>
             <td>{{$player->id}} </td>
-            <td><img width="60" height="auto" src="{{url($player->thumbnail)}}" alt="{{$player -> name}}"> </td>
-            <td>{{$player->name}}</td>
-            <td>{{$player->description}}</td>
-            <td>{{$player->position}}</td>
-            <td>{{$player->height}} cm</td>
-            <td>{{$player->weight}} kg</td>
-            <td>{{$player->jerseyNumber}}</td>
-            <td>{{$player->dateOfBirth}}</td>
-            <td>{{$player->citizenship}}</td>
-            <td>{{$player->playerHistory}}</td>
+            <td><img width="50" height="auto" src="{{url($player->thumbnail)}}" alt="{{$player -> name}}"> </td>
+            <td>{{$player -> name}}</td>
+            <td>{{$player -> description}}</td>
+            <td>{{$player -> position}}</td>
+            <td>{{$player -> height}} cm</td>
+            <td>{{$player -> weight}} kg</td>
+            <td>{{$player -> jerseyNumber}}</td>
+            <td>{{$player -> dateOfBirth}}</td>
+            <td>{{$player -> citizenship}}</td>
+            <td>{{$player -> playerHistory}}</td>
             <td>{{$player->club->name}}</td>
             <td>{{$player->selection->category}}</td>
             <td>{{$player->created_at}}</td>
