@@ -21,6 +21,6 @@ class StaffType extends Model
     
     public function staffType()
     {
-        return $this->belongsTo("App\Staff", 'type_id');
+        return $this->hasMany("App\Staff");
     }
 }

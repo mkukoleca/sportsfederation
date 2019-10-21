@@ -15,10 +15,15 @@ class StaffController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index() {        
+    public function index() {  
+ 
+        if (request()->has('type')) {
+            return view('federation.staff',
+                    ['staffs' => Staff::with(['type', 'federation'])->where('type_id',request('type'))->get()]);
+        } 
+
         return view('federation.staff',
                     ['staffs' => Staff::with(['type', 'federation'])->get()]);
-    
     }
 
     /**
@@ -87,8 +92,7 @@ class StaffController extends Controller
         
         return view('federation.editStaff', [
             'staff' => $staff,
-            'staffs' => StaffType::all(),
-            'feds' => Federation::all(), 
+            'staffs' => StaffType::all()
             ]);
     }
 

@@ -52,7 +52,7 @@
           <fieldset>
             <span>Federation </span>
             <select name="fedType">
-              @foreach ($feds as $fed)
+              @foreach ($staff->federation as $fed)
               <option value="{{ $fed->id }}">{{ $fed->name }}</option>
               @endforeach
             </select>
@@ -71,7 +71,6 @@
       <div clas="col-3">
       </div>
     </div>
-
   </div>
 </body>
 
