@@ -37,6 +37,10 @@ Rukometni savez Republike Srpske-Games
                 <td>{{$game -> guest}}</td>
             </tr>
             <tr>
+                <th>Category</th>
+                <td>{{$game -> category}}</td>
+            </tr>
+            <tr>
                 <th>Referee1</th>
                 <td>{{$game -> referee1}}</td>
             </tr>

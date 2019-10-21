@@ -42,7 +42,7 @@ class GameController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->only(['eventId', 'date', 'place', 'home', 'guest', 'referee1', 'referee2', 'delegate', 'round', 'scoresHome', 'scoresGuest', 'note']);
+        $data = $request->only(['eventId', 'date', 'place', 'home', 'guest','category', 'referee1', 'referee2', 'delegate', 'round','note']);
         if (count($data) > 0) {
             $game = new Game();
             $game->eventId = $data['eventId'];
@@ -50,12 +50,11 @@ class GameController extends Controller
             $game->place = $data['place'];
             $game->home = $data['home'];
             $game->guest = $data['guest'];
+            $game->category = $data['category'];
             $game->referee1 = $data['referee1'];
             $game->referee2 = $data['referee2'];
             $game->delegate = $data['delegate'];
             $game->round = $data['round'];
-            $game->scoresHome = $data['scoresHome'];
-            $game->scoresGuest = $data['scoresGuest'];
             $game->note = $data['note'];
 
 
@@ -104,7 +103,7 @@ class GameController extends Controller
      */
     public function update($id, Request $request)
     {
-        $data = $request->only(['eventId', 'date', 'place', 'home', 'guest', 'referee1', 'referee2', 'delegate', 'round', 'scoresHome', 'scoresGuest', 'note']);
+        $data = $request->only(['eventId', 'date', 'place', 'home', 'guest', 'category', 'referee1', 'referee2', 'delegate', 'round', 'scoresHome', 'scoresGuest', 'note']);
 
         $game = Game::where('id', $id)->first();
         $game->eventId = $data['eventId'];
