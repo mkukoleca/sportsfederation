@@ -16,7 +16,7 @@
   <div clas="col-3"></div>
   <div class="col-6">
     <br><br>
-<button type="button" class="btn btn-secondary btn-lg btn-block"><a href="/players">Back</a></button>
+<a href="/players"><button type="button" class="btn btn-secondary btn-lg btn-block">Back</button></a>
 <div class="container">  
   <form id="contact" action="{{route('updateplayer', $player->id)}}" method="POST" enctype="multipart/form-data">
   {{csrf_field()}}
