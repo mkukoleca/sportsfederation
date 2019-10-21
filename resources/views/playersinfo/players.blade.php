@@ -14,14 +14,13 @@ Rukometni savez Republike Srpske-Players
       <table class="table blueTable">
         <thead>
           <tr>
-            <th>No.</th>
+            
             <th>Profile image</th>
             <th>Name</th>
             <th>Description</th>
             <th>Position</th>
-            <th>Height</th>
-            <th>Weight</th>
-            <th>Jersey number</th>
+            <th>Height<br>Weight<br>Jersey number</th>
+            
             <th>Date of birth</th>
             <th>Citizenship</th>
             <th>History</th>
@@ -38,14 +37,12 @@ Rukometni savez Republike Srpske-Players
         <tbody>
           @foreach($player_infos as $player)
           <tr>
-            <td>{{$player->id}} </td>
+            
             <td><img width="50" height="auto" src="{{url($player->thumbnail)}}" alt="{{$player -> name}}"> </td>
             <td>{{$player -> name}}</td>
             <td>{{$player -> description}}</td>
             <td>{{$player -> position}}</td>
-            <td>{{$player -> height}} cm</td>
-            <td>{{$player -> weight}} kg</td>
-            <td>{{$player -> jerseyNumber}}</td>
+            <td>{{$player -> height}} cm<br>{{$player -> weight}} kg<br>{{$player -> jerseyNumber}}</td>
             <td>{{$player -> dateOfBirth}}</td>
             <td>{{$player -> citizenship}}</td>
             <td>{{$player -> playerHistory}}</td>
