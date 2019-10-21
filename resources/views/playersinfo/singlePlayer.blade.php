@@ -1,21 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-<link rel="stylesheet" type="text/css" href="tableClub.css">
+@extends("../layouts.master")
+@section("content")
 
-   
-    <title>Document</title>
-</head>
-<body>
-<br><br><br>
-<button autofocus><a href="/playersInfo/registerPlayer">Register new player</a></button>
-<br><br><br>
+
+@section("title")
+Rukometni savez Republike Srpske-Players
+@endsection
+<div class="container">
+  <div class="row">
+  
+     
+
+     <div>
+  <br><br>
+<button type="button" class="btn btn-secondary btn-lg btn-block"><a href="/players">Back</a></button>
+<div class="container1">  
+ <br><br><br>
+ <a href="/registerPlayer"><button class="myButton" autofocus>Register new player</button></a>
+ <br><br><br>
+ <div class="table-responsive">
  <table class="blueTable">
   
     
@@ -38,42 +40,44 @@
             </tr>
             <tr>
                 <th>Height</th>
-                <td>{{$player -> height}}</td>
+                <td>{{$player -> height}} cm</td> 
             </tr>
             <tr>
                 <th>Weight</th>
-                <td>{{$player -> weight}}</td>
+                <td>{{$player -> weight}} kg</td> 
             </tr>
             <tr>
                 <th>Jersey number</th>
-                <td>{{$player -> jerseyNumber}}</td>
+                <td>&nbsp;&nbsp;{{$player -> jerseyNumber}}</td>
             </tr>
             <tr>
                 <th>Date of birth</th>
-                <td>{{$player -> dateOfBirth}}</td>
+                <td>  {{$player -> dateOfBirth}}</td>
             </tr>
             <tr>
                 <th>Citizenship</th>
                 <td>{{$player -> citizenship}}</td>
             </tr>
             <tr>
-                <th>Club history</th>
+                <th>Player history</th>
                 <td>{{$player -> playerHistory}}</td>
             </tr>
             <tr>
                 <th>Current club</th>
-                <td>{{$player -> clubId}}</td>
+                <td>{{$player->club->name}}</td>
             </tr>
             <tr>
+            
                 <th>Selection</th>
-                <td>{{$player -> selection}}</td>
+                <td>{{$player->selection}}</td>
+                
             </tr>
             
             <tr>
-                <td><button><a href="/playersInfo/updatePlayer/{{$player->id}}">EDIT</a></button></td>
-                <td><button onclick="return confirm('Are you sure you want to delete this data')"><a href="/deletePlayer/{{$player->id}}">DELETE</a></button></td>
-                <td><button><a href="/playersInfo/players">Lista igrača</a></button></td>
-            </tr>
+             <th><a href="/updatePlayer/{{$player->id}}"><button class="myButton">Edit</button></a></th>
+             <td><a href="/players"><button class="myButton">Players list</button></a></td>
+             <td><a onclick="return confirm('DA LI STE SIGURNI DA ZELITE BRISATI?')" href="/deletePlayer/{{$player->id}}"><button class="myButton">Delete</button></a></td>
+             </tr>
            
 </table>
 
@@ -81,5 +85,4 @@
 {{$message}}
 @endisset
 
-</body>
-</html>
+@endsection
