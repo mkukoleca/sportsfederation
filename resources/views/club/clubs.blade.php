@@ -42,12 +42,15 @@ Rukometni savez Republike Srpske-Clubs
             <td>{{$club->dateOfFoundation}}</td>
             <td>{{$club->director}}</td>
             <td>{{$club->history}}</td>
-            
+
             <td><a href="/selection?clubId={{$club->id}}">Selection ({{count($club->selections)}})</a></td>
-            <td><img src="{{ url($club->thumbnail) }}" alt="club pic"></td>
+            <td>
+            @if(file_exists("$club->thumbnail"))
+              <img width="50" height="auto" src="{{ url($club->thumbnail) }}" alt="club pic">
+            @endif
+            </td>
            <td><a href="editClub/{{$club->id}}"><button class="myButton">Edit</button></a></td>
            <td><a onclick="return confirm('DA LI STE SIGURNI DA ZELITE BRISATI?')" href="deleteClub/{{$club->id}}"><button class="myButton">Delete</button></a></td>
-    
           </tr>
 
           @endforeach

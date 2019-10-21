@@ -37,7 +37,11 @@ Rukometni savez Republike Srpske-Staff
                 @endforeach
               </td>
 
-              <td><img width="50" height="auto" src="{{ url($staff->thumbnail) }}" alt="staff pic"></td>
+              <td>
+              @if(file_exists("$staff->thumbnail"))
+                <img width="50" height="auto" src="{{ url($staff->thumbnail) }}" alt="staff pic">
+              @endif
+              </td>
 
               <td><a href="/editStaff/{{ $staff->id }}"><button class="myButton">Edit</button></a></td>
               <td><a onclick="return confirm('DA LI STE SIGURNI DA ZELITE BRISATI?')" href="deleteStaff/{{$staff->id}}"><button class="myButton">Delete</button></a></td>

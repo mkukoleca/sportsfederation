@@ -48,8 +48,8 @@
 - EventId
 - Date
 - Place
-- Home
-- Guest
+- HomeClubId
+- GuestClubId
 - Referee1 
 - Referee2
 - Delegate

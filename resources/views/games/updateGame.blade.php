@@ -37,7 +37,7 @@
     </fieldset>
     <fieldset>
       <span>Home</span>
-          <select name="home">
+          <select name="homeClubId">
             @foreach ($clubs as $club)
             <option value="{{$club->id}}">{{$club->name}}</option>
             @endforeach
@@ -45,7 +45,7 @@
     </fieldset>
     <fieldset>
       <span>Guest</span>
-            <select name="guest">
+            <select name="guestClubId">
               @foreach ($clubs as $club)
               <option value="{{$club->id}}">{{$club->name}}</option>
               @endforeach

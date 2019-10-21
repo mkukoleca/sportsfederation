@@ -32,11 +32,11 @@
             Description:<p><textarea type="text" name="description" tabindex="3" required value="{{ $staff->description }}">{{ $staff->description }}</textarea>
           </fieldset>
 
-          <fieldset> Choose an image:
+          <fieldset> 
             @if (file_exists( "$staff->thumbnail" ))
-            <p>Old image: {{ $staff->thumbnail }}</p>
+            <p>Current image: {{ $staff->thumbnail }}</p>
             @endif
-
+            Choose an image:
             <input type="file" name="thumbnail" value="{{ $staff->thumbnail }}" tabindex="4">
           </fieldset>
 
