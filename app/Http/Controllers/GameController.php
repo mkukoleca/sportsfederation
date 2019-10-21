@@ -48,7 +48,7 @@ class GameController extends Controller
             $game->eventId = $data['eventId'];
             $game->date = $data['date'];
             $game->place = $data['place'];
-            $game->homeCLubId = $data['homeClubId'];
+            $game->homeClubId = $data['homeClubId'];
             $game->guestClubId = $data['guestClubId'];
             $game->referee1 = $data['referee1'];
             $game->referee2 = $data['referee2'];
