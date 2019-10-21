@@ -17,12 +17,11 @@ class GamesSeeder extends Seeder
             'place' => 'Dvorana Borik',
             'homeClubId' => 'Borac',
             'guestClubId' => 'Metaloplastika',
+            'category'=> 'U21',
             'referee1' => 'Hamzo Humo',
             'referee2' => 'Mladen Oljača',
             'delegate' => 'Antonije Isaković',
             'round' => 2,
-            'scoresGuest' => 2,
-            'scoresHome' => 3,
             'note' => 'Utakmica je odigrana u mirnom tonu i sa velikim igračkim žarom.'
         ]);
 
@@ -32,12 +31,11 @@ class GamesSeeder extends Seeder
             'place' => 'Arena Centar',
             'homeClubId' => 'Crvena Zvezda',
             'guestClubId' => 'Budućnost',
+            'category'=> 'senior',
             'referee1' => 'Petko Stamenković',
             'referee2' => 'Miodrag Stefanović',
             'delegate' => 'Boško Rudić',
             'round' => 1,
-            'scoresGuest' => 23,
-            'scoresHome' => 19,
             'note' => 'Utakmica je odigrana u paklenoj navijačkoj atmosferi koja je doprinijela pobjedi gostiju.'
         ]);
     }
