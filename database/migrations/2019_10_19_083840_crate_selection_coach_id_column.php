@@ -15,6 +15,8 @@ class CrateSelectionCoachIdColumn extends Migration
     {
         Schema::table('selection', function (Blueprint $table) {
             $table->renameColumn('staffTypeId', 'coachId');
+            $table->dropForeign('selection_staffTypeId_foreign');
+            $table->foreign('coachId')->references('id')->on('staffs');
         });
     }
 
