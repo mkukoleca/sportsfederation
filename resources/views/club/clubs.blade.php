@@ -24,6 +24,7 @@ Rukometni savez Republike Srpske-Clubs
             <th>Date of foundation</th>
             <th>Director</th>
             <th>History</th>
+            <th>Selections #</th>
             <th>Edit</th>
             <th>Delete</th>
             <th>Thumbnail</th>
@@ -42,6 +43,8 @@ Rukometni savez Republike Srpske-Clubs
             <td>{{$club->dateOfFoundation}}</td>
             <td>{{$club->director}}</td>
             <td>{{$club->history}}</td>
+            
+            <td><a href="/selection?clubId={{$club->id}}">Selection ({{count($club->selections)}})</a></td>
             
            <td><button><a href="editClub/{{$club->id}}">Edit</button></td>
            <td><a onclick="return confirm('DA LI STE SIGURNI DA ZELITE BRISATI?')" href="deleteClub/{{$club->id}}"><button>Delete</button></a></td>

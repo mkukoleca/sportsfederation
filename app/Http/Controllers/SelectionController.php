@@ -17,10 +17,21 @@ class SelectionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $selection = DB::table('selection')->get();
-        return view('/selection/selection', ['selection' => $selection, 'selection' => Selection::with(['club', 'staffType'])->get()]);
+        $selection = Selection::with(['club', 'staffType']);
+
+        if ($request->has('clubId')) {
+            $selection->where('clubId', $request->input('clubId'));
+        }
+
+        if ($request->has('category')) {
+            $selection->where('category', $request->input('category'));
+        }
+
+
+        return view('/selection/selection', 
+                    ['selection' => $selection->get()]);
     }
 
 

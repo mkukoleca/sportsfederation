@@ -16,8 +16,8 @@ class Club extends Model
         'id', 'name', 'address', 'email', 'website', 'dateOfFoundation', 'director', 'history', 'thumbnail'
     ];
 
-    public function selection() {
-        return $this->hasMany("App\Selection");
+    public function selections() {
+        return $this->hasMany("App\Selection", 'clubId');
     }
 
     public function players() {
