@@ -8,7 +8,7 @@ Rukometni savez Republike Srpske-Players
 
 
 <br><br>
-    <a href="/playersInfo/registerPlayer"><button class="myButton" autofocus>Register new player</button></a>
+    <a href="/registerPlayer"><button class="myButton" autofocus>Register new player</button></a>
     <br/><br/><br/>
     <div class="table-responsive">
       <table class="table blueTable">
@@ -54,8 +54,8 @@ Rukometni savez Republike Srpske-Players
             <td>{{$player -> created_at}}</td>
             <td>{{$player -> updated_at}}</td>
             
-           <td><a href="/playersInfo/updatePlayer/{{$player->id}}"><button class="myButton">Edit</button></a></td>
-           <td><a href="/playersInfo/singlePlayer/{{$player->id}}"><button class="myButton">Show</button></a></td>
+           <td><a href="/updatePlayer/{{$player->id}}"><button class="myButton">Edit</button></a></td>
+           <td><a href="/singlePlayer/{{$player->id}}"><button class="myButton">Show</button></a></td>
            <td><a onclick="return confirm('DA LI STE SIGURNI DA ZELITE BRISATI?')" href="/deletePlayer/{{$player->id}}"><button class="myButton">Delete</button></a></td>
           </tr>
 
