@@ -11,8 +11,13 @@
     <title>Edit Selection</title>
 </head>
 <body>
-<a href="/selection"><button type="button" class="btn btn-secondary btn-lg btn-block">Back</button></a>
-<div class="container">  
+<div class="container">
+  <div class="row">
+  <div clas="col-3"></div>
+  <div class="col-6">
+  <br><br>
+  <a href="/selection"><button type="button" class="btn btn-secondary btn-lg btn-block">Back</button></a>
+ 
   <form id="contact" action="{{route('updateselection', $selection->id)}}" method="POST">
   {{csrf_field()}}
     <h3>Update Selection</h3>
@@ -52,6 +57,10 @@
     </fieldset>
     <p class="copyright">Designed by <a href="https://bit.ly/312kfAQ" target="_blank" title="thumbnail">Pekmez_GANG</a></p>
   </form>
+  </div>
+  <div clas="col-3"></div>
+  </div>
+
 </div>
 </body>
 </html>
