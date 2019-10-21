@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\StaffType;
 
 class StaffTypeTableSeeder extends Seeder
 {
@@ -13,22 +14,22 @@ class StaffTypeTableSeeder extends Seeder
     {
         DB::table('staff_types')->insert([
             'name' => 'Delegate',
-            'id' => 1
+            'id' => StaffType::DELEGATE
         ]);
     
         DB::table('staff_types')->insert([
             'name' => 'Referee',
-            'id' => 2
+            'id' => StaffType::REFEREE
         ]);
 
         DB::table('staff_types')->insert([
             'name' => 'Coach',
-            'id' => 3
+            'id' => StaffType::COACH
         ]);
         
         DB::table('staff_types')->insert([
             'name' => 'Doctor',
-            'id' => 4
+            'id' => StaffType::DOCTOR
         ]);
     }
 }

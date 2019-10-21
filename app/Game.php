@@ -8,11 +8,6 @@ use App\Event;
 
 class Game extends Model
 {
-
-    public function event() {
-        return $this->belongsTo("App\Event");
-    }
-  
     /**
      * The attributes that are mass assignable.
      *
@@ -34,4 +29,8 @@ class Game extends Model
         'created_at',
         'updated_at',
         ];
+
+    public function event() {
+        return $this->belongsTo("App\Event");
+    }
 }

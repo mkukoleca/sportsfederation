@@ -40,8 +40,8 @@
     <fieldset>
       Coach:
       <select name="coachId">
-        @foreach ($staffs as $staff)
-          <option value="{{$staff->id}}">{{$staff->name}}</option>
+        @foreach ($coaches as $coach)
+          <option value="{{$coach->id}}">{{$coach->name}}</option>
         @endforeach
       </select>
     </fieldset> 

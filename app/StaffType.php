@@ -9,6 +9,11 @@ class StaffType extends Model
     protected $table = "staff_types";
     public $timestamps = false;
     
+    const DELEGATE = 1;
+    const REFEREE = 2;
+    const COACH = 3;
+    const DOCTOR = 4;
+    
     protected $fillable = [
         'id', 'name'
     ];

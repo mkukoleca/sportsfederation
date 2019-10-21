@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\StaffType;
 
 class StaffTableSeeder extends Seeder
 {
@@ -15,7 +16,7 @@ class StaffTableSeeder extends Seeder
             'id' => 1,
             'name' => 'Bibiana Delegate',
             'description' => 'German football referee!!!',
-            'type_id' => 1,
+            'type_id' => StaffType::DELEGATE,
             'thumbnail' => ''
         ]);
 
@@ -23,7 +24,7 @@ class StaffTableSeeder extends Seeder
             'id' => 2,
             'name' => 'Bibiana Referee',
             'description' => 'German football referee!!!',
-            'type_id' => 2,
+            'type_id' => StaffType::REFEREE,
             'thumbnail' => ''
         ]);
 
@@ -31,7 +32,7 @@ class StaffTableSeeder extends Seeder
             'id' => 3,
             'name' => 'Bibiana Coach',
             'description' => 'German football referee!!!',
-            'type_id' => 3,
+            'type_id' => StaffType::COACH,
             'thumbnail' => ''
         ]);
 
@@ -39,7 +40,7 @@ class StaffTableSeeder extends Seeder
             'id' => 4,
             'name' => 'Bibiana Doctor',
             'description' => 'German football referee!!!',
-            'type_id' => 4,
+            'type_id' => StaffType::DOCTOR,
             'thumbnail' => ''
         ]);
     }

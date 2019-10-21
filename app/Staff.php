@@ -9,6 +9,7 @@ class Staff extends Model
     protected $table = "staffs";
     public $timestamps = false;
 
+
     public function type()
     {
         return $this->belongsTo("App\StaffType");
@@ -32,5 +33,9 @@ class Staff extends Model
     public function federation()
     {
         return $this->belongsToMany('App\Federation', 'federation_staff');
+    }
+
+    public static function byType($type = StaffType::COACH) {
+        return self::where('type_id', $type)->get();
     }
 }

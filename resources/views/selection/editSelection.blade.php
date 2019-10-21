@@ -38,8 +38,8 @@
     <fieldset>
       Coach:
       <select name="coachId">
-        @foreach ($staffs as $staff)
-          <option value="{{$staff->id}}" @if ($staff->id == $selection->coachId) selected @endif>{{$staff->name}}</option>
+        @foreach ($coaches as $coach)
+          <option value="{{$coach->id}}" @if ($coach->id == $selection->coachId) selected @endif>{{$coach->name}}</option>
         @endforeach
       </select>
     </fieldset> 

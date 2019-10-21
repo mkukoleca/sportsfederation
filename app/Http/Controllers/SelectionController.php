@@ -17,10 +17,21 @@ class SelectionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $selection = DB::table('selection')->get();
-        return view('/selection/selection', ['selection' => $selection, 'selection' => Selection::with(['club','staffType'])->get()]);
+        $selection = Selection::with(['club', 'staffType']);
+
+        if ($request->has('clubId')) {
+            $selection->where('clubId', $request->input('clubId'));
+        }
+
+        if ($request->has('category')) {
+            $selection->where('category', $request->input('category'));
+        }
+
+
+        return view('/selection/selection', 
+                    ['selection' => $selection->get()]);
     }
 
 
@@ -30,26 +41,32 @@ class SelectionController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request) {
-        
+    public function store(Request $request)
+    {
+
         $data = $request->only(['gender', 'category', 'history', 'coachId', 'clubId']);
 
-            if(count($data) > 0){
-                $selection = new Selection();
-                $selection->gender = $data['gender'];
-                $selection->category = $data['category'];
-                $selection->history = $data['history'];
-                $selection->coachId = $data['coachId'];
-                $selection->clubId = $data['clubId'];
-                $selection->save();
+        if (count($data) > 0) {
+            $selection = new Selection();
+            $selection->gender = $data['gender'];
+            $selection->category = $data['category'];
+            $selection->history = $data['history'];
+            $selection->coachId = $data['coachId'];
+            $selection->clubId = $data['clubId'];
+            $selection->save();
 
-                return redirect("/selection");
-            }
-    return view('/selection/newSelection',
-                [ 'clubs' => Club::all(),
-                'staffs' => Staff::all()]);
+            return redirect("/selection");
+        }
+
+        return view(
+            '/selection/newSelection',
+            [
+                'clubs' => Club::all(),
+                'coaches' => Staff::byType(StaffType::COACH)
+            ]
+        );
     }
-    
+
     /**
      * Show the form for editing the specified resource.
      *
@@ -58,9 +75,14 @@ class SelectionController extends Controller
      */
     public function edit(Selection $selection)
     {
-        return view('/selection/editSelection', compact('selection'),
-                    [ 'clubs' => Club::all(),
-                    'staffs' => Staff::all()]);
+        return view(
+            '/selection/editSelection',
+            compact('selection'),
+            [
+                'clubs' => Club::all(),
+                'coaches' => Staff::byType(StaffType::COACH)
+            ]
+        );
     }
 
     public function update($id, Request $request)
@@ -68,13 +90,13 @@ class SelectionController extends Controller
         $data = $request->only(['gender', 'category', 'coachId', 'history', 'clubId']);
 
         $selection = Selection::where('id', $id)->first();
-        $selection->gender=$data['gender'];
-        $selection->category=$data['category'];
-        $selection->coachId=$data['coachId'];
-        $selection->history=$data['history'];
-        $selection->clubId=$data['clubId'];
+        $selection->gender = $data['gender'];
+        $selection->category = $data['category'];
+        $selection->coachId = $data['coachId'];
+        $selection->history = $data['history'];
+        $selection->clubId = $data['clubId'];
         $selection->save();
-    
+
         return redirect('/selection');
     }
 
@@ -85,17 +107,10 @@ class SelectionController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function destroy($id, Request $request){
-        
+    public function destroy($id, Request $request)
+    {
         $selection = Selection::where('id', $id)->first();
         $selection->delete();
         return redirect('/selection');
     }
-    
-
-    
-
-
 }
-
-
