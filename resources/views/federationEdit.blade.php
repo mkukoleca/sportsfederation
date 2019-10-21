@@ -32,19 +32,19 @@
                     
                     <fieldset>
                         Name:<br>
-                        <input name="name" type="text" value="{{ $federation['name'] }}" tabindex="1" autofocus required>
+                        <input name="name" type="text" value="{{ $federation->name }}" tabindex="1" autofocus required>
                     </fieldset>
                     <fieldset>
                         History:<br>
-                        <textarea name="history" type="text" value="{{ $federation['history'] }}" tabindex="2" required>{{ $federation['history'] }}</textarea>
+                        <textarea name="history" type="text" value="{{ $federation->history }}" tabindex="2" required>{{ $federation->history }}</textarea>
                     </fieldset>
                     <fieldset>
                         President:<br>
-                        <input name="president" type="text" value="{{$federation['president']}}" tabindex="3" required>
+                        <input name="president" type="text" value="{{ $federation->president }}" tabindex="3" required>
                     </fieldset>
                     <fieldset>
                         Description:<br>
-                        <textarea name="description" type="text" value="{{$federation['description']}}" tabindex="4" required>{{ $federation['description'] }}</textarea>
+                        <textarea name="description" type="text" value="{{ $federation->description }}" tabindex="4" required>{{ $federation->description }}</textarea>
                     </fieldset>
                     
                     <fieldset>

@@ -20,9 +20,7 @@ Route::post('/playersInfo/registerPlayer', 'PlayerInfoController@store')->name('
 Route::get('/deletePlayer/{id}','PlayerInfoController@destroy');
 
 //staff federation route
-Route::get('/federation', 'FederationController@index');
-Route::get('/federation/{id}', 'FederationController@edit');
-Route::post('/federationEdit/{id}', 'FederationController@update');
+
 Route::any('/staffs', 'StaffController@index');
 Route::get('/newStaff','StaffController@store');
 Route::post('/newStaff', 'StaffController@store')->name('create');
@@ -33,6 +31,8 @@ Route::get('/editStaff/{id}', 'StaffController@edit');
 Route::post('/editStaff/{id}', 'StaffController@update');
 Route::get('/deleteStaff/{id}', 'StaffController@destroy');
 
+//Route::get('/newStaff', 'FederationStaffController@create');
+//Route::get('/editStaff/{id}', 'FederationStaffController@create');
 
 //Game
 Route::get('/gamesList', 'GameController@index');
