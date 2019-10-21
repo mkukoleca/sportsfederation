@@ -9,7 +9,7 @@ Rukometni savez Republike Srpske-Games
     <a href="/games/registerGame"><button class="myButton" autofocus>Register new game</button></a>
     <br/><br/><br/>
     
-    <table>
+    <table class="blueTable">
     @foreach ($games as $game)
     
             <tr>

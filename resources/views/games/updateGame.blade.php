@@ -8,11 +8,16 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 <link rel="stylesheet" type="text/css" href="../formaClub.css">
-    <title>Document</title>
+    <title>Update Game</title>
 </head>
 <body>
-<button type="button" class="btn btn-secondary btn-lg btn-block"><a href="/games">Back</a></button>
-<div class="container">  
+<div class="container">
+  <div class="row">
+  <div clas="col-3"></div>
+  <div class="col-6">
+    <br><br>
+  <a href="/games"><button type="button" class="btn btn-secondary btn-lg btn-block">Back</button></a>
+  
   <form id="contact" action="{{route('updategame', $game->id)}}" method="POST">
   {{csrf_field()}}
     <h3>Update Game</h3>
@@ -87,6 +92,11 @@
     </fieldset>
     <p class="copyright">Designed by <a href="https://colorlib.com" target="_blank" title="Colorlib">Colorlib</a></p>
   </form>
+  </div>
+  <div clas="col-3"></div>
+  </div>
+
 </div>
+
 </body>
 </html>

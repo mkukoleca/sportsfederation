@@ -10,7 +10,7 @@ Rukometni savez Republike Srpske-Clubs
 
 
     <br><br>
-    <button><a href="/newClub">Add new Club</a></button>
+    <a href="/newClub"><button  class="myButton">Add new Club</button></a>
     <br><br><br>
     <div class="table-responsive">
       <table class="table blueTable">
@@ -25,10 +25,9 @@ Rukometni savez Republike Srpske-Clubs
             <th>Director</th>
             <th>History</th>
             <th>Selections #</th>
+            <th>Thumbnail</th>
             <th>Edit</th>
             <th>Delete</th>
-            <th>Thumbnail</th>
-
           </tr>
         </thead>
         
@@ -45,12 +44,10 @@ Rukometni savez Republike Srpske-Clubs
             <td>{{$club->history}}</td>
             
             <td><a href="/selection?clubId={{$club->id}}">Selection ({{count($club->selections)}})</a></td>
-            
-           <td><button><a href="editClub/{{$club->id}}">Edit</button></td>
-           <td><a onclick="return confirm('DA LI STE SIGURNI DA ZELITE BRISATI?')" href="deleteClub/{{$club->id}}"><button>Delete</button></a></td>
-    
-
             <td><img src="{{ url($club->thumbnail) }}" alt="club pic"></td>
+           <td><a href="editClub/{{$club->id}}"><button class="myButton">Edit</button></a></td>
+           <td><a onclick="return confirm('DA LI STE SIGURNI DA ZELITE BRISATI?')" href="deleteClub/{{$club->id}}"><button class="myButton">Delete</button></a></td>
+    
           </tr>
 
           @endforeach
