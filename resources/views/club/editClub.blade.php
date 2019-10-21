@@ -48,7 +48,11 @@
     History:<br><textarea placeholder="History" type="text" name ="history" value="{{$club->history}}" tabindex="6" ></textarea>
     </fieldset>
 
-    <fieldset> Club image:
+    <fieldset>
+    @if (file_exists( "$club->thumbnail" ))
+      <p>Current image: {{ $club->thumbnail }}</p>
+    @endif
+    Choose an image: 
       <input type="file" name="thumbnail" value="{{ $club->thumbnail }}" tabindex="7" required>{{ $club->thumbnail }}
     </fieldset>
 
