@@ -33,7 +33,7 @@
 - Jersey number
 - Date of birth
 - Citizenship
-- Club history
+- Player history
 - Current club
 - Selection 
 

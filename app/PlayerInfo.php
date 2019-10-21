@@ -4,14 +4,17 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Club;
+use App\Selection;
 
 class PlayerInfo extends Model
 
 {
     public function club (){
         return $this->belongsTo('App\Club', 'clubId');
-    
-    
+    }
+
+    public function selection (){
+        return $this->belongsTo('App\Selection', 'selectionId');
     }
 
     /**
@@ -31,7 +34,7 @@ class PlayerInfo extends Model
     'citizenship',
     'playerHistory',
     'clubId',
-    'selection',
+    'selectionId',
     'created_at',
     'updated_at',
 

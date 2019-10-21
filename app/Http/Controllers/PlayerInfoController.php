@@ -37,7 +37,7 @@ class PlayerInfoController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->only(['thumbnail', 'name', 'description', 'position', 'height', 'weight', 'jerseyNumber', 'dateOfBirth', 'citizenship', 'playerHistory', 'clubId', 'selection' ]);
+        $data = $request->only(['thumbnail', 'name', 'description', 'position', 'height', 'weight', 'jerseyNumber', 'dateOfBirth', 'citizenship', 'playerHistory', 'clubId', 'selectionId' ]);
         //dd($data);
         if(count($data) > 0){
             $player = new PlayerInfo();
@@ -52,11 +52,11 @@ class PlayerInfoController extends Controller
             $player->citizenship=$data['citizenship'];
             $player->playerHistory=$data['playerHistory'];
             $player->clubId=$data['clubId'];
-            $player->selection=$data['selection'];
+            $player->selectionId=$data['selectionId'];
 
             if($request->hasFile('thumbnail')){
                 $name = $player->name.time().'.'.$request->thumbnail->extension();
-                $folder = 'assets/images/';
+                $folder = 'assets/photo/';
                 $request->thumbnail->move(public_path($folder), $name);
 
                 $player->thumbnail=$folder.$name;
@@ -79,6 +79,15 @@ class PlayerInfoController extends Controller
     {
         //return PlayerInfo::find($id);
         $player = PlayerInfo::where('id', $id)->first();
+        
+        if(request()->hasFile('thumbnail')){
+            $name = $player->name.time().'.'.$request->thumbnail->extension();
+            $folder = 'assets/photo/';
+            $request->thumbnail->move(public_path($folder), $name);
+
+            $player->thumbnail=$folder.$name;
+        }
+
         return view("/playersinfo.singlePlayer", ['player' => $player]);
 
         //return view('/playersinfo/singlePlayer'); je kontrolni cisto da vidim da li radi ruta
@@ -110,7 +119,7 @@ class PlayerInfoController extends Controller
      */
     public function update($id, Request $request)
     {
-        $data = $request->only(['thumbnail', 'name', 'description', 'position', 'height', 'weight', 'jerseyNumber', 'dateOfBirth', 'citizenship', 'playerHistory', 'clubId', 'selection', 'created_at', 'updated_at',]);
+        $data = $request->only(['thumbnail', 'name', 'description', 'position', 'height', 'weight', 'jerseyNumber', 'dateOfBirth', 'citizenship', 'playerHistory', 'clubId', 'selectionId', 'created_at', 'updated_at',]);
         
         //dd($data);
         $player=PlayerInfo::where('id', $id)->first();
@@ -125,11 +134,17 @@ class PlayerInfoController extends Controller
         $player->citizenship=$data['citizenship'];
         $player->playerHistory=$data['playerHistory'];
         $player->clubId=$data['clubId'];
-        $player->selection=$data['selection'];
+        $player->selectionId=$data['selectionId'];
         
+        if($request->hasFile('thumbnail')){
+            $name = $player->name.time().'.'.$request->thumbnail->extension();
+            $folder = 'assets/photo/';
+            $request->thumbnail->move(public_path($folder), $name);
+
+            $player->thumbnail=$folder.$name;
+        }
 
         $player->save();
-    
         return redirect('/players');
     }
 

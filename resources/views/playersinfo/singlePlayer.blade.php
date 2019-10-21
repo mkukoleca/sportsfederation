@@ -59,7 +59,7 @@ Rukometni savez Republike Srpske-Players
                 <td>{{$player -> citizenship}}</td>
             </tr>
             <tr>
-                <th>Player history</th>
+                <th>History</th>
                 <td>{{$player -> playerHistory}}</td>
             </tr>
             <tr>
@@ -69,7 +69,7 @@ Rukometni savez Republike Srpske-Players
             <tr>
             
                 <th>Selection</th>
-                <td>{{$player->selection}}</td>
+                <td>{{$player->selection->category}}</td>
                 
             </tr>
             

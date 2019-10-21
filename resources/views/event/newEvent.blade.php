@@ -11,8 +11,13 @@
     <title>New Event</title>
 </head>
 <body>
-<a href="/event"><button type="button" class="btn btn-secondary btn-lg btn-block">Back</button></a>
-<div class="container">  
+<div class="container">
+  <div class="row">
+  <div clas="col-3"></div>
+  <div class="col-6">
+  <br><br>
+  <a href="/event"><button type="button" class="btn btn-secondary btn-lg btn-block">Back</button></a>
+  
   <form id="contact" action="{{route('createEvent')}}" method="POST">
   {{csrf_field()}}
     <h3>Add new Event</h3>
@@ -32,18 +37,16 @@
 
     <fieldset>
     <textarea placeholder="Description" type="text" name ="description" tabindex="4" required></textarea>
-
     </fieldset> 
 
-    
-
-
-    
     <fieldset>
       <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
     </fieldset>
     <p class="copyright">Designed by <a href="https://bit.ly/312kfAQ" target="_blank" title="thumbnail">Pekmez_GANG</a></p>
   </form>
+  </div>
+  <div clas="col-3"></div>
+  </div>
 </div>
 </body>
 </html>

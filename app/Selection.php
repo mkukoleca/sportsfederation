@@ -5,6 +5,7 @@ namespace App;
 use App\Club;
 use App\Staff;
 use App\StaffType;
+use App\Playerinfo;
 use Illuminate\Database\Eloquent\Model;
 
 class Selection extends Model
@@ -19,4 +20,9 @@ class Selection extends Model
     {
         return $this->belongsTo("App\Staff", 'coachId');
     }
+    public function player()
+    {
+        return $this->hasMany("App\PlayerInfo");
+    }
+
 }
