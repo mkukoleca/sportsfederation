@@ -19,6 +19,7 @@ Rukometni savez Republike Srpske-Games
             <th>Place</th>
             <th>Home</th>
             <th>Guest</th>
+            <th>Category</th>
             <th>Referee1</th>
             <th>Referee2</th>
             <th>Delegate</th>
@@ -40,6 +41,7 @@ Rukometni savez Republike Srpske-Games
             <td>{{$game -> place}}</td>
             <td>{{$game -> homeClubId}}</td>
             <td>{{$game -> guestClubId}}</td>
+            <td>{{$game -> category}}</td>
             <td>{{$game -> referee1}}</td>
             <td>{{$game -> referee2}}</td>
             <td>{{$game -> delegate}}</td>

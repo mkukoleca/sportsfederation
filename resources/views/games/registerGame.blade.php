@@ -52,6 +52,15 @@
             </select>
     </fieldset>
     <fieldset>
+    <span>Category</span>
+    <select name="category">
+    <option value="senior">Senior</option>
+      <option value="U21">U21</option>
+      <option value="U19">U19</option>
+      <option value="U17">U17</option>
+    </select> 
+    </fieldset>
+    <fieldset>
       <span>Referee1</span>
               <select name="referee1">
                 @foreach ($staffs as $staff)
@@ -77,12 +86,6 @@
     </fieldset> 
     <fieldset>
       <input placeholder="Round" type="number" min="1" name ="round" tabindex="9" required>
-    </fieldset>
-    <fieldset>
-      <input placeholder="Scores Home" type="number" min="1" name ="scoresHome" tabindex="10" required>
-    </fieldset>
-    <fieldset>
-      <input placeholder="Scores Guest" type="number" min="1" name ="scoresGuest" tabindex="11" required>
     </fieldset>
     <fieldset>
       <textarea placeholder="Note" type="text" name ="note" tabindex="12" required></textarea>
