@@ -30,11 +30,11 @@ Rukometni savez Republike Srpske-Games
             </tr>
             <tr>
                 <th>Home</th>
-                <td>{{$game -> home}}</td>
+                <td>{{$game -> homeClubId}}</td>
             </tr>
             <tr>
                 <th>Guest</th>
-                <td>{{$game -> guest}}</td>
+                <td>{{$game -> guestClubId}}</td>
             </tr>
             <tr>
                 <th>Referee1</th>
