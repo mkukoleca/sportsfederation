@@ -47,7 +47,7 @@ class SelectionController extends Controller
             }
     return view('/selection/newSelection',
                 [ 'clubs' => Club::all(),
-                'staffs' => Staff::all()]);
+                'staffs' => Staff::where('type_id', 3)->get()]);
     }
     
     /**
@@ -60,7 +60,7 @@ class SelectionController extends Controller
     {
         return view('/selection/editSelection', compact('selection'),
                     [ 'clubs' => Club::all(),
-                    'staffs' => Staff::all()]);
+                    'staffs' => Staff::where('type_id', 3)->get()]);
     }
 
     public function update($id, Request $request)
