@@ -70,3 +70,6 @@ Route::get('/filter', function () {
     }
    
 });
+Auth::routes();
+
+Route::get('/dashboard', 'DashboardController@index');
