@@ -28,11 +28,11 @@
     </fieldset>
 
     <fieldset>
-      <input placeholder="Description" type="text" name ="description" tabindex="3">
+      <textarea placeholder="Description" type="text" name ="description" tabindex="3"></textarea>
     </fieldset>
 
     <fieldset> Staff image:
-      <input type="file" name="thumbnail" tabindex="3" required>
+          <input type="file" name="thumbnail" tabindex="3">
     </fieldset>
 
     <fieldset>
