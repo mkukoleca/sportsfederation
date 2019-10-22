@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Club;
 use App\Staff;
 use App\Event;
+use App\StaffType;
 
 
 class GameController extends Controller
@@ -31,7 +32,8 @@ class GameController extends Controller
         return view('/games/registerGame', 
                     ['clubs' => Club::all(), 
                      'events' => Event::all(), 
-                     'staffs' => Staff::all()]);
+                     'referee' => Staff::byType(StaffType::REFEREE),
+                     'delegate' => Staff::byType(StaffType::DELEGATE)]);
     }
 
     /**
@@ -91,7 +93,8 @@ class GameController extends Controller
                     ['game' => $game, 
                      'clubs' => Club::all(), 
                      'events' => Event::all(), 
-                     'staffs' => Staff::all()]);
+                     'referee' => Staff::byType(StaffType::REFEREE),
+                     'delegate' => Staff::byType(StaffType::DELEGATE)]);
     }
 
     /**
@@ -111,9 +114,9 @@ class GameController extends Controller
         $game->homeClubId = $data['homeClubId'];
         $game->guestClubId = $data['guestClubId'];
         $game->category = $data['category'];
-        $game->referee1 = $data['referee1Id'];
-        $game->referee2 = $data['referee2Id'];
-        $game->delegate = $data['delegateId'];
+        $game->referee1Id = $data['referee1Id'];
+        $game->referee2Id = $data['referee2Id'];
+        $game->delegateId = $data['delegateId'];
         $game->round = $data['round'];
         $game->scoresHome = $data['scoresHome'];
         $game->scoresGuest = $data['scoresGuest'];
