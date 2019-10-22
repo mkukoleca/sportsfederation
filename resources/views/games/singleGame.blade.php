@@ -15,7 +15,7 @@
 </head>
 
 <body><br>
-    <a href="/games"><button type="button" class="btn btn-secondary btn-lg btn-block">Back</button></a>
+    <a href="/games"><button type="button" class="btn_back">Back</button></a>
     <br><br>
     <a href="/games/registerGame"><button class="myButton" autofocus>Register new game</button></a>
     <br><br><br>
