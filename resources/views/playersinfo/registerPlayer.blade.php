@@ -15,10 +15,11 @@
   <div class="row">
   <div clas="col-3"></div>
   <div class="col-6">
+    <div class="container">
   <br><br>
 
 <a href="/players"><button type="button" class="btn btn-secondary btn-lg btn-block">Back</button></a>
-<div class="container">  
+ 
   <form id="contact" action="{{route('registerplayer')}}" method="POST" enctype="multipart/form-data">
   {{csrf_field()}}
     <h3>Add new Player</h3>
