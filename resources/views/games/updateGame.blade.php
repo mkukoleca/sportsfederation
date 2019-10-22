@@ -62,24 +62,24 @@
     </fieldset>
     <fieldset>
       <span>Referee1</span>
-              <select name="referee1">
-                @foreach ($staffs as $staff)
+              <select name="referee1Id">
+                @foreach ($referee as $staff)
                 <option value="{{$staff->id}}">{{$staff->name}}</option>
                 @endforeach
               </select>
     </fieldset>
     <fieldset>
       <span>Referee2</span>
-                <select name="referee2">
-                  @foreach ($staffs as $staff)
+                <select name="referee2Id">
+                  @foreach ($referee as $staff)
                   <option value="{{$staff->id}}">{{$staff->name}}</option>
                   @endforeach
                 </select>
     </fieldset>
     <fieldset>
       <span>Delegate</span>
-                <select name="delegate">
-                  @foreach ($staffs as $staff)
+                <select name="delegateId">
+                  @foreach ($delegate as $staff)
                   <option value="{{$staff->id}}">{{$staff->name}}</option>
                   @endforeach
                 </select>
@@ -101,6 +101,7 @@
     </fieldset>
     <p class="copyright">Designed by <a href="https://colorlib.com" target="_blank" title="Colorlib">Colorlib</a></p>
   </form>
+  </div>
   </div>
   <div clas="col-3"></div>
   </div>

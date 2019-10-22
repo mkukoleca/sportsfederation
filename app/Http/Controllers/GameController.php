@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Club;
 use App\Staff;
 use App\Event;
+use App\StaffType;
 
 
 class GameController extends Controller
@@ -31,7 +32,8 @@ class GameController extends Controller
         return view('/games/registerGame', 
                     ['clubs' => Club::all(), 
                      'events' => Event::all(), 
-                     'staffs' => Staff::all()]);
+                     'referee' => Staff::byType(StaffType::REFEREE),
+                     'delegate' => Staff::byType(StaffType::DELEGATE)]);
     }
 
     /**
@@ -42,7 +44,7 @@ class GameController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->only(['eventId', 'date', 'place', 'homeClubId', 'guestClubId','category', 'referee1', 'referee2', 'delegate', 'round', 'scoresHome', 'scoresGuest', 'note']);
+        $data = $request->only(['eventId', 'date', 'place', 'homeClubId', 'guestClubId','category', 'referee1Id', 'referee2Id', 'delegateId', 'round', 'scoresHome', 'scoresGuest', 'note']);
         if (count($data) > 0) {
             $game = new Game();
             $game->eventId = $data['eventId'];
@@ -51,9 +53,9 @@ class GameController extends Controller
             $game->homeClubId = $data['homeClubId'];
             $game->guestClubId = $data['guestClubId'];
             $game->category = $data['category'];
-            $game->referee1 = $data['referee1'];
-            $game->referee2 = $data['referee2'];
-            $game->delegate = $data['delegate'];
+            $game->referee1Id = $data['referee1Id'];
+            $game->referee2Id = $data['referee2Id'];
+            $game->delegateId = $data['delegateId'];
             $game->round = $data['round'];
             $game->note = $data['note'];
 
@@ -91,7 +93,8 @@ class GameController extends Controller
                     ['game' => $game, 
                      'clubs' => Club::all(), 
                      'events' => Event::all(), 
-                     'staffs' => Staff::all()]);
+                     'referee' => Staff::byType(StaffType::REFEREE),
+                     'delegate' => Staff::byType(StaffType::DELEGATE)]);
     }
 
     /**
@@ -103,7 +106,7 @@ class GameController extends Controller
      */
     public function update($id, Request $request)
     {
-        $data = $request->only(['eventId', 'date', 'place', 'homeClubId', 'guestClubId','category', 'referee1', 'referee2', 'delegate', 'round', 'scoresHome', 'scoresGuest', 'note']);
+        $data = $request->only(['eventId', 'date', 'place', 'homeClubId', 'guestClubId','category', 'referee1Id', 'referee2Id', 'delegateId', 'round', 'scoresHome', 'scoresGuest', 'note']);
         $game = Game::where('id', $id)->first();
         $game->eventId = $data['eventId'];
         $game->date = $data['date'];
@@ -111,9 +114,9 @@ class GameController extends Controller
         $game->homeClubId = $data['homeClubId'];
         $game->guestClubId = $data['guestClubId'];
         $game->category = $data['category'];
-        $game->referee1 = $data['referee1'];
-        $game->referee2 = $data['referee2'];
-        $game->delegate = $data['delegate'];
+        $game->referee1Id = $data['referee1Id'];
+        $game->referee2Id = $data['referee2Id'];
+        $game->delegateId = $data['delegateId'];
         $game->round = $data['round'];
         $game->scoresHome = $data['scoresHome'];
         $game->scoresGuest = $data['scoresGuest'];
