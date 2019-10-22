@@ -65,7 +65,9 @@
                     </li>
                     <li><a href="#contact">Kontakt</a></li>
                 </ul>
+                
             </nav><!-- #nav-menu-container -->
+            <a class="btn btn-danger float-left" href="/dashboard" role="button">Log in</a>
         </div>
     </header><!-- #header -->
 
