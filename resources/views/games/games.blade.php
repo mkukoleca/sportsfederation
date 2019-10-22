@@ -9,6 +9,7 @@ Rukometni savez Republike Srpske-Games
 <br><br><br>
 <a href="/games/registerGame"><button class="myButton" autofocus>Register new game</button></a>
 <br /><br /><br />
+<div class="table-responsive">
     <table class="table blueTable">
         <thead>
             <tr>
@@ -33,7 +34,7 @@ Rukometni savez Republike Srpske-Games
             </tr>
         </thead>
         <tbody>
-        @foreach ($games as $game)
+            @foreach ($games as $game)
             <tr>
                 <td>{{$game->event->type}}</td>
                 <td>{{$game -> date}}</td>
@@ -52,9 +53,12 @@ Rukometni savez Republike Srpske-Games
                 <td>{{$game -> updated_at}}</td>
                 <td><a href="/games/singleGame/{{$game->id}}"><button class="myButton">Show Game</button></a></td>
                 <td><a href="/games/updateGame/{{$game->id}}"><button class="myButton">Edit</button></a></td>
-                <td><a href="/deleteGame/{{$game->id}}"><button class="myButton" onclick="return confirm('Are you sure you want to delete this data')">Delete</button></a></td>
+                <td><a href="/deleteGame/{{$game->id}}"><button class="myButton"
+                            onclick="return confirm('Are you sure you want to delete this data')">Delete</button></a>
+                </td>
             </tr>
             @endforeach
         </tbody>
     </table>
+</div>
 @endsection

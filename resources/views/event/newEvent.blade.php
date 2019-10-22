@@ -15,6 +15,7 @@
   <div class="row">
   <div clas="col-3"></div>
   <div class="col-6">
+  <div class="container">
   <br><br>
   <a href="/event"><button type="button" class="btn btn-secondary btn-lg btn-block">Back</button></a>
   
@@ -44,6 +45,7 @@
     </fieldset>
     <p class="copyright">Designed by <a href="https://bit.ly/312kfAQ" target="_blank" title="thumbnail">Pekmez_GANG</a></p>
   </form>
+  </div>
   </div>
   <div clas="col-3"></div>
   </div>
