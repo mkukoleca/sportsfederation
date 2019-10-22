@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="{{ asset('css/stil.css') }}">
+
 @extends("../layouts.master")
 @section("content")
 
@@ -39,7 +41,7 @@ Rukometni savez Republike Srpske-Players
           <tr>
           <td>
             @if(file_exists("$player->thumbnail"))
-            <img width="50" height="auto" src="{{url($player->thumbnail)}}" alt="{{$player -> name}}"> 
+            <img img class="thumbnail zoom" width="50" height="60" src="{{url($player->thumbnail)}}" alt="{{$player -> name}}"> 
             @endif
             </td>
             <td>{{$player -> name}}</td>
