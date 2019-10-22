@@ -10,6 +10,8 @@
   <link rel="stylesheet" type="text/css" href="../formaClub.css">
   <link rel="stylesheet" type="text/css" href="../navbar.css">
   <link rel="stylesheet" type="text/css" href="../tableClub.css">
+  <link rel="stylesheet" href="{{ asset('css/stil.css') }}">
+
     <title>Single Player</title>
 </head>
 <body>
@@ -40,7 +42,7 @@
     </thead>
     <tbody>
         <tr>    
-            <td><img src="{{url($player->thumbnail)}}" width="50" height="auto" alt="profile img"></td>
+            <td><img img class="thumbnail zoom" src="{{url($player->thumbnail)}}" width="50" height="60" alt="profile img"></td>
             <td>{{$player -> name}}</td>
             <td>{{$player -> description}}</td>
             <td>{{$player -> position}}</td>
