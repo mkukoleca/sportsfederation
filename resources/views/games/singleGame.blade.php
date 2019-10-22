@@ -7,87 +7,61 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-<link rel="stylesheet" type="text/css" href="tableClub.css">
-
-   
-    <title>Document</title>
+  <link rel="stylesheet" type="text/css" href="../../formaClub.css">
+  <link rel="stylesheet" type="text/css" href="../../navbar.css">
+  <link rel="stylesheet" type="text/css" href="../../tableClub.css">
+    <title>Single Game</title>
 </head>
-<body>
-<br><br><br>
-<button autofocus><a href="/games/registerGame">Register new game</a></button>
+<body><br>
+<a href="/games"><button type="button" class="btn btn-secondary btn-lg btn-block">Back</button></a>
+<br><br>
+<a href="/games/registerGame"><button class="myButton" autofocus>Register new game</button></a>
 <br><br><br>
  <table class="blueTable">
-  
-    
-            
-            <tr>
-                <th>Event</th>
-                <td>{{$game->event->type}}</td>
-            </tr>
-            <tr>
-                <th>Date</th>
-                <td>{{$game -> date}}</td>
-            </tr>
-            <tr>
-                <th>Place</th>
-                <td>{{$game -> place}}</td>
-            </tr>
-            <tr>
-                <th>Home</th>
-                <td>{{$game -> homeClubId}}</td>
-            </tr>
-            <tr>
-                <th>Guest</th>
-                <td>{{$game -> guestClubId}}</td>
-            </tr>
-            <tr>
-                <th>Category</th>
-                <td>{{$game -> category}}</td>
-            </tr>
-            <tr>
-                <th>Referee1</th>
-                <td>{{$game -> referee1}}</td>
-            </tr>
-            <tr>
-                <th>Referee2</th>
-                <td>{{$game -> referee2}}</td>
-            </tr>
-            <tr>
-                <th>Delegate</th>
-                <td>{{$game -> delegate}}</td>
-            </tr>
-            <tr>
-                <th>Round</th>
-                <td>{{$game -> round}}</td>
-            </tr>
-            <tr>
-                <th>Scores Home</th>
-                <td>{{$game -> scoresHome}}</td>
-            </tr>
-            <tr>
-                <th>Scores Guest</th>
-                <td>{{$game -> scoresGuest}}</td>
-            </tr>
-            <tr>
-                <th>Note</th>
-                <td>{{$game -> note}}</td>
-            </tr>
-            
-            <tr>
-                <th>Registered at</th>
-                <td>{{$game -> created_at}}</td>
-            </tr>
-            <tr>
-                <th>Updated at</th>
-                <td>{{$game -> updated_at}}</td>
-            </tr>
-            
-            <tr>
-                <td><button><a href="/games/updateGame/{{$game->id}}">EDIT</a></button></td>
-                <td><button><a href="/deletePlayer/{{$game->id}}">DELETE</a></button></td>
-                <td><button><a href="/games">GAMES LIST</a></button></td>
-            </tr>
-           
+    <thead>
+        <tr>
+            <th>Event</th>
+            <th>Date</th>
+            <th>Place</th>
+            <th>Home</th>
+            <th>Guest</th>
+            <th>Category</th>
+            <th>Referee1</th>
+            <th>Referee2</th>
+            <th>Delegate</th>
+            <th>Round</th>
+            <th>Scores Home</th>
+            <th>Scores Guest</th>
+            <th>Note</th>
+            <th>Registered at</th>
+            <th>Updated at</th>
+            <th>Edit</th>
+            <th>Delete</th>
+            <th>Games List</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{$game->event->type}}</td>
+            <td>{{$game -> date}}</td>
+            <td>{{$game -> place}}</td>
+            <td>{{$game -> homeClubId}}</td>
+            <td>{{$game -> guestClubId}}</td>
+            <td>{{$game -> category}}</td>
+            <td>{{$game -> referee1}}</td>
+            <td>{{$game -> referee2}}</td>
+            <td>{{$game -> delegate}}</td>
+            <td>{{$game -> round}}</td>
+            <td>{{$game -> scoresHome}}</td>
+            <td>{{$game -> scoresGuest}}</td>
+            <td>{{$game -> note}}</td>
+            <td>{{$game -> created_at}}</td>
+            <td>{{$game -> updated_at}}</td>
+            <td><a href="/games/updateGame/{{$game->id}}"><button class="myButton">Edit</button></a></td>
+            <td><a href="/deletePlayer/{{$game->id}}"><button class="myButton">Delete</button></a></td>
+            <td><a href="/games"><button class="myButton">Games List</button></a></td>            
+        </tr>
+    </tbody>
 </table>
 
 @isset($message)

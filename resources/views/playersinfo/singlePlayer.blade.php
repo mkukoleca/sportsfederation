@@ -7,12 +7,14 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="../formaClub.css">
+  <link rel="stylesheet" type="text/css" href="../../formaClub.css">
   <link rel="stylesheet" type="text/css" href="../navbar.css">
   <link rel="stylesheet" type="text/css" href="../tableClub.css">
+  <link rel="stylesheet" href="{{ asset('css/stil.css') }}">
+
     <title>Single Player</title>
 </head>
-<body>
+<body><br>
 <a href="/players"><button type="button" class="btn btn-secondary btn-lg btn-block">Back</button></a>
  <br><br>
  <a href="/registerPlayer"><button class="myButton" autofocus>Register new player</button></a>
@@ -40,7 +42,7 @@
     </thead>
     <tbody>
         <tr>    
-            <td><img src="{{url($player->thumbnail)}}" width="50" height="auto" alt="profile img"></td>
+            <td><img img class="thumbnail zoom" src="{{url($player->thumbnail)}}" width="50" height="60" alt="profile img"></td>
             <td>{{$player -> name}}</td>
             <td>{{$player -> description}}</td>
             <td>{{$player -> position}}</td>
