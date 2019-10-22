@@ -19,6 +19,7 @@ class Game extends Model
         'place',
         'homeClubId',
         'guestClubId',
+        'category',
         'referee1',
         'referee2',
         'delegate',
@@ -31,6 +32,6 @@ class Game extends Model
         ];
 
     public function event() {
-        return $this->belongsTo("App\Event");
+        return $this->belongsTo("App\Event",'eventId');
     }
 }
