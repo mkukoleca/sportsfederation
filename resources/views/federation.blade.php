@@ -113,11 +113,8 @@
                   <h4>Članovi saveza</h4>
                 </div>
                 <div class="panel-body">
-                  <a href="/staff?type=1">Delegate</a>
-                  <a href="/staff?type=2"> Referee</a>
-                  <a href="/staff?type=3"> Coach</a>
-                  <a href="/staff?type=4"> Doctor</a><p>
                   @foreach($fed->staff as $staff)
+                  <a href="/staff?type={{ $staff->type->id }}">{{$staff->type->name}}</a>
                   <div>
                     {{$staff->type->name}}: {{$staff->name}}
                   </div>
