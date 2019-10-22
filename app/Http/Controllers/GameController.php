@@ -88,7 +88,7 @@ class GameController extends Controller
     {
         $game = Game::where('id', $id)->first();
         return view("games/updateGame", 
-                    ['game' => Game::all(), 
+                    ['game' => $game, 
                      'clubs' => Club::all(), 
                      'events' => Event::all(), 
                      'staffs' => Staff::all()]);
@@ -104,7 +104,6 @@ class GameController extends Controller
     public function update($id, Request $request)
     {
         $data = $request->only(['eventId', 'date', 'place', 'homeClubId', 'guestClubId','category', 'referee1', 'referee2', 'delegate', 'round', 'scoresHome', 'scoresGuest', 'note']);
-
         $game = Game::where('id', $id)->first();
         $game->eventId = $data['eventId'];
         $game->date = $data['date'];
