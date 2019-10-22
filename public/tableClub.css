@@ -67,4 +67,32 @@ table.blueTable {
   .filter {
     font-size: 14px;
   }
-  
+  .btn_back{
+    display: block;
+    width: 13%;
+    font-weight: 600;
+    font-size: 16px;
+    letter-spacing: 3px;
+    padding: 8px 14px;
+    line-height: 1.3333333;
+    margin-bottom: 0;
+    border-radius: 50px;
+    text-align: center;
+    white-space: nowrap;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    user-select: none;
+    text-decoration: none;
+    color: #444444;
+  }
+  .btn_back:hover{
+    color: #FFFFFF;
+    background: #2dc997;
+    border: none;
+    -webkit-transition: background-color 0.3s ease-in-out;
+    -moz-transition: background-color 0.3s ease-in-out;
+    transition: background-color 0.3s ease-in-out;
+    text-decoration: none;
+  }
