@@ -33,13 +33,13 @@ class Game extends Model
         ];
 
     public function event() {
-        return $this->belongsTo("App\Event",'eventId');
+        return $this->belongsTo('App\Event','eventId');
     }
     public function homeClub() {
-        return $this->belongsTo("App\Club",'homeClubId');
+        return $this->belongsTo('App\Club','homeClubId', 'id');
     }
     public function guestClub() {
-        return $this->belongsTo("App\Club",'guestClubId');
+        return $this->belongsTo('App\Club','guestClubId', 'id');
     }
 
 }
