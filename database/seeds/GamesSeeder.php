@@ -18,9 +18,9 @@ class GamesSeeder extends Seeder
             'homeClubId' => 'Borac',
             'guestClubId' => 'Metaloplastika',
             'category'=> 'U21',
-            'referee1' => 'Hamzo Humo',
-            'referee2' => 'Mladen Oljača',
-            'delegate' => 'Antonije Isaković',
+            'referee1Id' => 1,
+            'referee2Id' => 2,
+            'delegateId' => 3,
             'round' => 2,
             'note' => 'Utakmica je odigrana u mirnom tonu i sa velikim igračkim žarom.'
         ]);
@@ -32,9 +32,9 @@ class GamesSeeder extends Seeder
             'homeClubId' => 'Crvena Zvezda',
             'guestClubId' => 'Budućnost',
             'category'=> 'senior',
-            'referee1' => 'Petko Stamenković',
-            'referee2' => 'Miodrag Stefanović',
-            'delegate' => 'Boško Rudić',
+            'referee1Id' => 1,
+            'referee2Id' => 2,
+            'delegateId' => 3,
             'round' => 1,
             'note' => 'Utakmica je odigrana u paklenoj navijačkoj atmosferi koja je doprinijela pobjedi gostiju.'
         ]);
