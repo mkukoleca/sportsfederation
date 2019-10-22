@@ -65,7 +65,7 @@
                         </fieldset>
                         <fieldset>
                             <span>Referee1</span>
-                            <select name="referee1">
+                            <select name="referee1Id">
                                 @foreach ($staffs as $staff)
                                 <option value="{{$staff->id}}">{{$staff->name}}</option>
                                 @endforeach
@@ -73,7 +73,7 @@
                         </fieldset>
                         <fieldset>
                             <span>Referee2</span>
-                            <select name="referee2">
+                            <select name="referee2Id">
                                 @foreach ($staffs as $staff)
                                 <option value="{{$staff->id}}">{{$staff->name}}</option>
                                 @endforeach
@@ -81,7 +81,7 @@
                         </fieldset>
                         <fieldset>
                             <span>Delegate</span>
-                            <select name="delegate">
+                            <select name="delegateId">
                                 @foreach ($staffs as $staff)
                                 <option value="{{$staff->id}}">{{$staff->name}}</option>
                                 @endforeach
