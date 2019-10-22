@@ -21,9 +21,9 @@ class Game extends Model
         'homeClubId',
         'guestClubId',
         'category',
-        'referee1',
-        'referee2',
-        'delegate',
+        'referee1Id',
+        'referee2Id',
+        'delegateId',
         'round',
         'scoresGuest',
         'scoresHome',
@@ -40,6 +40,16 @@ class Game extends Model
     }
     public function guestClub() {
         return $this->belongsTo('App\Club','guestClubId', 'id');
+    }
+    public function referee1() {
+        return $this->belongsTo('App\Staff','referee1Id', 'id');
+    }
+    public function referee2() {
+         return $this->belongsTo('App\Staff','referee2Id', 'id');
+    }
+     public function delegate() {
+        return $this->belongsTo('App\Staff','delegateId', 'id');
+
     }
 
 }
