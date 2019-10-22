@@ -21,7 +21,7 @@
 <div class="col-6">
 <br><br>
 
-<button type="button" class="btn btn-secondary btn-lg btn-block"><a href="/clubs">Back</a></button>
+<a href="/clubs"><button type="button" class="btn btn-secondary btn-lg btn-block">Back</button></a>
  
   <form id="contact" action="{{route('updateclub', $club->id)}}" method="POST" enctype="multipart/form-data">
   {{csrf_field()}}
@@ -48,7 +48,11 @@
     History:<br><textarea placeholder="History" type="text" name ="history" value="{{$club->history}}" tabindex="6" ></textarea>
     </fieldset>
 
-    <fieldset> Club image:
+    <fieldset>
+    @if (file_exists( "$club->thumbnail" ))
+      <p>Current image: {{ $club->thumbnail }}</p>
+    @endif
+    Choose an image: 
       <input type="file" name="thumbnail" value="{{ $club->thumbnail }}" tabindex="7" required>{{ $club->thumbnail }}
     </fieldset>
 

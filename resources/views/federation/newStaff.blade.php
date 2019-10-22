@@ -11,17 +11,13 @@
     <title>Rukometni savez Republike Srpske</title>
 </head>
 <body>
-
-
 <div class="container">
 <div class="row">
 
-<div clas="col-3">
-</div>
-
+<div clas="col-3"></div>
 <div class="col-6">
 <br><br>
-<button type="button" class="btn btn-secondary btn-lg btn-block"><a href="/staffs">Back</a></button>
+<a href="/staff"><button type="button" class="btn btn-secondary btn-lg btn-block">Back</button></a>
 
 <div class="container">  
   <form id="contact" action="{{route('create')}}" method="POST" enctype="multipart/form-data">
@@ -38,7 +34,6 @@
     <fieldset> Staff image:
       <input type="file" name="thumbnail" tabindex="3" required>
     </fieldset>
-
 
     <fieldset>
       <span>Staff Type </span>
@@ -58,20 +53,17 @@
       </select>
     </fieldset>
 
-
     <fieldset>
       <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
     </fieldset>
     <p class="copyright">Designed by Sharks</a></p>
   </form>
-</div>
 
 </div>
 <div clas="col-3">
 @if (session('status'))
 <div class="alert alert-success">
-        {{ session('status') }}
-    </div>
+        {{ session('status') }}</div>
 @endif
       </div>
     </div>

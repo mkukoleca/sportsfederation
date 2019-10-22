@@ -42,7 +42,7 @@ Route::post('/games/updateGame/{id}', 'GameController@update')->name('updategame
 Route::get('/deleteGame/{id}','GameController@destroy');
 
 // Selection
-Route::get('/selection','SelectionController@index' );
+Route::get('/selection','SelectionController@index');
 Route::get('/newSelection', 'SelectionController@store');
 Route::post('/newSelection','SelectionController@store')->name('createSelection');
 Route::get('/editSelection/{selection}','SelectionController@edit');

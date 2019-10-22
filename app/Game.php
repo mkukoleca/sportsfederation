@@ -4,15 +4,11 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Event;
+use App\Club;
 
 
 class Game extends Model
 {
-
-    public function event() {
-        return $this->belongsTo("App\Event");
-    }
-  
     /**
      * The attributes that are mass assignable.
      *
@@ -22,8 +18,9 @@ class Game extends Model
         'eventId',   
         'date',
         'place',
-        'home',
-        'guest',
+        'homeClubId',
+        'guestClubId',
+        'category',
         'referee1',
         'referee2',
         'delegate',
@@ -34,4 +31,15 @@ class Game extends Model
         'created_at',
         'updated_at',
         ];
+
+    public function event() {
+        return $this->belongsTo("App\Event",'eventId');
+    }
+    public function homeClub() {
+        return $this->belongsTo("App\Club",'homeClubId');
+    }
+    public function guestClub() {
+        return $this->belongsTo("App\Club",'guestClubId');
+    }
+
 }

@@ -19,13 +19,10 @@
  <table class="blueTable">
   
     
-            <tr>
-                <th>Id</th>
-                <td>{{$game->id}}</td>
-            </tr>
+            
             <tr>
                 <th>Event</th>
-                <td>{{$game->eventId}}</td>
+                <td>{{$game->event->type}}</td>
             </tr>
             <tr>
                 <th>Date</th>
@@ -37,11 +34,15 @@
             </tr>
             <tr>
                 <th>Home</th>
-                <td>{{$game -> home}}</td>
+                <td>{{$game -> homeClubId}}</td>
             </tr>
             <tr>
                 <th>Guest</th>
-                <td>{{$game -> guest}}</td>
+                <td>{{$game -> guestClubId}}</td>
+            </tr>
+            <tr>
+                <th>Category</th>
+                <td>{{$game -> category}}</td>
             </tr>
             <tr>
                 <th>Referee1</th>

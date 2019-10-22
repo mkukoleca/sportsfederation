@@ -7,16 +7,20 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-<link rel="stylesheet" type="text/css" href="formaClub.css">
-    <title>Document</title>
+<link rel="stylesheet" type="text/css" href="../formaClub.css">
+    <title>New Game</title>
 </head>
 <body>
-<button type="button" class="btn btn-secondary btn-lg btn-block"><a href="/games">Back</a></button>
-<div class="container">  
+<div class="container">
+  <div class="row">
+  <div clas="col-3"></div>
+  <div class="col-6">
+  <br><br>
+  <a href="/games"><button type="button" class="btn btn-secondary btn-lg btn-block">Back</button></a>
+ 
   <form id="contact" action="{{route('register')}}" method="POST">
   {{csrf_field()}}
     <h3>Add new Game</h3>
-    
     <fieldset>
       <span>Event</span>
       <select name="eventId">
@@ -24,7 +28,6 @@
           <option value="{{$event->id}}">{{$event->type}}</option>
         @endforeach
       </select>
-      
     </fieldset>
     <fieldset>
       <input placeholder="Date" type="date" name ="date" tabindex="2" required>
@@ -34,7 +37,7 @@
     </fieldset>
     <fieldset>
       <span>Home</span>
-          <select name="home">
+          <select name="homeClubId">
             @foreach ($clubs as $club)
             <option value="{{$club->id}}">{{$club->name}}</option>
             @endforeach
@@ -42,11 +45,20 @@
     </fieldset>
     <fieldset>
       <span>Guest</span>
-            <select name="guest">
+            <select name="guestClubId">
               @foreach ($clubs as $club)
               <option value="{{$club->id}}">{{$club->name}}</option>
               @endforeach
             </select>
+    </fieldset>
+    <fieldset>
+    <span>Category</span>
+    <select name="category">
+    <option value="senior">Senior</option>
+      <option value="U21">U21</option>
+      <option value="U19">U19</option>
+      <option value="U17">U17</option>
+    </select> 
     </fieldset>
     <fieldset>
       <span>Referee1</span>
@@ -76,12 +88,6 @@
       <input placeholder="Round" type="number" min="1" name ="round" tabindex="9" required>
     </fieldset>
     <fieldset>
-      <input placeholder="Scores Home" type="number" min="1" name ="scoresHome" tabindex="10" required>
-    </fieldset>
-    <fieldset>
-      <input placeholder="Scores Guest" type="number" min="1" name ="scoresGuest" tabindex="11" required>
-    </fieldset>
-    <fieldset>
       <textarea placeholder="Note" type="text" name ="note" tabindex="12" required></textarea>
     </fieldset>
     <fieldset>
@@ -89,6 +95,9 @@
     </fieldset>
     <p class="copyright">Designed by <a href="https://colorlib.com" target="_blank" title="Colorlib">Colorlib</a></p>
   </form>
+  </div>
+  <div clas="col-3"></div>
+  </div>
 </div>
 </body>
 </html>

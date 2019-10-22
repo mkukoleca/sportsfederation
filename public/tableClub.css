@@ -3,44 +3,39 @@ body {
   font-weight: 100;
   font-size: 12px;
   line-height: 30px;
-  color: #777;
-  background-image:url(images/rukomet.jpg);
-  background-repeat: no-repeat;
+  color: rgb(94, 92, 92);
+  background-color: rgb(236, 233, 233);
   background-size: cover;
-  padding: 20px;
-  
+  padding: 20px; 
 }
-
 table.blueTable {
-    border: 1px solid #1C6EA4;
     background-color: #EEEEEE;
     width: 100%;
     text-align: left;
     border-collapse: collapse;
   }
   table.blueTable td, table.blueTable th {
-    border: 1px solid #AAAAAA;
     padding: 3px 2px;
-  
   }
   table.blueTable tbody td {
     font-size: 13px;
+    text-align: center;
   }
   table.blueTable tr:nth-child(even) {
     background: #D0E4F5;
   }
   table.blueTable thead {
-    background: #1C6EA4;
-    background: -moz-linear-gradient(top, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
-    background: -webkit-linear-gradient(top, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
-    background: linear-gradient(to bottom, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
+    background: rgb(217, 235, 247);
+    background: -moz-linear-gradient(top, #EEEEEE 0%, #EEEEEE 66%, #EEEEEE 100%);
+    background: -webkit-linear-gradient(top, #EEEEEE 0%, #EEEEEE 66%, #EEEEEE 100%);
+    background: linear-gradient(to bottom, #EEEEEE 0%, #EEEEEE 66%, #EEEEEE 100%);
     border-bottom: 2px solid #444444;
   }
   table.blueTable thead th {
     font-size: 15px;
-    font-weight: bold;
-    color: #FFFFFF;
-    border-left: 2px solid #D0E4F5;
+    color:#444444;
+    text-align: center;
+    padding: 10px 0;
   }
   table.blueTable thead th:first-child {
     border-left: none;
@@ -54,7 +49,7 @@ table.blueTable {
     background: -moz-linear-gradient(top, #dcebf7 0%, #d4e6f6 66%, #D0E4F5 100%);
     background: -webkit-linear-gradient(top, #dcebf7 0%, #d4e6f6 66%, #D0E4F5 100%);
     background: linear-gradient(to bottom, #dcebf7 0%, #d4e6f6 66%, #D0E4F5 100%);
-    border-top: 2px solid #444444;
+    border-top: 2px solid #6b6a6a;
   }
   table.blueTable tfoot td {
     font-size: 14px;
@@ -64,8 +59,12 @@ table.blueTable {
   }
   table.blueTable tfoot .links a{
     display: inline-block;
-    background: #1C6EA4;
+    background: rgb(168, 210, 238);
     color: #FFFFFF;
     padding: 2px 8px;
     border-radius: 5px;
   }
+  .filter {
+    font-size: 14px;
+  }
+  
