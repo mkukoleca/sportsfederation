@@ -94,11 +94,11 @@
                                 value="{{$game-> round}}" tabindex="9">
                         </fieldset>
                         <fieldset>
-                            Scores Home:<br><input placeholder="ScoresHome" type="number" min="1" name="scoresHome"
+                            Scores Home:<br><input placeholder="ScoresHome" type="number" min="0" name="scoresHome"
                                 value="" tabindex="10">
                         </fieldset>
                         <fieldset>
-                            Scores Guest:<br><input placeholder="ScoresGuest" type="number" name="scoresGuest" value=""
+                            Scores Guest:<br><input placeholder="ScoresGuest" type="number" min="0" name="scoresGuest" value=""
                                 tabindex="11">
                         </fieldset>
                         <fieldset>
