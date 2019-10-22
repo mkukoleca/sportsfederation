@@ -27,7 +27,7 @@ Rukometni savez Republike Srpske-Games
                 <th>Note</th>
                 <th>Registered at</th>
                 <th>Updated at</th>
-                <th>Show Game</th>
+                <th>Show</th>
                 <th>Edit</th>
                 <th>Delete</th>
             </tr>
@@ -50,7 +50,7 @@ Rukometni savez Republike Srpske-Games
                 <td>{{$game -> note}}</td>
                 <td>{{$game -> created_at}}</td>
                 <td>{{$game -> updated_at}}</td>
-                <td><a href="/games/singleGame/{{$game->id}}"><button class="myButton">Show Game</button></a></td>
+                <td><a href="/games/singleGame/{{$game->id}}"><button class="myButton">Show</button></a></td>
                 <td><a href="/games/updateGame/{{$game->id}}"><button class="myButton">Edit</button></a></td>
                 <td><a href="/deleteGame/{{$game->id}}"><button class="myButton" onclick="return confirm('Are you sure you want to delete this data')">Delete</button></a></td>
             </tr>
