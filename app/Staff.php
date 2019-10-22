@@ -35,7 +35,13 @@ class Staff extends Model
         return $this->belongsToMany('App\Federation', 'federation_staff');
     }
 
-    public static function byType($type = StaffType::COACH) {
+    public static function byType($type = StaffType::COACH) 
+    {
         return self::where('type_id', $type)->get();
+    }
+
+    public function game()
+    {
+        return $this->hasMany('App\Game');
     }
 }

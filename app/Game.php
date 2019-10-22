@@ -5,6 +5,9 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use App\Event;
 use App\Club;
+use App\Staff;
+use App\StaffType;
+
 
 
 class Game extends Model

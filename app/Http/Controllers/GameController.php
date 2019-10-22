@@ -32,7 +32,8 @@ class GameController extends Controller
         return view('/games/registerGame', 
                     ['clubs' => Club::all(), 
                      'events' => Event::all(), 
-                     'staffs' => Staff::all()]);
+                     'referee'=>Staff::byType(StaffType::REFEREE),
+                     'delegate'=>Staff::byType(StaffType::DELEGATE)]);
                      
     }
 
@@ -90,10 +91,11 @@ class GameController extends Controller
     {
         $game = Game::where('id', $id)->first();
         return view("games/updateGame", 
-                    ['game' => $game, 
-                     'clubs' => Club::all(), 
-                     'events' => Event::all(), 
-                     'staffs' => Staff::all()]);
+                    ['game'=>$game, 
+                     'clubs'=>Club::all(), 
+                     'events'=>Event::all(), 
+                     'referee'=>Staff::byType(StaffType::REFEREE),
+                     'delegate'=>Staff::byType(StaffType::DELEGATE)]);
 
     }
 

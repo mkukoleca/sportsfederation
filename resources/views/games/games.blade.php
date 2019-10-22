@@ -42,9 +42,9 @@ Rukometni savez Republike Srpske-Games
                 <td>{{$game->homeClub['name']}}</td>
                 <td>{{$game->guestClub['name']}}</td>
                 <td>{{$game->category}}</td>
-                <td>{{$game->referee1->name}}</td>
-                <td>{{$game->referee2->name}}</td>
-                <td>{{$game->delegate->name}}</td>
+                <td>{{$game->staffType['name']}}</td>
+                <td>{{$game->staffType['name']}}</td>
+                <td>{{$game->staffType['name']}}</td>
                 <td>{{$game->round}}</td>
                 <td>{{$game->scoresHome}}</td>
                 <td>{{$game->scoresGuest}}</td>

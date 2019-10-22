@@ -18,9 +18,9 @@ class GamesSeeder extends Seeder
             'homeClubId' => 'Borac',
             'guestClubId' => 'Metaloplastika',
             'category'=> 'U21',
-            'referee1Id' => 1,
+            'referee1Id' => 2,
             'referee2Id' => 2,
-            'delegateId' => 3,
+            'delegateId' => 1,
             'round' => 2,
             'note' => 'Utakmica je odigrana u mirnom tonu i sa velikim igračkim žarom.'
         ]);
@@ -32,9 +32,9 @@ class GamesSeeder extends Seeder
             'homeClubId' => 'Crvena Zvezda',
             'guestClubId' => 'Budućnost',
             'category'=> 'senior',
-            'referee1Id' => 1,
+            'referee1Id' => 2,
             'referee2Id' => 2,
-            'delegateId' => 3,
+            'delegateId' => 1,
             'round' => 1,
             'note' => 'Utakmica je odigrana u paklenoj navijačkoj atmosferi koja je doprinijela pobjedi gostiju.'
         ]);
