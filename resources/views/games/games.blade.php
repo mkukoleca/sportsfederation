@@ -37,20 +37,20 @@ Rukometni savez Republike Srpske-Games
             @foreach ($games as $game)
             <tr>
                 <td>{{$game->event->type}}</td>
-                <td>{{$game -> date}}</td>
-                <td>{{$game -> place}}</td>
-                <td>{{$game -> homeClub['name']}}</td>
-                <td>{{$game -> guestClub['name']}}</td>
-                <td>{{$game -> category}}</td>
-                <td>{{$game -> referee1['name']}}</td>
-                <td>{{$game -> referee2['name']}}</td>
-                <td>{{$game -> delegate['name']}}</td>
-                <td>{{$game -> round}}</td>
-                <td>{{$game -> scoresHome}}</td>
-                <td>{{$game -> scoresGuest}}</td>
-                <td>{{$game -> note}}</td>
-                <td>{{$game -> created_at}}</td>
-                <td>{{$game -> updated_at}}</td>
+                <td>{{$game->date}}</td>
+                <td>{{$game->place}}</td>
+                <td>{{$game->homeClub['name']}}</td>
+                <td>{{$game->guestClub['name']}}</td>
+                <td>{{$game->category}}</td>
+                <td>{{$game->referee1->name}}</td>
+                <td>{{$game->referee2->name}}</td>
+                <td>{{$game->delegate->name}}</td>
+                <td>{{$game->round}}</td>
+                <td>{{$game->scoresHome}}</td>
+                <td>{{$game->scoresGuest}}</td>
+                <td>{{$game->note}}</td>
+                <td>{{$game->created_at}}</td>
+                <td>{{$game->updated_at}}</td>
                 <td><a href="/games/singleGame/{{$game->id}}"><button class="myButton">Show</button></a></td>
                 <td><a href="/games/updateGame/{{$game->id}}"><button class="myButton">Edit</button></a></td>
                 <td><a href="/deleteGame/{{$game->id}}"><button class="myButton"
