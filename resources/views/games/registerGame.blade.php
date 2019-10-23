@@ -19,7 +19,7 @@
   <br><br>
   <a href="/games"><button type="button" class="btn btn-secondary btn-lg btn-block">Back</button></a>
  
-  <form id="contact" action="{{route('register')}}" method="POST">
+  <form id="contact" action="{{route('registerGame')}}" method="POST">
   {{csrf_field()}}
     <h3>Add new Game</h3>
     <fieldset>
@@ -31,10 +31,11 @@
       </select>
     </fieldset>
     <fieldset>
-      <input placeholder="Date/Time" type="dateTime" name ="dateTime" tabindex="2" required>
+      <input placeholder="Date" type="date" name ="date" tabindex="2" required>
+      <input placeholder="Time" type="time" name ="time" tabindex="3" required>
     </fieldset>
     <fieldset>
-      <input placeholder="Place" type="text" name ="place" tabindex="3" required>
+      <input placeholder="Place" type="text" name ="place" tabindex="4" required>
     </fieldset>
     <fieldset>
       <span>Home</span>

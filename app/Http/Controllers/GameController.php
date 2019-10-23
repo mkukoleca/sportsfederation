@@ -45,11 +45,11 @@ class GameController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->only(['eventId', 'dateTime', 'place', 'homeClubId', 'guestClubId','category', 'referee1Id', 'referee2Id', 'delegateId', 'round', 'scoresHome', 'scoresGuest', 'note']);
+        $data = $request->only(['eventId', 'date', 'time', 'place', 'homeClubId', 'guestClubId','category', 'referee1Id', 'referee2Id', 'delegateId', 'round', 'scoresHome', 'scoresGuest', 'note']);
         if (count($data) > 0) {
             $game = new Game();
             $game->eventId = $data['eventId'];
-            $game->dateTime = $data['dateTime'];
+            $game->dateTime = "{$data['date']} {$data['time']}";
             $game->place = $data['place'];
             $game->homeClubId = $data['homeClubId'];
             $game->guestClubId = $data['guestClubId'];
