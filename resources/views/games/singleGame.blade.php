@@ -61,7 +61,7 @@
                     <td>{{$game->created_at}}</td>
                     <td>{{$game->updated_at}}</td>
                     <td><a href="/games/updateGame/{{$game->id}}"><button class="myButton">Edit</button></a></td>
-                    <td><a href="/deletePlayer/{{$game->id}}"><button class="myButton">Delete</button></a></td>
+                    <td><a href="/deleteGame/{{$game->id}}"><button class="myButton"onclick="return confirm('Are you sure you want to delete this data')">Delete</button></a></td>
                     <td><a href="/games"><button class="myButton">Games List</button></a></td>
                 </tr>
             </tbody>
