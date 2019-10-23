@@ -19,7 +19,7 @@ class Game extends Model
      */
     protected $fillable = [
         'eventId',   
-        'date',
+        'dateTime',
         'place',
         'homeClubId',
         'guestClubId',

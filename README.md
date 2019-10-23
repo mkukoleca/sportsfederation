@@ -46,7 +46,7 @@
 
 ### Game
 - EventId
-- Date
+- DateTime
 - Place
 - HomeClubId
 - GuestClubId

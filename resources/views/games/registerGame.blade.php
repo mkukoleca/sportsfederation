@@ -31,7 +31,7 @@
       </select>
     </fieldset>
     <fieldset>
-      <input placeholder="Date" type="date" name ="date" tabindex="2" required>
+      <input placeholder="Date/Time" type="dateTime" name ="dateTime" tabindex="2" required>
     </fieldset>
     <fieldset>
       <input placeholder="Place" type="text" name ="place" tabindex="3" required>

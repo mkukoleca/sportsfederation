@@ -24,7 +24,7 @@
             <thead>
                 <tr>
                     <th>Event</th>
-                    <th>Date</th>
+                    <th>Date/Time</th>
                     <th>Place</th>
                     <th>Home</th>
                     <th>Guest</th>
@@ -46,7 +46,7 @@
             <tbody>
                 <tr>
                     <td>{{$game->event->type}}</td>
-                    <td>{{$game -> date}}</td>
+                    <td>{{$game -> dateTime}}</td>
                     <td>{{$game -> place}}</td>
                     <td>{{$game -> homeClubId}}</td>
                     <td>{{$game -> guestClubId}}</td>

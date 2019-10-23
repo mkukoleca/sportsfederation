@@ -13,7 +13,7 @@ class GamesSeeder extends Seeder
     {
         DB::table('games')->insert([
             'eventId' => 1,  
-            'date' => '2019-10-01',
+            'dateTime' => '2019-10-23 09:42:11',
             'place' => 'Dvorana Borik',
             'homeClubId' => 'Borac',
             'guestClubId' => 'Metaloplastika',
@@ -27,7 +27,7 @@ class GamesSeeder extends Seeder
 
         DB::table('games')->insert([
             'eventId' => 1,  
-            'date' => '2019-10-05',
+            'dateTime' => '2018-09-16 11:42:11',
             'place' => 'Arena Centar',
             'homeClubId' => 'Crvena Zvezda',
             'guestClubId' => 'Budućnost',

@@ -14,7 +14,7 @@ Rukometni savez Republike Srpske-Games
         <thead>
             <tr>
                 <th>Event</th>
-                <th>Date</th>
+                <th>Date/Time</th>
                 <th>Place</th>
                 <th>Home</th>
                 <th>Guest</th>
@@ -37,7 +37,7 @@ Rukometni savez Republike Srpske-Games
             @foreach ($games as $game)
             <tr>
                 <td>{{$game->event->type}}</td>
-                <td>{{$game->date}}</td>
+                <td>{{$game->dateTime}}</td>
                 <td>{{$game->place}}</td>
                 <td>{{$game->homeClub['name']}}</td>
                 <td>{{$game->guestClub['name']}}</td>
