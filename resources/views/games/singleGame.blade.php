@@ -46,20 +46,20 @@
             <tbody>
                 <tr>
                     <td>{{$game->event->type}}</td>
-                    <td>{{$game -> dateTime}}</td>
-                    <td>{{$game -> place}}</td>
-                    <td>{{$game -> homeClubId}}</td>
-                    <td>{{$game -> guestClubId}}</td>
-                    <td>{{$game -> category}}</td>
-                    <td>{{$game -> referee1}}</td>
-                    <td>{{$game -> referee2}}</td>
-                    <td>{{$game -> delegate}}</td>
-                    <td>{{$game -> round}}</td>
-                    <td>{{$game -> scoresHome}}</td>
-                    <td>{{$game -> scoresGuest}}</td>
-                    <td>{{$game -> note}}</td>
-                    <td>{{$game -> created_at}}</td>
-                    <td>{{$game -> updated_at}}</td>
+                    <td>{{$game->dateTime}}</td>
+                    <td>{{$game->place}}</td>
+                    <td>{{$game->homeClub->name}}</td>
+                    <td>{{$game->guestClub->name}}</td>
+                    <td>{{$game->category}}</td>
+                    <td>{{$game->referee1->name}}</td>
+                    <td>{{$game->referee2->name}}</td>
+                    <td>{{$game->delegate->name}}</td>
+                    <td>{{$game->round}}</td>
+                    <td>{{$game->scoresHome}}</td>
+                    <td>{{$game->scoresGuest}}</td>
+                    <td>{{$game->note}}</td>
+                    <td>{{$game->created_at}}</td>
+                    <td>{{$game->updated_at}}</td>
                     <td><a href="/games/updateGame/{{$game->id}}"><button class="myButton">Edit</button></a></td>
                     <td><a href="/deletePlayer/{{$game->id}}"><button class="myButton">Delete</button></a></td>
                     <td><a href="/games"><button class="myButton">Games List</button></a></td>
