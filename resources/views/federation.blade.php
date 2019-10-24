@@ -48,33 +48,33 @@
                     <li><a href="#team">Timovi</a></li>
                     <li class="menu-has-children"><a href="#play">Igrači</a>
                         <ul>
-                            <li class="menu-has-children"><a href="#">Tim NijePekmez</a>
+                            <li class="menu-has-children"><a href="#play">Tim NijePekmez</a>
                                 <ul>
-                                    <li><a href="#">Nikolina</a></li>
-                                    <li><a href="#">Srđan</a></li>
-                                    <li><a href="#">Saša</a></li>
-                                    <li><a href="#">Predrag</a></li>
-                                    <li><a href="#">Goran</a></li>
-                                </ul>
-                            </li>    
-                            <li class="menu-has-children"><a href="#">Tim Sharks</a>
-                                <ul>
-                                    <li><a href="#">Biljana</a></li>
-                                    <li><a href="#">Tanja</a></li>
-                                    <li><a href="#">Renata</a></li>
-                                    <li><a href="#">Dijana</a></li>
-                                    <li><a href="#">Danijel</a></li>
+                                    <li><a href="#play">Nikolina</a></li>
+                                    <li><a href="#play">Srđan</a></li>
+                                    <li><a href="#play">Saša</a></li>
+                                    <li><a href="#play">Predrag</a></li>
+                                    <li><a href="#play">Goran</a></li>
                                 </ul>
                             </li>
-                            <li class="menu-has-children"><a href="#">Tim Kornjače</a>
+                            <li class="menu-has-children"><a href="#play">Tim Sharks</a>
                                 <ul>
-                                    <li><a href="#">Jovana</a></li>
-                                    <li><a href="#">Igor</a></li>
-                                    <li><a href="#">Jelena</a></li>
-                                    <li><a href="#">Igor</a></li>
-                                    <li><a href="#">Nikola</a></li>
+                                    <li><a href="#play">Biljana</a></li>
+                                    <li><a href="#play">Tanja</a></li>
+                                    <li><a href="#play">Renata</a></li>
+                                    <li><a href="#play">Dijana</a></li>
+                                    <li><a href="#play">Danijel</a></li>
                                 </ul>
-                            </li>   
+                            </li>
+                            <li class="menu-has-children"><a href="#play">Tim Kornjače</a>
+                                <ul>
+                                    <li><a href="#play">Jovana</a></li>
+                                    <li><a href="#play">Igor</a></li>
+                                    <li><a href="#play">Jelena</a></li>
+                                    <li><a href="#play">Igor</a></li>
+                                    <li><a href="#play">Nikola</a></li>
+                                </ul>
+                            </li>
                         </ul>
                     </li>
                     <li><a href="#contact">Kontakt</a></li>
@@ -82,21 +82,24 @@
                     <li><a href="/clubs">Clubs</a></li>
                     @endif
                 </ul>
-                
+
             </nav><!-- #nav-menu-container -->
             <div class="butt">
                 <ul class="nav">
                     @if (Auth::check())
-                        <li class="nav-item" style="padding:3px"><a class="btn btn-danger float-left"href="/logout" role="button" >Logout</a></li>
+                    <li class="nav-item" style="padding:3px"><a class="btn btn-danger float-left" href="/logout"
+                            role="button">Logout</a></li>
                     @else
-                        <li class="nav-item" style="padding:3px"><a class="btn btn-danger float-left"href="/register" role="button"> Register</a></li>
-                        <li class="nav-item" style="padding:3px"><a class="btn btn-danger float-left" href="/login" role="button">Login</a></li>
+                    <li class="nav-item" style="padding:3px"><a class="btn btn-danger float-left" href="/register"
+                            role="button"> Register</a></li>
+                    <li class="nav-item" style="padding:3px"><a class="btn btn-danger float-left" href="/login"
+                            role="button">Login</a></li>
                     @endif
                 </ul>
             </div>
         </div>
     </header><!-- #header -->
-    
+
 
     <!--==========================
     Hero Section
@@ -159,54 +162,36 @@
                         <p></p>
                         <p></p>
                         <div class="box">
-                            <div class="icon"><a href=""><i class="fa fa-phone-square"></i></a></div>
+                            <div class="icon"><a href=""><i class="fa fa-users"></i></a></div>
                             <h4 class="title"><a href="/federation/{{ $fed->id }}">Savez Update</a></h4>
                             <p class="description">Nove informacije možete dodati...</p>
                         </div>
                     </div>
-                    <p></p>
-                    <p></p>
-                    <!--  <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.4s">
-            <div class="box">
-              <div class="icon"><a href=""><i class="fa fa-bar-chart"></i></a></div>
-              <h4 class="title"><a href="">Statistika</a></h4>
-              <p class="description">Informacije o utakmicama</p>
-            </div>
-          </div>
-          <p></p>
-          <p></p>
-          <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
-            <div class="box">
-              <div class="icon"><a href="/federation/staffs"><i class="fa fa-users"></i></a></div>
-              <h4 class="title"><a href="">Upravni odbor</a></h4>
-              <p class="description">Informacije o nasim clanovima</p>
-            </div>
-          </div>
 
-          <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
-            <div class="box">
-              <div class="icon"><a href=""><i class="fa fa-photo"></i></a></div>
-              <h4 class="title"><a href="">Galerija slika</a></h4>
-              <p class="description">Slike s utakmica i desavanja</p>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.4s">
-            <div class="box">
-              <div class="icon"><a href=""><i class="fa fa-user"></i></a></div>
-              <h4 class="title"><a href="">Predsjednik</a></h4>
-              <p class="description">Shoe Man</p>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
-            <div class="box">
-              <div class="icon"><a href=""><i class="fa fa-info"></i></a></div>
-              <h4 class="title"><a href="">Istorija</a></h4>
-              <p class="description">Istorija saveza</p>
-            </div>
-          </div>
-        </div> -->
-
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.4s">
+                        <div class="box">
+                            <div class="icon"><a href=""><i class="fa fa-user"></i></a></div>
+                            <h4 class="title"><a href="">Predavač</a></h4>
+                            <p class="description">Mirko Kukoleča</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.4s">
+                        <div class="box">
+                            <div class="icon"><a href=""><i class="fa fa-user"></i></a></div>
+                            <h4 class="title"><a href="">Predavač</a></h4>
+                            <p class="description">Sergej</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.4s">
+                        <div class="box">
+                            <div class="icon"><a href=""><i class="fa fa-user"></i></a></div>
+                            <h4 class="title"><a href="">Predavač</a></h4>
+                            <p class="description">Nevena</p>
+                        </div>
+                    </div>
                 </div>
+
+            </div>
         </section><!-- #services -->
 
         <!--==========================
@@ -216,12 +201,16 @@
             <div class="container wow fadeIn">
                 <div class="row">
                     <div class="col-lg-9 text-center text-lg-left">
-                        <h3 class="cta-title">STOP!! "ZABRANJENO KLIKTANJE"</h3>
-                        <p class="cta-text"> Santa Maria della Salute</p>
+                        <h3 class="cta-title">RUKOMEZNI SAVEZ REPUBLIKE SRPSKE</h3>
+                        <p class="cta-text">Rukometni Savez RS krovna je sportska organizacija koje
+                            okuplja sve rukometne klubove, rukometne sudije i organizuje sportska takmičenja u rukometu
+                            na teritoriji Republike Srpske.
+                        </p>
                     </div>
                     <div class="col-lg-3 cta-btn-container text-center">
-                        <a class="cta-btn align-middle" href="https://www.youtube.com/watch?v=DZ2J71OGjGY"
-                            target="_blank">NE KLIKĆI! STROGO ZABRANJENO!</a>
+                        <a class="cta-btn align-middle"
+                            href=https://sr.wikipedia.org/wiki/%D0%A0%D1%83%D0%BA%D0%BE%D0%BC%D0%B5%D1%82%D0%BD%D0%B8_%D1%81%D0%B0%D0%B2%D0%B5%D0%B7_%D0%A0%D0%B5%D0%BF%D1%83%D0%B1%D0%BB%D0%B8%D0%BA%D0%B5_%D0%A1%D1%80%D0%BF%D1%81%D0%BA%D0%B5"
+                            target="_blank">SAZNAJ VIŠE</a>
                     </div>
                 </div>
 
@@ -293,8 +282,135 @@
                     <h3 class="section-title">IGRAČI</h3>
                     <p class="section-description">Ovo su naši backend igrači po timovima</p>
                 </div>
-               
-                
+                <div>
+                    <h3><b> Tim Nije pekmez</b></h3><br>
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="card" style="width:200px">
+                                <img class="card-img-top" src="img/nikolina.jpg">
+                                <div class="card-body">
+                                    <h4 class="card-title">Nikolina Vranješ</h4>
+                                    <p class="card-text">Član tima nije pekmez.</p>
+                                </div>
+                            </div>
+                            <div class="card" style="width:200px">
+                                <img class="card-img-top" src="img/team-2.jpg">
+                                <div class="card-body">
+                                    <h4 class="card-title">Srđan Knežević</h4>
+                                    <p class="card-text"> Član tima nije pekmez.</p>
+                                </div>
+                            </div>
+                            <div class="card" style="width:200px">
+                                <img class="card-img-top" src="img/team-2.jpg">
+                                <div class="card-body">
+                                    <h4 class="card-title">Saša Oljača</h4>
+                                    <p class="card-text">Član tima nije pekmez.</p>
+                                </div>
+                            </div>
+                            <div class="card" style="width:200px">
+                                <img class="card-img-top" src="img/team-2.jpg">
+                                <div class="card-body">
+                                    <h4 class="card-title">Predrag Koprena</h4>
+                                    <p class="card-text">Član tima nije pekmez.</p>
+                                </div>
+                            </div>
+                            <div class="card" style="width:200px">
+                                <img class="card-img-top" src="img/team-2.jpg">
+                                <div class="card-body">
+                                    <h4 class="card-title">Goran Lukač</h4>
+                                    <p class="card-text">Član tima nije pekmez.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="#play">
+                    <h3><b>Tim Sharks</b> </h3><br>
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="card" style="width:200px">
+                                <img class="card-img-top" src="img/team-3.jpg">
+                                <div class="card-body">
+                                    <h4 class="card-title">Biljana </h4>
+                                    <p class="card-text">Član tima Sharks</p>
+                                </div>
+                            </div>
+                            <div class="card" style="width:200px">
+                                <img class="card-img-top" src="img/team-3.jpg">
+                                <div class="card-body">
+                                    <h4 class="card-title">Tanja</h4>
+                                    <p class="card-text">Član tima Sharks</p>
+                                </div>
+                            </div>
+                            <div class="card" style="width:200px">
+                                <img class="card-img-top" src="img/team-3.jpg">
+                                <div class="card-body">
+                                    <h4 class="card-title">Renata</h4>
+                                    <p class="card-text">Član tima Sharks</p>
+                                </div>
+                            </div>
+                            <div class="card" style="width:200px">
+                                <img class="card-img-top" src="img/team-3.jpg">
+                                <div class="card-body">
+                                    <h4 class="card-title">Dijana Kovačević</h4>
+                                    <p class="card-text">Član tima Sharks</p>
+                                </div>
+                            </div>
+                            <div class="card" style="width:200px">
+                                <img class="card-img-top" src="img/team-3.jpg">
+                                <div class="card-body">
+                                    <h4 class="card-title">Danijel Vrebac</h4>
+                                    <p class="card-text">Član tima Sharks</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h3><b>Tim Kornjače</b> </h3><br>
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="card" style="width:200px">
+                                <img class="card-img-top" src="img/team-1.jpg">
+                                <div class="card-body">
+                                    <h4 class="card-title">Jovana</h4>
+                                    <p class="card-text">Član tima Kornjače.</p>
+                                </div>
+                            </div>
+                            <div class="card" style="width:200px">
+                                <img class="card-img-top" src="img/team-1.jpg">
+                                <div class="card-body">
+                                    <h4 class="card-title">Igor</h4>
+                                    <p class="card-text"> Član tima Kornjače.</p>
+                                </div>
+                            </div>
+                            <div class="card" style="width:200px">
+                                <img class="card-img-top" src="img/team-1.jpg">
+                                <div class="card-body">
+                                    <h4 class="card-title">Jelena</h4>
+                                    <p class="card-text">Član tima Kornjače.</p>
+                                </div>
+                            </div>
+                            <div class="card" style="width:200px">
+                                <img class="card-img-top" src="img/team-1.jpg">
+                                <div class="card-body">
+                                    <h4 class="card-title">Igor</h4>
+                                    <p class="card-text">Član tima Kornjače.</p>
+                                </div>
+                            </div>
+                            <div class="card" style="width:200px">
+                                <img class="card-img-top" src="img/team-1.jpg">
+                                <div class="card-body">
+                                    <h4 class="card-title">Nikola</h4>
+                                    <p class="card-text">Član tima Kornjače.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
 
             </div>
         </section><!-- #team -->
@@ -306,7 +422,7 @@
             <div class="container wow fadeInUp">
                 <div class="section-header">
                     <h3 class="section-title">Kontakt</h3>
-                    <p class="section-description">Tra lalalallaalala javitee nam seeee</p>
+                    <p class="section-description"></p>
                 </div>
             </div>
 
