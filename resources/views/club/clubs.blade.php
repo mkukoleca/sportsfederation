@@ -7,6 +7,29 @@ Rukometni savez Republike Srpske-Clubs
 @endsection
 
 
+<<<<<<< HEAD
+    <br><br>
+    <button><a href="/newClub">Add new Club</a></button>
+    <br><br><br>
+    @include("filters.clubs-filter")
+    <div class="table-responsive">
+      <table class="table blueTable">
+        <thead>
+          <tr>
+            <th>No.</th>
+            <th>Name</th>
+            <th>Address</th>
+            <th>E-mail</th>
+            <th>Website</th>
+            <th>Date of foundation</th>
+            <th>Director</th>
+            <th>History</th>
+            <th>Selections #</th>
+            <th>Edit</th>
+            <th>Delete</th>
+            <th>Thumbnail</th>
+=======
+>>>>>>> 0466fdc640e67adb36cbbf1df182e185e67e6292
 
 <br><br>
 <a href="/newClub"><button class="myButton">Add new Club</button></a>
