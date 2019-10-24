@@ -63,7 +63,7 @@
                                     <li><a href="#">Tanja</a></li>
                                     <li><a href="#">Renata</a></li>
                                     <li><a href="#">Dijana</a></li>
-                                    <li><a href="#">Vrebac</a></li>
+                                    <li><a href="#">Danijel</a></li>
                                 </ul>
                             </li>
                             <li class="menu-has-children"><a href="#">Tim Kornjače</a>
