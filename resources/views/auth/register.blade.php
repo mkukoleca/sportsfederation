@@ -66,7 +66,7 @@
                         <div class="form-group row mb-0" >
                             <div class="col-md-6 offset-md-4" style="padding-right:3px">
                                 <button type="submit" class="btn btn-primary">{{ __('Register') }}</button>
-                                <button type="submit" class="btn btn-danger">{{ __('Cancel') }}</button>
+                                <a href="/" class="btn btn-danger">{{ __('Cancel') }}</a>
                             </div>
                         </div>
                     </form>
