@@ -58,7 +58,7 @@ Rukometni savez Republike Srpske-Players
                 <td>{{$player -> dateOfBirth}}</td>
                 <td>{{$player -> citizenship}}</td>
                 <td>{{$player -> playerHistory}}</td>
-                <td>{{$player->club->name}}</a></td>
+                <td><a href="/clubs?id={{$player->clubId}}">{{$player->club->name}}</a></td>
                 <td>{{$player->selection->category}}</td>
                 <td>{{$player->created_at}}</td>
                 <td>{{$player->updated_at}}</td>
