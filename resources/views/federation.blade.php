@@ -30,7 +30,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 
 <body>
@@ -84,7 +84,7 @@
             <div class="butt">
                 <ul class="nav">
                     @if (Auth::check())
-                        <li class="nav-item" style="padding:3px"><a class="btn btn-danger float-left"href="/logout" role="button">Logout</a></li>
+                        <li class="nav-item" style="padding:3px"><a class="btn btn-danger float-left"href="/logout" role="button" >Logout</a></li>
                     @else
                         <li class="nav-item" style="padding:3px"><a class="btn btn-danger float-left"href="/register" role="button"> Register</a></li>
                         <li class="nav-item" style="padding:3px"><a class="btn btn-danger float-left" href="/login" role="button">Login</a></li>
@@ -93,6 +93,38 @@
             </div>
         </div>
     </header><!-- #header -->
+    
+    {{-- <ul class="navbar-nav ml-auto">
+            <!-- Authentication Links -->
+            @guest
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }} role="button" class="btn btn-danger</a>
+                </li>
+                @if (Route::has('register'))
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }} role="button" class="btn btn-danger</a>
+                    </li>
+                @endif
+            @else
+                <li class="nav-item dropdown">
+                    <a role="button" id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        {{ Auth::user()->name }} <span class="caret"></span>
+                    </a>
+
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{{ route('logout') }}"
+                           onclick="event.preventDefault();
+                                         document.getElementById('logout-form').submit();">
+                            {{ __('Logout') }} 
+                        </a>
+
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
+                    </div>
+                </li>
+            @endguest
+        </ul> --}}
 
     <!--==========================
     Hero Section
