@@ -8,8 +8,22 @@ use \Illuminate\Http\Response;
 
 class ClubController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
+
+        if( count( $request->query() ) > 0 ){
+
+            $filters = [];
+            foreach ( $request->query() as $key => $value ) {
+
+                if( strlen($value) )
+                    array_push($filters, [$key, $value]);
+            }
+ 
+            if (count($filters))
+                return view('/club.clubs', ['clubs' => Club::where($filters)->get(), 'allClubs' => Club::select("name", "address", "director")->get()]);
+        }
+
         return view('/club.clubs', ['clubs' => Club::all()]);
     }
 

@@ -7,10 +7,10 @@ Rukometni savez Republike Srpske-Clubs
 @endsection
 
 
-
 <br><br>
-<a href="/newClub"><button class="myButton">Add new Club</button></a>
+<a href="/newClub"><button>Add new Club</button></a>
 <br><br><br>
+@include("filters.clubs-filter")
 <div class="table-responsive">
     <table class="table blueTable">
         <thead>
@@ -29,7 +29,6 @@ Rukometni savez Republike Srpske-Clubs
                 <th>Delete</th>
             </tr>
         </thead>
-
         <tbody>
             @foreach($clubs as $club)
             <tr>

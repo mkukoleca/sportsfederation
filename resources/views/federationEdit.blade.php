@@ -22,7 +22,7 @@
             <div class="col-6">
                 <br><br>
 
-                <button type="button" class="btn btn-secondary btn-lg btn-block"><a href="/">Back</a></button>
+                <a href="/"><button type="button" class="btn btn-secondary btn-lg btn-block">Back</button></a>
 
 
                 <form id="contact" method="POST" action="/federationEdit/{{ $federation->id }}">

@@ -31,6 +31,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     
+
 </head>
 
 <body>
@@ -63,7 +64,7 @@
                                     <li><a href="#">Tanja</a></li>
                                     <li><a href="#">Renata</a></li>
                                     <li><a href="#">Dijana</a></li>
-                                    <li><a href="#">Vrebac</a></li>
+                                    <li><a href="#">Danijel</a></li>
                                 </ul>
                             </li>
                             <li class="menu-has-children"><a href="#">Tim Kornjače</a>
@@ -78,6 +79,9 @@
                         </ul>
                     </li>
                     <li><a href="#contact">Kontakt</a></li>
+                    @if (Auth::check())
+                    <li><a href="/clubs">Clubs</a></li>
+                    @endif
                 </ul>
                 
             </nav><!-- #nav-menu-container -->
@@ -93,6 +97,8 @@
             </div>
         </div>
     </header><!-- #header -->
+    
+
     <!--==========================
     Hero Section
   ============================-->
