@@ -336,14 +336,14 @@
                             <div class="card" style="width:200px">
                                 <img class="card-img-top" src="img/team-3.jpg">
                                 <div class="card-body">
-                                    <h4 class="card-title">Tanja</h4>
+                                    <h4 class="card-title">Tanja Maksimović</h4>
                                     <p class="card-text">Član tima Sharks</p>
                                 </div>
                             </div>
                             <div class="card" style="width:200px">
                                 <img class="card-img-top" src="img/team-3.jpg">
                                 <div class="card-body">
-                                    <h4 class="card-title">Renata</h4>
+                                    <h4 class="card-title">Renata Šikanjić</h4>
                                     <p class="card-text">Član tima Sharks</p>
                                 </div>
                             </div>
