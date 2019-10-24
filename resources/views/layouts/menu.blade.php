@@ -20,6 +20,16 @@
         <a href="/event">Event</a>
         <a href="/players">Players</a>
         <a href="/games">Games</a>
+        <a id="navbarDropdown" style="margin-left:49%" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    Jelena <span class="caret"></span>
+                                </a>
+
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="http://localhost:8000/logout"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        Logout
+                                    </a>
 
         <a class="icon" onclick="myFunction()">
             <i class="fa fa-bars"></i>
