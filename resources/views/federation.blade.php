@@ -30,7 +30,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 
 <body>
@@ -46,11 +46,11 @@
                     <li class="menu-active"><a href="#hero">Početna</a></li>
                     <li><a href="#services">O savezu</a></li>
                     <li><a href="#team">Timovi</a></li>
-                    <li class="menu-has-children"><a href="">Igrači</a>
+                    <li class="menu-has-children"><a href="#play">Igrači</a>
                         <ul>
                             <li class="menu-has-children"><a href="#">Tim NijePekmez</a>
                                 <ul>
-                                    <li><a href="#">Nina</a></li>
+                                    <li><a href="#">Nikolina</a></li>
                                     <li><a href="#">Srđan</a></li>
                                     <li><a href="#">Saša</a></li>
                                     <li><a href="#">Predrag</a></li>
@@ -59,14 +59,14 @@
                             </li>    
                             <li class="menu-has-children"><a href="#">Tim Sharks</a>
                                 <ul>
-                                    <li><a href="#">Renata</a></li>
+                                    <li><a href="#">Biljana</a></li>
                                     <li><a href="#">Tanja</a></li>
-                                    <li><a href="#">Bilja</a></li>
+                                    <li><a href="#">Renata</a></li>
                                     <li><a href="#">Dijana</a></li>
                                     <li><a href="#">Vrebac</a></li>
                                 </ul>
                             </li>
-                            <li class="menu-has-children"><a href="#">Tim Kornjača</a>
+                            <li class="menu-has-children"><a href="#">Tim Kornjače</a>
                                 <ul>
                                     <li><a href="#">Jovana</a></li>
                                     <li><a href="#">Igor</a></li>
@@ -84,7 +84,7 @@
             <div class="butt">
                 <ul class="nav">
                     @if (Auth::check())
-                        <li class="nav-item" style="padding:3px"><a class="btn btn-danger float-left"href="/logout" role="button">Logout</a></li>
+                        <li class="nav-item" style="padding:3px"><a class="btn btn-danger float-left"href="/logout" role="button" >Logout</a></li>
                     @else
                         <li class="nav-item" style="padding:3px"><a class="btn btn-danger float-left"href="/register" role="button"> Register</a></li>
                         <li class="nav-item" style="padding:3px"><a class="btn btn-danger float-left" href="/login" role="button">Login</a></li>
@@ -93,6 +93,38 @@
             </div>
         </div>
     </header><!-- #header -->
+    
+    {{-- <ul class="navbar-nav ml-auto">
+            <!-- Authentication Links -->
+            @guest
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }} role="button" class="btn btn-danger</a>
+                </li>
+                @if (Route::has('register'))
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }} role="button" class="btn btn-danger</a>
+                    </li>
+                @endif
+            @else
+                <li class="nav-item dropdown">
+                    <a role="button" id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        {{ Auth::user()->name }} <span class="caret"></span>
+                    </a>
+
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{{ route('logout') }}"
+                           onclick="event.preventDefault();
+                                         document.getElementById('logout-form').submit();">
+                            {{ __('Logout') }} 
+                        </a>
+
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
+                    </div>
+                </li>
+            @endguest
+        </ul> --}}
 
     <!--==========================
     Hero Section
@@ -101,12 +133,12 @@
         <div class="hero-container">
             <h1>Dobrodošli na oficijalnu stranicu Rukometnog Saveza Republike Srpske</h1>
             <h2>Mi volimo rukomet</h2>
-            <p><a href="/clubs" class="btn-get-started">CLUB</a>
+            <!--<p><a href="/clubs" class="btn-get-started">CLUB</a>
                 <a href="/staff" class="btn-get-started">STAFF</a>
                 <a href="/selection" class="btn-get-started">SELECTION</a>
                 <a href="/event" class="btn-get-started">EVENT</a>
                 <a href="/players" class="btn-get-started">PLAYERS</a>
-                <a href="/games" class="btn-get-started">GAMES</a></p>
+                <a href="/games" class="btn-get-started">GAMES</a></p>-->
         </div>
     </section><!-- #hero -->
 
@@ -279,6 +311,18 @@
                         </div>
                     </div>
                 </div>
+
+            </div>
+        </section><!-- #team -->
+
+        <section id="play">
+            <div class="container wow fadeInUp">
+                <div class="section-header">
+                    <h3 class="section-title">IGRAČI</h3>
+                    <p class="section-description">Ovo su naši backend igrači po timovima</p>
+                </div>
+               
+                
 
             </div>
         </section><!-- #team -->
