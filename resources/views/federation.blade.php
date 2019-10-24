@@ -46,28 +46,51 @@
                     <li class="menu-active"><a href="#hero">Početna</a></li>
                     <li><a href="#services">O savezu</a></li>
                     <li><a href="#team">Timovi</a></li>
-                    <li class="menu-has-children"><a href="">Najbolji igrači</a>
+                    <li class="menu-has-children"><a href="">Igrači</a>
                         <ul>
-                            <li><a href="#">Drop Down 1</a></li>
-                            <li class="menu-has-children"><a href="#">Drop Down 2</a>
+                            <li class="menu-has-children"><a href="#">Tim NijePekmez</a>
                                 <ul>
-                                    <li><a href="#">Deep Drop Down 1</a></li>
-                                    <li><a href="#">Deep Drop Down 2</a></li>
-                                    <li><a href="#">Deep Drop Down 3</a></li>
-                                    <li><a href="#">Deep Drop Down 4</a></li>
-                                    <li><a href="#">Deep Drop Down 5</a></li>
+                                    <li><a href="#">Nina</a></li>
+                                    <li><a href="#">Srđan</a></li>
+                                    <li><a href="#">Saša</a></li>
+                                    <li><a href="#">Predrag</a></li>
+                                    <li><a href="#">Goran</a></li>
+                                </ul>
+                            </li>    
+                            <li class="menu-has-children"><a href="#">Tim Sharks</a>
+                                <ul>
+                                    <li><a href="#">Renata</a></li>
+                                    <li><a href="#">Tanja</a></li>
+                                    <li><a href="#">Bilja</a></li>
+                                    <li><a href="#">Dijana</a></li>
+                                    <li><a href="#">Vrebac</a></li>
                                 </ul>
                             </li>
-                            <li><a href="#">Drop Down 3</a></li>
-                            <li><a href="#">Drop Down 4</a></li>
-                            <li><a href="#">Drop Down 5</a></li>
+                            <li class="menu-has-children"><a href="#">Tim Kornjača</a>
+                                <ul>
+                                    <li><a href="#">Jovana</a></li>
+                                    <li><a href="#">Igor</a></li>
+                                    <li><a href="#">Jelena</a></li>
+                                    <li><a href="#">Igor</a></li>
+                                    <li><a href="#">Nikola</a></li>
+                                </ul>
+                            </li>   
                         </ul>
                     </li>
                     <li><a href="#contact">Kontakt</a></li>
                 </ul>
                 
             </nav><!-- #nav-menu-container -->
-            <a class="btn btn-danger float-left" href="/dashboard" role="button">Log in</a>
+            <div class="butt">
+                <ul class="nav">
+                    @if (Auth::check())
+                        <li class="nav-item" style="padding:3px"><a class="btn btn-danger float-left"href="/logout" role="button">Logout</a></li>
+                    @else
+                        <li class="nav-item" style="padding:3px"><a class="btn btn-danger float-left"href="/register" role="button"> Register</a></li>
+                        <li class="nav-item" style="padding:3px"><a class="btn btn-danger float-left" href="/login" role="button">Login</a></li>
+                    @endif
+                </ul>
+            </div>
         </div>
     </header><!-- #header -->
 
