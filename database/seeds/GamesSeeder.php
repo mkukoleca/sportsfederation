@@ -13,31 +13,29 @@ class GamesSeeder extends Seeder
     {
         DB::table('games')->insert([
             'eventId' => 1,  
-            'date' => '2019-10-01',
+            'dateTime' => '2019-10-23 09:42:11',
             'place' => 'Dvorana Borik',
-            'home' => 'Borac',
-            'guest' => 'Metaloplastika',
-            'referee1' => 'Hamzo Humo',
-            'referee2' => 'Mladen Oljača',
-            'delegate' => 'Antonije Isaković',
+            'homeClubId' => 1,
+            'guestClubId' => 1,
+            'category'=> 'U21',
+            'referee1Id' => 2,
+            'referee2Id' => 2,
+            'delegateId' => 1,
             'round' => 2,
-            'scoresGuest' => 2,
-            'scoresHome' => 3,
             'note' => 'Utakmica je odigrana u mirnom tonu i sa velikim igračkim žarom.'
         ]);
 
         DB::table('games')->insert([
             'eventId' => 1,  
-            'date' => '2019-10-05',
+            'dateTime' => '2018-09-16 11:42:11',
             'place' => 'Arena Centar',
-            'home' => 'Crvena Zvezda',
-            'guest' => 'Budućnost',
-            'referee1' => 'Petko Stamenković',
-            'referee2' => 'Miodrag Stefanović',
-            'delegate' => 'Boško Rudić',
+            'homeClubId' => 2,
+            'guestClubId' => 2,
+            'category'=> 'senior',
+            'referee1Id' => 2,
+            'referee2Id' => 2,
+            'delegateId' => 1,
             'round' => 1,
-            'scoresGuest' => 23,
-            'scoresHome' => 19,
             'note' => 'Utakmica je odigrana u paklenoj navijačkoj atmosferi koja je doprinijela pobjedi gostiju.'
         ]);
     }

@@ -4,6 +4,10 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Event;
+use App\Club;
+use App\Staff;
+use App\StaffType;
+
 
 
 class Game extends Model
@@ -15,13 +19,14 @@ class Game extends Model
      */
     protected $fillable = [
         'eventId',   
-        'date',
+        'dateTime',
         'place',
-        'home',
-        'guest',
-        'referee1',
-        'referee2',
-        'delegate',
+        'homeClubId',
+        'guestClubId',
+        'category',
+        'referee1Id',
+        'referee2Id',
+        'delegateId',
         'round',
         'scoresGuest',
         'scoresHome',
@@ -31,6 +36,23 @@ class Game extends Model
         ];
 
     public function event() {
-        return $this->belongsTo("App\Event");
+        return $this->belongsTo('App\Event','eventId');
     }
+    public function homeClub() {
+        return $this->belongsTo('App\Club','homeClubId', 'id');
+    }
+    public function guestClub() {
+        return $this->belongsTo('App\Club','guestClubId', 'id');
+    }
+    public function referee1() {
+        return $this->belongsTo('App\Staff','referee1Id', 'id');
+    }
+    public function referee2() {
+         return $this->belongsTo('App\Staff','referee2Id', 'id');
+    }
+     public function delegate() {
+        return $this->belongsTo('App\Staff' ,'delegateId', 'id');
+
+    }
+
 }

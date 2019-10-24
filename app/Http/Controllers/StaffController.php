@@ -17,15 +17,16 @@ class StaffController extends Controller
      */
     public function index() {  
  
+        $staff = Staff::with(['type', 'federation']);
+
         if (request()->has('type')) {
-            return view('federation.staff',
-                    ['staffs' => Staff::with(['type', 'federation'])->where('type_id',request('type'))->get()]);
+                    $staff->where('type_id',request('type'));
         } 
 
         return view('federation.staff',
-                    ['staffs' => Staff::with(['type', 'federation'])->get()]);
+                    ['staffs' => $staff->get()]);
     }
-
+    
     /**
      * Show the form for creating a new resource.
      *

@@ -25,18 +25,19 @@
                 <button type="button" class="btn btn-secondary btn-lg btn-block"><a href="/">Back</a></button>
 
 
-                <form id="contact"  method="POST" action="/federationEdit/{{ $federation->id }}">
+                <form id="contact" method="POST" action="/federationEdit/{{ $federation->id }}">
                     @csrf
                     <h3>Update Federation</h3>
 
-                    
+
                     <fieldset>
                         Name:<br>
                         <input name="name" type="text" value="{{ $federation->name }}" tabindex="1" autofocus required>
                     </fieldset>
                     <fieldset>
                         History:<br>
-                        <textarea name="history" type="text" value="{{ $federation->history }}" tabindex="2" required>{{ $federation->history }}</textarea>
+                        <textarea name="history" type="text" value="{{ $federation->history }}" tabindex="2"
+                            required>{{ $federation->history }}</textarea>
                     </fieldset>
                     <fieldset>
                         President:<br>
@@ -44,13 +45,14 @@
                     </fieldset>
                     <fieldset>
                         Description:<br>
-                        <textarea name="description" type="text" value="{{ $federation->description }}" tabindex="4" required>{{ $federation->description }}</textarea>
+                        <textarea name="description" type="text" value="{{ $federation->description }}" tabindex="4"
+                            required>{{ $federation->description }}</textarea>
                     </fieldset>
-                    
+
                     <fieldset>
                         <button name="submit" type="submit" id="contact-submit">Update</button>
                     </fieldset>
-                   
+
 
                     <p class="copyright">Designed by Sharks</p>
                 </form>
@@ -62,4 +64,5 @@
         </div>
     </div>
 </body>
+
 </html>
