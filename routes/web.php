@@ -2,7 +2,7 @@
 
 // Federation
 Route::get('/', 'FederationController@index');
-Route::get('/federation/{id}', 'FederationController@edit');
+Route::get('/federation/{id}', 'FederationController@edit')->middleware('auth');
 Route::post('/federationEdit/{id}', 'FederationController@update');
 
 // Club
