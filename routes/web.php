@@ -61,4 +61,5 @@ Route::get('/deleteEvent/{id}','EventController@destroy');
 Auth::routes();
 
 Route::get('/dashboard', 'DashboardController@index');
+
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
