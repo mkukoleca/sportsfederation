@@ -28,7 +28,7 @@ Route::get('/newStaff','StaffController@store');
 Route::post('/newStaff', 'StaffController@store')->name('create');
 
 // Staff edit and delete
-Route::get('/editStaff/{id}', 'StaffController@edit');
+Route::get('/editStaff/{id}', 'StaffController@edit')->middleware('auth');
 Route::post('/editStaff/{id}', 'StaffController@update');
 Route::get('/deleteStaff/{id}', 'StaffController@destroy');
 

@@ -30,6 +30,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    
 
 </head>
 
@@ -87,13 +88,10 @@
             <div class="butt">
                 <ul class="nav">
                     @if (Auth::check())
-                    <li class="nav-item" style="padding:3px"><a class="btn btn-danger float-left" href="/logout"
-                            role="button">Logout</a></li>
+                        <li class="nav-item" style="padding:3px"><a class="btn btn-primary float-left"href="/logout" role="button" >Logout</a></li>
                     @else
-                    <li class="nav-item" style="padding:3px"><a class="btn btn-danger float-left" href="/register"
-                            role="button"> Register</a></li>
-                    <li class="nav-item" style="padding:3px"><a class="btn btn-danger float-left" href="/login"
-                            role="button">Login</a></li>
+                        <li class="nav-item" style="padding:3px"><a class="btn btn-primary float-left"href="/register" role="button"> Register</a></li>
+                        <li class="nav-item" style="padding:3px"><a class="btn btn-primary float-left" href="/login" role="button">Login</a></li>
                     @endif
                 </ul>
             </div>
