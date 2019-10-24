@@ -101,12 +101,12 @@
         <div class="hero-container">
             <h1>Dobrodošli na oficijalnu stranicu Rukometnog Saveza Republike Srpske</h1>
             <h2>Mi volimo rukomet</h2>
-            <p><a href="/clubs" class="btn-get-started">CLUB</a>
+            <!--<p><a href="/clubs" class="btn-get-started">CLUB</a>
                 <a href="/staff" class="btn-get-started">STAFF</a>
                 <a href="/selection" class="btn-get-started">SELECTION</a>
                 <a href="/event" class="btn-get-started">EVENT</a>
                 <a href="/players" class="btn-get-started">PLAYERS</a>
-                <a href="/games" class="btn-get-started">GAMES</a></p>
+                <a href="/games" class="btn-get-started">GAMES</a></p>-->
         </div>
     </section><!-- #hero -->
 
