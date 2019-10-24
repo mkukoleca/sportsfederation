@@ -57,19 +57,7 @@ Route::get('/editEvent/{event}','EventController@edit');
 Route::post('/editEvent/{id}','EventController@update')->name('updateevent');
 Route::get('/deleteEvent/{id}','EventController@destroy');
 
-//filters
-Route::get('/filter', function () {
-    $clubs=App\Club::get();
-
-    return view('filter')->with('clubs',$clubs);
-
-    if(request()->has('website')){
-        $clubs=App\Club::where('website',request('website'))->paginate(1);
-    } else {
-         $clubs =App\Club::paginate(1);
-    }
-   
-});
+//login
 Auth::routes();
 
 Route::get('/dashboard', 'DashboardController@index');

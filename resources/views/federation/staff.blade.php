@@ -10,11 +10,6 @@ Rukometni savez Republike Srpske-Staff
 <div>
     <a href="/newStaff"><button class="myButton">Add new Staff</button></a>
     <br><br>
-    <div class="filter">
-        @foreach($staffs as $staff)
-        <a href="/staff?type={{ $staff->type->id }}"> {{$staff->type->name}} </a>
-        @endforeach
-    </div>
     <div class="table-responsive">
         <table class="blueTable">
             <thead>
@@ -35,7 +30,7 @@ Rukometni savez Republike Srpske-Staff
                     <td>{{$staff->id}} </td>
                     <td>{{$staff->name}}</td>
                     <td>{{$staff->description}}</td>
-                    <td>{{$staff->type->name}}</td>
+                    <td><a href="/staff?type={{ $staff->type->id }}"> {{$staff->type->name}} </a></td>
                     <td>
                         @foreach($staff->federation as $fed)
                         {{$fed->name}}
