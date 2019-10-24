@@ -12,6 +12,7 @@ Rukometni savez Republike Srpske-Clubs
     <br><br>
     <button><a href="/newClub">Add new Club</a></button>
     <br><br><br>
+    @include("filters.clubs-filter")
     <div class="table-responsive">
       <table class="table blueTable">
         <thead>
