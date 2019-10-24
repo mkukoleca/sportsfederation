@@ -67,7 +67,16 @@
                 </ul>
                 
             </nav><!-- #nav-menu-container -->
-            <a class="btn btn-danger float-left" href="/dashboard" role="button">Log in</a>
+            <div class="butt">
+                <ul class="nav">
+                    @if (Auth::check())
+                        <li class="nav-item" style="padding:3px"><a class="btn btn-danger float-left"href="/logout" role="button">Logout</a></li>
+                    @else
+                        <li class="nav-item" style="padding:3px"><a class="btn btn-danger float-left"href="/register" role="button"> Register</a></li>
+                        <li class="nav-item" style="padding:3px"><a class="btn btn-danger float-left" href="/login" role="button">Login</a></li>
+                    @endif
+                </ul>
+            </div>
         </div>
     </header><!-- #header -->
 
