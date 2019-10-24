@@ -6,7 +6,18 @@
 @section("title")
 Rukometni savez Republike Srpske-Players
 @endsection
-
+<form  action="{{action('PlayerInfoController@index')}}" method="GET" enctype="multipart/form-data">
+   <div>Sortiranje po :  <select name="club">
+                  
+                  @foreach ( collect( $player_infos)->unique('clubId')->values()->all() as $player)
+                 
+                  <option value="{{$player->clubId}}">{{$player->club->name}}</option>
+                  @endforeach
+                </select>
+                <button id="submit_filters">Submit</button>
+        <button id="reset_filters" class="ml-2">Reset</button>
+    </div>
+</form>
 <br><br>
 <a href="/registerPlayer"><button class="myButton" autofocus>Register new player</button></a>
 <br /><br /><br />
@@ -47,8 +58,7 @@ Rukometni savez Republike Srpske-Players
                 <td>{{$player -> dateOfBirth}}</td>
                 <td>{{$player -> citizenship}}</td>
                 <td>{{$player -> playerHistory}}</td>
-                <td><a href="/players?clubId={{$player->clubId}}"> ({{$player->club['name']}})</a></td>
-                
+                <td>{{$player->club->name}}</a></td>
                 <td>{{$player->selection->category}}</td>
                 <td>{{$player->created_at}}</td>
                 <td>{{$player->updated_at}}</td>
