@@ -28,7 +28,7 @@ Route::get('/newStaff','StaffController@store');
 Route::post('/newStaff', 'StaffController@store')->name('create');
 
 // Staff edit and delete
-Route::get('/editStaff/{id}', 'StaffController@edit');
+Route::get('/editStaff/{id}', 'StaffController@edit')->middleware('auth');
 Route::post('/editStaff/{id}', 'StaffController@update');
 Route::get('/deleteStaff/{id}', 'StaffController@destroy');
 
@@ -61,4 +61,3 @@ Route::get('/deleteEvent/{id}','EventController@destroy');
 Auth::routes();
 
 Route::get('/dashboard', 'DashboardController@index');
-Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
