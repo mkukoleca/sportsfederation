@@ -46,11 +46,11 @@
                     <li class="menu-active"><a href="#hero">Početna</a></li>
                     <li><a href="#services">O savezu</a></li>
                     <li><a href="#team">Timovi</a></li>
-                    <li class="menu-has-children"><a href="">Igrači</a>
+                    <li class="menu-has-children"><a href="#play">Igrači</a>
                         <ul>
                             <li class="menu-has-children"><a href="#">Tim NijePekmez</a>
                                 <ul>
-                                    <li><a href="#">Nina</a></li>
+                                    <li><a href="#">Nikolina</a></li>
                                     <li><a href="#">Srđan</a></li>
                                     <li><a href="#">Saša</a></li>
                                     <li><a href="#">Predrag</a></li>
@@ -59,14 +59,14 @@
                             </li>    
                             <li class="menu-has-children"><a href="#">Tim Sharks</a>
                                 <ul>
-                                    <li><a href="#">Renata</a></li>
+                                    <li><a href="#">Biljana</a></li>
                                     <li><a href="#">Tanja</a></li>
-                                    <li><a href="#">Bilja</a></li>
+                                    <li><a href="#">Renata</a></li>
                                     <li><a href="#">Dijana</a></li>
                                     <li><a href="#">Vrebac</a></li>
                                 </ul>
                             </li>
-                            <li class="menu-has-children"><a href="#">Tim Kornjača</a>
+                            <li class="menu-has-children"><a href="#">Tim Kornjače</a>
                                 <ul>
                                     <li><a href="#">Jovana</a></li>
                                     <li><a href="#">Igor</a></li>
@@ -311,6 +311,18 @@
                         </div>
                     </div>
                 </div>
+
+            </div>
+        </section><!-- #team -->
+
+        <section id="play">
+            <div class="container wow fadeInUp">
+                <div class="section-header">
+                    <h3 class="section-title">IGRAČI</h3>
+                    <p class="section-description">Ovo su naši backend igrači po timovima</p>
+                </div>
+               
+                
 
             </div>
         </section><!-- #team -->
