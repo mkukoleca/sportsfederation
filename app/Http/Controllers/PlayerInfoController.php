@@ -15,14 +15,15 @@ class PlayerInfoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index()
     {
-       
-       $player_infos = PlayerInfo::with(['playerinfo']);
-       if ($request->has('clubId')) {
-        $player_infos->where('clubId', $request->input('clubId'));
+        
+       $player = PlayerInfo::with(['club']);
+       if (request()->has('club')) {
+        $player->where('clubId', request('club'));
+        
     }
-    return view('/playersinfo.players', ['player_infos'=> PlayerInfo::all()]);
+    return view('/playersinfo.players', ['player_infos'=> $player->get()]);
     }
 
     /**
