@@ -14,8 +14,8 @@ Rukometni savez Republike Srpske-Players
                   <option value="{{$player->clubId}}">{{$player->club->name}}</option>
                   @endforeach
                 </select>
-                <button id="submit_filters">Submit</button>
-        <button id="reset_filters" class="ml-2">Reset</button>
+                <button type="submit" id="submit_filters">Submit</button>
+        <button type="reset" id="reset_filters" class="ml-2">Reset</button>
     </div>
 </form>
 <br><br>
