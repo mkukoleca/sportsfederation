@@ -25,6 +25,10 @@
     <a href="/games">Games</a>
     <a href="/players">Players</a>
     <a href="/selection">Selection</a>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+    </a>
+
     
     <a href="/logout" class="btn float-left">
       @if (Auth::check())
