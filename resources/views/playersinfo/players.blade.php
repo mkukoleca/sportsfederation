@@ -1,5 +1,5 @@
 <link rel="stylesheet" href="{{ asset('css/stil.css') }}">
-
+<div class="container p-2 ml-0">
 @extends("../layouts.masterMeni")
 @section("content")
 
@@ -35,15 +35,9 @@ Rukometni savez Republike Srpske-Players
             <tr>
                 <th>Profile img</th>
                 <th>Name</th>
-                <th>Description</th>
-                <th>Position</th>
                 <th>Height<br>Weight<br>Jersey number</th>
-                <th>Date of birth</th>
-                <th>Citizenship</th>
-                <th>History</th>
                 <th>Current club/ <br>
                 Selection</th>
-                <th>Registered at</th>
                 <th>Change</th>
             </tr>
         </thead>
@@ -56,16 +50,10 @@ Rukometni savez Republike Srpske-Players
                         alt="{{$player -> name}}">
                     @endif
                 </td>
-                <td>{{$player -> name}}</td>
-                <td>{{$player -> description}}</td>
-                <td>{{$player -> position}}</td>
+                <td>{{$player -> name}} ({{$player -> position}})</td>
                 <td>{{$player -> height}} cm<br>{{$player -> weight}} kg<br>{{$player -> jerseyNumber}}</td>
-                <td>{{$player -> dateOfBirth}}</td>
-                <td>{{$player -> citizenship}}</td>
-                <td>{{$player -> playerHistory}}</td>
                 <td><a href="/clubs?id={{$player->clubId}}">{{$player->club->name}}/</a> <br>
                 {{$player->selection->category}}</td>
-                <td>{{$player->created_at}}</td>
 
                 <td> 
                 <div class="dropdown">
@@ -100,7 +88,7 @@ Rukometni savez Republike Srpske-Players
     @isset($message)
     {{$message}}
     @endisset
-
+    </div>
 </div>
 
 
