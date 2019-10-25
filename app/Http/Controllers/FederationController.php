@@ -6,6 +6,7 @@ use App\Federation;
 use App\Staff;
 use App\FederationStaff;
 use App\StaffType;
+use App\Event;
 use Illuminate\Http\Request;
 
 class FederationController extends Controller
@@ -20,7 +21,7 @@ class FederationController extends Controller
         $staff = Staff::with(['type', 'federation']);
 
         return view('federation', [
-            'federations' => Federation::all(),'staffs' => $staff->get()
+            'federations' => Federation::all(),'staffs' => $staff->get(),'events' => Event::all()
             ]);
     }
 

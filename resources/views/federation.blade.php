@@ -321,7 +321,27 @@
 
             </div>
         </section><!-- #team -->
-
+           <!--==========================
+    Call To Action Section
+    ============================-->
+    <section id="call-to-action">
+        <div class="container wow fadeIn">
+            <div class="row">
+                <div class="col-lg-12 text-center text-lg-left">
+                    <h3 class="cta-title">DEŠAVANJA</h3>
+                    <p class="cta-text">   
+                        @foreach($events as $event)
+                        <p class="cta-text">  {{$event->season}}</p>
+                        <p class="cta-text"> <img src="ball.ico" alt="Handball icon"> {{$event->type}} :  " {{$event->name}} "  {{$event->description}}</p>
+                        <br><br>
+                        @endforeach
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section><!-- #call-to-action -->
+<p></p>
+<br>
         <section id="play">
             <div class="container wow fadeInUp">
                 <div class="section-header">
@@ -377,7 +397,7 @@
                             <div class="card" style="width:200px">
                                 <img class="card-img-top" src="img/team-3.jpg">
                                 <div class="card-body">
-                                    <h4 class="card-title">Biljana </h4>
+                                    <h4 class="card-title">Bilja </h4>
                                     <p class="card-text">Član tima Sharks</p>
                                 </div>
                             </div>
