@@ -24,11 +24,11 @@ Rukometni savez Republike Srpske-Players
                 <button type="submit" id="submit_filters" class="btn btn-primary btn-sm">Submit</button>
                 <button type="reset" id="reset_filters" class="btn btn-secondary btn-sm">Reset</button>
             </div>
-    </div>
+        </div>
 </div>
-</form>
+        </form>
 <div class="table-responsive">
-    <table class="table blueTable">
+    <table class="table table-bordered table-dark table-striped blueTable">
         <thead>
             <tr>
                 <th>Profile img</th>
@@ -65,6 +65,10 @@ Rukometni savez Republike Srpske-Players
                 {{$player->selection->category}}</td>
                 <td>{{$player->created_at}}</td>
 
+<<<<<<< HEAD
+                <td><a href="/updatePlayer/{{$player->id}}"><button
+                            class="btn btn-warning btn-sm">Edit</button></a></td>
+=======
                 <td> 
                 <div class="dropdown">
     <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
@@ -84,12 +88,18 @@ Rukometni savez Republike Srpske-Players
 
                 <!-- <td><a href="/updatePlayer/{{$player->id}}"><button
                             class="btn btn-outline-info btn-sm">Edit</button></a></td>
+>>>>>>> 5bd0e9dfd6471f6aa4ba8c0d2c9cb288ab804915
                 <td><a href="/singlePlayer/{{$player->id}}"><button
-                            class="btn btn-outline-info btn-sm">Show</button></a></td>
+                            class="btn btn-info btn-sm">Show</button></a></td>
                 <td><a onclick="return confirm('DA LI STE SIGURNI DA ZELITE BRISATI?')"
                         href="/deletePlayer/{{$player->id}}"><button
+<<<<<<< HEAD
+                            class="btn btn-danger btn-sm">Delete</button></a></td>
+            </tr>
+=======
                             class="btn btn-outline-info btn-sm">Delete</button></a></td>
             </tr> -->
+>>>>>>> 5bd0e9dfd6471f6aa4ba8c0d2c9cb288ab804915
 
             @endforeach
         </tbody>
