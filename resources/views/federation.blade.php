@@ -222,22 +222,25 @@
             <section>
                 <h2 style="text-align:center">Predavači</h2>
                 <p style="text-align:center; color:#ccc">Ovo je naš tim predavača</p>
+                <div class="container">
                 <div class="row">
-                    <div class="col-4">
-                        <div class="card">
-                        @foreach($staffs as $staff)
-                            <img src="{{ url($staff->thumbnail) }}" alt="Slika staff" style="width:100%">
+                    @foreach($staffs as $staff)
+                    <div>
+                        <div class="card" >
+
+                            <img src="{{ url($staff->thumbnail) }}" alt="Slika staff" style="width:100%; height:auto">
                             <h1>{{$staff->name}}</h1>
                             <p class="title">{{$staff->type->name}}</p>
                             <div style="margin: 24px 0;">
-                                <a href="#"><i class="fa fa-instagram"></i></a>
-                                <a href="#"><i class="fa fa-facebook"></i></a>
+                                <a href="{{$staff->facebook}}"><i class="fa fa-instagram"></i></a>
+                                <a href="{{$staff->instagram}}"><i class="fa fa-facebook"></i></a>
                             </div>
-                            <p><button style="color:#ccc;">mirko@invenit.io</button></p>
+                            <p><button style="color:#ccc;">{{$staff->email}}</button></p>
                         </div>
-                        @endforeach
+
                     </div>
-                </div>
+                    @endforeach
+                </div></div>
             </section><!-- #treneri -->
 
             </div>
@@ -250,7 +253,7 @@
             <div class="container wow fadeIn">
                 <div class="row">
                     <div class="col-lg-9 text-center text-lg-left">
-                        <h3 class="cta-title">RUKOMEZNI SAVEZ REPUBLIKE SRPSKE</h3>
+                        <h3 class="cta-title">RUKOMETNI SAVEZ REPUBLIKE SRPSKE</h3>
                         <p class="cta-text">Rukometni Savez RS krovna je sportska organizacija koje
                             okuplja sve rukometne klubove, rukometne sudije i organizuje sportska takmičenja u rukometu
                             na teritoriji Republike Srpske.
@@ -321,27 +324,28 @@
 
             </div>
         </section><!-- #team -->
-           <!--==========================
+        <!--==========================
     Call To Action Section
     ============================-->
-    <section id="call-to-action">
-        <div class="container wow fadeIn">
-            <div class="row">
-                <div class="col-lg-12 text-center text-lg-left">
-                    <h3 class="cta-title">DEŠAVANJA</h3>
-                    <p class="cta-text">   
-                        @foreach($events as $event)
-                        <p class="cta-text">  {{$event->season}}</p>
-                        <p class="cta-text"> <img src="ball.ico" alt="Handball icon"> {{$event->type}} :  " {{$event->name}} "  {{$event->description}}</p>
-                        <br><br>
-                        @endforeach
-                    </p>
+        <section id="call-to-action">
+            <div class="container wow fadeIn">
+                <div class="row">
+                    <div class="col-lg-12 text-center text-lg-left">
+                        <h3 class="cta-title">DEŠAVANJA</h3>
+                        <p class="cta-text">
+                            @foreach($events as $event)
+                            <p class="cta-text"> {{$event->season}}</p>
+                            <p class="cta-text"> <img src="ball.ico" alt="Handball icon"> {{$event->type}} : "
+                                {{$event->name}} " {{$event->description}}</p>
+                            <br><br>
+                            @endforeach
+                        </p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section><!-- #call-to-action -->
-<p></p>
-<br>
+        </section><!-- #call-to-action -->
+        <p></p>
+        <br>
         <section id="play">
             <div class="container wow fadeInUp">
                 <div class="section-header">
