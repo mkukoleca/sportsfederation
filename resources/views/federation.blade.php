@@ -214,48 +214,51 @@ button:hover, a:hover {
                      <!--==========================
       Coaches Section
     ============================-->
-        <section>
-                <h2 style="text-align:center">Predavači</h2>
-                <p style="text-align:center; color:#ccc">Ovo je naš tim predavača</p>
-            <div class="row justify-content-center">
-                <div class="col-lg-3 col-md-6">
-                    <div class="member">
-                        <div class="pic"><img src="img/mirko_fancy.jpg" alt="Mirko" style="width:100%"></div>
-                    <h3>Mirko Kukoleča</h3>
-                    <p class="title">ITP100 2019</p>
-                        <div class="social"> 
-                            <a href="#"><i class="fa fa-linkedin"></i></a>  
-                            <a href="#"><i class="fa fa-facebook"></i></a> 
-                        </div>
-                    <p><button style="color:#ccc;">Jesi radio 8h?</button></p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="member" >
-                            <div class="pic"><img src="img/nevena.png" alt="Nevena" style="width:100%"></div>
-                    <h3>Nevena Mićić</h3>
-                    <p class="title">ITP100 2019</p>
-                    <div style="social"> 
-                        <a href="#"><i class="fa fa-linkedin"></i></a>  
-                        <a href="#"><i class="fa fa-facebook"></i></a> 
-                    </div>
-                    <p><button style="color:#ccc;">Njam onaj Nikolinin pekmez...</button></p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="social" >
-                    <img src="img/sergej.jpg" alt="Sergej" style="width:100%">
-                    <h3>Sergej Vuković</h3>
-                    <p class="title">ITP100 2019</p>
-                    <div class="social"> 
-                        <a href="#"><i class="fa fa-linkedin"></i></a>  
-                        <a href="#"><i class="fa fa-facebook"></i></a> 
-                    </div>
-                    <p><button style="color:#ccc;">Debaguj!!!</button></p>
-                    </div>
+    <section>
+            <h2 style="text-align:center">Predavači</h2>
+            <p style="text-align:center; color:#ccc">Ovo je naš tim predavača</p>
+        <div class="row">
+            <div class="col-4">
+                <div class="card">
+					<img src="img/mirko_fancy.jpg" alt="Mirko" style="width:100%">
+					<h1>Mirko Kukoleča</h1>
+					<p class="title">Prointer</p>
+					<p>ITP100 2019</p>
+					<div style="margin: 24px 0;"> 
+						<a href="#"><i class="fa fa-linkedin"></i></a>  
+						<a href="#"><i class="fa fa-facebook"></i></a> 
+					</div>
+					<p><button style="color:#ccc;">mirko@invenit.io</button></p>
                 </div>
             </div>
-            </section><!-- #treneri -->
+            <div class="col-4">
+                <div class="card" style="margin-left:50px;">
+                <img src="img/nevena.png" alt="Nevena" style="width:100%">
+                <h1>Nevena Mićić</h1>
+                <p class="title">Invenit Solutions</p>
+                <p>ITP100 2019</p>
+                <div style="margin: 24px 0;"> 
+                    <a href="#"><i class="fa fa-linkedin"></i></a>  
+                    <a href="#"><i class="fa fa-facebook"></i></a> 
+                </div>
+                <p><button style="color:#ccc;">nevena@invenit.io</button></p>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="card" style="margin-left:0px;">
+                <img src="img/sergej.jpg" alt="Sergej" style="width:100%">
+                <h1>Sergej Vuković</h1>
+                <p class="title">JSGuru</p>
+                <p>ITP100 2019</p>
+                <div style="margin: 24px 0;"> 
+                    <a href="#"><i class="fa fa-linkedin"></i></a>  
+                    <a href="#"><i class="fa fa-facebook"></i></a> 
+                </div>
+                <p><button style="color:#ccc;">sergejv95@gmail.com</button></p>
+                </div>
+            </div>
+        </div>
+        </section><!-- #treneri -->
 
             </div>
         </section><!-- #services -->
