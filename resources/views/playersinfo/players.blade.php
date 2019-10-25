@@ -10,7 +10,7 @@ Rukometni savez Republike Srpske-Players
 <br><br><br>
 <a href="/registerPlayer"><button class="btn btn-success">Register new player</button></a>
 <br /><br />
-<div class="container p-2 ml-0">
+<div class="container-fluid">
     <div class="row">
         <form action="{{action('PlayerInfoController@index')}}" method="GET" enctype="multipart/form-data">
             <div>
