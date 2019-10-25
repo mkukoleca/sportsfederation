@@ -8,11 +8,13 @@ Rukometni savez Republike Srpske-New Club
     <div class="container">
         <div class="row">
 
-            <div clas="col-3">
+            <div class="col-3">
             </div>
 
             <div class="col-6">
                 <div class="container">
+                
+
                     <br><br>
                     <a href="/clubs"><button type="button" class="btn btn-secondary btn-lg btn-block">Back</button></a>
 
@@ -54,13 +56,13 @@ Rukometni savez Republike Srpske-New Club
                         <p class="copyright">Designed by Sharks</a></p>
                     </form>
                 </div>
-
+            
             </div>
             <div clas="col-3">
             </div>
         </div>
 
     </div>
-</body>
+
 
 @endsection

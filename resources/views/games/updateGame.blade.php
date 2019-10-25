@@ -1,5 +1,6 @@
 @extends("../layouts.master")
 
+
 @section("content")
 
 @section("title")
@@ -7,8 +8,10 @@ Rukometni savez Republike Srpske-Game
 @endsection
 <div class="container">
   <div class="row">
-    <div clas="col-3"></div>
+    <div class="col-3"></div>
     <div class="col-6">
+    <div class="container">
+
         <br><br>
       <a href="/games"><button type="button" class="btn btn-secondary btn-lg btn-block">Back</button></a>
       
@@ -95,7 +98,7 @@ Rukometni savez Republike Srpske-Game
           </fieldset>
           <p class="copyright">Designed by <a href="https://colorlib.com" target="_blank" title="Colorlib">Colorlib</a></p>
       </form>
-    </div>
+    </div></div>
     <div clas="col-3"></div>
   </div>
 </div>

@@ -2,19 +2,11 @@
 
 @section("content")
 
-<<<<<<< HEAD
-@section("title")
-Rukometni savez Republike Srpske-New Club
-@endsection
-<br>
-    <a href="/players"><button type="button" class="btn_back">Back</button></a>
-=======
     <title>Single Player</title>
 </head>
 
 <body><br>
     <a href="/players"><button type="button" class="btn btn-secondary btn-lg">Back</button></a>
->>>>>>> 5bd0e9dfd6471f6aa4ba8c0d2c9cb288ab804915
     <br><br>
     <a href="/registerPlayer"><button class="btn btn-success" >Register new player</button></a>
     <br><br><br>

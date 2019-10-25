@@ -15,7 +15,6 @@
 <body>
 <div class="container-fluid">
 
-    
 
 
     @include("layouts.menu")

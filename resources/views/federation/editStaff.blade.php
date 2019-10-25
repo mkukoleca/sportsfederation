@@ -8,8 +8,9 @@ Rukometni savez Republike Srpske-Staff
     <div class="container">
         <div class="row">
 
-            <div clas="col-3">
+            <div class="col-3">
             </div>
+            <div class="col-6">
             <div class="container"><br><br>
                 <a href="/staff"><button type="button" class="btn btn-secondary btn-lg btn-block">Back</button></a>
                 <form id="contact" method="POST" action="/editStaff/{{ $staff->id }}" enctype="multipart/form-data">
@@ -58,9 +59,6 @@ Rukometni savez Republike Srpske-Staff
                     <p class="copyright">Designed by Sharks</a></p>
                 </form>
             </div>
-
-            <div class="col-6">
-
             </div>
             <div clas="col-3">
             </div>

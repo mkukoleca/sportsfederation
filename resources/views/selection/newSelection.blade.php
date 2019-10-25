@@ -7,7 +7,7 @@ Rukometni savez Republike Srpske-Selection
 @endsection
     <div class="container">
         <div class="row">
-            <div clas="col-3"></div>
+            <div class="col-3"></div>
             <div class="col-6">
                 <br><br>
                 <div class="container">

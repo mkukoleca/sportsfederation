@@ -2,16 +2,14 @@
 
 @section("content")
 
-<<<<<<< HEAD
-@section("title")
-Rukometni savez Republike Srpske-Staff
-@endsection
-<div class="container">  
-=======
+<div class="container">
+<div class="row">
+<div class="col-3">
+</div>
+<div class="col-6">
 <div class="container">
 <br><br>
     <a href="/staff"><button type="button" class="btn btn-secondary btn-lg btn-block">Back</button></a>  
->>>>>>> 5bd0e9dfd6471f6aa4ba8c0d2c9cb288ab804915
   <form id="contact" action="{{route('create')}}" method="POST" enctype="multipart/form-data">
   {{csrf_field()}}
     <h3>Add new Staff</h3>
