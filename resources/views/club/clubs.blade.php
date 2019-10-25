@@ -12,8 +12,8 @@ Rukometni savez Republike Srpske-Clubs
 <a href="/newClub"><button class="btn btn-success">Add new Club</button></a>
 <br><br>
 @include("filters.clubs-filter")
-<div class="table-responsive">
-    <table class="table blueTable">
+<div class="table-responsive-sm">
+    <table class="table table-bordered table-dark table-striped table-hover blueTable">
         <thead>
             <tr>
                 <th>No.</th>
@@ -48,9 +48,9 @@ Rukometni savez Republike Srpske-Clubs
                     <img width="50" height="auto" src="{{ url($club->thumbnail) }}" alt="club pic">
                     @endif
                 </td>
-                <td><a href="editClub/{{$club->id}}"><button class="btn btn-outline-info btn-sm">Edit</button></a></td>
+                <td><a href="editClub/{{$club->id}}"><button class="btn btn-warning btn-sm">Edit</button></a></td>
                 <td><a onclick="return confirm('DA LI STE SIGURNI DA ZELITE BRISATI?')"
-                        href="deleteClub/{{$club->id}}"><button class="btn btn-outline-info btn-sm">Delete</button></a></td>
+                        href="deleteClub/{{$club->id}}"><button class="btn btn-danger btn-sm">Delete</button></a></td>
             </tr>
 
             @endforeach

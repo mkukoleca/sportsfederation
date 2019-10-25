@@ -6,18 +6,6 @@
 @section("title")
 Rukometni savez Republike Srpske-Players
 @endsection
-<<<<<<< HEAD
-<br><br>
-<a href="/registerPlayer"><button class="myButton" autofocus>Register new player</button></a>
-<br /><br /><br />
-<form  action="{{action('PlayerInfoController@index')}}" method="GET" enctype="multipart/form-data">
-   <div>Sortiranje po :  <select name="club">
-                  
-                  @foreach ( collect( $player_infos)->unique('clubId')->values()->all() as $player)
-                 
-                  <option value="{{$player->clubId}}">{{$player->club->name}}</option>
-                  @endforeach
-=======
 
 <br><br><br>
 <a href="/registerPlayer"><button class="btn btn-success">Register new player</button></a>
@@ -32,21 +20,17 @@ Rukometni savez Republike Srpske-Players
 
                     <option value="{{$player->clubId}}">{{$player->club->name}}</option>
                     @endforeach
->>>>>>> 5bd0e9dfd6471f6aa4ba8c0d2c9cb288ab804915
                 </select>
                 <button type="submit" id="submit_filters" class="btn btn-primary btn-sm">Submit</button>
                 <button type="reset" id="reset_filters" class="btn btn-secondary btn-sm">Reset</button>
             </div>
-    </div>
+        </div>
 </div>
+
 </form>
-<<<<<<< HEAD
 
-
-=======
->>>>>>> 5bd0e9dfd6471f6aa4ba8c0d2c9cb288ab804915
 <div class="table-responsive">
-    <table class="table blueTable">
+    <table class="table table-bordered table-dark table-striped blueTable">
         <thead>
             <tr>
                 <th>Profile img</th>
@@ -103,7 +87,7 @@ Rukometni savez Republike Srpske-Players
                 <!-- <td><a href="/updatePlayer/{{$player->id}}"><button
                             class="btn btn-outline-info btn-sm">Edit</button></a></td>
                 <td><a href="/singlePlayer/{{$player->id}}"><button
-                            class="btn btn-outline-info btn-sm">Show</button></a></td>
+                            class="btn btn-info btn-sm">Show</button></a></td>
                 <td><a onclick="return confirm('DA LI STE SIGURNI DA ZELITE BRISATI?')"
                         href="/deletePlayer/{{$player->id}}"><button
                             class="btn btn-outline-info btn-sm">Delete</button></a></td>

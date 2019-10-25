@@ -10,8 +10,8 @@ Rukometni savez Republike Srpske-Selection
 <br><br><br>
 <a href="/newSelection"><button class="btn btn-success">Add new Selection</button></a>
 <br><br><br>
-<div class="table-responsive">
-    <table class="blueTable">
+<div class="table-responsive-sm">
+    <table class="table table-bordered table-dark table-striped blueTable">
         <thead>
             <tr>
                 <th>Gender</th>
@@ -31,9 +31,9 @@ Rukometni savez Republike Srpske-Selection
                 <td>{{$select->history}}</td>
                 <td>{{$select->staffType->name}}</td>
                 <td>{{$select->club->name}}</td>
-                <td><a href="editSelection/{{$select->id}}"><button class="btn btn-outline-info btn-sm">Edit</button></a></td>
+                <td><a href="editSelection/{{$select->id}}"><button class="btn btn-warning btn-sm">Edit</button></a></td>
                 <td><a onclick="return confirm('DA LI STE SIGURNI DA ZELITE BRISATI?')"
-                        href="deleteSelection/{{$select->id}}"><button class="btn btn-outline-info btn-sm">Delete</button></a></td>
+                        href="deleteSelection/{{$select->id}}"><button class="btn btn-danger btn-sm">Delete</button></a></td>
             </tr>
             @endforeach
         </tbody>
