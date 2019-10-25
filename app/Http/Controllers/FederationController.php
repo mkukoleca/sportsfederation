@@ -3,7 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Federation;
+use App\Staff;
+use App\FederationStaff;
+use App\StaffType;
 use App\Event;
+use App\Club;
+
 use Illuminate\Http\Request;
 
 class FederationController extends Controller
@@ -15,9 +20,13 @@ class FederationController extends Controller
      */
     public function index()
     {
+        $types = StaffType::whereIn('name', ['delegate', 'coach'])->pluck('id')->toArray();
+        $staff = Staff::whereIn('type_id', $types)->with(['type', 'federation']);
+
         return view('federation', [
             'federations' => Federation::all(),
-            'events' => Event::all()
+            'staffs' => $staff->get(),'events' => Event::all(),
+            'clubs' => Club::all()  
             ]);
     }
 
