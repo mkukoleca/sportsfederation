@@ -183,7 +183,7 @@ button:hover, a:hover {
                                 <p>Trenutni predsjednik saveza je {{ $fed->president }}.</p>
                             </div>
                             <p>
-                                <div class="panel-heading">
+                               {{--  <div class="panel-heading">
                                     <h4>Članovi saveza</h4>
                                 </div>
                                 <div class="panel-body">
@@ -193,7 +193,7 @@ button:hover, a:hover {
                                         {{$staff->type->name}}: {{$staff->name}}
                                     </div>
                                     @endforeach
-                                </div>
+                                </div> --}}
                         </div>
                         @endforeach
                     </p>
@@ -210,29 +210,52 @@ button:hover, a:hover {
                             <p class="description">Nove informacije možete dodati...</p>
                         </div>
                     </div>
-
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.4s">
-                        <div class="box">
-                            <div class="icon"><a href=""><i class="fa fa-user"></i></a></div>
-                            <h4 class="title"><a href="">Predavač</a></h4>
-                            <p class="description">Mirko Kukoleča</p>
+                </div>
+                     <!--==========================
+      Coaches Section
+    ============================-->
+        <section>
+                <h2 style="text-align:center">Predavači</h2>
+                <p style="text-align:center; color:#ccc">Ovo je naš tim predavača</p>
+            <div class="row justify-content-center">
+                <div class="col-lg-3 col-md-6">
+                    <div class="member">
+                        <div class="pic"><img src="img/mirko_fancy.jpg" alt="Mirko" style="width:100%"></div>
+                    <h3>Mirko Kukoleča</h3>
+                    <p class="title">ITP100 2019</p>
+                        <div class="social"> 
+                            <a href="#"><i class="fa fa-linkedin"></i></a>  
+                            <a href="#"><i class="fa fa-facebook"></i></a> 
                         </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.4s">
-                        <div class="box">
-                            <div class="icon"><a href=""><i class="fa fa-user"></i></a></div>
-                            <h4 class="title"><a href="">Predavač</a></h4>
-                            <p class="description">Sergej</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.4s">
-                        <div class="box">
-                            <div class="icon"><a href=""><i class="fa fa-user"></i></a></div>
-                            <h4 class="title"><a href="">Predavač</a></h4>
-                            <p class="description">Nevena</p>
-                        </div>
+                    <p><button style="color:#ccc;">Jesi radio 8h?</button></p>
                     </div>
                 </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="member" >
+                            <div class="pic"><img src="img/nevena.png" alt="Nevena" style="width:100%"></div>
+                    <h3>Nevena Mićić</h3>
+                    <p class="title">ITP100 2019</p>
+                    <div style="social"> 
+                        <a href="#"><i class="fa fa-linkedin"></i></a>  
+                        <a href="#"><i class="fa fa-facebook"></i></a> 
+                    </div>
+                    <p><button style="color:#ccc;">Njam onaj Nikolinin pekmez...</button></p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="social" >
+                    <img src="img/sergej.jpg" alt="Sergej" style="width:100%">
+                    <h3>Sergej Vuković</h3>
+                    <p class="title">ITP100 2019</p>
+                    <div class="social"> 
+                        <a href="#"><i class="fa fa-linkedin"></i></a>  
+                        <a href="#"><i class="fa fa-facebook"></i></a> 
+                    </div>
+                    <p><button style="color:#ccc;">Debaguj!!!</button></p>
+                    </div>
+                </div>
+            </div>
+            </section><!-- #treneri -->
 
             </div>
         </section><!-- #services -->
@@ -259,9 +282,6 @@ button:hover, a:hover {
 
             </div>
         </section><!-- #call-to-action -->
-
-
-
 
         <!--==========================
       Team Section
@@ -318,51 +338,6 @@ button:hover, a:hover {
 
             </div>
         </section><!-- #team -->
-        <!--==========================
-      Coaches Section
-    ============================-->
-        <section>
-            <h2 style="text-align:center">Predavači</h2>
-            <p style="text-align:center; color:#ccc">Ovo je naš tim predavača</p>
-        <div class="row">
-            <div class="col-4">
-                <div class="card">
-                <img src="img/mirko_fancy.jpg" alt="Mirko" style="width:100%">
-                <h1>Mirko Kukoleča</h1>
-                <p class="title">ITP100 2019</p>
-                <div style="margin: 24px 0;"> 
-                    <a href="#"><i class="fa fa-linkedin"></i></a>  
-                    <a href="#"><i class="fa fa-facebook"></i></a> 
-                </div>
-                <p><button style="color:#ccc;">Jesi radio 8h?</button></p>
-                </div>
-            </div>
-            <div class="col-4">
-                <div class="card" style="margin-left:50px;">
-                <img src="img/nevena.png" alt="Nevena" style="width:100%">
-                <h1>Nevena Mićić</h1>
-                <p class="title">ITP100 2019</p>
-                <div style="margin: 24px 0;"> 
-                    <a href="#"><i class="fa fa-linkedin"></i></a>  
-                    <a href="#"><i class="fa fa-facebook"></i></a> 
-                </div>
-                <p><button style="color:#ccc;">Njam onaj Nikolinin pekmez...</button></p>
-                </div>
-            </div>
-            <div class="col-4">
-                <div class="card" style="margin-left:0px;">
-                <img src="img/sergej.jpg" alt="Sergej" style="width:100%">
-                <h1>Sergej Vuković</h1>
-                <p class="title">ITP100 2019</p>
-                <div style="margin: 24px 0;"> 
-                    <a href="#"><i class="fa fa-linkedin"></i></a>  
-                    <a href="#"><i class="fa fa-facebook"></i></a> 
-                </div>
-                <p><button style="color:#ccc;">Debaguj!!!</button></p>
-                </div>
-            </div>
-        </div>
-        </section><!-- #treneri -->
 
         <section id="play">
             <div class="container wow fadeInUp">
