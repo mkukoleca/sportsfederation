@@ -10,7 +10,7 @@ Rukometni savez Republike Srpske-Selection
 <br><br><br>
 <a href="/newSelection"><button class="btn btn-success">Add new Selection</button></a>
 <br><br><br>
-<div class="table-responsive-sm">
+<div class="container-fluid">
     <table class="table table-bordered table-dark table-striped blueTable">
         <thead>
             <tr>
