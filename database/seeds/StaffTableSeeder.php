@@ -14,26 +14,36 @@ class StaffTableSeeder extends Seeder
     {
         DB::table('staffs')->insert([
             'id' => 1,
-            'name' => 'Bibiana Delegate',
-            'description' => 'German football referee!!!',
+            'name' => 'Mirko Kukoleča',
+            'description' => 'Hoćeš li da savladaš PHP? -Jesi li radio osam sati?',
             'type_id' => StaffType::DELEGATE,
-            'thumbnail' => ''
+            'thumbnail' => 'img/mirko.kukoleca.jpg',
+            'email' => 'nesto@email.com',
+            'facebook' => 'http//:www.facebook.com',
+            'instagram' => 'http//:www.facebook.com',
+
         ]);
 
         DB::table('staffs')->insert([
             'id' => 2,
-            'name' => 'Bibiana Referee',
+            'name' => 'Nevena Mićić',
             'description' => 'German football referee!!!',
-            'type_id' => StaffType::REFEREE,
-            'thumbnail' => ''
+            'type_id' => StaffType::COACH,
+            'thumbnail' => 'img/nevena.png',
+            'email' => 'nesto@email.com',
+            'facebook' => 'http//:www.facebook.com',
+            'instagram' => 'http//:www.facebook.com',
         ]);
 
         DB::table('staffs')->insert([
             'id' => 3,
-            'name' => 'Bibiana Coach',
+            'name' => 'Sergej Vuković',
             'description' => 'German football referee!!!',
             'type_id' => StaffType::COACH,
-            'thumbnail' => ''
+            'thumbnail' => 'img/sergej.v.jpg',
+            'email' => 'nesto@email.com',
+            'facebook' => 'http//:www.facebook.com',
+            'instagram' => 'http//:www.facebook.com',
         ]);
 
         DB::table('staffs')->insert([
@@ -41,7 +51,10 @@ class StaffTableSeeder extends Seeder
             'name' => 'Bibiana Doctor',
             'description' => 'German football referee!!!',
             'type_id' => StaffType::DOCTOR,
-            'thumbnail' => ''
+            'thumbnail' => 'img/hero-bg.jpg',
+            'email' => 'nesto@email.com',
+            'facebook' => 'http//:www.facebook.com',
+            'instagram' => 'http//:www.facebook.com',
         ]);
     }
 }
