@@ -279,49 +279,22 @@
                     <p class="section-description">Bekend timovi u razvoju website-a rukometne reprezentacije</p>
                 </div>
                 <div class="row justify-content-center">
+                        @foreach($clubs as $club)
                     <div class="col-lg-3 col-md-6">
                         <div class="member">
-                            <div class="pic"><img src="img/team-1.jpg" alt=""></div>
-                            <h4>Tim Kornjače</h4>
-                            <span>Spori, ali dobri</span>
+                            <div class="pic"><img src="{{$club->thumbnail}}" alt=""></div>
+                            <h4>{{$club->name}}</h4>
+                            <span>{{$club->history}}</span>
                             <div class="social">
                                 <a href=""><i class="fa fa-twitter"></i></a>
                                 <a href=""><i class="fa fa-facebook"></i></a>
                                 <a href=""><i class="fa fa-google-plus"></i></a>
                                 <a href=""><i class="fa fa-linkedin"></i></a>
-                            </div>
+                            </div>  
                         </div>
                     </div>
-
-                    <div class="col-lg-3 col-md-6">
-                        <div class="member">
-                            <div class="pic"><img src="img/team-2.jpg" alt=""></div>
-                            <h4>Tim NijePekmez</h4>
-                            <span>Sve je, samo nije pekmez...by head of support, Nikolina Vranješ</span>
-                            <div class="social">
-                                <a href=""><i class="fa fa-twitter"></i></a>
-                                <a href=""><i class="fa fa-facebook"></i></a>
-                                <a href=""><i class="fa fa-google-plus"></i></a>
-                                <a href=""><i class="fa fa-linkedin"></i></a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6">
-                        <div class="member">
-                            <div class="pic"><img src="img/team-3.jpg" alt=""></div>
-                            <h4>Tim Sharks</h4>
-                            <span>Ujedaju :D</span>
-                            <div class="social">
-                                <a href=""><i class="fa fa-twitter"></i></a>
-                                <a href=""><i class="fa fa-facebook"></i></a>
-                                <a href=""><i class="fa fa-google-plus"></i></a>
-                                <a href=""><i class="fa fa-linkedin"></i></a>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
-
             </div>
         </section><!-- #team -->
         <!--==========================
