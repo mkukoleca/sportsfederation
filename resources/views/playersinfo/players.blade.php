@@ -1,5 +1,4 @@
 <link rel="stylesheet" href="{{ asset('css/stil.css') }}">
-<div class="container p-2 ml-0">
 @extends("../layouts.masterMeni")
 @section("content")
 
@@ -8,6 +7,8 @@ Rukometni savez Republike Srpske-Players
 @endsection
 
 <br><br><br>
+<div class="container p-2 ml-0">
+
 <a href="/registerPlayer"><button class="btn btn-success">Register new player</button></a>
 <br /><br />
 <div class="container-fluid">
