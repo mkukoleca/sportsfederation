@@ -52,8 +52,8 @@ Rukometni savez Republike Srpske-Game
                     <td>{{$game->created_at}}</td>
                     <td>{{$game->updated_at}}</td>
                     <td><a href="/games/updateGame/{{$game->id}}"><button class="btn btn-warning btn-sm">Edit</button></a></td>
-                    <td><a href="/deleteGame/{{$game->id}}"><button class="btn btn-info btn-sm" onclick="return confirm('Are you sure you want to delete this data')">Delete</button></a></td>
-                    <td><a href="/games"><button class="btn btn-danger btn-sm">Games List</button></a></td>
+                    <td><a href="/deleteGame/{{$game->id}}"><button class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this data')">Delete</button></a></td>
+                    <td><a href="/games"><button class="btn btn-info btn-sm">Games List</button></a></td>
                 </tr>
             </tbody>
         </table>
