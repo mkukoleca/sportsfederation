@@ -14,8 +14,8 @@ class StaffTableSeeder extends Seeder
     {
         DB::table('staffs')->insert([
             'id' => 1,
-            'name' => 'Mirko Kukoleč',
-            'description' => 'Hoćeš li da savladaš PHP? -Jesi li radio odam sati?',
+            'name' => 'Mirko Kukoleča',
+            'description' => 'Hoćeš li da savladaš PHP? -Jesi li radio osam sati?',
             'type_id' => StaffType::DELEGATE,
             'thumbnail' => 'img/mirko.kukoleca.jpg',
             'email' => 'nesto@email.com',
@@ -51,7 +51,7 @@ class StaffTableSeeder extends Seeder
             'name' => 'Bibiana Doctor',
             'description' => 'German football referee!!!',
             'type_id' => StaffType::DOCTOR,
-            'thumbnail' => '',
+            'thumbnail' => 'img/hero-bg.jpg',
             'email' => 'nesto@email.com',
             'facebook' => 'http//:www.facebook.com',
             'instagram' => 'http//:www.facebook.com',
