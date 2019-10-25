@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Federation;
 use App\Event;
+use App\Club;
+
 use Illuminate\Http\Request;
 
 class FederationController extends Controller
@@ -17,7 +19,8 @@ class FederationController extends Controller
     {
         return view('federation', [
             'federations' => Federation::all(),
-            'events' => Event::all()
+            'events' => Event::all(),
+            'clubs' => Club::all()  
             ]);
     }
 
