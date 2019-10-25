@@ -19,6 +19,51 @@
     <!-- Bootstrap CSS File -->
     <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
+    <!-- Bootstrap profile cards CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+  border-radius: 5px;
+  margin-right: 20px;
+}
+img{
+    border-radius: 5px;
+}
+
+.title {
+  color: grey;
+  font-size: 18px;
+}
+
+button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+a {
+  text-decoration: none;
+  font-size: 22px;
+  color: black;
+}
+
+button:hover, a:hover {
+  opacity: 0.7;
+}
+</style>
+
     <!-- Libraries CSS Files -->
     <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <link href="lib/animate/animate.min.css" rel="stylesheet">
@@ -273,6 +318,51 @@
 
             </div>
         </section><!-- #team -->
+        <!--==========================
+      Coaches Section
+    ============================-->
+        <section>
+            <h2 style="text-align:center">Predavači</h2>
+            <p style="text-align:center; color:#ccc">Ovo je naš tim predavača</p>
+        <div class="row">
+            <div class="col-4">
+                <div class="card">
+                <img src="img/mirko_fancy.jpg" alt="Mirko" style="width:100%">
+                <h1>Mirko Kukoleča</h1>
+                <p class="title">ITP100 2019</p>
+                <div style="margin: 24px 0;"> 
+                    <a href="#"><i class="fa fa-linkedin"></i></a>  
+                    <a href="#"><i class="fa fa-facebook"></i></a> 
+                </div>
+                <p><button style="color:#ccc;">Jesi radio 8h?</button></p>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="card" style="margin-left:50px;">
+                <img src="img/nevena.png" alt="Nevena" style="width:100%">
+                <h1>Nevena Mićić</h1>
+                <p class="title">ITP100 2019</p>
+                <div style="margin: 24px 0;"> 
+                    <a href="#"><i class="fa fa-linkedin"></i></a>  
+                    <a href="#"><i class="fa fa-facebook"></i></a> 
+                </div>
+                <p><button style="color:#ccc;">Njam onaj Nikolinin pekmez...</button></p>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="card" style="margin-left:0px;">
+                <img src="img/sergej.jpg" alt="Sergej" style="width:100%">
+                <h1>Sergej Vuković</h1>
+                <p class="title">ITP100 2019</p>
+                <div style="margin: 24px 0;"> 
+                    <a href="#"><i class="fa fa-linkedin"></i></a>  
+                    <a href="#"><i class="fa fa-facebook"></i></a> 
+                </div>
+                <p><button style="color:#ccc;">Debaguj!!!</button></p>
+                </div>
+            </div>
+        </div>
+        </section><!-- #treneri -->
 
         <section id="play">
             <div class="container wow fadeInUp">
