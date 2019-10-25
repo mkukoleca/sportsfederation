@@ -445,7 +445,7 @@
                                 </div>
                             </div>
                             <div class="card" style="width:200px">
-                                <img class="card-img-top" src="img/team-1.jpg">
+                                <img class="card-img-top" src="img/rafaelo.jpg">
                                 <div class="card-body">
                                     <h4 class="card-title">Nikola Dafinić</h4>
                                     <p class="card-text">Član tima Kornjače.</p>
