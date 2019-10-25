@@ -7,7 +7,7 @@ Rukometni savez Republike Srpske-Games
 @endsection
 
 <br><br><br>
-<a href="/games/registerGame"><button class="myButton" autofocus>Register new game</button></a>
+<a href="/games/registerGame"><button class="btn btn-success">Register new game</button></a>
 <br /><br /><br />
 <div class="table-responsive">
     <table class="table blueTable">
@@ -39,8 +39,8 @@ Rukometni savez Republike Srpske-Games
                 <td>{{$game->event->type}}</td>
                 <td>{{$game->dateTime}}</td>
                 <td>{{$game->place}}</td>
-                <td>{{$game->homeClub->name}}</td>
-                <td>{{$game->guestClub->name}}</td>
+                <td><a href="/clubs?id={{$game->homeClubId}}">{{$game->homeClub->name}}</td>
+                <td><a href="/clubs?id={{$game->guestClubId}}">{{$game->guestClub->name}}</td>
                 <td>{{$game->category}}</td>
                 <td>{{$game->referee1->name}}</td>
                 <td>{{$game->referee2->name}}</td>
@@ -51,9 +51,9 @@ Rukometni savez Republike Srpske-Games
                 <td>{{$game->note}}</td>
                 <td>{{$game->created_at}}</td>
                 <td>{{$game->updated_at}}</td>
-                <td><a href="/games/singleGame/{{$game->id}}"><button class="myButton">Show</button></a></td>
-                <td><a href="/games/updateGame/{{$game->id}}"><button class="myButton">Edit</button></a></td>
-                <td><a href="/deleteGame/{{$game->id}}"><button class="myButton"
+                <td><a href="/games/singleGame/{{$game->id}}"><button class="btn btn-outline-info btn-sm">Show</button></a></td>
+                <td><a href="/games/updateGame/{{$game->id}}"><button class="btn btn-outline-info btn-sm">Edit</button></a></td>
+                <td><a href="/deleteGame/{{$game->id}}"><button class="btn btn-outline-info btn-sm"
                             onclick="return confirm('Are you sure you want to delete this data')">Delete</button></a>
                 </td>
             </tr>

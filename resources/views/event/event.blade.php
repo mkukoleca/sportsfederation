@@ -8,7 +8,7 @@ Rukometni savez Republike Srpske-Event
 
 
 <br><br><br>
-<a href="/newEvent"><button class="myButton">Add new Event</button></a>
+<a href="/newEvent"><button class="btn btn-success">Add new Event</button></a>
 <br><br><br>
 <div class="table-responsive">
     <table class="blueTable">
@@ -29,9 +29,9 @@ Rukometni savez Republike Srpske-Event
                 <td>{{$event->name}}</td>
                 <td>{{$event->season}}</td>
                 <td>{{$event->description}}</td>
-                <td><a href="editEvent/{{$event->id}}"><button class="myButton">Edit</button></a></td>
+                <td><a href="editEvent/{{$event->id}}"><button class="btn btn-outline-info btn-sm">Edit</button></a></td>
                 <td><a onclick="return confirm('DA LI STE SIGURNI DA ŽELITE BRISATI?')"
-                        href="deleteEvent/{{$event->id}}"><button class="myButton">Delete</button></a></td>
+                        href="deleteEvent/{{$event->id}}"><button class="btn btn-outline-info btn-sm">Delete</button></a></td>
             </tr>
             @endforeach
         </tbody>

@@ -19,6 +19,51 @@
     <!-- Bootstrap CSS File -->
     <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
+    <!-- Bootstrap profile cards CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+  border-radius: 5px;
+  margin-right: 20px;
+}
+img{
+    border-radius: 5px;
+}
+
+.title {
+  color: grey;
+  font-size: 18px;
+}
+
+button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+a {
+  text-decoration: none;
+  font-size: 22px;
+  color: black;
+}
+
+button:hover, a:hover {
+  opacity: 0.7;
+}
+</style>
+
     <!-- Libraries CSS Files -->
     <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <link href="lib/animate/animate.min.css" rel="stylesheet">
@@ -138,7 +183,7 @@
                                 <p>Trenutni predsjednik saveza je {{ $fed->president }}.</p>
                             </div>
                             <p>
-                                <div class="panel-heading">
+                               {{--  <div class="panel-heading">
                                     <h4>Članovi saveza</h4>
                                 </div>
                                 <div class="panel-body">
@@ -148,7 +193,7 @@
                                         {{$staff->type->name}}: {{$staff->name}}
                                     </div>
                                     @endforeach
-                                </div>
+                                </div> --}}
                         </div>
                         @endforeach
                     </p>
@@ -165,29 +210,52 @@
                             <p class="description">Nove informacije možete dodati...</p>
                         </div>
                     </div>
-
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.4s">
-                        <div class="box">
-                            <div class="icon"><a href=""><i class="fa fa-user"></i></a></div>
-                            <h4 class="title"><a href="">Predavač</a></h4>
-                            <p class="description">Mirko Kukoleča</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.4s">
-                        <div class="box">
-                            <div class="icon"><a href=""><i class="fa fa-user"></i></a></div>
-                            <h4 class="title"><a href="">Predavač</a></h4>
-                            <p class="description">Sergej</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.4s">
-                        <div class="box">
-                            <div class="icon"><a href=""><i class="fa fa-user"></i></a></div>
-                            <h4 class="title"><a href="">Predavač</a></h4>
-                            <p class="description">Nevena</p>
-                        </div>
-                    </div>
                 </div>
+                     <!--==========================
+      Coaches Section
+    ============================-->
+    <section>
+            <h2 style="text-align:center">Predavači</h2>
+            <p style="text-align:center; color:#ccc">Ovo je naš tim predavača</p>
+        <div class="row">
+            <div class="col-4">
+                <div class="card">
+					<img src="img/mirko.kukoleca.jpg" alt="Mirko" style="width:100%">
+					<h1>Mirko Kukoleča</h1>
+					<p class="title">ITP100 2019</p>
+					<div style="margin: 24px 0;"> 
+						<a href="#"><i class="fa fa-linkedin"></i></a>  
+						<a href="#"><i class="fa fa-facebook"></i></a> 
+					</div>
+					<p><button style="color:#ccc;">mirko@invenit.io</button></p>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="card" style="margin-left:50px;">
+                <img src="img/nevena.png" alt="Nevena" style="width:100%">
+                <h1>Nevena Mićić</h1>
+                <p class="title">ITP100 2019</p>
+                <div style="margin: 24px 0;"> 
+                    <a href="#"><i class="fa fa-linkedin"></i></a>  
+                    <a href="#"><i class="fa fa-facebook"></i></a> 
+                </div>
+                <p><button style="color:#ccc;">nevena@invenit.io</button></p>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="card" style="margin-left:0px;">
+                <img src="img/sergej.v.jpg" alt="Sergej" style="width:100%">
+                <h1>Sergej Vuković</h1>
+                <p class="title">ITP100 2019</p>
+                <div style="margin: 24px 0;"> 
+                    <a href="#"><i class="fa fa-linkedin"></i></a>  
+                    <a href="#"><i class="fa fa-facebook"></i></a> 
+                </div>
+                <p><button style="color:#ccc;">sergejv95@gmail.com</button></p>
+                </div>
+            </div>
+        </div>
+        </section><!-- #treneri -->
 
             </div>
         </section><!-- #services -->
@@ -215,9 +283,6 @@
             </div>
         </section><!-- #call-to-action -->
 
-
-
-
         <!--==========================
       Team Section
     ============================-->
@@ -228,52 +293,45 @@
                     <p class="section-description">Bekend timovi u razvoju website-a rukometne reprezentacije</p>
                 </div>
                 <div class="row justify-content-center">
+                        @foreach($clubs as $club)
                     <div class="col-lg-3 col-md-6">
                         <div class="member">
-                            <div class="pic"><img src="img/team-1.jpg" alt=""></div>
-                            <h4>Tim Kornjače</h4>
-                            <span>Spori, ali dobri</span>
+                            <div class="pic"><img src="{{$club->thumbnail}}" alt=""></div>
+                            <h4>{{$club->name}}</h4>
+                            <span>{{$club->history}}</span>
                             <div class="social">
                                 <a href=""><i class="fa fa-twitter"></i></a>
                                 <a href=""><i class="fa fa-facebook"></i></a>
                                 <a href=""><i class="fa fa-google-plus"></i></a>
                                 <a href=""><i class="fa fa-linkedin"></i></a>
-                            </div>
+                            </div>  
                         </div>
                     </div>
-
-                    <div class="col-lg-3 col-md-6">
-                        <div class="member">
-                            <div class="pic"><img src="img/team-2.jpg" alt=""></div>
-                            <h4>Tim NijePekmez</h4>
-                            <span>Sve je, samo nije pekmez...by head of support, Nikolina Vranješ</span>
-                            <div class="social">
-                                <a href=""><i class="fa fa-twitter"></i></a>
-                                <a href=""><i class="fa fa-facebook"></i></a>
-                                <a href=""><i class="fa fa-google-plus"></i></a>
-                                <a href=""><i class="fa fa-linkedin"></i></a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6">
-                        <div class="member">
-                            <div class="pic"><img src="img/team-3.jpg" alt=""></div>
-                            <h4>Tim Sharks</h4>
-                            <span>Ujedaju :D</span>
-                            <div class="social">
-                                <a href=""><i class="fa fa-twitter"></i></a>
-                                <a href=""><i class="fa fa-facebook"></i></a>
-                                <a href=""><i class="fa fa-google-plus"></i></a>
-                                <a href=""><i class="fa fa-linkedin"></i></a>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
-
             </div>
         </section><!-- #team -->
-
+           <!--==========================
+    Call To Action Section
+    ============================-->
+    <section id="call-to-action">
+        <div class="container wow fadeIn">
+            <div class="row">
+                <div class="col-lg-12 text-center text-lg-left">
+                    <h3 class="cta-title">DEŠAVANJA</h3>
+                    <p class="cta-text">   
+                        @foreach($events as $event)
+                        <p class="cta-text">  {{$event->season}}</p>
+                        <p class="cta-text"> <img src="ball.ico" alt="Handball icon"> {{$event->type}} :  " {{$event->name}} "  {{$event->description}}</p>
+                        <br><br>
+                        @endforeach
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section><!-- #call-to-action -->
+<p></p>
+<br>
         <section id="play">
             <div class="container wow fadeInUp">
                 <div class="section-header">
@@ -299,21 +357,21 @@
                                 </div>
                             </div>
                             <div class="card" style="width:200px">
-                                <img class="card-img-top" src="img/team-2.jpg">
+                                <img class="card-img-top" src="img/sasa.jpg">
                                 <div class="card-body">
                                     <h4 class="card-title">Saša Oljača</h4>
                                     <p class="card-text">Član tima nije pekmez.</p>
                                 </div>
                             </div>
                             <div class="card" style="width:200px">
-                                <img class="card-img-top" src="img/team-2.jpg">
+                                <img class="card-img-top" src="img/pedja.jpg">
                                 <div class="card-body">
                                     <h4 class="card-title">Predrag Koprena</h4>
                                     <p class="card-text">Član tima nije pekmez.</p>
                                 </div>
                             </div>
                             <div class="card" style="width:200px">
-                                <img class="card-img-top" src="img/team-2.jpg">
+                                <img class="card-img-top" src="img/lukac.jpg">
                                 <div class="card-body">
                                     <h4 class="card-title">Goran Lukač</h4>
                                     <p class="card-text">Član tima nije pekmez.</p>
@@ -329,7 +387,7 @@
                             <div class="card" style="width:200px">
                                 <img class="card-img-top" src="img/team-3.jpg">
                                 <div class="card-body">
-                                    <h4 class="card-title">Biljana </h4>
+                                    <h4 class="card-title">Bilja </h4>
                                     <p class="card-text">Član tima Sharks</p>
                                 </div>
                             </div>
@@ -391,16 +449,16 @@
                                 </div>
                             </div>
                             <div class="card" style="width:200px">
-                                <img class="card-img-top" src="img/team-1.jpg">
+                                <img class="card-img-top" src="img/$igormusic.jpg">
                                 <div class="card-body">
-                                    <h4 class="card-title">Igor</h4>
+                                    <h4 class="card-title"><a style="font-size:18px;" href="https://github.com/agentsmith-source/stunning-octo-broccoli/tree/agentsmith-source-mojeideje">$Igor->php->musiĆ</a></h4>
                                     <p class="card-text">Član tima Kornjače.</p>
                                 </div>
                             </div>
                             <div class="card" style="width:200px">
                                 <img class="card-img-top" src="img/team-1.jpg">
                                 <div class="card-body">
-                                    <h4 class="card-title">Nikola</h4>
+                                    <h4 class="card-title">Nikola Dafinić</h4>
                                     <p class="card-text">Član tima Kornjače.</p>
                                 </div>
                             </div>
@@ -437,7 +495,7 @@
                         <div class="info">
                             <div>
                                 <i class="fa fa-map-marker"></i>
-                                <p>Kralja Petra I<br>Banja Luka,78000 BiH</p>
+                                <p>Braće Pantić 4<br>Banja Luka,78000 BiH</p>
                             </div>
 
                             <div>
@@ -447,7 +505,7 @@
 
                             <div>
                                 <i class="fa fa-phone"></i>
-                                <p>+387 51 123 456</p>
+                                <p>+387 51 223 160</p>
                             </div>
                         </div>
 

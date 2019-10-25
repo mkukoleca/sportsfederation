@@ -2,13 +2,21 @@
 
 @section("content")
 
+<<<<<<< HEAD
 @section("title")
 Rukometni savez Republike Srpske-New Club
 @endsection
 <br>
     <a href="/players"><button type="button" class="btn_back">Back</button></a>
+=======
+    <title>Single Player</title>
+</head>
+
+<body><br>
+    <a href="/players"><button type="button" class="btn btn-secondary btn-lg">Back</button></a>
+>>>>>>> 5bd0e9dfd6471f6aa4ba8c0d2c9cb288ab804915
     <br><br>
-    <a href="/registerPlayer"><button class="myButton" autofocus>Register new player</button></a>
+    <a href="/registerPlayer"><button class="btn btn-success" >Register new player</button></a>
     <br><br><br>
     <div class="table-responsive">
         <table class="blueTable">
@@ -46,10 +54,10 @@ Rukometni savez Republike Srpske-New Club
                     <td>{{$player -> playerHistory}}</td>
                     <td>{{$player->club->name}}</td>
                     <td>{{$player->selection->category}}</td>
-                    <td><a href="/updatePlayer/{{$player->id}}"><button class="myButton">Edit</button></a></td>
-                    <td><a href="/players"><button class="myButton">Players list</button></a></td>
+                    <td><a href="/updatePlayer/{{$player->id}}"><button class="btn btn-outline-info btn-sm">Edit</button></a></td>
+                    <td><a href="/players"><button class="btn btn-outline-info btn-sm">Players list</button></a></td>
                     <td><a onclick="return confirm('DA LI STE SIGURNI DA ZELITE BRISATI?')"
-                            href="/deletePlayer/{{$player->id}}"><button class="myButton">Delete</button></a></td>
+                            href="/deletePlayer/{{$player->id}}"><button class="btn btn-outline-info btn-sm">Delete</button></a></td>
                 </tr>
             </tbody>
         </table>

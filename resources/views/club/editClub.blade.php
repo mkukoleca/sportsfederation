@@ -44,7 +44,7 @@ Rukometni savez Republike Srpske-New Club
                         </fieldset>
                         <fieldset>
                             History:<br><textarea placeholder="History" type="text" name="history"
-                                value="{{$club->history}}" tabindex="6"></textarea>
+                                value="{{$club->history}}" tabindex="6">{{$club->history}}</textarea>
                         </fieldset>
 
                         <fieldset>
