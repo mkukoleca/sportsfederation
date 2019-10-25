@@ -15,9 +15,9 @@
 </head>
 
 <body><br>
-    <a href="/games"><button type="button" class="btn_back">Back</button></a>
+    <a href="/games"><button type="button" class="btn btn-secondary btn-lg">Back</button></a>
     <br><br>
-    <a href="/games/registerGame"><button class="myButton" autofocus>Register new game</button></a>
+    <a href="/games/registerGame"><button class="btn btn-success">Register new game</button></a>
     <br><br><br>
     <div class="table-responsive">
         <table class="blueTable">
@@ -60,9 +60,9 @@
                     <td>{{$game->note}}</td>
                     <td>{{$game->created_at}}</td>
                     <td>{{$game->updated_at}}</td>
-                    <td><a href="/games/updateGame/{{$game->id}}"><button class="myButton">Edit</button></a></td>
-                    <td><a href="/deleteGame/{{$game->id}}"><button class="myButton"onclick="return confirm('Are you sure you want to delete this data')">Delete</button></a></td>
-                    <td><a href="/games"><button class="myButton">Games List</button></a></td>
+                    <td><a href="/games/updateGame/{{$game->id}}"><button class="btn btn-outline-info btn-sm">Edit</button></a></td>
+                    <td><a href="/deleteGame/{{$game->id}}"><button class="btn btn-outline-info btn-sm" onclick="return confirm('Are you sure you want to delete this data')">Delete</button></a></td>
+                    <td><a href="/games"><button class="btn btn-outline-info btn-sm">Games List</button></a></td>
                 </tr>
             </tbody>
         </table>
