@@ -27,12 +27,12 @@
 	    $directors = implode('',array_unique($directors));
     ?>
     <div class="row">
-        <select name="name" class="col-md-2 col-12 mr-1 ml-2 pl-1">{!! $names !!}</select>
-        <select name="address" class="col-md-2 col-12 mr-1 pl-1">{!! $addresses !!}</select>
-        <select name="director" class="col-md-2 col-12 mr-1 pl-1">{!! $directors !!}</select>
+        <select class="dropdown-item" name="name" class="col-md-2 col-12 mr-1 ml-2 pl-1">{!! $names !!}</select>
+        <select class="dropdown-item" name="address" class="col-md-2 col-12 mr-1 pl-1">{!! $addresses !!}</select>
+        <select class="dropdown-item" name="director" class="col-md-2 col-12 mr-1 pl-1">{!! $directors !!}</select>
 
-        <button id="submit_filters">Submit</button>
-        <button id="reset_filters" class="ml-2">Reset</button>
+        <button type="submit" class="btn btn-primary btn-sm" id="submit_filters" >Submit</button> 
+        <button type="reset"class="btn btn-secondary btn-sm" id="reset_filters" >Reset</button>
     </div>
 </div>
 

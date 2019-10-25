@@ -6,10 +6,10 @@
 Rukometni savez Republike Srpske-Staff
 @endsection
 
-<br><br><br><br>
+<br><br><br>
 <div>
-    <a href="/newStaff"><button class="myButton">Add new Staff</button></a>
-    <br><br>
+    <a href="/newStaff"><button class="btn btn-success">Add new Staff</button></a>
+    <br><br><br>
     <div class="table-responsive">
         <table class="blueTable">
             <thead>
@@ -43,9 +43,9 @@ Rukometni savez Republike Srpske-Staff
                         @endif
                     </td>
 
-                    <td><a href="/editStaff/{{ $staff->id }}"><button class="myButton">Edit</button></a></td>
+                    <td><a href="/editStaff/{{ $staff->id }}"><button  class="btn btn-outline-info btn-sm">Edit</button></a></td>
                     <td><a onclick="return confirm('DA LI STE SIGURNI DA ZELITE BRISATI?')"
-                            href="deleteStaff/{{$staff->id}}"><button class="myButton">Delete</button></a></td>
+                            href="deleteStaff/{{$staff->id}}"><button class="btn btn-outline-info btn-sm">Delete</button></a></td>
                 </tr>
 
                 @endforeach

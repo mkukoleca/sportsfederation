@@ -12,7 +12,9 @@
     <title>Rukometni savez Republike Srpske</title>
 </head>
 
-<div class="container">  
+<div class="container">
+<br><br>
+    <a href="/staff"><button type="button" class="btn btn-secondary btn-lg btn-block">Back</button></a>  
   <form id="contact" action="{{route('create')}}" method="POST" enctype="multipart/form-data">
   {{csrf_field()}}
     <h3>Add new Staff</h3>

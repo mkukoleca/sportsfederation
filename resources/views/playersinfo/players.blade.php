@@ -6,21 +6,27 @@
 @section("title")
 Rukometni savez Republike Srpske-Players
 @endsection
-<form  action="{{action('PlayerInfoController@index')}}" method="GET" enctype="multipart/form-data">
-   <div>Sortiranje po :  <select name="club">
-                  
-                  @foreach ( collect( $player_infos)->unique('clubId')->values()->all() as $player)
-                 
-                  <option value="{{$player->clubId}}">{{$player->club->name}}</option>
-                  @endforeach
+
+<br><br><br>
+<a href="/registerPlayer"><button class="btn btn-success">Register new player</button></a>
+<br /><br />
+<div class="container p-2 ml-0">
+    <div class="row">
+        <form action="{{action('PlayerInfoController@index')}}" method="GET" enctype="multipart/form-data">
+            <div>
+                <h3> Sortiranje po :</h3> <select class="dropdown-item" name="club">
+
+                    @foreach ( collect( $player_infos)->unique('clubId')->values()->all() as $player)
+
+                    <option value="{{$player->clubId}}">{{$player->club->name}}</option>
+                    @endforeach
                 </select>
-                <button type="submit" id="submit_filters">Submit</button>
-        <button type="reset" id="reset_filters" class="ml-2">Reset</button>
+                <button type="submit" id="submit_filters" class="btn btn-primary btn-sm">Submit</button>
+                <button type="reset" id="reset_filters" class="btn btn-secondary btn-sm">Reset</button>
+            </div>
     </div>
+</div>
 </form>
-<br><br>
-<a href="/registerPlayer"><button class="myButton" autofocus>Register new player</button></a>
-<br /><br /><br />
 <div class="table-responsive">
     <table class="table blueTable">
         <thead>
@@ -63,10 +69,13 @@ Rukometni savez Republike Srpske-Players
                 <td>{{$player->created_at}}</td>
                 <td>{{$player->updated_at}}</td>
 
-                <td><a href="/updatePlayer/{{$player->id}}"><button class="myButton">Edit</button></a></td>
-                <td><a href="/singlePlayer/{{$player->id}}"><button class="myButton">Show</button></a></td>
+                <td><a href="/updatePlayer/{{$player->id}}"><button
+                            class="btn btn-outline-info btn-sm">Edit</button></a></td>
+                <td><a href="/singlePlayer/{{$player->id}}"><button
+                            class="btn btn-outline-info btn-sm">Show</button></a></td>
                 <td><a onclick="return confirm('DA LI STE SIGURNI DA ZELITE BRISATI?')"
-                        href="/deletePlayer/{{$player->id}}"><button class="myButton">Delete</button></a></td>
+                        href="/deletePlayer/{{$player->id}}"><button
+                            class="btn btn-outline-info btn-sm">Delete</button></a></td>
             </tr>
 
             @endforeach
