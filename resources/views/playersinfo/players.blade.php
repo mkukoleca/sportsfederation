@@ -31,7 +31,7 @@ Rukometni savez Republike Srpske-Players
     <table class="table blueTable">
         <thead>
             <tr>
-                <th>Profile image</th>
+                <th>Profile img</th>
                 <th>Name</th>
                 <th>Description</th>
                 <th>Position</th>
@@ -39,13 +39,10 @@ Rukometni savez Republike Srpske-Players
                 <th>Date of birth</th>
                 <th>Citizenship</th>
                 <th>History</th>
-                <th>Current club</th>
-                <th>Selection</th>
+                <th>Current club/ <br>
+                Selection</th>
                 <th>Registered at</th>
-                <th>Updated</th>
-                <th>Edit</th>
-                <th>Show</th>
-                <th>Delete</th>
+                <th>Change</th>
             </tr>
         </thead>
         <tbody>
@@ -64,19 +61,35 @@ Rukometni savez Republike Srpske-Players
                 <td>{{$player -> dateOfBirth}}</td>
                 <td>{{$player -> citizenship}}</td>
                 <td>{{$player -> playerHistory}}</td>
-                <td><a href="/clubs?id={{$player->clubId}}">{{$player->club->name}}</a></td>
-                <td>{{$player->selection->category}}</td>
+                <td><a href="/clubs?id={{$player->clubId}}">{{$player->club->name}}/</a> <br>
+                {{$player->selection->category}}</td>
                 <td>{{$player->created_at}}</td>
-                <td>{{$player->updated_at}}</td>
 
-                <td><a href="/updatePlayer/{{$player->id}}"><button
+                <td> 
+                <div class="dropdown">
+    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+      More
+    </button>
+                
+                <div class="dropdown-menu">
+
+                    <a class="dropdown-item" href="/singlePlayer/{{$player->id}}">Show</a>
+                    <a class="dropdown-item" href="/updatePlayer/{{$player->id}}">Edit</a>
+                    <a onclick="return confirm('DA LI STE SIGURNI DA ZELITE BRISATI?')" class="dropdown-item" href="/deletePlayer/{{$player->id}}">Delete</a>
+                    
+                    </div> 
+                </td>
+            </tr>
+
+
+                <!-- <td><a href="/updatePlayer/{{$player->id}}"><button
                             class="btn btn-outline-info btn-sm">Edit</button></a></td>
                 <td><a href="/singlePlayer/{{$player->id}}"><button
                             class="btn btn-outline-info btn-sm">Show</button></a></td>
                 <td><a onclick="return confirm('DA LI STE SIGURNI DA ZELITE BRISATI?')"
                         href="/deletePlayer/{{$player->id}}"><button
                             class="btn btn-outline-info btn-sm">Delete</button></a></td>
-            </tr>
+            </tr> -->
 
             @endforeach
         </tbody>
