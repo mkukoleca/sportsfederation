@@ -69,6 +69,10 @@
                                 <a href="/" class="btn btn-danger">{{ __('Cancel') }}</a>
                             </div>
                         </div>
+                        <br>
+                        <div style="text-align:center">
+                            <a class="btn btn-link" href="login">Already have an account? Sign in</a>
+                        </div>
                     </form>
                 </div>
             </div>
