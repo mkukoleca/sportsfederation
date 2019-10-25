@@ -22,40 +22,35 @@
       <input placeholder="Name" type="text" name ="name" tabindex="1" required autofocus>
     </fieldset>
 
-    <fieldset>
-      <textarea placeholder="Description" type="text" name ="description" tabindex="3"></textarea>
-    </fieldset>
+   
 
-    <fieldset> Staff image:
-          <input type="file" name="thumbnail" tabindex="3">
-    </fieldset>
+        <fieldset>
+        <textarea placeholder="Description" type="text" name ="description" tabindex="3"></textarea>
+        </fieldset>
 
-                       
+        <fieldset>
+            <span>Staff Type </span>
+            <select name="staffType">
+                @foreach ($staff as $s)
+                <option value="{{ $s->id  }}">{{ $s->name }}</option>
+                @endforeach
+            </select>
+        </fieldset>
+        <fieldset>
+            <span>Federation </span>
+            <select name="fedType">
+                @foreach ($feds as $fed)
+                <option value="{{ $fed->id }}">{{ $fed->name }}</option>
+                @endforeach
+            </select>
+        </fieldset>
 
-                        <fieldset>
-                            <span>Staff Type </span>
-                            <select name="staffType">
-                                @foreach ($staff as $s)
-                                <option value="{{ $s->id  }}">{{ $s->name }}</option>
-                                @endforeach
-                            </select>
-                        </fieldset>
-
-                        <fieldset>
-                            <span>Federation </span>
-                            <select name="fedType">
-                                @foreach ($feds as $fed)
-                                <option value="{{ $fed->id }}">{{ $fed->name }}</option>
-                                @endforeach
-                            </select>
-                        </fieldset>
-
-                        <fieldset>
-                            <button name="submit" type="submit" id="contact-submit"
-                                data-submit="...Sending">Submit</button>
-                        </fieldset>
-                        <p class="copyright">Designed by Sharks</a></p>
-                    </form>
+        <fieldset>
+            <button name="submit" type="submit" id="contact-submit"
+                data-submit="...Sending">Submit</button>
+        </fieldset>
+        <p class="copyright">Designed by Sharks</a></p>
+    </form>
 
                 </div>
                 <div clas="col-3">
@@ -67,5 +62,4 @@
             </div>
         </div>
 </body>
-
 </html>

@@ -220,7 +220,7 @@ button:hover, a:hover {
         <div class="row">
             <div class="col-4">
                 <div class="card">
-					<img src="img/mirko_fancy.jpg" alt="Mirko" style="width:100%">
+					<img src="img/mirko.kukoleca.jpg" alt="Mirko" style="width:100%">
 					<h1>Mirko Kukoleča</h1>
 					<p class="title">ITP100 2019</p>
 					<div style="margin: 24px 0;"> 
@@ -244,7 +244,7 @@ button:hover, a:hover {
             </div>
             <div class="col-4">
                 <div class="card" style="margin-left:0px;">
-                <img src="img/sergej.jpg" alt="Sergej" style="width:100%">
+                <img src="img/sergej.v.jpg" alt="Sergej" style="width:100%">
                 <h1>Sergej Vuković</h1>
                 <p class="title">ITP100 2019</p>
                 <div style="margin: 24px 0;"> 
@@ -338,7 +338,27 @@ button:hover, a:hover {
 
             </div>
         </section><!-- #team -->
-
+           <!--==========================
+    Call To Action Section
+    ============================-->
+    <section id="call-to-action">
+        <div class="container wow fadeIn">
+            <div class="row">
+                <div class="col-lg-12 text-center text-lg-left">
+                    <h3 class="cta-title">DEŠAVANJA</h3>
+                    <p class="cta-text">   
+                        @foreach($events as $event)
+                        <p class="cta-text">  {{$event->season}}</p>
+                        <p class="cta-text"> <img src="ball.ico" alt="Handball icon"> {{$event->type}} :  " {{$event->name}} "  {{$event->description}}</p>
+                        <br><br>
+                        @endforeach
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section><!-- #call-to-action -->
+<p></p>
+<br>
         <section id="play">
             <div class="container wow fadeInUp">
                 <div class="section-header">
@@ -364,21 +384,21 @@ button:hover, a:hover {
                                 </div>
                             </div>
                             <div class="card" style="width:200px">
-                                <img class="card-img-top" src="img/team-2.jpg">
+                                <img class="card-img-top" src="img/sasa.jpg">
                                 <div class="card-body">
                                     <h4 class="card-title">Saša Oljača</h4>
                                     <p class="card-text">Član tima nije pekmez.</p>
                                 </div>
                             </div>
                             <div class="card" style="width:200px">
-                                <img class="card-img-top" src="img/team-2.jpg">
+                                <img class="card-img-top" src="img/pedja.jpg">
                                 <div class="card-body">
                                     <h4 class="card-title">Predrag Koprena</h4>
                                     <p class="card-text">Član tima nije pekmez.</p>
                                 </div>
                             </div>
                             <div class="card" style="width:200px">
-                                <img class="card-img-top" src="img/team-2.jpg">
+                                <img class="card-img-top" src="img/lukac.jpg">
                                 <div class="card-body">
                                     <h4 class="card-title">Goran Lukač</h4>
                                     <p class="card-text">Član tima nije pekmez.</p>
@@ -394,7 +414,7 @@ button:hover, a:hover {
                             <div class="card" style="width:200px">
                                 <img class="card-img-top" src="img/team-3.jpg">
                                 <div class="card-body">
-                                    <h4 class="card-title">Biljana </h4>
+                                    <h4 class="card-title">Bilja </h4>
                                     <p class="card-text">Član tima Sharks</p>
                                 </div>
                             </div>
@@ -502,7 +522,7 @@ button:hover, a:hover {
                         <div class="info">
                             <div>
                                 <i class="fa fa-map-marker"></i>
-                                <p>Kralja Petra I<br>Banja Luka,78000 BiH</p>
+                                <p>Braće Pantić 4<br>Banja Luka,78000 BiH</p>
                             </div>
 
                             <div>
@@ -512,7 +532,7 @@ button:hover, a:hover {
 
                             <div>
                                 <i class="fa fa-phone"></i>
-                                <p>+387 51 123 456</p>
+                                <p>+387 51 223 160</p>
                             </div>
                         </div>
 
