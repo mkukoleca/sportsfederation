@@ -214,48 +214,48 @@ button:hover, a:hover {
                      <!--==========================
       Coaches Section
     ============================-->
-        <section>
-                <h2 style="text-align:center">Predavači</h2>
-                <p style="text-align:center; color:#ccc">Ovo je naš tim predavača</p>
-            <div class="row justify-content-center">
-                <div class="col-lg-3 col-md-6">
-                    <div class="member">
-                        <div class="pic"><img src="img/mirko_fancy.jpg" alt="Mirko" style="width:100%"></div>
-                    <h3>Mirko Kukoleča</h3>
-                    <p class="title">ITP100 2019</p>
-                        <div class="social"> 
-                            <a href="#"><i class="fa fa-linkedin"></i></a>  
-                            <a href="#"><i class="fa fa-facebook"></i></a> 
-                        </div>
-                    <p><button style="color:#ccc;">Jesi radio 8h?</button></p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="member" >
-                            <div class="pic"><img src="img/nevena.png" alt="Nevena" style="width:100%"></div>
-                    <h3>Nevena Mićić</h3>
-                    <p class="title">ITP100 2019</p>
-                    <div style="social"> 
-                        <a href="#"><i class="fa fa-linkedin"></i></a>  
-                        <a href="#"><i class="fa fa-facebook"></i></a> 
-                    </div>
-                    <p><button style="color:#ccc;">Njam onaj Nikolinin pekmez...</button></p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="social" >
-                    <img src="img/sergej.jpg" alt="Sergej" style="width:100%">
-                    <h3>Sergej Vuković</h3>
-                    <p class="title">ITP100 2019</p>
-                    <div class="social"> 
-                        <a href="#"><i class="fa fa-linkedin"></i></a>  
-                        <a href="#"><i class="fa fa-facebook"></i></a> 
-                    </div>
-                    <p><button style="color:#ccc;">Debaguj!!!</button></p>
-                    </div>
+    <section>
+            <h2 style="text-align:center">Predavači</h2>
+            <p style="text-align:center; color:#ccc">Ovo je naš tim predavača</p>
+        <div class="row">
+            <div class="col-4">
+                <div class="card">
+					<img src="img/mirko.kukoleca.jpg" alt="Mirko" style="width:100%">
+					<h1>Mirko Kukoleča</h1>
+					<p class="title">ITP100 2019</p>
+					<div style="margin: 24px 0;"> 
+						<a href="#"><i class="fa fa-linkedin"></i></a>  
+						<a href="#"><i class="fa fa-facebook"></i></a> 
+					</div>
+					<p><button style="color:#ccc;">mirko@invenit.io</button></p>
                 </div>
             </div>
-            </section><!-- #treneri -->
+            <div class="col-4">
+                <div class="card" style="margin-left:50px;">
+                <img src="img/nevena.png" alt="Nevena" style="width:100%">
+                <h1>Nevena Mićić</h1>
+                <p class="title">ITP100 2019</p>
+                <div style="margin: 24px 0;"> 
+                    <a href="#"><i class="fa fa-linkedin"></i></a>  
+                    <a href="#"><i class="fa fa-facebook"></i></a> 
+                </div>
+                <p><button style="color:#ccc;">nevena@invenit.io</button></p>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="card" style="margin-left:0px;">
+                <img src="img/sergej.v.jpg" alt="Sergej" style="width:100%">
+                <h1>Sergej Vuković</h1>
+                <p class="title">ITP100 2019</p>
+                <div style="margin: 24px 0;"> 
+                    <a href="#"><i class="fa fa-linkedin"></i></a>  
+                    <a href="#"><i class="fa fa-facebook"></i></a> 
+                </div>
+                <p><button style="color:#ccc;">sergejv95@gmail.com</button></p>
+                </div>
+            </div>
+        </div>
+        </section><!-- #treneri -->
 
             </div>
         </section><!-- #services -->
@@ -364,21 +364,21 @@ button:hover, a:hover {
                                 </div>
                             </div>
                             <div class="card" style="width:200px">
-                                <img class="card-img-top" src="img/team-2.jpg">
+                                <img class="card-img-top" src="img/sasa.jpg">
                                 <div class="card-body">
                                     <h4 class="card-title">Saša Oljača</h4>
                                     <p class="card-text">Član tima nije pekmez.</p>
                                 </div>
                             </div>
                             <div class="card" style="width:200px">
-                                <img class="card-img-top" src="img/team-2.jpg">
+                                <img class="card-img-top" src="img/pedja.jpg">
                                 <div class="card-body">
                                     <h4 class="card-title">Predrag Koprena</h4>
                                     <p class="card-text">Član tima nije pekmez.</p>
                                 </div>
                             </div>
                             <div class="card" style="width:200px">
-                                <img class="card-img-top" src="img/team-2.jpg">
+                                <img class="card-img-top" src="img/lukac.jpg">
                                 <div class="card-body">
                                     <h4 class="card-title">Goran Lukač</h4>
                                     <p class="card-text">Član tima nije pekmez.</p>
@@ -502,7 +502,7 @@ button:hover, a:hover {
                         <div class="info">
                             <div>
                                 <i class="fa fa-map-marker"></i>
-                                <p>Kralja Petra I<br>Banja Luka,78000 BiH</p>
+                                <p>Braće Pantić 4<br>Banja Luka,78000 BiH</p>
                             </div>
 
                             <div>
@@ -512,7 +512,7 @@ button:hover, a:hover {
 
                             <div>
                                 <i class="fa fa-phone"></i>
-                                <p>+387 51 123 456</p>
+                                <p>+387 51 223 160</p>
                             </div>
                         </div>
 
