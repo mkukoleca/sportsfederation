@@ -13,11 +13,15 @@
 </head>
 
 <body>
+<div class="container-fluid">
+
+    
+
 
     @include("layouts.menu")
 
     @yield("content")
-
+</div>
 </body>
 
 </html>
