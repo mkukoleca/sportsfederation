@@ -222,8 +222,7 @@ button:hover, a:hover {
                 <div class="card">
 					<img src="img/mirko_fancy.jpg" alt="Mirko" style="width:100%">
 					<h1>Mirko Kukoleča</h1>
-					<p class="title">Prointer</p>
-					<p>ITP100 2019</p>
+					<p class="title">ITP100 2019</p>
 					<div style="margin: 24px 0;"> 
 						<a href="#"><i class="fa fa-linkedin"></i></a>  
 						<a href="#"><i class="fa fa-facebook"></i></a> 
@@ -235,8 +234,7 @@ button:hover, a:hover {
                 <div class="card" style="margin-left:50px;">
                 <img src="img/nevena.png" alt="Nevena" style="width:100%">
                 <h1>Nevena Mićić</h1>
-                <p class="title">Invenit Solutions</p>
-                <p>ITP100 2019</p>
+                <p class="title">ITP100 2019</p>
                 <div style="margin: 24px 0;"> 
                     <a href="#"><i class="fa fa-linkedin"></i></a>  
                     <a href="#"><i class="fa fa-facebook"></i></a> 
@@ -248,8 +246,7 @@ button:hover, a:hover {
                 <div class="card" style="margin-left:0px;">
                 <img src="img/sergej.jpg" alt="Sergej" style="width:100%">
                 <h1>Sergej Vuković</h1>
-                <p class="title">JSGuru</p>
-                <p>ITP100 2019</p>
+                <p class="title">ITP100 2019</p>
                 <div style="margin: 24px 0;"> 
                     <a href="#"><i class="fa fa-linkedin"></i></a>  
                     <a href="#"><i class="fa fa-facebook"></i></a> 
