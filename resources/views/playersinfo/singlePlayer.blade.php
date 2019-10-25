@@ -1,22 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends("../layouts.master")
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="../../formaClub.css">
-    <link rel="stylesheet" type="text/css" href="../navbar.css">
-    <link rel="stylesheet" type="text/css" href="../tableClub.css">
-    <link rel="stylesheet" href="{{ asset('css/stil.css') }}">
+@section("content")
 
-    <title>Single Player</title>
-</head>
-
-<body><br>
+@section("title")
+Rukometni savez Republike Srpske-New Club
+@endsection
+<br>
     <a href="/players"><button type="button" class="btn_back">Back</button></a>
     <br><br>
     <a href="/registerPlayer"><button class="myButton" autofocus>Register new player</button></a>
@@ -70,6 +59,4 @@
     @endisset
 
 
-</body>
-
-</html>
+@endsection

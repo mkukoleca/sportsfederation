@@ -1,11 +1,14 @@
 <link rel="stylesheet" href="{{ asset('css/stil.css') }}">
 
-@extends("../layouts.master")
+@extends("../layouts.masterMeni")
 @section("content")
 
 @section("title")
 Rukometni savez Republike Srpske-Players
 @endsection
+<br><br>
+<a href="/registerPlayer"><button class="myButton" autofocus>Register new player</button></a>
+<br /><br /><br />
 <form  action="{{action('PlayerInfoController@index')}}" method="GET" enctype="multipart/form-data">
    <div>Sortiranje po :  <select name="club">
                   
@@ -18,9 +21,8 @@ Rukometni savez Republike Srpske-Players
         <button type="reset" id="reset_filters" class="ml-2">Reset</button>
     </div>
 </form>
-<br><br>
-<a href="/registerPlayer"><button class="myButton" autofocus>Register new player</button></a>
-<br /><br /><br />
+
+
 <div class="table-responsive">
     <table class="table blueTable">
         <thead>

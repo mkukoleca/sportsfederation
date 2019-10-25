@@ -1,6 +1,7 @@
-@extends("../layouts.master")
-@section("content")
 
+@extends("../layouts.masterMeni")
+
+@section("content")
 
 @section("title")
 Rukometni savez Republike Srpske-Clubs
@@ -49,7 +50,7 @@ Rukometni savez Republike Srpske-Clubs
                 </td>
                 <td><a href="editClub/{{$club->id}}"><button class="myButton">Edit</button></a></td>
                 <td><a onclick="return confirm('DA LI STE SIGURNI DA ZELITE BRISATI?')"
-                        href="deleteClub/{{$club->id}}"><button class="myButton">Delete</button></a></td>
+                        href="deleteClub/{{$club->id}}"><button class="myButton">Delete</button></a></td>   
             </tr>
 
             @endforeach
@@ -61,7 +62,6 @@ Rukometni savez Republike Srpske-Clubs
     @endisset
 
 </div>
-
 
 
 @endsection

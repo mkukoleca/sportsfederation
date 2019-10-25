@@ -1,9 +1,9 @@
-@extends("../layouts.master")
+@extends("../layouts.masterMeni")
 @section("content")
 
 
 @section("title")
-Rukometni savez Republike Srpske-Players
+Rukometni savez Republike Srpske-Event
 @endsection
 
 

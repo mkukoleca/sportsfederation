@@ -14,9 +14,12 @@
 
 <body>
 
+    @include("layouts.menu")
 
     @yield("content")
 
 </body>
 
 </html>
+
+
