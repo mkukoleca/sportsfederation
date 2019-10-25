@@ -11,7 +11,7 @@ Rukometni savez Republike Srpske-Game
     <a href="/games/registerGame"><button class="btn btn-success">Register new game</button></a>
     <br><br><br>
     <div class="table-responsive">
-        <table class="blueTable">
+        <table class="table table-bordered table-dark table-striped blueTable">
             <thead>
                 <tr>
                     <th>Event</th>
@@ -51,9 +51,9 @@ Rukometni savez Republike Srpske-Game
                     <td>{{$game->note}}</td>
                     <td>{{$game->created_at}}</td>
                     <td>{{$game->updated_at}}</td>
-                    <td><a href="/games/updateGame/{{$game->id}}"><button class="btn btn-outline-info btn-sm">Edit</button></a></td>
-                    <td><a href="/deleteGame/{{$game->id}}"><button class="btn btn-outline-info btn-sm" onclick="return confirm('Are you sure you want to delete this data')">Delete</button></a></td>
-                    <td><a href="/games"><button class="btn btn-outline-info btn-sm">Games List</button></a></td>
+                    <td><a href="/games/updateGame/{{$game->id}}"><button class="btn btn-warning btn-sm">Edit</button></a></td>
+                    <td><a href="/deleteGame/{{$game->id}}"><button class="btn btn-info btn-sm" onclick="return confirm('Are you sure you want to delete this data')">Delete</button></a></td>
+                    <td><a href="/games"><button class="btn btn-danger btn-sm">Games List</button></a></td>
                 </tr>
             </tbody>
         </table>

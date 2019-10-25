@@ -11,7 +11,7 @@
     <a href="/registerPlayer"><button class="btn btn-success" >Register new player</button></a>
     <br><br><br>
     <div class="table-responsive">
-        <table class="blueTable">
+        <table class="table table-bordered table-dark table-striped blueTable">
             <thead>
                 <tr>
                     <th>Profile image</th>
@@ -46,10 +46,10 @@
                     <td>{{$player -> playerHistory}}</td>
                     <td>{{$player->club->name}}</td>
                     <td>{{$player->selection->category}}</td>
-                    <td><a href="/updatePlayer/{{$player->id}}"><button class="btn btn-outline-info btn-sm">Edit</button></a></td>
-                    <td><a href="/players"><button class="btn btn-outline-info btn-sm">Players list</button></a></td>
+                    <td><a href="/updatePlayer/{{$player->id}}"><button class="btn btn-warning btn-sm">Edit</button></a></td>
+                    <td><a href="/players"><button class="btn btn-info btn-sm">Players list</button></a></td>
                     <td><a onclick="return confirm('DA LI STE SIGURNI DA ZELITE BRISATI?')"
-                            href="/deletePlayer/{{$player->id}}"><button class="btn btn-outline-info btn-sm">Delete</button></a></td>
+                            href="/deletePlayer/{{$player->id}}"><button class="btn btn-danger btn-sm">Delete</button></a></td>
                 </tr>
             </tbody>
         </table>
