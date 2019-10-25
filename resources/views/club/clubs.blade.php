@@ -1,6 +1,7 @@
-@extends("../layouts.master")
-@section("content")
 
+@extends("../layouts.masterMeni")
+
+@section("content")
 
 @section("title")
 Rukometni savez Republike Srpske-Clubs
@@ -11,7 +12,7 @@ Rukometni savez Republike Srpske-Clubs
 <a href="/newClub"><button class="btn btn-success">Add new Club</button></a>
 <br><br>
 @include("filters.clubs-filter")
-<div class="table-responsive-sm">
+<div class="container-fluid">
     <table class="table table-bordered table-dark table-striped table-hover blueTable">
         <thead>
             <tr>
@@ -61,7 +62,6 @@ Rukometni savez Republike Srpske-Clubs
     @endisset
 
 </div>
-
 
 
 @endsection

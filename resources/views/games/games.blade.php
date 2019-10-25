@@ -1,4 +1,4 @@
-@extends("../layouts.master")
+@extends("../layouts.masterMeni")
 @section("content")
 
 
@@ -9,7 +9,7 @@ Rukometni savez Republike Srpske-Games
 <br><br><br>
 <a href="/games/registerGame"><button class="btn btn-success">Register new game</button></a>
 <br /><br /><br />
-<div class="table-responsive-sm">
+<div class="container-fluid">
     <table class="table table-bordered table-dark table-striped blueTable">
         <thead>
             <tr>

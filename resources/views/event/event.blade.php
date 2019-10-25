@@ -1,16 +1,16 @@
-@extends("../layouts.master")
+@extends("../layouts.masterMeni")
 @section("content")
 
 
 @section("title")
-Rukometni savez Republike Srpske-Players
+Rukometni savez Republike Srpske-Event
 @endsection
 
 
 <br><br><br>
 <a href="/newEvent"><button class="btn btn-success">Add new Event</button></a>
 <br><br><br>
-<div class="table-responsive-sm">
+<div class="container-fluid">
     <table class="table table-bordered table-dark table-striped blueTable">
         <thead>
             <tr>

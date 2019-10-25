@@ -58,16 +58,25 @@
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Login') }}
                                 </button>
-
                                 <a href="/" class="btn btn-danger">Cancel</a>
-
-
-                                @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
-                                    </a>
-                                @endif
                             </div>
+                            <br>
+                            <div class="container-fluid">
+                                <div style="text-align:center">
+                                    <div>
+                                        @if (Route::has('password.request'))
+                                            <a class="btn btn-link" href="{{ route('password.request') }}">
+                                                {{ __('Forgot Your Password?') }}        
+                                            </a>              
+                                        @endif
+                                    </div>
+                                </div>
+                                <div style="text-align:center">
+                                    <a class="btn btn-link" href="{{ route('register') }}">
+                                        {{ __('Don`t have an account? Register!') }}
+                                     </a>
+                                </div>
+                            </div>   
                         </div>
                     </form>
                 </div>
