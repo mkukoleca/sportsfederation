@@ -22,21 +22,12 @@
       <input placeholder="Name" type="text" name ="name" tabindex="1" required autofocus>
     </fieldset>
 
-    <fieldset>
-      <textarea placeholder="Description" type="text" name ="description" tabindex="3"></textarea>
-    </fieldset>
-
-    <fieldset> Staff image:
-          <input type="file" name="thumbnail" tabindex="3">
-    </fieldset>
+   
 
         <fieldset>
         <textarea placeholder="Description" type="text" name ="description" tabindex="3"></textarea>
         </fieldset>
 
-        <fieldset> Staff image:
-            <input type="file" name="thumbnail" tabindex="3">
-        </fieldset>
         <fieldset>
             <span>Staff Type </span>
             <select name="staffType">
