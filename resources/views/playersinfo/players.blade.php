@@ -79,8 +79,8 @@ Rukometni savez Republike Srpske-Players
                             class="btn btn-info btn-sm">Show</button></a></td>
                 <td><a onclick="return confirm('DA LI STE SIGURNI DA ZELITE BRISATI?')"
                         href="/deletePlayer/{{$player->id}}"><button
-                            class="btn btn-outline-info btn-sm">Delete</button></a></td>
-            </tr> -->
+                            class="btn btn-danger btn-sm">Delete</button></a></td>
+            </tr>
 
             @endforeach
         </tbody>
