@@ -226,10 +226,10 @@
                 <div class="row">
                     @foreach($staffs as $staff)
                     <div>
-                        <div class="card" >
+                            <div class="card" >
 
                             <img src="{{ url($staff->thumbnail) }}" alt="Slika staff" style="width:100%; height:auto">
-                            <h1>{{$staff->name}}</h1>
+                            <h1>{{$staff->name}}</h1> 
                             <p class="title">{{$staff->type->name}}</p>
                             <div style="margin: 24px 0;">
                                 <a href="{{$staff->facebook}}"><i class="fa fa-instagram"></i></a>

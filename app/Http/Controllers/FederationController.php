@@ -20,10 +20,12 @@ class FederationController extends Controller
      */
     public function index()
     {
-        $staff = Staff::with(['type', 'federation']);
+        $types = StaffType::whereIn('name', ['delegate', 'coach'])->pluck('id')->toArray();
+        $staff = Staff::whereIn('type_id', $types)->with(['type', 'federation']);
 
         return view('federation', [
-            'federations' => Federation::all(),'staffs' => $staff->get(),'events' => Event::all(),
+            'federations' => Federation::all(),
+            'staffs' => $staff->get(),'events' => Event::all(),
             'clubs' => Club::all()  
             ]);
     }
