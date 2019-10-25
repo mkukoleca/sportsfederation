@@ -391,9 +391,9 @@
                                 </div>
                             </div>
                             <div class="card" style="width:200px">
-                                <img class="card-img-top" src="img/team-1.jpg">
+                                <img class="card-img-top" src="img/$igormusic.jpg">
                                 <div class="card-body">
-                                    <h4 class="card-title">Igor</h4>
+                                    <h4 class="card-title"><a href="https://github.com/agentsmith-source/stunning-octo-broccoli/tree/agentsmith-source-mojeideje">$Igor->php->musiĆ</a></h4>
                                     <p class="card-text">Član tima Kornjače.</p>
                                 </div>
                             </div>
