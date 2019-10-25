@@ -24,11 +24,11 @@ Rukometni savez Republike Srpske-Players
                 <button type="submit" id="submit_filters" class="btn btn-primary btn-sm">Submit</button>
                 <button type="reset" id="reset_filters" class="btn btn-secondary btn-sm">Reset</button>
             </div>
-    </div>
+        </div>
 </div>
-</form>
+        </form>
 <div class="table-responsive">
-    <table class="table blueTable">
+    <table class="table table-bordered table-dark table-striped blueTable">
         <thead>
             <tr>
                 <th>Profile image</th>
@@ -70,12 +70,12 @@ Rukometni savez Republike Srpske-Players
                 <td>{{$player->updated_at}}</td>
 
                 <td><a href="/updatePlayer/{{$player->id}}"><button
-                            class="btn btn-outline-info btn-sm">Edit</button></a></td>
+                            class="btn btn-warning btn-sm">Edit</button></a></td>
                 <td><a href="/singlePlayer/{{$player->id}}"><button
-                            class="btn btn-outline-info btn-sm">Show</button></a></td>
+                            class="btn btn-info btn-sm">Show</button></a></td>
                 <td><a onclick="return confirm('DA LI STE SIGURNI DA ZELITE BRISATI?')"
                         href="/deletePlayer/{{$player->id}}"><button
-                            class="btn btn-outline-info btn-sm">Delete</button></a></td>
+                            class="btn btn-danger btn-sm">Delete</button></a></td>
             </tr>
 
             @endforeach
