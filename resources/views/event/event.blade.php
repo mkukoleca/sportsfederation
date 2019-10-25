@@ -18,6 +18,7 @@ Rukometni savez Republike Srpske-Event
                 <th>Name</th>
                 <th>Season</th>
                 <th>Description</th>
+                <th>Games</th>
                 <th>Edit</th>
                 <th>Delete</th>
             </tr>
@@ -29,6 +30,8 @@ Rukometni savez Republike Srpske-Event
                 <td>{{$event->name}}</td>
                 <td>{{$event->season}}</td>
                 <td>{{$event->description}}</td>
+                
+                <td><a href="/games?eventId={{$event->id}}">Games  {{count($event->games)}}</a></td>
                 <td><a href="editEvent/{{$event->id}}"><button class="btn btn-warning btn-sm">Edit</button></a></td>
                 <td><a onclick="return confirm('DA LI STE SIGURNI DA ŽELITE BRISATI?')"
                         href="deleteEvent/{{$event->id}}"><button class="btn btn-danger btn-sm">Delete</button></a></td>
