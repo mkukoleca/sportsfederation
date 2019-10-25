@@ -1,21 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends("../layouts.master")
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="../../formaClub.css">
-    <link rel="stylesheet" type="text/css" href="../../navbar.css">
-    <link rel="stylesheet" type="text/css" href="../../tableClub.css">
-    <title>Single Game</title>
-</head>
+@section("content")
 
-<body><br>
-    <a href="/games"><button type="button" class="btn btn-secondary btn-lg">Back</button></a>
+@section("title")
+Rukometni savez Republike Srpske-Game
+@endsection
+<br>
+    <a href="/games"><button type="button" class="btn_back">Back</button></a>
     <br><br>
     <a href="/games/registerGame"><button class="btn btn-success">Register new game</button></a>
     <br><br><br>
@@ -72,6 +63,4 @@
     {{$message}}
     @endisset
 
-</body>
-
-</html>
+@endsection

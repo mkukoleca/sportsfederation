@@ -1,6 +1,7 @@
-@extends("../layouts.master")
-@section("content")
 
+@extends("../layouts.masterMeni")
+
+@section("content")
 
 @section("title")
 Rukometni savez Republike Srpske-Clubs
@@ -61,7 +62,6 @@ Rukometni savez Republike Srpske-Clubs
     @endisset
 
 </div>
-
 
 
 @endsection

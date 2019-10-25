@@ -8,6 +8,7 @@ use \Illuminate\Http\Response;
 
 class ClubController extends Controller
 {
+    
     public function index(Request $request)
     {
 
