@@ -14,26 +14,26 @@ class StaffTableSeeder extends Seeder
     {
         DB::table('staffs')->insert([
             'id' => 1,
-            'name' => 'Bibiana Delegate',
-            'description' => 'German football referee!!!',
+            'name' => 'Mirko Kukoleč',
+            'description' => 'Hoćeš li da savladaš PHP? -Jesi li radio odam sati?',
             'type_id' => StaffType::DELEGATE,
-            'thumbnail' => ''
+            'thumbnail' => 'img/mirko.kukoleca.jpg'
         ]);
 
         DB::table('staffs')->insert([
             'id' => 2,
-            'name' => 'Bibiana Referee',
+            'name' => 'Nevena Mićić',
             'description' => 'German football referee!!!',
-            'type_id' => StaffType::REFEREE,
-            'thumbnail' => ''
+            'type_id' => StaffType::COACH,
+            'thumbnail' => 'img/nevena.png'
         ]);
 
         DB::table('staffs')->insert([
             'id' => 3,
-            'name' => 'Bibiana Coach',
+            'name' => 'Sergej Vuković',
             'description' => 'German football referee!!!',
             'type_id' => StaffType::COACH,
-            'thumbnail' => ''
+            'thumbnail' => 'img/sergej.v.jpg'
         ]);
 
         DB::table('staffs')->insert([
