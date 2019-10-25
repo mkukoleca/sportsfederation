@@ -364,7 +364,7 @@ button:hover, a:hover {
                                 </div>
                             </div>
                             <div class="card" style="width:200px">
-                                <img class="card-img-top" src="img/team-2.jpg">
+                                <img class="card-img-top" src="img/sasa.jpg">
                                 <div class="card-body">
                                     <h4 class="card-title">Saša Oljača</h4>
                                     <p class="card-text">Član tima nije pekmez.</p>
