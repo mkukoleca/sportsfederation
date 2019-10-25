@@ -10,7 +10,7 @@ class Event extends Model
     protected $table = 'events';
     protected $fillable = ['type', 'name', 'season', 'description'];
 
-    public function game(){
-        return $this->hasMany("App\Game");
+    public function games(){
+        return $this->hasMany('App\Game', 'eventId');
     }
 }

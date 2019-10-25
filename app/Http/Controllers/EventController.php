@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Event;
+use App\Game;
 use Illuminate\Http\Request;
 use DB;
 
@@ -13,10 +14,15 @@ class EventController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $event = DB::table('events')->get();
-        return view('/event/event', ['events' => $event]);
+        $event = Event::with('games');
+
+        if ($request->has('eventId')) {
+            $event->where('eventId', $request->input('eventId'));
+        }
+        return view('/event/event', [
+            'events' => $event->get()]);
     }
 
     /**
