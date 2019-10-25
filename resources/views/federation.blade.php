@@ -22,47 +22,49 @@
     <!-- Bootstrap profile cards CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
-.card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  max-width: 300px;
-  margin: auto;
-  text-align: center;
-  font-family: arial;
-  border-radius: 5px;
-  margin-right: 20px;
-}
-img{
-    border-radius: 5px;
-}
+    .card {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        max-width: 300px;
+        margin: auto;
+        text-align: center;
+        font-family: arial;
+        border-radius: 5px;
+        margin-right: 20px;
+    }
 
-.title {
-  color: grey;
-  font-size: 18px;
-}
+    img {
+        border-radius: 5px;
+    }
 
-button {
-  border: none;
-  outline: 0;
-  display: inline-block;
-  padding: 8px;
-  color: white;
-  background-color: #000;
-  text-align: center;
-  cursor: pointer;
-  width: 100%;
-  font-size: 18px;
-}
+    .title {
+        color: grey;
+        font-size: 18px;
+    }
 
-a {
-  text-decoration: none;
-  font-size: 22px;
-  color: black;
-}
+    button {
+        border: none;
+        outline: 0;
+        display: inline-block;
+        padding: 8px;
+        color: white;
+        background-color: #000;
+        text-align: center;
+        cursor: pointer;
+        width: 100%;
+        font-size: 18px;
+    }
 
-button:hover, a:hover {
-  opacity: 0.7;
-}
-</style>
+    a {
+        text-decoration: none;
+        font-size: 22px;
+        color: black;
+    }
+
+    button:hover,
+    a:hover {
+        opacity: 0.7;
+    }
+    </style>
 
     <!-- Libraries CSS Files -->
     <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
@@ -75,7 +77,7 @@ button:hover, a:hover {
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-    
+
 
 </head>
 
@@ -133,10 +135,13 @@ button:hover, a:hover {
             <div class="butt">
                 <ul class="nav">
                     @if (Auth::check())
-                        <li class="nav-item" style="padding:3px"><a class="btn btn-primary float-left"href="/logout" role="button" >Logout</a></li>
+                    <li class="nav-item" style="padding:3px"><a class="btn btn-primary float-left" href="/logout"
+                            role="button">Logout</a></li>
                     @else
-                        <li class="nav-item" style="padding:3px"><a class="btn btn-primary float-left"href="/register" role="button"> Register</a></li>
-                        <li class="nav-item" style="padding:3px"><a class="btn btn-primary float-left" href="/login" role="button">Login</a></li>
+                    <li class="nav-item" style="padding:3px"><a class="btn btn-primary float-left" href="/register"
+                            role="button"> Register</a></li>
+                    <li class="nav-item" style="padding:3px"><a class="btn btn-primary float-left" href="/login"
+                            role="button">Login</a></li>
                     @endif
                 </ul>
             </div>
@@ -183,79 +188,57 @@ button:hover, a:hover {
                                 <p>Trenutni predsjednik saveza je {{ $fed->president }}.</p>
                             </div>
                             <p>
-                               {{--  <div class="panel-heading">
+                                {{--  <div class="panel-heading">
                                     <h4>Članovi saveza</h4>
                                 </div>
                                 <div class="panel-body">
                                     @foreach($fed->staff as $staff)
                                     <a href="/staff?type={{ $staff->type->id }}">{{$staff->type->name}}</a>
-                                    <div>
-                                        {{$staff->type->name}}: {{$staff->name}}
-                                    </div>
-                                    @endforeach
-                                </div> --}}
-                        </div>
-                        @endforeach
-                    </p>
-                    <p>
-                        <br>
+                                <div>
+                                    {{$staff->type->name}}: {{$staff->name}}
+                                </div>
+                                @endforeach
+                        </div> --}}
                 </div>
-                <div class="row">
-                    <div class="col-lg-12 col-md-12 wow fadeInUp" data-wow-delay="0.2s">
-                        <p></p>
-                        <p></p>
-                        <div class="box">
-                            <div class="icon"><a href=""><i class="fa fa-users"></i></a></div>
-                            <h4 class="title"><a href="/federation/{{ $fed->id }}">Savez Update</a></h4>
-                            <p class="description">Nove informacije možete dodati...</p>
-                        </div>
+                @endforeach
+                </p>
+                <p>
+                    <br>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 col-md-12 wow fadeInUp" data-wow-delay="0.2s">
+                    <p></p>
+                    <p></p>
+                    <div class="box">
+                        <div class="icon"><a href=""><i class="fa fa-users"></i></a></div>
+                        <h4 class="title"><a href="/federation/{{ $fed->id }}">Savez Update</a></h4>
+                        <p class="description">Nove informacije možete dodati...</p>
                     </div>
                 </div>
-                     <!--==========================
+            </div>
+            <!--==========================
       Coaches Section
     ============================-->
-    <section>
-            <h2 style="text-align:center">Predavači</h2>
-            <p style="text-align:center; color:#ccc">Ovo je naš tim predavača</p>
-        <div class="row">
-            <div class="col-4">
-                <div class="card">
-					<img src="img/mirko.kukoleca.jpg" alt="Mirko" style="width:100%">
-					<h1>Mirko Kukoleča</h1>
-					<p class="title">ITP100 2019</p>
-					<div style="margin: 24px 0;"> 
-						<a href="#"><i class="fa fa-linkedin"></i></a>  
-						<a href="#"><i class="fa fa-facebook"></i></a> 
-					</div>
-					<p><button style="color:#ccc;">mirko@invenit.io</button></p>
+            <section>
+                <h2 style="text-align:center">Predavači</h2>
+                <p style="text-align:center; color:#ccc">Ovo je naš tim predavača</p>
+                <div class="row">
+                    <div class="col-4">
+                        <div class="card">
+                        @foreach($staffs as $staff)
+                            <img src="{{ url($staff->thumbnail) }}" alt="Slika staff" style="width:100%">
+                            <h1>{{$staff->name}}</h1>
+                            <p class="title">{{$staff->type->name}}</p>
+                            <div style="margin: 24px 0;">
+                                <a href="#"><i class="fa fa-instagram"></i></a>
+                                <a href="#"><i class="fa fa-facebook"></i></a>
+                            </div>
+                            <p><button style="color:#ccc;">mirko@invenit.io</button></p>
+                        </div>
+                        @endforeach
+                    </div>
                 </div>
-            </div>
-            <div class="col-4">
-                <div class="card" style="margin-left:50px;">
-                <img src="img/nevena.png" alt="Nevena" style="width:100%">
-                <h1>Nevena Mićić</h1>
-                <p class="title">ITP100 2019</p>
-                <div style="margin: 24px 0;"> 
-                    <a href="#"><i class="fa fa-linkedin"></i></a>  
-                    <a href="#"><i class="fa fa-facebook"></i></a> 
-                </div>
-                <p><button style="color:#ccc;">nevena@invenit.io</button></p>
-                </div>
-            </div>
-            <div class="col-4">
-                <div class="card" style="margin-left:0px;">
-                <img src="img/sergej.v.jpg" alt="Sergej" style="width:100%">
-                <h1>Sergej Vuković</h1>
-                <p class="title">ITP100 2019</p>
-                <div style="margin: 24px 0;"> 
-                    <a href="#"><i class="fa fa-linkedin"></i></a>  
-                    <a href="#"><i class="fa fa-facebook"></i></a> 
-                </div>
-                <p><button style="color:#ccc;">sergejv95@gmail.com</button></p>
-                </div>
-            </div>
-        </div>
-        </section><!-- #treneri -->
+            </section><!-- #treneri -->
 
             </div>
         </section><!-- #services -->
@@ -458,7 +441,9 @@ button:hover, a:hover {
                             <div class="card" style="width:200px">
                                 <img class="card-img-top" src="img/$igormusic.jpg">
                                 <div class="card-body">
-                                    <h4 class="card-title"><a style="font-size:18px;" href="https://github.com/agentsmith-source/stunning-octo-broccoli/tree/agentsmith-source-mojeideje">$Igor->php->musiĆ</a></h4>
+                                    <h4 class="card-title"><a style="font-size:18px;"
+                                            href="https://github.com/agentsmith-source/stunning-octo-broccoli/tree/agentsmith-source-mojeideje">$Igor->php->musiĆ</a>
+                                    </h4>
                                     <p class="card-text">Član tima Kornjače.</p>
                                 </div>
                             </div>
