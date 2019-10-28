@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\StaffType;
 use App\Federation;
 use App\FederationStaff;
-
+use Intervention\Image\ImageManagerStatic as Image;
 class StaffController extends Controller
 {
     /**
@@ -51,11 +51,22 @@ class StaffController extends Controller
                 $staff->type_id = $data['staffType'];
 
                 if ($request->hasFile('thumbnail')) {
-                    $name = $staff->name . '.' . $request->thumbnail->extension();
+                    $thumbnail      = $request->file('thumbnail');
+                //$filename    = $thumbnail->getClientOriginalName();
+                $filename = $staff->name.time().'.'.$request->thumbnail->extension();
+                $image_resize = Image::make($thumbnail->getRealPath());              
+                $image_resize->resize(300, null, function ($constraint) {
+                    $constraint->aspectRatio();
+                }); 
+                 $image_resize->save(public_path('assets/photo/' .$filename));
+                 $folder = 'assets/photo/';
+                 
+                 $staff->thumbnail=$folder.$filename;
+                    /*$name = $staff->name . '.' . $request->thumbnail->extension();
                     $folder = 'assets/photo/';
                     $request->thumbnail->move(public_path($folder), $name);
     
-                    $staff->thumbnail = $folder . $name;
+                    $staff->thumbnail = $folder . $name;*/
                 }
                
                 $staff->save();
@@ -115,11 +126,22 @@ class StaffController extends Controller
         $staff->type_id = $data['staffType'];
 
         if ($request->hasFile('thumbnail')) {
-            $name = $staff->name . '.' . $request->thumbnail->extension();
+                $thumbnail      = $request->file('thumbnail');
+                //$filename    = $thumbnail->getClientOriginalName();
+                $filename = $staff->name.time().'.'.$request->thumbnail->extension();
+                $image_resize = Image::make($thumbnail->getRealPath());              
+                $image_resize->resize(300, null, function ($constraint) {
+                    $constraint->aspectRatio();
+                }); 
+                 $image_resize->save(public_path('assets/photo/' .$filename));
+                 $folder = 'assets/photo/';
+                 
+                 $staff->thumbnail=$folder.$filename;
+            /* $name = $staff->name . '.' . $request->thumbnail->extension();
             $folder = 'assets/photo/';
             $request->thumbnail->move(public_path($folder), $name);
 
-            $staff->thumbnail = $folder . $name;
+            $staff->thumbnail = $folder . $name;*/
         }
 
         $staff->save();

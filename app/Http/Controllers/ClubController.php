@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Club;
 use Illuminate\Http\Request;
 use \Illuminate\Http\Response;
+use Intervention\Image\ImageManagerStatic as Image;
 
 class ClubController extends Controller
 {
@@ -44,11 +45,22 @@ class ClubController extends Controller
             $club->history = $data['history'];
 
             if ($request->hasFile('thumbnail')) {
-                $name = $club->name . '.' . $request->thumbnail->extension();
+                $thumbnail      = $request->file('thumbnail');
+                //$filename    = $thumbnail->getClientOriginalName();
+                $filename = $club->name.time().'.'.$request->thumbnail->extension();
+                $image_resize = Image::make($thumbnail->getRealPath());              
+                $image_resize->resize(300, null, function ($constraint) {
+                    $constraint->aspectRatio();
+                }); 
+                 $image_resize->save(public_path('assets/photo/' .$filename));
+                 $folder = 'assets/photo/';
+                 
+                 $club->thumbnail=$folder.$filename;
+                /* $name = $club->name . '.' . $request->thumbnail->extension();
                 $folder = 'assets/photo/';
                 $request->thumbnail->move(public_path($folder), $name);
 
-                $club->thumbnail = $folder . $name;
+                $club->thumbnail = $folder . $name; */
             }
 
             $club->save();
@@ -80,11 +92,22 @@ class ClubController extends Controller
         $club->history = $data['history'];
 
         if ($request->hasFile('thumbnail')) {
-            $name = $club->name . '.' . $request->thumbnail->extension();
+            $thumbnail      = $request->file('thumbnail');
+                //$filename    = $thumbnail->getClientOriginalName();
+                $filename = $club->name.time().'.'.$request->thumbnail->extension();
+                $image_resize = Image::make($thumbnail->getRealPath());              
+                $image_resize->resize(300, null, function ($constraint) {
+                    $constraint->aspectRatio();
+                }); 
+                 $image_resize->save(public_path('assets/photo/' .$filename));
+                 $folder = 'assets/photo/';
+                 
+                 $club->thumbnail=$folder.$filename;
+            /*$name = $club->name . '.' . $request->thumbnail->extension();
             $folder = 'assets/photo/';
             $request->thumbnail->move(public_path($folder), $name);
 
-            $club->thumbnail = $folder . $name;
+            $club->thumbnail = $folder . $name;*/
         }
 
 
