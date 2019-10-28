@@ -6,6 +6,7 @@ use App\PlayerInfo;
 use Illuminate\Http\Request;
 use App\Selection;
 use App\Club;
+use Intervention\Image\ImageManagerStatic as Image;
 
 
 class PlayerInfoController extends Controller
@@ -61,11 +62,23 @@ class PlayerInfoController extends Controller
             $player->selectionId=$data['selectionId'];
 
             if($request->hasFile('thumbnail')){
-                $name = $player->name.time().'.'.$request->thumbnail->extension();
+                $thumbnail      = $request->file('thumbnail');
+                //$filename    = $thumbnail->getClientOriginalName();
+                $filename = $player->name.time().'.'.$request->thumbnail->extension();
+                $image_resize = Image::make($thumbnail->getRealPath());              
+                $image_resize->resize(300, null, function ($constraint) {
+                    $constraint->aspectRatio();
+                }); 
+                 $image_resize->save(public_path('assets/photo/' .$filename));
+                 $folder = 'assets/photo/';
+                 
+                 $player->thumbnail=$folder.$filename;
+
+              /*  $name = $player->name.time().'.'.$request->thumbnail->extension();
                 $folder = 'assets/photo/';
                 $request->thumbnail->move(public_path($folder), $name);
 
-                $player->thumbnail=$folder.$name;
+                $player->thumbnail=$folder.$name;*/
             }
 
             $player->save();
@@ -143,12 +156,26 @@ class PlayerInfoController extends Controller
         $player->selectionId=$data['selectionId'];
         
         if($request->hasFile('thumbnail')){
-            $name = $player->name.time().'.'.$request->thumbnail->extension();
+            
+            
+            $thumbnail      = $request->file('thumbnail');
+            //$filename    = $thumbnail->getClientOriginalName();
+            $filename = $player->name.time().'.'.$request->thumbnail->extension();
+            $image_resize = Image::make($thumbnail->getRealPath());              
+            $image_resize->resize(300, null, function ($constraint) {
+                $constraint->aspectRatio();
+            }); 
+             $image_resize->save(public_path('assets/photo/' .$filename));
+             $folder = 'assets/photo/';
+             
+             $player->thumbnail=$folder.$filename;
+            }
+            /*$name = $player->name.time().'.'.$request->thumbnail->extension();
             $folder = 'assets/photo/';
             $request->thumbnail->move(public_path($folder), $name);
 
-            $player->thumbnail=$folder.$name;
-        }
+            $player->thumbnail=$folder.$name;*/
+        
 
         $player->save();
         return redirect('/players');
